@@ -1,5 +1,4 @@
 using System.Web.Http;
-using ECommerceDistributedAPI;
 using Microsoft.Practices.Unity.WebApi;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(AnApiOfIceAndFire.App_Start.UnityWebApiActivator), "Start")]

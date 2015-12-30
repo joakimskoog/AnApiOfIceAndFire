@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Practices.Unity;
 
-namespace ECommerceDistributedAPI
+namespace AnApiOfIceAndFire
 {
     /// <summary>
     /// Specifies the Unity configuration for the main container.
