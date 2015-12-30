@@ -249,7 +249,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AnApiOfIceAndFire.Domain\AnApiOfIceAndFire.Domain.csproj">
+      <Project>{f1a3a89b-5ffe-412a-83cf-0740533ac7ab}</Project>
+      <Name>AnApiOfIceAndFire.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
