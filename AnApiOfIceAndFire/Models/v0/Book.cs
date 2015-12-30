@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+// ReSharper disable InconsistentNaming
 
 namespace AnApiOfIceAndFire.Models.v0
 {
@@ -23,7 +24,7 @@ namespace AnApiOfIceAndFire.Models.v0
         /// <summary>
         /// The authors of this book
         /// </summary>
-        public string[] Authors { get; }
+        public ICollection<string> Authors { get; }
 
         /// <summary>
         /// The number of pages in this book
@@ -53,11 +54,33 @@ namespace AnApiOfIceAndFire.Models.v0
         /// <summary>
         /// The character resource URLs that are in this book
         /// </summary>
-        public IReadOnlyCollection<string> Characters { get; } 
+        public ICollection<string> Characters { get; }
 
         /// <summary>
         /// The character resource URLs that have at least one POV chapter in this book
         /// </summary>
-        public IReadOnlyCollection<string> POVCharacters { get; } 
+        public ICollection<string> POVCharacters { get; }
+
+        public Book(string url, string name, string isbn, ICollection<string> authors, int numberOfPages, string publisher, 
+            string country, MediaType mediaType, DateTime released, ICollection<string> characters = null, ICollection<string> povCharacters = null)
+        {
+            if (url == null) throw new ArgumentNullException(nameof(url));
+            if (name == null) throw new ArgumentNullException(nameof(name));
+            if (isbn == null) throw new ArgumentNullException(nameof(isbn));
+            if (authors == null) throw new ArgumentNullException(nameof(authors));
+            if (publisher == null) throw new ArgumentNullException(nameof(publisher));
+            if (country == null) throw new ArgumentNullException(nameof(country));
+            URL = url;
+            Name = name;
+            ISBN = isbn;
+            Authors = authors;
+            NumberOfPages = numberOfPages;
+            Publisher = publisher;
+            Country = country;
+            MediaType = mediaType;
+            Released = released;
+            Characters = characters ?? new List<string>();
+            POVCharacters = povCharacters ?? new List<string>();
+        }
     }
 }
