@@ -46,7 +46,7 @@ namespace AnApiOfIceAndFire.Models.v0
         public MediaType MediaType { get; }
 
         /// <summary>
-        /// The date this book was released
+        /// The date, in ISO 8601 format, this book was released
         /// </summary>
         public DateTime Released { get; }
 
