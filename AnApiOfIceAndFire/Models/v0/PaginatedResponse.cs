@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AnApiOfIceAndFire.Models
+namespace AnApiOfIceAndFire.Models.v0
 {
     public class PaginatedResponse<TData>
     {

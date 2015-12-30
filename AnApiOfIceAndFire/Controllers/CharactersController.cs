@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
 using AnApiOfIceAndFire.Models;
+using AnApiOfIceAndFire.Models.v0;
 
 namespace AnApiOfIceAndFire.Controllers
 {

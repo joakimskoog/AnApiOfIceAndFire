@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AnApiOfIceAndFire.Models
+namespace AnApiOfIceAndFire.Models.v0
 {
     public class PaginationLinks
     {
