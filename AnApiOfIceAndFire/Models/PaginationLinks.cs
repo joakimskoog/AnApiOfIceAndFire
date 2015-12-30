@@ -33,8 +33,10 @@ namespace AnApiOfIceAndFire.Models
         {
             if (first == null) throw new ArgumentNullException(nameof(first));
             if (last == null) throw new ArgumentNullException(nameof(last));
+            if (self == null) throw new ArgumentNullException(nameof(self));
             First = first;
             Last = last;
+            Self = self;
             Previous = previous;
             Next = next;
         }
