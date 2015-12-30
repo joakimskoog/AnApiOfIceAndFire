@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Http;
+using System.Web.Http.Description;
+using AnApiOfIceAndFire.Models;
+
+namespace AnApiOfIceAndFire.Controllers
+{
+    public class CharactersController : ApiController
+    {
+        [HttpGet]
+        [ResponseType(typeof(Character))]
+        public IHttpActionResult Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        [HttpGet]
+        [ResponseType(typeof(IEnumerable<Character>))]
+        public IHttpActionResult Get(int? page)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
