@@ -51,12 +51,12 @@ namespace AnApiOfIceAndFire.Models.v0
         public DateTime Released { get; }
 
         /// <summary>
-        /// The character resources that are in this book
+        /// The character resource URLs that are in this book
         /// </summary>
         public IReadOnlyCollection<string> Characters { get; } 
 
         /// <summary>
-        /// The character resources that have at least one POV chapter in this book
+        /// The character resource URLs that have at least one POV chapter in this book
         /// </summary>
         public IReadOnlyCollection<string> POVCharacters { get; } 
     }
