@@ -6,6 +6,11 @@ namespace AnApiOfIceAndFire.Models.v0
     public class Book
     {
         /// <summary>
+        /// The hypermedia URL of this resource
+        /// </summary>
+        public string URL { get; }
+
+        /// <summary>
         /// The name of this book
         /// </summary>
         public string Name { get; }
@@ -36,12 +41,12 @@ namespace AnApiOfIceAndFire.Models.v0
         public string Country { get; }
 
         /// <summary>
-        /// The media type of this book.
+        /// The media type of this book
         /// </summary>
         public MediaType MediaType { get; }
 
         /// <summary>
-        /// The date this book was released.
+        /// The date this book was released
         /// </summary>
         public DateTime Released { get; }
 
