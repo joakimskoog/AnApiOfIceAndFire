@@ -192,6 +192,8 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\House.cs" />
+    <Compile Include="Models\PaginatedResponse.cs" />
+    <Compile Include="Models\PaginationLinks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
