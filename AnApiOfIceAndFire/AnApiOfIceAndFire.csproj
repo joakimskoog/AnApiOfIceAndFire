@@ -195,8 +195,6 @@
     <Compile Include="Models\v0\Character.cs" />
     <Compile Include="Models\v0\House.cs" />
     <Compile Include="Models\v0\MediaType.cs" />
-    <Compile Include="Models\v0\PaginatedResponse.cs" />
-    <Compile Include="Models\v0\PaginationLinks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

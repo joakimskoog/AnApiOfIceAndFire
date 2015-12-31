@@ -17,7 +17,7 @@ namespace AnApiOfIceAndFire.Controllers
         }
 
         [HttpGet]
-        [ResponseType(typeof(PaginatedResponse<House>))]
+        [ResponseType(typeof(IEnumerable<House>))]
         public IHttpActionResult Get(int? page = null)
         {
             throw new NotImplementedException();
