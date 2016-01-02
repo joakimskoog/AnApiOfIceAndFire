@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
 using AnApiOfIceAndFire.Domain;
@@ -10,11 +11,11 @@ namespace AnApiOfIceAndFire.Controllers.v0
     {
         private readonly IBookService _bookService;
 
-        //public BooksController(IBookService bookService)
-        //{
-        //    if (bookService == null) throw new ArgumentNullException(nameof(bookService));
-        //    _bookService = bookService;
-        //}
+        public BooksController(IBookService bookService)
+        {
+            if (bookService == null) throw new ArgumentNullException(nameof(bookService));
+            _bookService = bookService;
+        }
 
         [HttpGet]
         [ResponseType(typeof(Book))]
