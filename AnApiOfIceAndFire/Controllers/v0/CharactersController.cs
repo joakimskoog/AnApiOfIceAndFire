@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
-using AnApiOfIceAndFire.Models;
 using AnApiOfIceAndFire.Models.v0;
 
-namespace AnApiOfIceAndFire.Controllers
+namespace AnApiOfIceAndFire.Controllers.v0
 {
-    public class HousesController : ApiController
+    public class CharactersController : ApiController
     {
         [HttpGet]
-        [ResponseType(typeof(House))]
+        [ResponseType(typeof(Character))]
         public IHttpActionResult Get(int id)
         {
             throw new NotImplementedException();
         }
 
         [HttpGet]
-        [ResponseType(typeof(IEnumerable<House>))]
+        [ResponseType(typeof(IEnumerable<Character>))]
         public IHttpActionResult Get(int? page = null)
         {
             throw new NotImplementedException();

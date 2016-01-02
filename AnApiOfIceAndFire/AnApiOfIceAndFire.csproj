@@ -156,13 +156,15 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityWebApiActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\BooksController.cs" />
-    <Compile Include="Controllers\CharactersController.cs" />
+    <Compile Include="Controllers\v0\BooksController.cs" />
+    <Compile Include="Controllers\v0\CharactersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HousesController.cs" />
+    <Compile Include="Controllers\v0\HousesController.cs" />
+    <Compile Include="Controllers\v1\BooksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\AcceptHeaderControllerSelector.cs" />
     <Compile Include="Models\v0\Book.cs" />
     <Compile Include="Models\v0\Character.cs" />
     <Compile Include="Models\v0\House.cs" />

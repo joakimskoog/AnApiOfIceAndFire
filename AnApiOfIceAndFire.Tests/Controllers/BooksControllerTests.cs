@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http.Results;
-using AnApiOfIceAndFire.Controllers;
+using AnApiOfIceAndFire.Controllers.v0;
 using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Models.v0;

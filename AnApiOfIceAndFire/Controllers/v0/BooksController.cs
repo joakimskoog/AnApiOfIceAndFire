@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Description;
 using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Models.v0;
 
-namespace AnApiOfIceAndFire.Controllers
+namespace AnApiOfIceAndFire.Controllers.v0
 {
     public class BooksController : ApiController
     {
         private readonly IBookService _bookService;
 
-        public BooksController(IBookService bookService)
-        {
-            if (bookService == null) throw new ArgumentNullException(nameof(bookService));
-            _bookService = bookService;
-        }
+        //public BooksController(IBookService bookService)
+        //{
+        //    if (bookService == null) throw new ArgumentNullException(nameof(bookService));
+        //    _bookService = bookService;
+        //}
 
         [HttpGet]
         [ResponseType(typeof(Book))]

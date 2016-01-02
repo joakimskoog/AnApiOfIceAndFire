@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.Dispatcher;
+using AnApiOfIceAndFire.Infrastructure;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
@@ -29,8 +32,17 @@ namespace AnApiOfIceAndFire
             //We want to represent our enums with their names instead of their numerical values. This is to make it more readable for the consumer.
             config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
 
+            //Add our own media type to enable versioning via the accept header. Make this sexier, maybe use reflection to reflect all current namespaces?
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue(AcceptHeaderControllerSelector.AllowedAcceptHeaderMediaType)
+            {
+                Parameters = { new NameValueHeaderValue(AcceptHeaderControllerSelector.AllowedAcceptHeaderMediaTypeParamter, "0") }
+            });
+
             //Remove the possibility to serialize models to XML since we don't want to support that at the moment.
             config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+            //Replace the default IHttpControllerSelector with our own that selects controllers based on Accept header and namespaces.
+            config.Services.Replace(typeof(IHttpControllerSelector), new AcceptHeaderControllerSelector(config));
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
