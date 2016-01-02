@@ -49,7 +49,7 @@ Text about rate limiting here...
 
 Text about versioning here...
 
-#Resources
+# Resources
 - - -
 
 <a name="books"></a>
