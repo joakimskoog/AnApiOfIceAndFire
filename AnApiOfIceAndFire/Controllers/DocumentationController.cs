@@ -2,11 +2,11 @@
 
 namespace AnApiOfIceAndFire.Controllers
 {
-    public class HomeController : Controller
+    public class DocumentationController : Controller
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            //Set title
 
             return View();
         }
