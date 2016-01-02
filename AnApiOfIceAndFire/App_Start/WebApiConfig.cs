@@ -21,7 +21,7 @@ namespace AnApiOfIceAndFire
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            //Add a message handler that takes care of all for us (ETag and Last-Modified)
+            //Adds a message handler that takes care of all caching for us (ETag and Last-Modified)
             config.MessageHandlers.Add(new CachingHandler(config));
 
             //Use indented to make it more readable for the consumer, using gzip is better for bandwidth anyway.
