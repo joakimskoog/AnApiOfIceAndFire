@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
 using AnApiOfIceAndFire.Infrastructure;
+using CacheCow.Server;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
@@ -19,6 +20,9 @@ namespace AnApiOfIceAndFire
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            //Add a message handler that takes care of all for us (ETag and Last-Modified)
+            config.MessageHandlers.Add(new CachingHandler(config));
 
             //Use indented to make it more readable for the consumer, using gzip is better for bandwidth anyway.
             config.Formatters.JsonFormatter.SerializerSettings.Formatting = Formatting.Indented;

@@ -46,6 +46,14 @@
     <DocumentationFile>bin\AnApiOfIceAndFire.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CacheCow.Common, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheCow.Common.1.2.0\lib\net40\CacheCow.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CacheCow.Server, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CacheCow.Server.1.2.0\lib\net40\CacheCow.Server.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CommonMark, Version=0.1.0.0, Culture=neutral, PublicKeyToken=001ef8810438905d, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonMark.NET.0.11.0\lib\net45\CommonMark.dll</HintPath>
       <Private>True</Private>
