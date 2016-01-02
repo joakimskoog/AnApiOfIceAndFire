@@ -23,7 +23,7 @@ Text about root endpoint here...
 ### Authentication
 
 
-Text about authentication here...
+An Api of Ice And Fire is an open API. This means that no authentication is required to query the API for data. Since no authentication is required, there is only support for **GET**-ing data.
 
 <a name="hypermedia"></a>
 ### Hypermedia
