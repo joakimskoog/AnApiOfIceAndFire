@@ -48,3 +48,24 @@ Text about rate limiting here...
 
 
 Text about versioning here...
+
+#Resources
+- - -
+
+<a name="books"></a>
+### Books
+
+
+Information about books resource here...
+
+<a name="characters"></a>
+### Characters
+
+
+Information about characters resource here...
+
+<a name="houses"></a>
+### Houses
+
+
+Information about houses resource here...
