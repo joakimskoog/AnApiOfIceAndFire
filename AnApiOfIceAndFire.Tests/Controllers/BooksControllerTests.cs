@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http.Results;
 using AnApiOfIceAndFire.Controllers;
 using AnApiOfIceAndFire.Domain;
@@ -37,11 +38,11 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         public void GivenThatBookWithGivenIdExists_WhenTryingToGetBook_ThenResultContainsExistingBook()
         {
             var service = MockRepository.GenerateMock<IBookService>();
-            var dummyBook = (new DummyBook()
+            var dummyBook = new DummyBook()
             {
                 Name = "TestBook",
                 Country = "Sweden",
-            });
+            };
             service.Stub(x => x.GetBook(Arg<int>.Is.Equal(1))).Return(dummyBook);
             var controller = new BooksController(service);
 
@@ -49,6 +50,24 @@ namespace AnApiOfIceAndFire.Tests.Controllers
 
             Assert.AreEqual(dummyBook.Name, result.Content.Name);
             Assert.AreEqual(dummyBook.Country, result.Content.Country);
+        }
+
+        [TestMethod]
+        public void GivenThatOneBookExists_WhenTryingToGetAllWithPageOneAndPageSizeOfTen_ThenExistingBookIsReturned()
+        {
+            var service = MockRepository.GenerateMock<IBookService>();
+            var dummyBook = new DummyBook
+            {
+                Name = "FirstBook",
+                Country = "Sweden"
+            };
+            service.Stub(x => x.GetBook(Arg<int>.Is.Equal(1))).Return(dummyBook);
+            var controller = new BooksController(service);
+
+            var result = controller.Get(page: 1, pageSize: 10) as OkNegotiatedContentResult<IEnumerable<Book>>;
+
+           Assert.IsNotNull(result);
+            Assert.AreEqual(1, result.Content.Count());
         }
     }
 
