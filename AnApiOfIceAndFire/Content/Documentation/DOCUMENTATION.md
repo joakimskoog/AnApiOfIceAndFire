@@ -42,3 +42,9 @@ Text about pagination here...
 
 
 Text about rate limiting here...
+
+<a name="versioning"></a>
+### Versioning
+
+
+Text about versioning here...
