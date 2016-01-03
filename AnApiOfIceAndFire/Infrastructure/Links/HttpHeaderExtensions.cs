@@ -14,7 +14,7 @@ namespace AnApiOfIceAndFire.Infrastructure.Links
             headers.Add("Link", headerValue);
         }
 
-        public static void AddLinkHeader(this HttpHeaders headers, IList<Link> links)
+        public static void AddLinkHeader(this HttpHeaders headers, IEnumerable<Link> links)
         {
             if (links == null) throw new ArgumentNullException(nameof(links));
 
