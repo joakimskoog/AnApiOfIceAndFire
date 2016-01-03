@@ -72,6 +72,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\BooksControllerTests.cs" />
+    <Compile Include="Infrastructure\Links\HttpHeaderExtensionsTests.cs" />
+    <Compile Include="Infrastructure\Links\LinkExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

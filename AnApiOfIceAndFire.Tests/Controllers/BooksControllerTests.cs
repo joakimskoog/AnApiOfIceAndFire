@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Web.Http.Results;
 using AnApiOfIceAndFire.Controllers.v0;
@@ -13,6 +14,7 @@ using MediaType = AnApiOfIceAndFire.Domain.Models.MediaType;
 namespace AnApiOfIceAndFire.Tests.Controllers
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
     public class BooksControllerTests
     {
         [TestMethod]
@@ -71,6 +73,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         }
     }
 
+    [ExcludeFromCodeCoverage]
     public class DummyBook : IBook
     {
         public int Identifier { get; set; }
