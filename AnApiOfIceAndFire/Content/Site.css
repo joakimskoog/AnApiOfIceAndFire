@@ -9,9 +9,26 @@
     padding-right: 15px;
 }
 
+p {
+    margin: 1em 0;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.alert {
+    padding: 0 15px;
+    color: #264c72;
+    border: 1px solid;
+    border-color: #97c1da;
+    border-radius: 3px;
+    background-color: #d8ebf8;
+}
+
+.alert p{
+    margin: 1em 0;
 }
