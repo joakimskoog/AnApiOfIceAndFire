@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Web.Http;
 using System.Web.Http.Controllers;
@@ -24,7 +25,7 @@ namespace AnApiOfIceAndFire.Infrastructure
         private readonly Lazy<IDictionary<string, HttpControllerDescriptor>> _controllers;
         private readonly ICollection<string> _duplicates;
 
-        private string _defaultControllerVersion;
+        private IDictionary<string, int> _defaultControllerVersions = new Dictionary<string, int>();
 
         public AcceptHeaderControllerSelector(HttpConfiguration configuration)
         {
@@ -42,14 +43,14 @@ namespace AnApiOfIceAndFire.Infrastructure
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            string version = GetVersionFromMediaType(request);
-            if (version == null)
+            string controllerName = GetRouteVariable<string>(routeData, ControllerKey);
+            if (controllerName == null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            string controllerName = GetRouteVariable<string>(routeData, ControllerKey);
-            if (controllerName == null)
+            var version = GetVersionFromMediaType(request, controllerName);
+            if (!version.HasValue)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
@@ -78,7 +79,6 @@ namespace AnApiOfIceAndFire.Infrastructure
         private IDictionary<string, HttpControllerDescriptor> InitialiseControllerDictionary()
         {
             var dictionary = new Dictionary<string, HttpControllerDescriptor>(StringComparer.OrdinalIgnoreCase);
-            var versionedNamespaces = new List<string>();
 
             // Create a lookup table where key is "namespace.controller". The value of "namespace" is the last
             // segment of the full namespace. For example:
@@ -97,7 +97,9 @@ namespace AnApiOfIceAndFire.Infrastructure
                 var controllerName = t.Name.Remove(t.Name.Length - DefaultHttpControllerSelector.ControllerSuffix.Length);
                 var namespaceName = segments[segments.Length - 1];
 
-                versionedNamespaces.Add(namespaceName.Remove(0,1)); //Remove the first character which should be v. Since we will add v whilst selecting the controller
+                //Calculate the default version for each controller, this will be the highest available version
+                int defaultVersionForController = CalculateDefaultVersion(controllerName.ToLower(), namespaceName);
+                _defaultControllerVersions[controllerName.ToLower()] = defaultVersionForController;
 
                 var key = string.Format(CultureInfo.InvariantCulture, "{0}.{1}", namespaceName, controllerName);
 
@@ -119,10 +121,20 @@ namespace AnApiOfIceAndFire.Infrastructure
                 dictionary.Remove(s);
             }
 
-            //Calculate the default version, we choose to use the highest available version as the default one
-            _defaultControllerVersion = versionedNamespaces.OrderByDescending(x => x).First();
-
             return dictionary;
+        }
+
+        private int CalculateDefaultVersion(string controllerName, string namespaceName)
+        {
+            int defaultVersion = -1;
+            var namespaceAsInt = int.Parse(namespaceName.Remove(0, 1));
+
+            if (_defaultControllerVersions.TryGetValue(controllerName, out defaultVersion))
+            {
+                return namespaceAsInt > defaultVersion ? namespaceAsInt : defaultVersion;
+            }
+
+            return namespaceAsInt;
         }
 
         // Get a value from the route data, if present.
@@ -136,7 +148,7 @@ namespace AnApiOfIceAndFire.Infrastructure
             return default(T);
         }
 
-        private string GetVersionFromMediaType(HttpRequestMessage request)
+        private int? GetVersionFromMediaType(HttpRequestMessage request, string controllerName)
         {
             var acceptHeader = request.Headers.Accept;
 
@@ -148,15 +160,20 @@ namespace AnApiOfIceAndFire.Infrastructure
 
                     if (version == null)
                     {
-                        return _defaultControllerVersion;
+                        return _defaultControllerVersions[controllerName];
                     }
 
-                    return version.Value;
-                }
+                    int parsedVersion = -1;
+                    if (int.TryParse(version.Value, out parsedVersion))
+                    {
+                        return parsedVersion;
+                    }
 
+                    return null;
+                }
             }
 
-            return _defaultControllerVersion;
+            return _defaultControllerVersions[controllerName];
         }
     }
 }
