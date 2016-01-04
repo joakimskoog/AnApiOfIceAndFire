@@ -21,7 +21,15 @@ namespace AnApiOfIceAndFire.Controllers.v0
         [ResponseType(typeof(Book))]
         public IHttpActionResult Get(int id)
         {
-            return Ok(0);
+            var book = _bookService.GetBook(id);
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            var mappedBook = book.Map(Url);
+
+            return Ok(mappedBook);
         }
 
         [HttpGet]

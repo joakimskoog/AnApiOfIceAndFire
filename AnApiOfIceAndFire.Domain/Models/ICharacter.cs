@@ -2,6 +2,6 @@
 {
     public interface ICharacter
     {
-         
+         int Identifier { get; }
     }
 }

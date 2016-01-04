@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Web.Http.Results;
+using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Controllers.v0;
 using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Domain.Models;
@@ -44,9 +45,21 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             {
                 Name = "TestBook",
                 Country = "Sweden",
+                Identifier = 1,
+                ISBN = "ISBN",
+                Authors = new List<string>() { "Author1"},
+                NumberOfPages = 1337,
+                Publisher = "Publisher",
+                Released = new DateTime(2000,1,1)
             };
             service.Stub(x => x.GetBook(Arg<int>.Is.Equal(1))).Return(dummyBook);
-            var controller = new BooksController(service);
+            var urlHelper = MockRepository.GenerateMock<UrlHelper>();
+            urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<object>.Is.Anything)).Return("http://localhost.com");
+
+            var controller = new BooksController(service)
+            {
+                Url = urlHelper
+            };
 
             var result = controller.Get(1) as OkNegotiatedContentResult<Book>;
 

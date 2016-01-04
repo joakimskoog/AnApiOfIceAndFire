@@ -183,9 +183,11 @@
     <Compile Include="Infrastructure\Links\Link.cs" />
     <Compile Include="Infrastructure\Links\LinkExtensions.cs" />
     <Compile Include="Models\v0\Book.cs" />
+    <Compile Include="Models\v0\BookMapping.cs" />
     <Compile Include="Models\v0\Character.cs" />
     <Compile Include="Models\v0\House.cs" />
     <Compile Include="Models\v0\MediaType.cs" />
+    <Compile Include="Models\v0\MediaTypeMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Results\ChainedResult.cs" />
     <Compile Include="Results\HttpActionResultExtensions.cs" />

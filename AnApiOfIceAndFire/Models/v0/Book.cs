@@ -24,7 +24,7 @@ namespace AnApiOfIceAndFire.Models.v0
         /// <summary>
         /// The authors of this book
         /// </summary>
-        public ICollection<string> Authors { get; }
+        public IEnumerable<string> Authors { get; }
 
         /// <summary>
         /// The number of pages in this book
@@ -54,15 +54,15 @@ namespace AnApiOfIceAndFire.Models.v0
         /// <summary>
         /// The character resource URLs that are in this book
         /// </summary>
-        public ICollection<string> Characters { get; }
+        public IEnumerable<string> Characters { get; }
 
         /// <summary>
         /// The character resource URLs that have at least one POV chapter in this book
         /// </summary>
-        public ICollection<string> POVCharacters { get; }
+        public IEnumerable<string> POVCharacters { get; }
 
-        public Book(string url, string name, string isbn, ICollection<string> authors, int numberOfPages, string publisher, 
-            string country, MediaType mediaType, DateTime released, ICollection<string> characters = null, ICollection<string> povCharacters = null)
+        public Book(string url, string name, string isbn, IEnumerable<string> authors, int numberOfPages, string publisher, 
+            string country, MediaType mediaType, DateTime released, IEnumerable<string> characters = null, IEnumerable<string> povCharacters = null)
         {
             if (url == null) throw new ArgumentNullException(nameof(url));
             if (name == null) throw new ArgumentNullException(nameof(name));
