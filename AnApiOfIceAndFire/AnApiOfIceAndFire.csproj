@@ -178,7 +178,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AcceptHeaderControllerSelector.cs" />
-    <Compile Include="Infrastructure\Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="Infrastructure\Html\HtmlHelperExtensions.cs" />
     <Compile Include="Infrastructure\Links\HttpHeaderExtensions.cs" />
     <Compile Include="Infrastructure\Links\Link.cs" />
     <Compile Include="Infrastructure\Links\LinkExtensions.cs" />
