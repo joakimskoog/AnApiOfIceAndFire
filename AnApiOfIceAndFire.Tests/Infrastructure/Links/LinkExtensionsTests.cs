@@ -10,6 +10,14 @@ namespace AnApiOfIceAndFire.Tests.Infrastructure.Links
     public class LinkExtensionsTests
     {
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void GivenThatLinkIsNull_WhenConstructingLinkHeader_ThenArgumentNullExceptionIsThrown()
+        {
+            Link link = null;
+            link.ToLinkHeader();
+        }
+
+        [TestMethod]
         public void GivenThatLinkHasNoRelation_WhenConstructingLinkHeader_ThenLinkHeaderOnlyContainsCorrectUrl()
         {
             var uri = new Uri("https://api.ourawesomesite.com");

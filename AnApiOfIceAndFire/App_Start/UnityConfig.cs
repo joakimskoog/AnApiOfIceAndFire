@@ -1,5 +1,13 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using AnApiOfIceAndFire.Domain;
+using AnApiOfIceAndFire.Domain.Models;
+using AnApiOfIceAndFire.Models.v0;
+using AnApiOfIceAndFire.Models.v0.Mappers;
 using Microsoft.Practices.Unity;
+using SimplePagination;
+using MediaType = AnApiOfIceAndFire.Domain.Models.MediaType;
 
 namespace AnApiOfIceAndFire
 {
@@ -33,6 +41,10 @@ namespace AnApiOfIceAndFire
         {
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();    
+
+            container.RegisterType<IModelMapper<MediaType, Models.v0.MediaType>, MediaTypeMapper>();
+            container.RegisterType<IModelService<IBook>, BookService>();
+            container.RegisterType<IModelMapper<IBook, Book>, BookMapper>();
         }
     }
 }

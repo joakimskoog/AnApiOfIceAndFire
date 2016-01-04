@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Mvc;
 
-namespace AnApiOfIceAndFire.Infrastructure.Extensions
+namespace AnApiOfIceAndFire.Infrastructure.Html
 {
     public static class HtmlHelperExtensions
     {

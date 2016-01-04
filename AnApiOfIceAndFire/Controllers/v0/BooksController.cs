@@ -1,42 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web.Http;
-using System.Web.Http.Description;
-using AnApiOfIceAndFire.Domain;
+﻿using AnApiOfIceAndFire.Domain;
+using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Models.v0;
+using AnApiOfIceAndFire.Models.v0.Mappers;
 
 namespace AnApiOfIceAndFire.Controllers.v0
 {
-    public class BooksController : ApiController
+    public class BooksController : BaseController<IBook, Book>
     {
-        private readonly IBookService _bookService;
-
-        public BooksController(IBookService bookService)
-        {
-            if (bookService == null) throw new ArgumentNullException(nameof(bookService));
-            _bookService = bookService;
-        }
-
-        [HttpGet]
-        [ResponseType(typeof(Book))]
-        public IHttpActionResult Get(int id)
-        {
-            var book = _bookService.GetBook(id);
-            if (book == null)
-            {
-                return NotFound();
-            }
-
-            var mappedBook = book.Map(Url);
-
-            return Ok(mappedBook);
-        }
-
-        [HttpGet]
-        [ResponseType(typeof(IEnumerable<Book>))]
-        public IHttpActionResult Get(int? page = null, int? pageSize = null)
-        {
-            return Ok(0);
-        }
+        public BooksController(IModelService<IBook> modelService, IModelMapper<IBook, Book> modelMapper) : base(modelService, modelMapper, "BooksApi") { }
     }
 }

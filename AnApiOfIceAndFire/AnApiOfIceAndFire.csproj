@@ -84,6 +84,10 @@
       <HintPath>..\packages\Unity.AspNet.WebApi.4.0.1\lib\net45\Microsoft.Practices.Unity.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimplePagination, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimplePagination.1.2.5\lib\SimplePagination.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -170,6 +174,7 @@
     <Compile Include="App_Start\UnityWebApiActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DocumentationController.cs" />
+    <Compile Include="Controllers\v0\BaseController.cs" />
     <Compile Include="Controllers\v0\BooksController.cs" />
     <Compile Include="Controllers\v0\CharactersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -182,12 +187,14 @@
     <Compile Include="Infrastructure\Links\HttpHeaderExtensions.cs" />
     <Compile Include="Infrastructure\Links\Link.cs" />
     <Compile Include="Infrastructure\Links\LinkExtensions.cs" />
+    <Compile Include="Infrastructure\Links\PagedListExtensions.cs" />
     <Compile Include="Models\v0\Book.cs" />
-    <Compile Include="Models\v0\BookMapping.cs" />
+    <Compile Include="Models\v0\Mappers\BookMapper.cs" />
     <Compile Include="Models\v0\Character.cs" />
     <Compile Include="Models\v0\House.cs" />
+    <Compile Include="Models\v0\Mappers\IModelMapper.cs" />
+    <Compile Include="Models\v0\Mappers\MediaTypeMapper.cs" />
     <Compile Include="Models\v0\MediaType.cs" />
-    <Compile Include="Models\v0\MediaTypeMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Results\ChainedResult.cs" />
     <Compile Include="Results\HttpActionResultExtensions.cs" />
