@@ -13,5 +13,10 @@ namespace AnApiOfIceAndFire.Models.v0.Mappers
                 default: throw new ArgumentOutOfRangeException();
             }
         }
+
+        public string CreateModelLink(Domain.Models.MediaType input, UrlHelper urlHelper)
+        {
+            throw new NotImplementedException("MediaType has no external endpoint");
+        }
     }
 }

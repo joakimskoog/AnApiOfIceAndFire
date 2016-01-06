@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Domain.Models;
+using static AnApiOfIceAndFire.Models.v0.BookLinkCreator;
+using static AnApiOfIceAndFire.Models.v0.CharacterLinkCreator;
 
 namespace AnApiOfIceAndFire.Models.v0.Mappers
 {
@@ -18,20 +20,16 @@ namespace AnApiOfIceAndFire.Models.v0.Mappers
 
         public Book Map(IBook input, UrlHelper urlHelper)
         {
-            var bookUrl = urlHelper.Link("BooksApi", new { id = input.Identifier });
-            var characterUrls = MapToCharactersUrl(input.Characters, urlHelper);
-            var povCharacterUrls = MapToCharactersUrl(input.POVCharacters, urlHelper);
+            if (input == null) throw new ArgumentNullException(nameof(input));
+            if (urlHelper == null) throw new ArgumentNullException(nameof(urlHelper));
+
+            var bookUrl = CreateBookLink(input, urlHelper);
+            var characterUrls = input.Characters?.Select(c => CreateCharacterLink(c, urlHelper));
+            var povCharacterUrls = input.POVCharacters?.Select(c => CreateCharacterLink(c, urlHelper));
             var mediaType = _mediaTypeMapper.Map(input.MediaType, urlHelper);
 
             return new Book(bookUrl, input.Name, input.ISBN, input.Authors, input.NumberOfPages, input.Publisher,
                 input.Country, mediaType, input.Released, characterUrls, povCharacterUrls);
-        }
-
-        private IEnumerable<string> MapToCharactersUrl(IEnumerable<ICharacter> characters, UrlHelper urlHelper)
-        {
-            if (characters == null) return Enumerable.Empty<string>();
-
-            return characters.Select(c => urlHelper.Link("CharactersApi", new { id = c.Identifier }));
         }
     }
 }

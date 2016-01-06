@@ -80,6 +80,7 @@
     <Compile Include="Infrastructure\Links\LinkExtensionsTests.cs" />
     <Compile Include="Infrastructure\Links\LinkTests.cs" />
     <Compile Include="Infrastructure\Links\PagedListExtensionsTests.cs" />
+    <Compile Include="Models\v0\Mappers\BookMapperTests.cs" />
     <Compile Include="Models\v0\Mappers\CharacterMapperTests.cs" />
     <Compile Include="Models\v0\Mappers\HouseMapperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

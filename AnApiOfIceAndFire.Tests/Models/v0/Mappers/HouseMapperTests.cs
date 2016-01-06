@@ -1,4 +1,5 @@
 ﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -209,7 +210,7 @@ namespace AnApiOfIceAndFire.Tests.Models.v0.Mappers
         public void GivenThatHouseHasTitles_WhenTryingToMapIt_ThenMappedHouseHasSameTitles()
         {
             var house = CreateMockedHouse(1, "testHouse");
-            house.Stub(x => x.Titles).Return(new List<string> {"titleOne, titleTwo"});
+            house.Stub(x => x.Titles).Return(new List<string> { "titleOne, titleTwo" });
             var mapper = new HouseMapper();
 
             var mappedHouse = mapper.Map(house, CreateUrlHelper(RequestedUri));

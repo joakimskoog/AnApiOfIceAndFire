@@ -12,7 +12,6 @@ using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Models.v0;
 using AnApiOfIceAndFire.Models.v0.Mappers;
-using AnApiOfIceAndFire.Results;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 using SimplePagination;

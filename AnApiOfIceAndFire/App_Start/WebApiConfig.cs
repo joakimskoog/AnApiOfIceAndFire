@@ -9,6 +9,9 @@ using CacheCow.Server;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using static AnApiOfIceAndFire.Models.v0.BookLinkCreator;
+using static AnApiOfIceAndFire.Models.v0.CharacterLinkCreator;
+using static AnApiOfIceAndFire.Models.v0.HouseLinkCreator;
 
 namespace AnApiOfIceAndFire
 {
@@ -57,19 +60,19 @@ namespace AnApiOfIceAndFire
             );
 
             config.Routes.MapHttpRoute(
-                name: "BooksApi",
+                name: BookRouteName,
                 routeTemplate: "api/books/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
 
             config.Routes.MapHttpRoute(
-                name: "CharactersApi",
+                name: CharacterRouteName,
                 routeTemplate: "api/characters/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
 
             config.Routes.MapHttpRoute(
-                name: "HousesApi",
+                name: HouseRouteName,
                 routeTemplate: "api/houses/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );

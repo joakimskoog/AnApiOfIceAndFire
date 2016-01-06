@@ -189,6 +189,9 @@
     <Compile Include="Infrastructure\Links\LinkExtensions.cs" />
     <Compile Include="Infrastructure\Links\PagedListExtensions.cs" />
     <Compile Include="Models\v0\Book.cs" />
+    <Compile Include="Models\v0\BookLinkCreator.cs" />
+    <Compile Include="Models\v0\CharacterLinkCreator.cs" />
+    <Compile Include="Models\v0\HouseLinkCreator.cs" />
     <Compile Include="Models\v0\Mappers\BookMapper.cs" />
     <Compile Include="Models\v0\Character.cs" />
     <Compile Include="Models\v0\House.cs" />
