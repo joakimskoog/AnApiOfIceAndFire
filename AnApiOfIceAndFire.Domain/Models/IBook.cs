@@ -9,13 +9,13 @@ namespace AnApiOfIceAndFire.Domain.Models
         int Identifier { get; }
         string Name { get; }
         string ISBN { get; }
-        ICollection<string> Authors { get; }
+        IReadOnlyCollection<string> Authors { get; }
         int NumberOfPages { get; }
         string Publisher { get; }
         string Country { get; }
         MediaType MediaType { get; }
         DateTime Released { get; }
-        ICollection<ICharacter> Characters { get; }
-        ICollection<ICharacter> POVCharacters { get; }  
+        IReadOnlyCollection<ICharacter> Characters { get; }
+        IReadOnlyCollection<ICharacter> POVCharacters { get; }  
     }
 }
