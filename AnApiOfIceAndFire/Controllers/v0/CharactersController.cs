@@ -1,25 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Web.Http;
-using System.Web.Http.Description;
+﻿using AnApiOfIceAndFire.Domain;
+using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Models.v0;
+using AnApiOfIceAndFire.Models.v0.Mappers;
 
 namespace AnApiOfIceAndFire.Controllers.v0
 {
-    public class CharactersController : ApiController
+    public class CharactersController : BaseController<ICharacter,Character>
     {
-        [HttpGet]
-        [ResponseType(typeof(Character))]
-        public IHttpActionResult Get(int id)
+        public CharactersController(IModelService<ICharacter> modelService, IModelMapper<ICharacter, Character> modelMapper) : base(modelService, modelMapper, "CharactersApi")
         {
-            throw new NotImplementedException();
-        }
-
-        [HttpGet]
-        [ResponseType(typeof(IEnumerable<Character>))]
-        public IHttpActionResult Get(int? page = null)
-        {
-            throw new NotImplementedException();
         }
     }
 }

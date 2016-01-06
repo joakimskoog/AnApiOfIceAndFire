@@ -1,12 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Models.v0;
 using AnApiOfIceAndFire.Models.v0.Mappers;
 using Microsoft.Practices.Unity;
-using SimplePagination;
 using MediaType = AnApiOfIceAndFire.Domain.Models.MediaType;
 
 namespace AnApiOfIceAndFire
@@ -43,8 +40,12 @@ namespace AnApiOfIceAndFire
             // container.LoadConfiguration();    
 
             container.RegisterType<IModelMapper<MediaType, Models.v0.MediaType>, MediaTypeMapper>();
-            container.RegisterType<IModelService<IBook>, BookService>();
             container.RegisterType<IModelMapper<IBook, Book>, BookMapper>();
+            container.RegisterType<IModelMapper<ICharacter, Character>, CharacterMapper>();
+            container.RegisterType<IModelMapper<IHouse, House>, HouseMapper>();
+            container.RegisterType<IModelService<IBook>, BookService>();
+            container.RegisterType<IModelService<ICharacter>, CharacterService>();
+            container.RegisterType<IModelService<IHouse>, HouseService>();
         }
     }
 }
