@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
@@ -13,6 +14,7 @@ using Rhino.Mocks;
 namespace AnApiOfIceAndFire.Tests.Models.v0.Mappers
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
     public class BookMapperTests
     {
         private const string RequestedUri = "http://localhost/api/books/1";
