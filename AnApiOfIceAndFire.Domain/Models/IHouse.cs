@@ -14,7 +14,7 @@ namespace AnApiOfIceAndFire.Domain.Models
 
         ICharacter CurrentLord { get; }
         ICharacter Heir { get; }
-        ICharacter Overlord { get; }
+        IHouse Overlord { get; }
 
         string Founded { get; }
         ICharacter Founder { get; }

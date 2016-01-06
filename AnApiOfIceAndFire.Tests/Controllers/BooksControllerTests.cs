@@ -89,7 +89,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             var service = MockRepository.GenerateMock<IModelService<IBook>>();
             service.Stub(x => x.GetPaginated(Arg<int>.Is.Anything, Arg<int>.Is.Anything))
                 .Return(new PagedList<IBook>(new List<IBook>().AsQueryable(), 1, 1));
-            var mapper = MockRepository.GenerateMock<IModelMapper<IBook,Book>>();
+            var mapper = MockRepository.GenerateMock<IModelMapper<IBook, Book>>();
             var urlHelper = MockRepository.GenerateMock<UrlHelper>();
             urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<object>.Is.Anything)).Return("https://localhost.com");
             var controller = new BooksController(service, mapper)
@@ -106,56 +106,6 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
             Assert.AreEqual(0, books.Count());
         }
-
-        //    [TestMethod]
-        //    public void GivenThatOneBookExists_WhenTryingToGetAllWithPageOneAndPageSizeOfTen_ThenExistingBookIsReturned()
-        //    {
-        //        var service = MockRepository.GenerateMock<IBookService>();
-        //        var dummyBook = new DummyBook
-        //        {
-        //            Name = "FirstBook",
-        //            Country = "Sweden",
-        //            Identifier = 1,
-        //            ISBN = "isbn",
-        //            Authors = new List<string>() { "author1" },
-        //            Released = new DateTime(2000, 1, 1),
-        //            NumberOfPages = 10,
-        //            Publisher = "publisher"
-        //        };
-        //        service.Stub(x => x.GetPaginatedBooks(Arg<int>.Is.Equal(1), Arg<int>.Is.Equal(10)))
-        //            .Return(new PagedList<IBook>(new List<IBook> { dummyBook }.AsQueryable(), 1, 10));
-        //        var urlHelper = MockRepository.GenerateMock<UrlHelper>();
-        //        urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<object>.Is.Anything)).Return("https://localhost.com");
-        //        var controller = new BooksController(service)
-        //        {
-        //            Url = urlHelper
-        //        };
-
-        //        var result = controller.Get(page: 1, pageSize: 10) as LinkHeaderResult;
-
-        //        result.
-
-        //        Assert.IsNotNull(result);
-        //        // Assert.AreEqual(1, result.Content.Count());
-        //    }
-
-        //    [TestMethod]
-        //    public void GivenThatNoBooksExists_WhenTryingToGetAll_ThenResultIsEmpty()
-        //    {
-        //        var service = MockRepository.GenerateMock<IBookService>();
-        //        service.Stub(x => x.GetAllBooks()).Return(Enumerable.Empty<IBook>().AsQueryable());
-        //        service.Stub(x => x.GetPaginatedBooks(Arg<int>.Is.Anything, Arg<int>.Is.Anything)).Return(new PagedList<IBook>(Enumerable.Empty<IBook>().AsQueryable(), 1, 1));
-        //        var urlHelper = MockRepository.GenerateMock<UrlHelper>();
-        //        urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<object>.Is.Anything)).Return("https://localhost.com");
-        //        var controller = new BooksController(service)
-        //        {
-        //            Url = urlHelper
-        //        };
-
-        //        var result = controller.Get(page: 1, pageSize: 10) as OkNegotiatedContentResult<IEnumerable<Book>>;
-
-        //        Assert.AreEqual(0, result.Content.Count());
-        //    }
     }
 
     [ExcludeFromCodeCoverage]
