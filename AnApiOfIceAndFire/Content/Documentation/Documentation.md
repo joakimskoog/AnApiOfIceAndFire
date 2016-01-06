@@ -11,7 +11,7 @@ Introductory text here...
 ### Current Version
 
 
-The current version of the API is v0. 
+The current version of the API is 0. 
 
 <a name="root_endpoint"></a>
 ### Root Endpoint
