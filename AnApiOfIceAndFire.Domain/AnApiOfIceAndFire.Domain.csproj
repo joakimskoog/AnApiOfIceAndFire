@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookService.cs" />
+    <Compile Include="CharacterService.cs" />
+    <Compile Include="HouseService.cs" />
     <Compile Include="IModelService.cs" />
     <Compile Include="Models\IBook.cs" />
     <Compile Include="Models\ICharacter.cs" />

@@ -192,6 +192,8 @@
     <Compile Include="Models\v0\Mappers\BookMapper.cs" />
     <Compile Include="Models\v0\Character.cs" />
     <Compile Include="Models\v0\House.cs" />
+    <Compile Include="Models\v0\Mappers\CharacterMapper.cs" />
+    <Compile Include="Models\v0\Mappers\HouseMapper.cs" />
     <Compile Include="Models\v0\Mappers\IModelMapper.cs" />
     <Compile Include="Models\v0\Mappers\MediaTypeMapper.cs" />
     <Compile Include="Models\v0\MediaType.cs" />
