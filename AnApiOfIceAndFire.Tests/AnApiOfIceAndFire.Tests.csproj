@@ -80,6 +80,7 @@
     <Compile Include="Infrastructure\Links\LinkExtensionsTests.cs" />
     <Compile Include="Infrastructure\Links\LinkTests.cs" />
     <Compile Include="Infrastructure\Links\PagedListExtensionsTests.cs" />
+    <Compile Include="Models\v0\Mappers\CharacterMapperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

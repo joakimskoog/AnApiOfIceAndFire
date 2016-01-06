@@ -72,7 +72,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             mapper.Stub(x => x.Map(Arg<IBook>.Matches(b => b.Identifier == 1), Arg<UrlHelper>.Is.Anything))
                 .Return(new Book("someKindOfUrl/1", book.Name, book.ISBN, book.Authors, book.NumberOfPages,
                     book.Publisher, book.Country,
-                    Models.v0.MediaType.Hardcover, book.Released, new List<string>(), new List<string>()));
+                    AnApiOfIceAndFire.Models.v0.MediaType.Hardcover, book.Released, new List<string>(), new List<string>()));
             var controller = new BooksController(service, mapper);
 
 
@@ -164,13 +164,13 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         public int Identifier { get; set; }
         public string Name { get; set; }
         public string ISBN { get; set; }
-        public ICollection<string> Authors { get; set; }
+        public IReadOnlyCollection<string> Authors { get; set; }
         public int NumberOfPages { get; set; }
         public string Publisher { get; set; }
         public string Country { get; set; }
         public MediaType MediaType { get; set; }
         public DateTime Released { get; set; }
-        public ICollection<ICharacter> Characters { get; set; }
-        public ICollection<ICharacter> POVCharacters { get; set; }
+        public IReadOnlyCollection<ICharacter> Characters { get; set; }
+        public IReadOnlyCollection<ICharacter> POVCharacters { get; set; }
     }
 }
