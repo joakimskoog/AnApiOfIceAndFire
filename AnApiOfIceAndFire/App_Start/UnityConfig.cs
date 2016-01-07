@@ -48,7 +48,7 @@ namespace AnApiOfIceAndFire
 
             container.RegisterType<IEntityDbContext, AnApiOfIceAndFireContext>();
             container.RegisterType<IRepositoryWithIntKey<BookEntity>, EFRepositoryWithIntKey<BookEntity>>();
-            container.RegisterType<IRepositoryWithIntKey<CharacterEntity>, TestCharacterRepo>();
+            container.RegisterType<IRepositoryWithIntKey<CharacterEntity>, EFRepositoryWithIntKey<CharacterEntity>>();
             container.RegisterType<IRepositoryWithIntKey<HouseEntity>, EFRepositoryWithIntKey<HouseEntity>>();
             container.RegisterType<IModelMapper<MediaType, Models.v0.MediaType>, MediaTypeMapper>();
             container.RegisterType<IModelMapper<IBook, Book>, BookMapper>();
@@ -57,54 +57,6 @@ namespace AnApiOfIceAndFire
             container.RegisterType<IModelService<IBook>, BookService>();
             container.RegisterType<IModelService<ICharacter>, CharacterService>();
             container.RegisterType<IModelService<IHouse>, HouseService>();
-        }
-    }
-
-    public class TestCharacterRepo : IRepositoryWithIntKey<CharacterEntity>
-    {
-        public IQueryable<CharacterEntity> GetAll(Expression<Func<CharacterEntity, bool>> filter = null, Func<IQueryable<CharacterEntity>, IOrderedQueryable<CharacterEntity>> orderBy = null, params Expression<Func<CharacterEntity, object>>[] includeProperties)
-        {
-            return new List<CharacterEntity>
-            {
-                new CharacterEntity() {Identifier = 1},
-                new CharacterEntity() {Identifier = 2},
-                new CharacterEntity() {Identifier = 3},
-                new CharacterEntity() {Identifier = 4},
-                new CharacterEntity() {Identifier = 5}
-            }.AsQueryable();
-        }
-
-        public CharacterEntity GetById(int id, params Expression<Func<CharacterEntity, object>>[] includePropertie)
-        {
-            return new CharacterEntity()
-            {
-                Identifier = id
-            };
-        }
-
-        public void Add(CharacterEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(CharacterEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(CharacterEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Save()
-        {
-            throw new NotImplementedException();
         }
     }
 }
