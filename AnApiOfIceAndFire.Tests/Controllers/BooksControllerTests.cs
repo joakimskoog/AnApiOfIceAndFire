@@ -5,11 +5,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Hosting;
 using System.Web.Http.Results;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Controllers.v0;
 using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Domain.Models;
+using AnApiOfIceAndFire.Domain.Services;
 using AnApiOfIceAndFire.Models.v0;
 using AnApiOfIceAndFire.Models.v0.Mappers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -53,19 +55,17 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         public void GivenThatBookWithGivenIdExists_WhenTryingToGetBook_ThenResultContainsBook()
         {
             var service = MockRepository.GenerateMock<IModelService<IBook>>();
-            var book = new DummyBook()
-            {
-                Name = "nameOfBook",
-                Identifier = 1,
-                Country = "country",
-                ISBN = "isbn",
-                Authors = new List<string> { "author" },
-                Released = new DateTime(2000, 1, 1),
-                Publisher = "publisher",
-                MediaType = MediaType.Hardcover,
-                NumberOfPages = 10,
+            var book = MockRepository.GenerateMock<IBook>();
+            book.Stub(x => x.Name).Return("book");
+            book.Stub(x => x.Identifier).Return(1);
+            book.Stub(x => x.Country).Return("country");
+            book.Stub(x => x.ISBN).Return("isbn");
+            book.Stub(x => x.Authors).Return(new List<string> { "author" });
+            book.Stub(x => x.Released).Return(new DateTime(2000, 1, 1));
+            book.Stub(x => x.Publisher).Return("publisher");
+            book.Stub(x => x.MediaType).Return(MediaType.Hardcover);
+            book.Stub(x => x.NumberOfPages).Return(10);
 
-            };
             service.Stub(x => x.Get(Arg<int>.Is.Equal(1))).Return(book);
             var mapper = MockRepository.GenerateMock<IModelMapper<IBook, Book>>();
             mapper.Stub(x => x.Map(Arg<IBook>.Matches(b => b.Identifier == 1), Arg<UrlHelper>.Is.Anything))
@@ -105,21 +105,73 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
             Assert.AreEqual(0, books.Count());
         }
-    }
 
-    [ExcludeFromCodeCoverage]
-    public class DummyBook : IBook
-    {
-        public int Identifier { get; set; }
-        public string Name { get; set; }
-        public string ISBN { get; set; }
-        public IReadOnlyCollection<string> Authors { get; set; }
-        public int NumberOfPages { get; set; }
-        public string Publisher { get; set; }
-        public string Country { get; set; }
-        public MediaType MediaType { get; set; }
-        public DateTime Released { get; set; }
-        public IReadOnlyCollection<ICharacter> Characters { get; set; }
-        public IReadOnlyCollection<ICharacter> POVCharacters { get; set; }
+        [TestMethod]
+        public void GivenThatOneBookExists_WhenTryingToGetAll_ThenResultContainsCorrectBook()
+        {
+            var book = CreateMockedBook(1);
+            var service = MockRepository.GenerateMock<IModelService<IBook>>();
+            service.Stub(x => x.GetPaginated(Arg<int>.Is.Anything, Arg<int>.Is.Anything))
+                .Return(new PagedList<IBook>(new List<IBook> {book}.AsQueryable(), 1, 1));
+            var urlHelper = CreateUrlHelper("http://localhost/api/books/1");
+            var mapper = new BookMapper(new MediaTypeMapper());
+            var controller = new BooksController(service, mapper)
+            {
+                Configuration = new HttpConfiguration(),
+                Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost/api/books/1")),
+                Url = urlHelper
+            };
+
+            IEnumerable<Book> books;
+            var result = controller.Get();
+            result.TryGetContentValue(out books);
+
+            Assert.AreEqual(1, books.Count());
+            Assert.AreEqual("http://localhost/api/books/1", books.ElementAt(0).URL);
+        }
+
+        private static IBook CreateMockedBook(int id, string name = "bookName", string isbn = "isbn", int numberOfPages = 100, string publisher = "publisher",
+            string country = "country", MediaType mediaType = MediaType.Hardcover)
+        {
+            var book = MockRepository.GenerateMock<IBook>();
+            book.Stub(x => x.Identifier).Return(id);
+            book.Stub(x => x.Name).Return(name);
+            book.Stub(x => x.ISBN).Return(isbn);
+            book.Stub(x => x.NumberOfPages).Return(numberOfPages);
+            book.Stub(x => x.Publisher).Return(publisher);
+            book.Stub(x => x.Country).Return(country);
+            book.Stub(x => x.MediaType).Return(mediaType);
+            book.Stub(x => x.Released).Return(new DateTime(2000, 1, 1));
+            book.Stub(x => x.Authors).Return(new List<string> { "authorOne" });
+
+            return book;
+        }
+
+        private static UrlHelper CreateUrlHelper(string requestUri)
+        {
+            var requestMessage = new HttpRequestMessage(HttpMethod.Get, new Uri(requestUri));
+
+            var configuration = new HttpConfiguration();
+            configuration.Routes.MapHttpRoute(
+                name: "BooksApi",
+                routeTemplate: "api/books/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+            configuration.Routes.MapHttpRoute(
+               name: "CharactersApi",
+               routeTemplate: "api/characters/{id}",
+               defaults: new { id = RouteParameter.Optional }
+           );
+            configuration.Routes.MapHttpRoute(
+               name: "HousesApi",
+               routeTemplate: "api/houses/{id}",
+               defaults: new { id = RouteParameter.Optional }
+           );
+            requestMessage.Properties.Add(HttpPropertyKeys.HttpConfigurationKey, configuration);
+
+            var urlHelper = new UrlHelper(requestMessage);
+
+            return urlHelper;
+        }
     }
 }

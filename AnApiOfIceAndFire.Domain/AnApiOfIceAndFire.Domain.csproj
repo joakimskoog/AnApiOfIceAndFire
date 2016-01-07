@@ -30,11 +30,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFrameworkRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFrameworkRepository.1.0.0\lib\EntityFrameworkRepository.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SimplePagination, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SimplePagination.1.2.5\lib\SimplePagination.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,10 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookService.cs" />
-    <Compile Include="CharacterService.cs" />
-    <Compile Include="HouseService.cs" />
-    <Compile Include="IModelService.cs" />
+    <Compile Include="Adapters\CharacterEntityAdapter.cs" />
+    <Compile Include="Adapters\HouseEntityAdapter.cs" />
+    <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Adapters\BookEntityAdapter.cs" />
+    <Compile Include="Services\BookService.cs" />
+    <Compile Include="Services\CharacterService.cs" />
+    <Compile Include="Services\HouseService.cs" />
+    <Compile Include="Services\IModelService.cs" />
     <Compile Include="Models\IBook.cs" />
     <Compile Include="Models\ICharacter.cs" />
     <Compile Include="Models\IHouse.cs" />
@@ -55,7 +72,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj">
+      <Project>{34374ae3-ddbd-4937-b7d2-67878b9baf57}</Project>
+      <Name>AnApiOfIceAndFire.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
