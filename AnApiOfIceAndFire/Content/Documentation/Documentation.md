@@ -49,8 +49,8 @@ $ curl -I "http://www.anapioficeandfire.com/api/characters?page=1&pageSize=10"
 
 **Here's the link header in the response:**
 
-`Link: <http://localhost:50920/api/characters?page=2&pageSize=10>; rel="next", <http://localhost:50920/api/characters?page=1&pageSize=10>; rel="first",
-<http://localhost:50920/api/characters?page=214&pageSize=10>; rel="last"
+`Link: <http://www.anapioficeandfire.com/api/characters?page=2&pageSize=10>; rel="next", <http://www.anapioficeandfire.com/api/characters?page=1&pageSize=10>; rel="first",
+<http://www.anapioficeandfire.com/api/characters?page=214&pageSize=10>; rel="last"
 `
 
 The link response header can contain one or more resource links. The possible values are:
