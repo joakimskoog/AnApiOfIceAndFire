@@ -31,13 +31,13 @@ An Api of Ice And Fire is an open API. This means that no authentication is requ
 
 An Api of Ice And Fire provides a lot of data about the world of Westeros. To prevent our servers from getting cranky, the API will automatically paginate the responses. You will learn how to create requests with pagination parameters and consume the response-
 
-There are a few things worth noting about paginated responses:
+**Things worth noting:**
 
 1. Information about the pagination is included in [the Link header](http://tools.ietf.org/html/rfc5988)
 2. Page numbering is 1-based
 3. You can specify how many items you want to receive per page, the maximum is 50
 
-First, we will take a look on how you can construct a request with pagination:
+**Constructing a request with pagination**
 
 You specify which page you want to access with the `?page` parameter, if you don't provide the `?page` parameter the first page will be returned. You can also specify the size of the page with the `?pageSize` parameter, if you don't provide the `?pageSize` parameter the default size of **10** will be used.
 
@@ -49,13 +49,14 @@ $ curl -I "http://www.anapioficeandfire.com/api/characters?page=1&pageSize=10"
 
 **Here's the link header in the response:**
 
-`Link: <http://www.anapioficeandfire.com/api/characters?page=2&pageSize=10>; rel="next", <http://www.anapioficeandfire.com/api/characters?page=1&pageSize=10>; rel="first",
-<http://www.anapioficeandfire.com/api/characters?page=214&pageSize=10>; rel="last"
-`
+	Link: <http://www.anapioficeandfire.com/api/characters?page=2&pageSize=10>; rel="next",
+	<http://www.anapioficeandfire.com/api/characters?page=1&pageSize=10>; rel="first",  
+	<http://www.anapioficeandfire.com/api/characters?page=214&pageSize=10>; rel="last"
 
-The link response header can contain one or more resource links. The possible values are:
 
-<table>
+**The possible values in the link response header are:**
+
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th>Name</th>

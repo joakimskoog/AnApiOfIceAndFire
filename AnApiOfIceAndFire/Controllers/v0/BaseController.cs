@@ -14,7 +14,7 @@ namespace AnApiOfIceAndFire.Controllers.v0
     {
         public const int DefaultPage = 1;
         public const int DefaultPageSize = 10;
-        public const int MaximumPageSize = 20;
+        public const int MaximumPageSize = 50;
 
         private readonly IModelService<TModel> _modelService;
         private readonly IModelMapper<TModel, TOutputModel> _modelMapper;
@@ -44,6 +44,7 @@ namespace AnApiOfIceAndFire.Controllers.v0
             return Ok(mappedModel);
         }
 
+        [HttpHead]
         [HttpGet]
         public virtual HttpResponseMessage Get(int? page = DefaultPage, int? pageSize = DefaultPageSize)
         {
