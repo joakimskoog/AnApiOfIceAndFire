@@ -1,11 +1,29 @@
-﻿using EntityFrameworkRepository;
+﻿using System.Data.Entity;
+using AnApiOfIceAndFire.Data.Configurations;
+using AnApiOfIceAndFire.Data.Entities;
+using EntityFrameworkRepository;
 
 namespace AnApiOfIceAndFire.Data
 {
     public class AnApiOfIceAndFireContext : EntityDbContext
     {
-        public AnApiOfIceAndFireContext() : base("nameOrConnectionString")
+        public DbSet<BookEntity> Books { get; set; }
+        public DbSet<CharacterEntity> Characters { get; set; }
+        public DbSet<HouseEntity> Houses { get; set; }   
+
+        public AnApiOfIceAndFireContext() : base("AnApiOfIceAndFire")
         {
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new BookConfiguration());
+            modelBuilder.Configurations.Add(new CharacterConfiguration());
+            modelBuilder.Configurations.Add(new HouseConfiguration());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

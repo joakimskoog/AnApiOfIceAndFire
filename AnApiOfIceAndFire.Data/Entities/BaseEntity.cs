@@ -4,6 +4,6 @@ namespace AnApiOfIceAndFire.Data.Entities
 {
     public abstract class BaseEntity : IEntity<int>
     {
-        public int Identifier { get; set; }
+        public int Id { get; set; }
     }
 }

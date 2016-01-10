@@ -39,7 +39,7 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
             var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
             repository.Stub(x => x.GetById(0, null)).IgnoreArguments().Return(new BookEntity()
             {
-                Identifier = 1
+                Id = 1
             });
             var service = new BookService(repository);
 
@@ -85,7 +85,7 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
             var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
             repository.Stub(x => x.GetAll(null, null, null))
                 .IgnoreArguments()
-                .Return(new List<BookEntity> { new BookEntity() { Identifier = 1 } }.AsQueryable());
+                .Return(new List<BookEntity> { new BookEntity() { Id = 1 } }.AsQueryable());
             var service = new BookService(repository);
 
             var books = service.GetAll();
@@ -100,7 +100,7 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
             var booksToReturn = new List<BookEntity>();
             for (int i = 0; i < 10; i++)
             {
-                booksToReturn.Add(new BookEntity() { Identifier = i });
+                booksToReturn.Add(new BookEntity() { Id = i });
             }
             var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
             repository.Stub(x => x.GetAll())

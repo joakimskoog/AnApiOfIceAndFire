@@ -39,7 +39,7 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
             var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<HouseEntity>>();
             repository.Stub(x => x.GetById(0, null)).IgnoreArguments().Return(new HouseEntity()
             {
-                Identifier = 1
+                Id = 1
             });
             var service = new HouseService(repository);
 
@@ -85,7 +85,7 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
             var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<HouseEntity>>();
             repository.Stub(x => x.GetAll(null, null, null))
                 .IgnoreArguments()
-                .Return(new List<HouseEntity> { new HouseEntity() { Identifier = 1 } }.AsQueryable());
+                .Return(new List<HouseEntity> { new HouseEntity() { Id = 1 } }.AsQueryable());
             var service = new HouseService(repository);
 
             var characters = service.GetAll();
@@ -100,7 +100,7 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
             var charactersToReturn = new List<HouseEntity>();
             for (int i = 0; i < 10; i++)
             {
-                charactersToReturn.Add(new HouseEntity() { Identifier = i });
+                charactersToReturn.Add(new HouseEntity() { Id = i });
             }
             var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<HouseEntity>>();
             repository.Stub(x => x.GetAll())

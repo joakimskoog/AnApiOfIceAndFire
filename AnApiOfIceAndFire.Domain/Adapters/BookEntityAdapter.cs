@@ -9,15 +9,15 @@ namespace AnApiOfIceAndFire.Domain.Adapters
     {
         private readonly BookEntity _bookEntity;
 
-        public int Identifier => _bookEntity.Identifier;
-        public string Name { get; }
-        public string ISBN { get; }
-        public IReadOnlyCollection<string> Authors { get; }
-        public int NumberOfPages { get; }
-        public string Publisher { get; }
-        public string Country { get; }
+        public int Identifier => _bookEntity.Id;
+        public string Name => _bookEntity.Name;
+        public string ISBN => _bookEntity.ISBN;
+        public IReadOnlyCollection<string> Authors => _bookEntity.Authors;
+        public int NumberOfPages => _bookEntity.NumberOfPages;
+        public string Publisher => _bookEntity.Publisher;
+        public string Country => _bookEntity.Country;
         public MediaType MediaType { get; }
-        public DateTime Released { get; }
+        public DateTime Released => _bookEntity.ReleaseDate;
         public IReadOnlyCollection<ICharacter> Characters { get; }
         public IReadOnlyCollection<ICharacter> POVCharacters { get; }
 

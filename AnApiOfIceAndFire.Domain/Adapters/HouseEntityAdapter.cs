@@ -9,7 +9,7 @@ namespace AnApiOfIceAndFire.Domain.Adapters
     {
         private readonly HouseEntity _houseEntity;
 
-        public int Identifier => _houseEntity.Identifier;
+        public int Identifier => _houseEntity.Id;
         public string Name { get; }
         public string Region { get; }
         public string CoatOfArms { get; }
