@@ -39,7 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFrameworkRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFrameworkRepository.1.0.1\lib\EntityFrameworkRepository.dll</HintPath>
+      <HintPath>..\packages\EntityFrameworkRepository.1.0.3\lib\EntityFrameworkRepository.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SimplePagination, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Adapters\CharacterEntityAdapter.cs" />
     <Compile Include="Adapters\HouseEntityAdapter.cs" />
+    <Compile Include="Models\MediaTypeEntityExtensions.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Adapters\BookEntityAdapter.cs" />
     <Compile Include="Services\BookService.cs" />

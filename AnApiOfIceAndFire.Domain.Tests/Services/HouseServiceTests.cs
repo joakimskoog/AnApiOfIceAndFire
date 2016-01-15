@@ -25,7 +25,7 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
         public void GivenThatNoCharacterExists_WhenTryingToGetById_ThenReturnedCharacterIsNull()
         {
             var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<HouseEntity>>();
-            repository.Stub(x => x.GetById(0, null)).IgnoreArguments().Return(null);
+            repository.Stub(x => x.GetById(0)).IgnoreArguments().Return(null);
             var service = new HouseService(repository);
 
             var character = service.Get(1);
@@ -37,7 +37,7 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
         public void GivenThatCharacterWithGivenIdExists_WhenTryingToGetById_ThenReturnedCharacterHasSameId()
         {
             var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<HouseEntity>>();
-            repository.Stub(x => x.GetById(0, null)).IgnoreArguments().Return(new HouseEntity()
+            repository.Stub(x => x.Get(0, null)).IgnoreArguments().Return(new HouseEntity()
             {
                 Id = 1
             });

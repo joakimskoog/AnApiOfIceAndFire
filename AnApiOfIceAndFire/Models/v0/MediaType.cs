@@ -2,6 +2,9 @@
 {
     public enum MediaType
     {
-        Hardcover
+        Hardback = 0,
+        Hardcover = 1,
+        GraphicNovel = 2,
+        Paperback = 3
     }
 }

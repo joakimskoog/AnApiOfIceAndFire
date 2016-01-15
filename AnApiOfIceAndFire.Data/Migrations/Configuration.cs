@@ -11,5 +11,10 @@ namespace AnApiOfIceAndFire.Data.Migrations
         {
             AutomaticMigrationsEnabled = false;
         }
+
+        protected override void Seed(AnApiOfIceAndFire.Data.AnApiOfIceAndFireContext context)
+        {
+            
+        }
     }
 }

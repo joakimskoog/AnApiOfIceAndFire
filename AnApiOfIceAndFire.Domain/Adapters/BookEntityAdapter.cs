@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AnApiOfIceAndFire.Data.Entities;
 using AnApiOfIceAndFire.Domain.Models;
 
@@ -16,10 +17,40 @@ namespace AnApiOfIceAndFire.Domain.Adapters
         public int NumberOfPages => _bookEntity.NumberOfPages;
         public string Publisher => _bookEntity.Publisher;
         public string Country => _bookEntity.Country;
-        public MediaType MediaType { get; }
+
+        private MediaType? _mediaType;
+        public MediaType MediaType
+        {
+            get
+            {
+                if (!_mediaType.HasValue)
+                {
+                    _mediaType = _bookEntity.MediaType.MapToMediatype();
+                }
+
+                return _mediaType.Value;
+            }
+        }
+
         public DateTime Released => _bookEntity.ReleaseDate;
-        public IReadOnlyCollection<ICharacter> Characters { get; }
-        public IReadOnlyCollection<ICharacter> POVCharacters { get; }
+
+        private IReadOnlyCollection<ICharacter> _characters;
+        public IReadOnlyCollection<ICharacter> Characters
+        {
+            get
+            {
+                return _characters ?? (_characters = _bookEntity.Characters.Select(c => new CharacterEntityAdapter(c)).ToList());
+            }
+        }
+
+        private IReadOnlyCollection<ICharacter> _povCharacters;
+        public IReadOnlyCollection<ICharacter> POVCharacters
+        {
+            get
+            {
+                return _povCharacters ?? (_povCharacters = _bookEntity.PovCharacters.Select(c => new CharacterEntityAdapter(c)).ToList());
+            }
+        }
 
         public BookEntityAdapter(BookEntity bookEntity)
         {

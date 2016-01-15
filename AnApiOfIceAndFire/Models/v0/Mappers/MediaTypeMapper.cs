@@ -9,7 +9,10 @@ namespace AnApiOfIceAndFire.Models.v0.Mappers
         {
             switch (input)
             {
+                case Domain.Models.MediaType.Hardback: return MediaType.Hardback;
                 case Domain.Models.MediaType.Hardcover: return MediaType.Hardcover;
+                case Domain.Models.MediaType.GraphicNovel: return MediaType.GraphicNovel;
+                case Domain.Models.MediaType.Paperback: return MediaType.Paperback;
                 default: throw new ArgumentOutOfRangeException();
             }
         }

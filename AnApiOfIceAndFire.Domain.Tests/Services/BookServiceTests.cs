@@ -25,7 +25,7 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
         public void GivenThatNoBookExists_WhenTryingToGetById_ThenReturnedBookIsNull()
         {
             var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
-            repository.Stub(x => x.GetById(0, null)).IgnoreArguments().Return(null);
+            repository.Stub(x => x.GetById(0)).IgnoreArguments().Return(null);
             var service = new BookService(repository);
 
             var book = service.Get(1);
@@ -37,7 +37,7 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
         public void GivenThatBookWithGivenIdExists_WhenTryingToGetById_ThenReturnedBookHasSameId()
         {
             var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
-            repository.Stub(x => x.GetById(0, null)).IgnoreArguments().Return(new BookEntity()
+            repository.Stub(x => x.Get(1, null)).IgnoreArguments().Return(new BookEntity
             {
                 Id = 1
             });

@@ -1,8 +1,6 @@
-﻿using EntityFrameworkRepository.Entities;
-
-namespace AnApiOfIceAndFire.Data.Entities
+﻿namespace AnApiOfIceAndFire.Data.Entities
 {
-    public abstract class BaseEntity : IEntity<int>
+    public abstract class BaseEntity
     {
         public int Id { get; set; }
     }

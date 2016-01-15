@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using AnApiOfIceAndFire.Data;
-using EntityFrameworkRepository.Entities;
+using AnApiOfIceAndFire.Data.Entities;
 using SimplePagination;
 
 namespace AnApiOfIceAndFire.Domain.Services
 {
     public abstract class BaseService<TModel, TEntity> : IModelService<TModel>
-        where TEntity : class, IEntity<int>
+        where TEntity : BaseEntity
         where TModel : class
     {
         private readonly IRepositoryWithIntKey<TEntity> _repository;
@@ -25,7 +25,7 @@ namespace AnApiOfIceAndFire.Domain.Services
 
         public TModel Get(int id)
         {
-            var entity = _repository.GetById(id, _includeProperties);
+            var entity = _repository.Get(id, _includeProperties);
             return entity == null ? null : CreateModel(entity);
         }
 
@@ -48,7 +48,7 @@ namespace AnApiOfIceAndFire.Domain.Services
                 return new PagedList<TModel>(Enumerable.Empty<TModel>().AsQueryable(), page, pageSize);
             }
 
-            var pagedList = new PagedList<TEntity>(entities, page, pageSize);
+            var pagedList = new PagedList<TEntity>(entities.OrderBy(e => e.Id), page, pageSize);
 
             return pagedList.ConvertTo(CreateModel);
         }

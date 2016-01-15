@@ -9,9 +9,13 @@ namespace AnApiOfIceAndFire.Domain.Services
 {
     public class BookService : BaseService<IBook, BookEntity>
     {
-        public BookService(IRepositoryWithIntKey<BookEntity> repository) : base(repository, new Expression<Func<BookEntity, object>>[0])
+        private static readonly Expression<Func<BookEntity, object>>[] BookIncludeProperties =
         {
-        }
+            book => book.Characters,
+            book => book.PovCharacters
+        };
+
+        public BookService(IRepositoryWithIntKey<BookEntity> repository) : base(repository, BookIncludeProperties) { }
 
         protected override IBook CreateModel(BookEntity entity)
         {
