@@ -19,7 +19,6 @@ namespace AnApiOfIceAndFire.Models.v0.Mappers
             var fatherUrl = CreateCharacterLink(input.Father, urlHelper);
             var motherUrl = CreateCharacterLink(input.Mother, urlHelper);
             var spouseUrl = CreateCharacterLink(input.Spouse, urlHelper);
-            var childrenUrls = input.Children?.Select(x => CreateCharacterLink(x, urlHelper));
             var booksUrls = input.Books?.Select(b => CreateBookLink(b, urlHelper));
             var povBooksUrls = input.PovBooks?.Select(b => CreateBookLink(b, urlHelper));
             var allegiances = input.Allegiances?.Select(h => CreateHouseLink(h, urlHelper));
@@ -33,7 +32,6 @@ namespace AnApiOfIceAndFire.Models.v0.Mappers
                 Father = fatherUrl,
                 Mother = motherUrl,
                 Spouse = spouseUrl,
-                Children = childrenUrls ?? Enumerable.Empty<string>(),
                 Books = booksUrls ?? Enumerable.Empty<string>(),
                 PovBooks = povBooksUrls ?? Enumerable.Empty<string>(),
                 Aliases = input.Aliases ?? Enumerable.Empty<string>(),

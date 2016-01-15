@@ -97,25 +97,6 @@ namespace AnApiOfIceAndFire.Tests.Models.v0.Mappers
         }
 
         [TestMethod]
-        public void GivenThatCharacterHasChildren_WhenTryingToMapCharacter_ThenMappedCharacterChildrenContainsCorrectUrls()
-        {
-            var childOne = MockRepository.GenerateMock<ICharacter>();
-            childOne.Stub(x => x.Identifier).Return(2);
-            var childTwo = MockRepository.GenerateMock<ICharacter>();
-            childTwo.Stub(x => x.Identifier).Return(3);
-            var character = MockRepository.GenerateMock<ICharacter>();
-            character.Stub(x => x.Identifier).Return(1);
-            character.Stub(x => x.Children).Return(new List<ICharacter> { childOne, childTwo });
-            var mapper = new CharacterMapper();
-
-            var mappedCharacter = mapper.Map(character, CreateUrlHelper("http://localhost/api/characters/1"));
-
-            Assert.AreEqual(2, mappedCharacter.Children.Count());
-            Assert.AreEqual("http://localhost/api/characters/2", mappedCharacter.Children.ElementAt(0));
-            Assert.AreEqual("http://localhost/api/characters/3", mappedCharacter.Children.ElementAt(1));
-        }
-
-        [TestMethod]
         public void GivenThatCharacterHasAllegiance_WhenTryingToMapCharacter_ThenMappedCharacterAllegiancesContainsCorrectUrls()
         {
             var house = MockRepository.GenerateMock<IHouse>();

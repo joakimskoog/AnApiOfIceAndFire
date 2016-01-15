@@ -14,7 +14,6 @@ namespace AnApiOfIceAndFire.Domain.Models
 
         ICharacter Father { get; }
         ICharacter Mother { get; }
-        IReadOnlyCollection<ICharacter> Children { get; }
         ICharacter Spouse { get; }
 
         IReadOnlyCollection<IHouse> Allegiances { get; }

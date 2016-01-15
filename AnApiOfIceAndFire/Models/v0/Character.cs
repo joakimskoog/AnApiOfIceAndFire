@@ -16,7 +16,6 @@ namespace AnApiOfIceAndFire.Models.v0
 
         public string Father { get; set; }
         public string Mother { get; set; }
-        public IEnumerable<string> Children { get; set; }
         public string Spouse { get; set; }
 
         public IEnumerable<string> Allegiances { get; set; }

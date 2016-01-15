@@ -45,7 +45,6 @@ namespace AnApiOfIceAndFire.Domain.Adapters
                 return _mother ?? (_mother = new CharacterEntityAdapter(_characterEntity.Mother));
             }
         }
-        public IReadOnlyCollection<ICharacter> Children { get; }
 
         private ICharacter _spouse;
         public ICharacter Spouse
