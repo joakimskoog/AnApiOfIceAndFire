@@ -7,7 +7,7 @@ Descriptive text here
 ## Who are you?
 
 
-I'm [Joakim Skoog](https://github.com/joakimskoog) and I build cool cloud-based logistics software over at [Centiro](https://www.centiro.com/).
+I'm [Joakim Skoog](https://github.com/joakimskoog) and I build cool, cloud-based logistics software over at [Centiro](https://www.centiro.com/).
 
 ## Why did you build this?
 
@@ -20,7 +20,7 @@ Besides, this was a great opportunity to try out new techniques.
 ## Technology used
 
 
-What technology I used here
+An Api of Ice And Fire is built with [ASP.NET Web API 2](https://msdn.microsoft.com/en-us/library/dn448365(v=vs.118).aspx) and [Entity Framework](https://msdn.microsoft.com/en-us/data/ef.aspx).
 
 ## Contributors
 
