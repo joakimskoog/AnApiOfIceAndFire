@@ -59,7 +59,7 @@ namespace AnApiOfIceAndFire.Domain.Adapters
                 return _overlord ?? (_overlord = new HouseEntityAdapter(_houseEntity.Overlord));
             }
         }
-        public string Founded => _houseEntity.Fouded;
+        public string Founded => _houseEntity.Founded;
 
         private ICharacter _founder;
         public ICharacter Founder

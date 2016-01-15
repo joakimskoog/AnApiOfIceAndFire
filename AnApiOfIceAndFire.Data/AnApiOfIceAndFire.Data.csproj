@@ -68,12 +68,28 @@
     <Compile Include="Entities\HouseEntity.cs" />
     <Compile Include="Entities\MediaTypeEntity.cs" />
     <Compile Include="IRepositoryWithIntKey.cs" />
+    <Compile Include="Migrations\201601151534573_Initial.cs" />
+    <Compile Include="Migrations\201601151534573_Initial.Designer.cs">
+      <DependentUpon>201601151534573_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601151730281_FixedSpellingMistakeInHouseEntity.cs" />
+    <Compile Include="Migrations\201601151730281_FixedSpellingMistakeInHouseEntity.Designer.cs">
+      <DependentUpon>201601151730281_FixedSpellingMistakeInHouseEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601151534573_Initial.resx">
+      <DependentUpon>201601151534573_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601151730281_FixedSpellingMistakeInHouseEntity.resx">
+      <DependentUpon>201601151730281_FixedSpellingMistakeInHouseEntity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

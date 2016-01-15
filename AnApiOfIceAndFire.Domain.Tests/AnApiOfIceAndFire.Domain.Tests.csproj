@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Adapters\BookEntityAdapterTests.cs" />
     <Compile Include="Adapters\CharacterEntityAdapterTests.cs" />
+    <Compile Include="Adapters\HouseEntityAdapterTests.cs" />
     <Compile Include="Services\BookServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CharacterServiceTests.cs" />

@@ -9,7 +9,7 @@ namespace AnApiOfIceAndFire.Data.Entities
         public string CoatOfArms { get; set; }
         public string Words { get; set; }
         public string Region { get; set; }
-        public string Fouded { get; set; }
+        public string Founded { get; set; }
         public string DiedOut { get; set; }
 
         public string SeatsRaw { get; set; }
