@@ -1,0 +1,13 @@
+﻿@using AnApiOfIceAndFire.Infrastructure.Html
+@model dynamic
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-9 col-sm-9">
+        @Html.Markdown("~/Content/Documentation/About.md")
+    </div>
+</div>

@@ -13,12 +13,6 @@ Introductory text here...
 
 The current version of the API is 0. 
 
-<a name="root_endpoint"></a>
-### Root Endpoint
-
-
-Text about root endpoint here...
-
 <a name="authentication"></a>
 ### Authentication
 

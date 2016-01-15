@@ -22,6 +22,9 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
                 </ul>
                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("About", "Index", "About", new { area = "" }, null)</li>
+                </ul>
+                <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Documentation", "Index", "Documentation", new { area = "" }, null)</li>
                 </ul>
             </div>
@@ -31,8 +34,17 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Joakim Skoog</p>
+            <span class="pull-left">
+                <a href="https://github.com/joakimskoog">&copy; @DateTime.Now.Year - Joakim Skoog</a>
+            </span>
+            <span class="pull-right">
+                <iframe src="https://ghbtns.com/github-btn.html?user=joakimskoog&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+                <iframe src="https://ghbtns.com/github-btn.html?user=joakimskoog&repo=AnApiOfIceAndFire&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+            </span>
         </footer>
+    </div>
+    <div class="container body-context pull-right">
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")
