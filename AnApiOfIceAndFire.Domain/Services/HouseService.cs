@@ -15,7 +15,8 @@ namespace AnApiOfIceAndFire.Domain.Services
             house => house.Heir,
             house => house.Overlord,
             house => house.Founder,
-            house => house.CadetBranches
+            house => house.CadetBranches,
+            house => house.SwornMembers
         };
 
         public HouseService(IRepositoryWithIntKey<HouseEntity> repository) : base(repository, HouseIncludeProperties) { }
