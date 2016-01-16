@@ -2,8 +2,6 @@
 ### Books
 
 
-Information about books resource here...
-
 It has the following attributes:
 <table class="table table-bordered table-hover">
   <thead>
