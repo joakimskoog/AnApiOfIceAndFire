@@ -5,7 +5,9 @@
 ### Introduction
 
 
-Introductory text here...
+This documentation will help you familiarise yourself with the API and how to consume the different resources that are available. The documentation provides all information needed to get started and it also has educational examples for all resources.
+
+If you're interested in using a native implementation, please take a look at the **Libraries** section.
 
 <a name="current_version"></a>
 ### Current Version
