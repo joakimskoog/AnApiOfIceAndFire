@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 
 namespace AnApiOfIceAndFire.Controllers
 {
@@ -9,6 +10,12 @@ namespace AnApiOfIceAndFire.Controllers
             ViewBag.Title = "Home Page";
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Charge(FormCollection fc)
+        {
+            return Redirect("/");
         }
     }
 }

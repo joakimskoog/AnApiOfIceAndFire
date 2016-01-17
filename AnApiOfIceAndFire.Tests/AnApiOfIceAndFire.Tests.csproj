@@ -83,6 +83,7 @@
     <Compile Include="Models\v0\Mappers\BookMapperTests.cs" />
     <Compile Include="Models\v0\Mappers\CharacterMapperTests.cs" />
     <Compile Include="Models\v0\Mappers\HouseMapperTests.cs" />
+    <Compile Include="Models\v0\Mappers\MediaTypeMapperTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
