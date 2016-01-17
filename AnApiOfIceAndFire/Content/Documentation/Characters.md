@@ -168,7 +168,6 @@ $ curl "http://www.anapioficeandfire.com/api/characters"
 $ curl "http://www.anapioficeandfire.com/api/characters/823"
 ```
 
-www.anapioficeandfire.co
 **Example response:**
 ``` command-line
 {
