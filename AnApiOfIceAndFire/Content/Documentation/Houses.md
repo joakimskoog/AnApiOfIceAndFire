@@ -5,7 +5,7 @@
 A House resource is a house branch within the Ice And Fire universe.
 
 It has the following attributes:
-<table class="table table-bordered table-hover">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -166,32 +166,32 @@ $ curl "http://www.anapioficeandfire.co/api/houses/10"
 **Example response:**
 ``` command-line
 {
-"url": "http://www.anapioficeandfire.com/api/houses/10",
-"name": "House Baelish of Harrenhal",
-"region": "The Riverlands",
-"coatOfArms": "A field of silver mockingbirds, on a green field(Vert, semé of mockingbirds argent)",
-"words": "",
-"titles": [
-"Lord Paramount of the Trident",
-"Lord of Harrenhal"
-],
-"seats": [
-"Harrenhal"
-],
-"currentLord": "http://www.anapioficeandfire.com/api/characters/823",
-"heir": "",
-"overlord": "http://www.anapioficeandfire.com/api/houses/16",
-"founded": "299 AC",
-"founder": "http://www.anapioficeandfire.com/api/characters/823",
-"diedOut": "",
-"ancestralWeapons": [],
-"cadetBranches": [],
-"swornMembers": [
-"http://www.anapioficeandfire.com/api/characters/651",
-"http://www.anapioficeandfire.com/api/characters/804",
-"http://www.anapioficeandfire.com/api/characters/823",
-"http://www.anapioficeandfire.com/api/characters/957",
-"http://www.anapioficeandfire.com/api/characters/970"
-]
+  "url": "http://www.anapioficeandfire.com/api/houses/10",
+  "name": "House Baelish of Harrenhal",
+  "region": "The Riverlands",
+  "coatOfArms": "A field of silver mockingbirds, on a green field(Vert, semé of mockingbirds argent)",
+  "words": "",
+  "titles": [
+    "Lord Paramount of the Trident",
+    "Lord of Harrenhal"
+  ],
+  "seats": [
+    "Harrenhal"
+  ],
+  "currentLord": "http://www.anapioficeandfire.com/api/characters/823",
+  "heir": "",
+  "overlord": "http://www.anapioficeandfire.com/api/houses/16",
+  "founded": "299 AC",
+  "founder": "http://www.anapioficeandfire.com/api/characters/823",
+  "diedOut": "",
+  "ancestralWeapons": [],
+  "cadetBranches": [],
+  "swornMembers": [
+    "http://www.anapioficeandfire.com/api/characters/651",
+    "http://www.anapioficeandfire.com/api/characters/804",
+    "http://www.anapioficeandfire.com/api/characters/823",
+    "http://www.anapioficeandfire.com/api/characters/957",
+    "http://www.anapioficeandfire.com/api/characters/970"
+  ]
 }
 ```

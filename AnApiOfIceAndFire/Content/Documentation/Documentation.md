@@ -93,7 +93,7 @@ Text about rate limiting here...
 
 Custom media types are used in An Api of Ice And Fire to let consumers choose which **version** of the data they wish to receive. This is done by adding the following type to the Accept header when you make a request. Note that media types are specific to resources, this allows them to change independently from each other.
 
-<div class="alert">
+<div class="alert alert-dismissible alert-warning">
 
 **Important:** If a version is not specified in the request the default version will be used. The default version may change in the future and can thus break the consumer's application. Make sure to **always** request a specific version in the ```Accept``` header as shown in the example below.
 
