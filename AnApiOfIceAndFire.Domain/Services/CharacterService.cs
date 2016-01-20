@@ -4,6 +4,7 @@ using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Entities;
 using AnApiOfIceAndFire.Domain.Adapters;
 using AnApiOfIceAndFire.Domain.Models;
+using Geymsla;
 
 namespace AnApiOfIceAndFire.Domain.Services
 {
@@ -18,7 +19,7 @@ namespace AnApiOfIceAndFire.Domain.Services
             character => character.Allegiances
         };
 
-        public CharacterService(IRepositoryWithIntKey<CharacterEntity> repository) : base(repository, CharacterIncludeProperties) { }
+        public CharacterService(IReadOnlyRepository<CharacterEntity,int> repository) : base(repository, CharacterIncludeProperties) { }
 
         protected override ICharacter CreateModel(CharacterEntity entity)
         {

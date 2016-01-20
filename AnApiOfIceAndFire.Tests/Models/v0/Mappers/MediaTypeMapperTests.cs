@@ -1,4 +1,5 @@
-﻿using System.Web.Http.Routing;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Models.v0.Mappers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -6,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AnApiOfIceAndFire.Tests.Models.v0.Mappers
 {
     [TestClass]
+    [ExcludeFromCodeCoverage]
     public class MediaTypeMapperTests
     {
         [TestMethod]

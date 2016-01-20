@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Domain.Services;
@@ -31,9 +32,9 @@ namespace AnApiOfIceAndFire.Controllers.v0
         }
 
         [HttpGet]
-        public virtual IHttpActionResult Get(int id)
+        public virtual async Task<IHttpActionResult> Get(int id)
         {
-            var model = _modelService.Get(id);
+            var model = await _modelService.GetAsync(id);
             if (model == null)
             {
                 return NotFound();
@@ -46,7 +47,7 @@ namespace AnApiOfIceAndFire.Controllers.v0
 
         [HttpHead]
         [HttpGet]
-        public virtual HttpResponseMessage Get(int? page = DefaultPage, int? pageSize = DefaultPageSize)
+        public virtual async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize)
         {
             if (page == null)
             {
@@ -61,7 +62,7 @@ namespace AnApiOfIceAndFire.Controllers.v0
                 pageSize = MaximumPageSize;
             }
 
-            var pagedModels = _modelService.GetPaginated(page.Value, pageSize.Value);
+            var pagedModels = await _modelService.GetPaginatedAsync(page.Value, pageSize.Value);
             var mappedModels = pagedModels.Select(pm => _modelMapper.Map(pm, Url));
             var pagingLinks = pagedModels.ToPagingLinks(Url, _routeName);
 

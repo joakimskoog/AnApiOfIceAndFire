@@ -1,15 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
+using System.Data.Entity;
 using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Entities;
-using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Domain.Services;
 using AnApiOfIceAndFire.Models.v0;
 using AnApiOfIceAndFire.Models.v0.Mappers;
-using EntityFrameworkRepository;
+using Geymsla;
+using Geymsla.EntityFramework;
 using Microsoft.Practices.Unity;
 using MediaType = AnApiOfIceAndFire.Domain.Models.MediaType;
 
@@ -46,10 +44,10 @@ namespace AnApiOfIceAndFire
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();    
 
-            container.RegisterType<IEntityDbContext, AnApiOfIceAndFireContext>();
-            container.RegisterType<IRepositoryWithIntKey<BookEntity>, EFRepositoryWithIntKey<BookEntity>>();
-            container.RegisterType<IRepositoryWithIntKey<CharacterEntity>, EFRepositoryWithIntKey<CharacterEntity>>();
-            container.RegisterType<IRepositoryWithIntKey<HouseEntity>, EFRepositoryWithIntKey<HouseEntity>>();
+            container.RegisterType<DbContext, AnApiOfIceAndFireContext>();
+            container.RegisterType<IReadOnlyRepository<BookEntity,int>, EntityFrameworkRepository<BookEntity,int>>();
+            container.RegisterType<IReadOnlyRepository<CharacterEntity,int>, EntityFrameworkRepository<CharacterEntity,int>>();
+            container.RegisterType<IReadOnlyRepository<HouseEntity,int>, EntityFrameworkRepository<HouseEntity,int>>();
             container.RegisterType<IModelMapper<MediaType, Models.v0.MediaType>, MediaTypeMapper>();
             container.RegisterType<IModelMapper<IBook, Book>, BookMapper>();
             container.RegisterType<IModelMapper<ICharacter, Character>, CharacterMapper>();

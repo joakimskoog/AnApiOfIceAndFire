@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using AnApiOfIceAndFire.Data;
+using System.Threading;
+using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data.Entities;
-using SimplePagination;
+using Geymsla;
+using Geymsla.Collections;
 
 namespace AnApiOfIceAndFire.Domain.Services
 {
@@ -12,10 +14,10 @@ namespace AnApiOfIceAndFire.Domain.Services
         where TEntity : BaseEntity
         where TModel : class
     {
-        private readonly IRepositoryWithIntKey<TEntity> _repository;
+        private readonly IReadOnlyRepository<TEntity, int> _repository;
         private readonly Expression<Func<TEntity, object>>[] _includeProperties;
 
-        protected BaseService(IRepositoryWithIntKey<TEntity> repository, Expression<Func<TEntity, object>>[] includeProperties)
+        protected BaseService(IReadOnlyRepository<TEntity, int> repository, Expression<Func<TEntity, object>>[] includeProperties)
         {
             if (repository == null) throw new ArgumentNullException(nameof(repository));
             if (includeProperties == null) throw new ArgumentNullException(nameof(includeProperties));
@@ -23,34 +25,32 @@ namespace AnApiOfIceAndFire.Domain.Services
             _includeProperties = includeProperties;
         }
 
-        public TModel Get(int id)
+        public async Task<TModel> GetAsync(int id)
         {
-            var entity = _repository.Get(id, _includeProperties);
-            return entity == null ? null : CreateModel(entity);
+            var entity = await _repository.GetSingleOrDefaultAsync(x => x.Id == id, _includeProperties);
+            return entity != null ? CreateModel(entity) : null;
         }
 
-        public IEnumerable<TModel> GetAll()
+        public async Task<IEnumerable<TModel>> GetAllAsync()
         {
-            var entities = _repository.GetAll(includeProperties: _includeProperties);
+            var entities = await _repository.GetAllAsync(CancellationToken.None, _includeProperties);
             if (entities == null)
             {
                 return Enumerable.Empty<TModel>();
             }
 
-            return entities.Select(e => CreateModel(e));
+            return entities.Select(CreateModel);
         }
 
-        public IPagedList<TModel> GetPaginated(int page, int pageSize)
+        public async Task<IPagedList<TModel>> GetPaginatedAsync(int page, int pageSize)
         {
-            var entities = _repository.GetAll(includeProperties: _includeProperties);
-            if (entities == null)
+            var pagedEntities = await _repository.GetPaginatedListAsync(e => e.OrderBy(x => x.Id), page, pageSize, CancellationToken.None, _includeProperties);
+            if (pagedEntities == null)
             {
                 return new PagedList<TModel>(Enumerable.Empty<TModel>().AsQueryable(), page, pageSize);
             }
 
-            var pagedList = new PagedList<TEntity>(entities.OrderBy(e => e.Id), page, pageSize);
-
-            return pagedList.ConvertTo(CreateModel);
+            return pagedEntities.ConvertTo(CreateModel);
         }
 
         protected abstract TModel CreateModel(TEntity entity);

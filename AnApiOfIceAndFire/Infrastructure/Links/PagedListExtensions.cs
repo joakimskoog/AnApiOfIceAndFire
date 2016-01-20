@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Http.Routing;
-using SimplePagination;
+using Geymsla.Collections;
 
 namespace AnApiOfIceAndFire.Infrastructure.Links
 {

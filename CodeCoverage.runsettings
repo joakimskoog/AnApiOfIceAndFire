@@ -36,6 +36,7 @@ Included items must then not match any entries in the exclude list to remain inc
                 <ModulePath>.*CPPUnitTestFramework.*</ModulePath>
                 <ModulePath>.*SimplePagination\.dll$</ModulePath>
                 <ModulePath>.*EntityFrameworkRepository\.dll$</ModulePath>
+                <ModulePath>.*Geymsla\.dll$</ModulePath>
               </Exclude>
             </ModulePaths>
 

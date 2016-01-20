@@ -38,8 +38,12 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFrameworkRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFrameworkRepository.1.0.3\lib\EntityFrameworkRepository.dll</HintPath>
+    <Reference Include="Geymsla, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Geymsla.EntityFramework.1.0.0\lib\Geymsla.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Geymsla.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Geymsla.EntityFramework.1.0.0\lib\Geymsla.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -61,13 +65,11 @@
     <Compile Include="Configurations\BookConfiguration.cs" />
     <Compile Include="Configurations\CharacterConfiguration.cs" />
     <Compile Include="Configurations\HouseConfiguration.cs" />
-    <Compile Include="EFRepositoryWithIntKey.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\BookEntity.cs" />
     <Compile Include="Entities\CharacterEntity.cs" />
     <Compile Include="Entities\HouseEntity.cs" />
     <Compile Include="Entities\MediaTypeEntity.cs" />
-    <Compile Include="IRepositoryWithIntKey.cs" />
     <Compile Include="Migrations\201601151534573_Initial.cs" />
     <Compile Include="Migrations\201601151534573_Initial.Designer.cs">
       <DependentUpon>201601151534573_Initial.cs</DependentUpon>

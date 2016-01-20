@@ -1,11 +1,10 @@
 ﻿using System.Data.Entity;
 using AnApiOfIceAndFire.Data.Configurations;
 using AnApiOfIceAndFire.Data.Entities;
-using EntityFrameworkRepository;
 
 namespace AnApiOfIceAndFire.Data
 {
-    public class AnApiOfIceAndFireContext : EntityDbContext
+    public class AnApiOfIceAndFireContext : DbContext
     {
         public DbSet<BookEntity> Books { get; set; }
         public DbSet<CharacterEntity> Characters { get; set; }

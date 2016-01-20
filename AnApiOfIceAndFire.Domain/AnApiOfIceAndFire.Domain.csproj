@@ -38,12 +38,8 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFrameworkRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFrameworkRepository.1.0.3\lib\EntityFrameworkRepository.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SimplePagination, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimplePagination.1.2.5\lib\SimplePagination.dll</HintPath>
+    <Reference Include="Geymsla, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Geymsla.1.0.0\lib\Geymsla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

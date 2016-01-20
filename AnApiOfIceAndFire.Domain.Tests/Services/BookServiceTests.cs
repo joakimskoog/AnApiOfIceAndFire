@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Threading;
+using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Entities;
 using AnApiOfIceAndFire.Domain.Services;
+using Geymsla;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 
@@ -22,123 +27,114 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
         }
 
         [TestMethod]
-        public void GivenThatNoBookExists_WhenTryingToGetById_ThenReturnedBookIsNull()
+        public async Task GivenThatNoBookExists_WhenTryingToGetById_ThenReturnedBookIsNull()
         {
-            var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
-            repository.Stub(x => x.GetById(0)).IgnoreArguments().Return(null);
+            var repository = MockRepository.GenerateMock<IReadOnlyRepository<BookEntity,int>>();
+            repository.Stub(x => x.GetAsync(null,CancellationToken.None, null)).IgnoreArguments().Return(Task.FromResult(Enumerable.Empty<BookEntity>()));
             var service = new BookService(repository);
 
-            var book = service.Get(1);
+            var book = await service.GetAsync(1);
 
             Assert.IsNull(book);
         }
 
         [TestMethod]
-        public void GivenThatBookWithGivenIdExists_WhenTryingToGetById_ThenReturnedBookHasSameId()
+        public async Task GivenThatBookWithGivenIdExists_WhenTryingToGetById_ThenReturnedBookHasSameId()
         {
-            var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
-            repository.Stub(x => x.Get(1, null)).IgnoreArguments().Return(new BookEntity
-            {
-                Id = 1
-            });
+            var repository = MockRepository.GenerateMock<IReadOnlyRepository<BookEntity,int>>();
+            repository.Stub(x => x.GetAsync(null, CancellationToken.None, null))
+                .IgnoreArguments()
+                .Return(Task.FromResult(new List<BookEntity>
+                {
+                    new BookEntity()
+                    {
+                        Id = 1
+                    }
+                }.AsEnumerable()));
             var service = new BookService(repository);
 
-            var book = service.Get(1);
+            var book = await service.GetAsync(1);
 
             Assert.IsNotNull(book);
             Assert.AreEqual(1, book.Identifier);
         }
 
         [TestMethod]
-        public void GivenThatRepositoryReturnsNull_WhenTryingToGetAll_ThenReturnedListIsEmpty()
+        public async Task GivenThatRepositoryReturnsNull_WhenTryingToGetAll_ThenReturnedListIsEmpty()
         {
-            var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
-            repository.Stub(x => x.GetAll(null, null, null))
+            var repository = MockRepository.GenerateMock<IReadOnlyRepository<BookEntity,int>>();
+            repository.Stub(x => x.GetAllAsync(CancellationToken.None, null))
                 .IgnoreArguments()
-                .Return(null);
+                .Return(Task.FromResult((IEnumerable<BookEntity>)null));
             var service = new BookService(repository);
 
-            var books = service.GetAll();
+            var books = await service.GetAllAsync();
 
             Assert.IsNotNull(books);
             Assert.AreEqual(0, books.Count());
         }
 
         [TestMethod]
-        public void GivenThatNoBookExists_WhenTryingToGetAll_ThenReturnedListIsEmpty()
+        public async Task GivenThatNoBookExists_WhenTryingToGetAll_ThenReturnedListIsEmpty()
         {
-            var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
-            repository.Stub(x => x.GetAll(null, null, null))
+            var repository = MockRepository.GenerateMock<IReadOnlyRepository<BookEntity,int>>();
+            repository.Stub(x => x.GetAllAsync(CancellationToken.None, null))
                 .IgnoreArguments()
-                .Return(Enumerable.Empty<BookEntity>().AsQueryable());
+                .Return(Task.FromResult(Enumerable.Empty<BookEntity>()));
             var service = new BookService(repository);
 
-            var books = service.GetAll();
+            var books = await service.GetAllAsync();
 
             Assert.IsNotNull(books);
             Assert.AreEqual(0, books.Count());
         }
 
         [TestMethod]
-        public void GivenThatOneBookExists_WhenTryingToGetAll_ThenReturnedListContainsOneBook()
+        public async Task GivenThatOneBookExists_WhenTryingToGetAll_ThenReturnedListContainsOneBook()
         {
-            var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
-            repository.Stub(x => x.GetAll(null, null, null))
+            var repository = MockRepository.GenerateMock<IReadOnlyRepository<BookEntity,int>>();
+            repository.Stub(x => x.GetAllAsync(null, null, null))
                 .IgnoreArguments()
-                .Return(new List<BookEntity> { new BookEntity() { Id = 1 } }.AsQueryable());
+                .Return(Task.FromResult(new List<BookEntity> { new BookEntity() { Id = 1 } }.AsEnumerable()));
             var service = new BookService(repository);
 
-            var books = service.GetAll();
+            var books = await service.GetAllAsync();
 
             Assert.IsNotNull(books);
             Assert.AreEqual(1, books.Count());
         }
 
         [TestMethod]
-        public void GivenThatTenBooksExists_WhenTryingToGetAll_ThenReturnedListContainsTenBooks()
+        public async Task GivenThatTenBooksExists_WhenTryingToGetAll_ThenReturnedListContainsTenBooks()
         {
             var booksToReturn = new List<BookEntity>();
             for (int i = 0; i < 10; i++)
             {
                 booksToReturn.Add(new BookEntity() { Id = i });
             }
-            var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
-            repository.Stub(x => x.GetAll())
+            var repository = MockRepository.GenerateMock<IReadOnlyRepository<BookEntity,int>>();
+            repository.Stub(x => x.GetAllAsync(CancellationToken.None,null))
                 .IgnoreArguments()
-                .Return(booksToReturn.AsQueryable());
+                .Return(Task.FromResult(booksToReturn.AsEnumerable()));
             var service = new BookService(repository);
 
-            var books = service.GetAll();
+            var books = await service.GetAllAsync();
 
             Assert.IsNotNull(books);
             Assert.AreEqual(10, books.Count());
         }
 
         [TestMethod]
-        public void GivenThatRepositoryReturnsNull_WhenTryingToGetPaginated_ThenReturnedListIsEmpty()
+        public async Task GivenThatNoBooksExists_WhenTryingToGetPaginated_ThenPaginatedListIsEmpty()
         {
-            var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
-            repository.Stub(x => x.GetAll(null, null, null))
+            var repository = MockRepository.GenerateMock<IReadOnlyRepository<BookEntity,int>>();
+            repository.Stub(x => x.GetAsync(null, CancellationToken.None, null))
                 .IgnoreArguments()
-                .Return(null);
+                .Return(Task.FromResult(Enumerable.Empty<BookEntity>()));
+            repository.Stub(x => x.GetAllAsQueryable()).Return(Enumerable.Empty<BookEntity>().AsQueryable());
             var service = new BookService(repository);
 
-            var books = service.GetPaginated(1,10);
-
-            Assert.IsNotNull(books);
-            Assert.AreEqual(0, books.Count());
-        }
-
-        [TestMethod]
-        public void GivenThatNoBooksExists_WhenTryingToGetPaginated_ThenPaginatedListIsEmpty()
-        {
-            var repository = MockRepository.GenerateMock<IRepositoryWithIntKey<BookEntity>>();
-            repository.Stub(x => x.GetAll(null, null, null))
-                .IgnoreArguments()
-                .Return(Enumerable.Empty<BookEntity>().AsQueryable());
-            var service = new BookService(repository);
-
-            var paginatedBooks = service.GetPaginated(1, 10);
+            var paginatedBooks = await service.GetPaginatedAsync(1, 10);
 
             Assert.IsNotNull(paginatedBooks);
             Assert.AreEqual(0, paginatedBooks.Count);

@@ -4,6 +4,7 @@ using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Entities;
 using AnApiOfIceAndFire.Domain.Adapters;
 using AnApiOfIceAndFire.Domain.Models;
+using Geymsla;
 
 namespace AnApiOfIceAndFire.Domain.Services
 {
@@ -15,7 +16,7 @@ namespace AnApiOfIceAndFire.Domain.Services
             book => book.PovCharacters
         };
 
-        public BookService(IRepositoryWithIntKey<BookEntity> repository) : base(repository, BookIncludeProperties) { }
+        public BookService(IReadOnlyRepository<BookEntity,int> repository) : base(repository, BookIncludeProperties) { }
 
         protected override IBook CreateModel(BookEntity entity)
         {

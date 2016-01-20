@@ -4,19 +4,19 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Hosting;
 using System.Web.Http.Results;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Controllers.v0;
-using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Domain.Services;
 using AnApiOfIceAndFire.Models.v0;
 using AnApiOfIceAndFire.Models.v0.Mappers;
+using Geymsla.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
-using SimplePagination;
 using MediaType = AnApiOfIceAndFire.Domain.Models.MediaType;
 
 namespace AnApiOfIceAndFire.Tests.Controllers
@@ -40,19 +40,19 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         }
 
         [TestMethod]
-        public void GivenThatBookWithGivenIdDoesNotExist_WhenTryingToGetBook_ThenResultIsOfTypeNotFound()
+        public async Task GivenThatBookWithGivenIdDoesNotExist_WhenTryingToGetBook_ThenResultIsOfTypeNotFound()
         {
             var service = MockRepository.GenerateMock<IModelService<IBook>>();
-            service.Stub(x => x.Get(Arg<int>.Is.Anything)).Return(null);
+            service.Stub(x => x.GetAsync(Arg<int>.Is.Anything)).Return(Task.FromResult((IBook)null));
             var controller = new BooksController(service, MockRepository.GenerateMock<IModelMapper<IBook, Book>>());
 
-            var result = controller.Get(1);
+            var result = await controller.Get(1);
 
             Assert.IsInstanceOfType(result, typeof(NotFoundResult));
         }
 
         [TestMethod]
-        public void GivenThatBookWithGivenIdExists_WhenTryingToGetBook_ThenResultContainsBook()
+        public async Task GivenThatBookWithGivenIdExists_WhenTryingToGetBook_ThenResultContainsBook()
         {
             var service = MockRepository.GenerateMock<IModelService<IBook>>();
             var book = MockRepository.GenerateMock<IBook>();
@@ -66,7 +66,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             book.Stub(x => x.MediaType).Return(MediaType.Hardcover);
             book.Stub(x => x.NumberOfPages).Return(10);
 
-            service.Stub(x => x.Get(Arg<int>.Is.Equal(1))).Return(book);
+            service.Stub(x => x.GetAsync(Arg<int>.Is.Equal(1))).Return(Task.FromResult(book));
             var mapper = MockRepository.GenerateMock<IModelMapper<IBook, Book>>();
             mapper.Stub(x => x.Map(Arg<IBook>.Matches(b => b.Identifier == 1), Arg<UrlHelper>.Is.Anything))
                 .Return(new Book("someKindOfUrl/1", book.Name, book.ISBN, book.Authors, book.NumberOfPages,
@@ -75,19 +75,20 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             var controller = new BooksController(service, mapper);
 
 
-            var result = controller.Get(1) as OkNegotiatedContentResult<Book>;
+            var result = await controller.Get(1);
+            var okResult = result as OkNegotiatedContentResult<Book>;
 
-            Assert.IsNotNull(result);
-            Assert.AreEqual(book.Name, result.Content.Name);
-            Assert.AreEqual("someKindOfUrl/1", result.Content.URL);
+            Assert.IsNotNull(okResult);
+            Assert.AreEqual(book.Name, okResult.Content.Name);
+            Assert.AreEqual("someKindOfUrl/1", okResult.Content.URL);
         }
 
         [TestMethod]
-        public void GivenThatNoBooksExists_WhenTryingTogetAll_ThenResultContainsNoBooks()
+        public async Task GivenThatNoBooksExists_WhenTryingTogetAll_ThenResultContainsNoBooks()
         {
             var service = MockRepository.GenerateMock<IModelService<IBook>>();
-            service.Stub(x => x.GetPaginated(Arg<int>.Is.Anything, Arg<int>.Is.Anything))
-                .Return(new PagedList<IBook>(new List<IBook>().AsQueryable(), 1, 1));
+            service.Stub(x => x.GetPaginatedAsync(Arg<int>.Is.Anything, Arg<int>.Is.Anything))
+                .Return(Task.FromResult((IPagedList<IBook>)new PagedList<IBook>(Enumerable.Empty<IBook>().AsQueryable(), 1, 1)));
             var mapper = MockRepository.GenerateMock<IModelMapper<IBook, Book>>();
             var urlHelper = MockRepository.GenerateMock<UrlHelper>();
             urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<object>.Is.Anything)).Return("https://localhost.com");
@@ -99,7 +100,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             };
 
             IEnumerable<Book> books;
-            var result = controller.Get();
+            var result = await controller.Get();
             result.TryGetContentValue(out books);
 
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
@@ -107,12 +108,12 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         }
 
         [TestMethod]
-        public void GivenThatOneBookExists_WhenTryingToGetAll_ThenResultContainsCorrectBook()
+        public async Task GivenThatOneBookExists_WhenTryingToGetAll_ThenResultContainsCorrectBook()
         {
             var book = CreateMockedBook(1);
             var service = MockRepository.GenerateMock<IModelService<IBook>>();
-            service.Stub(x => x.GetPaginated(Arg<int>.Is.Anything, Arg<int>.Is.Anything))
-                .Return(new PagedList<IBook>(new List<IBook> {book}.AsQueryable(), 1, 1));
+            service.Stub(x => x.GetPaginatedAsync(Arg<int>.Is.Anything, Arg<int>.Is.Anything))
+                .Return(Task.FromResult((IPagedList<IBook>)new PagedList<IBook>(new List<IBook> { book }.AsQueryable(), 1, 1)));
             var urlHelper = CreateUrlHelper("http://localhost/api/books/1");
             var mapper = new BookMapper(new MediaTypeMapper());
             var controller = new BooksController(service, mapper)
@@ -123,7 +124,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             };
 
             IEnumerable<Book> books;
-            var result = controller.Get();
+            var result = await controller.Get();
             result.TryGetContentValue(out books);
 
             Assert.AreEqual(1, books.Count());

@@ -4,9 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Infrastructure.Links;
+using Geymsla.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
-using SimplePagination;
 
 namespace AnApiOfIceAndFire.Tests.Infrastructure.Links
 {
