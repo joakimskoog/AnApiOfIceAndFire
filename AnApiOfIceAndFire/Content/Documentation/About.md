@@ -1,7 +1,7 @@
-## What is An Api of Ice And Fire?
+## What is An API of Ice And Fire?
 
 
-An Api of Ice And Fire is the world's greatest source for quantified and structured data from the universe of Ice and Fire (and the HBO series Game of Thrones).
+An API of Ice And Fire is the world's greatest source for quantified and structured data from the universe of Ice and Fire (and the HBO series Game of Thrones).
 
 We give you access to data about all **Books**, **Characters** and **Houses** in an easy to use [JSON](http://json.org/) format.
 
@@ -21,12 +21,12 @@ Besides, this was a great opportunity to try out new techniques.
 ## Technology used
 
 
-An Api of Ice And Fire is built with [ASP.NET Web API 2](https://msdn.microsoft.com/en-us/library/dn448365(v=vs.118).aspx) and [Entity Framework](https://msdn.microsoft.com/en-us/data/ef.aspx).
+An API of Ice And Fire is built with [ASP.NET Web API 2](https://msdn.microsoft.com/en-us/library/dn448365(v=vs.118).aspx) and [Entity Framework](https://msdn.microsoft.com/en-us/data/ef.aspx).
 
 ## Contributors
 
 
-An Api of Ice And Fire would not be the same without the help from the following people:
+An API of Ice And Fire would not be the same without the help from the following people:
 - [Joakim Skoog](https://github.com/joakimskoog)
 
 

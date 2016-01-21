@@ -19,13 +19,13 @@ The current version of the API is 0.
 ### Authentication
 
 
-An Api of Ice And Fire is an open API. This means that no authentication is required to query the API for data. Since no authentication is required, there is only support for **GET**-ing data.
+An API of Ice And Fire is an open API. This means that no authentication is required to query the API for data. Since no authentication is required, there is only support for **GET**-ing data.
 
 <a name="pagination"></a>
 ### Pagination
 
 
-An Api of Ice And Fire provides a lot of data about the world of Westeros. To prevent our servers from getting cranky, the API will automatically paginate the responses. You will learn how to create requests with pagination parameters and consume the response-
+An API of Ice And Fire provides a lot of data about the world of Westeros. To prevent our servers from getting cranky, the API will automatically paginate the responses. You will learn how to create requests with pagination parameters and consume the response-
 
 **Things worth noting:**
 
@@ -52,7 +52,7 @@ $ curl -I "http://www.anapioficeandfire.com/api/characters?page=1&pageSize=10"
 
 **The possible values in the link response header are:**
 
-<table class="table table-bordered table-hover">
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -91,7 +91,7 @@ Text about rate limiting here...
 ### Versioning
 
 
-Custom media types are used in An Api of Ice And Fire to let consumers choose which **version** of the data they wish to receive. This is done by adding the following type to the Accept header when you make a request. Note that media types are specific to resources, this allows them to change independently from each other.
+Custom media types are used in An API of Ice And Fire to let consumers choose which **version** of the data they wish to receive. This is done by adding the following type to the Accept header when you make a request. Note that media types are specific to resources, this allows them to change independently from each other.
 
 <div class="alert alert-dismissible alert-warning">
 
