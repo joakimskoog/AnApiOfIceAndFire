@@ -10,7 +10,7 @@ namespace AnApiOfIceAndFire.Data
         public DbSet<CharacterEntity> Characters { get; set; }
         public DbSet<HouseEntity> Houses { get; set; }   
 
-        public AnApiOfIceAndFireContext() : base("AnApiOfIceAndFire")
+        public AnApiOfIceAndFireContext() : base("AnApiOfIceAndFire_db")
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;
