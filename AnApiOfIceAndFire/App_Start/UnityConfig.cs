@@ -4,6 +4,7 @@ using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Entities;
 using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Domain.Services;
+using AnApiOfIceAndFire.Infrastructure;
 using AnApiOfIceAndFire.Models.v0;
 using AnApiOfIceAndFire.Models.v0.Mappers;
 using Geymsla;
@@ -45,9 +46,9 @@ namespace AnApiOfIceAndFire
             // container.LoadConfiguration();    
 
             container.RegisterType<DbContext, AnApiOfIceAndFireContext>();
-            container.RegisterType<IReadOnlyRepository<BookEntity,int>, EntityFrameworkRepository<BookEntity,int>>();
-            container.RegisterType<IReadOnlyRepository<CharacterEntity,int>, EntityFrameworkRepository<CharacterEntity,int>>();
-            container.RegisterType<IReadOnlyRepository<HouseEntity,int>, EntityFrameworkRepository<HouseEntity,int>>();
+            container.RegisterType<IReadOnlyRepository<BookEntity, int>, EntityFrameworkRepository<BookEntity, int>>();
+            container.RegisterType<IReadOnlyRepository<CharacterEntity, int>, EntityFrameworkRepository<CharacterEntity, int>>();
+            container.RegisterType<IReadOnlyRepository<HouseEntity, int>, EntityFrameworkRepository<HouseEntity, int>>();
             container.RegisterType<IModelMapper<MediaType, Models.v0.MediaType>, MediaTypeMapper>();
             container.RegisterType<IModelMapper<IBook, Book>, BookMapper>();
             container.RegisterType<IModelMapper<ICharacter, Character>, CharacterMapper>();
@@ -55,6 +56,7 @@ namespace AnApiOfIceAndFire
             container.RegisterType<IModelService<IBook>, BookService>();
             container.RegisterType<IModelService<ICharacter>, CharacterService>();
             container.RegisterType<IModelService<IHouse>, HouseService>();
+            container.RegisterType<IApiSettings, WebConfigSettings>();
         }
     }
 }

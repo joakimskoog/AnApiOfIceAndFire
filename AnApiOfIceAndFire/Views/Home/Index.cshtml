@@ -16,12 +16,12 @@
         @using (Html.BeginForm("Charge", "Home", FormMethod.Post))
         {
             <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="pk_test_D2gVDcOQdqBVcvNpZFDUZ1R1"
+                    data-key="@ViewBag.StripePublicKey"
                     data-image=""
                     data-name="An Api of Ice And Fire"
                     data-description="Donate and keep us alive!"
-                    data-currency="usd"
-                    data-amount="500">
+                    data-currency="@ViewBag.StripeDonationCurrency"
+                    data-amount="@ViewBag.StripeDonationAmountInCents">
             </script>
         }
         <p>You can also help by contributing to the project itself, it's completely open source and is available over at <a href="https://github.com/joakimskoog/AnApiOfIceAndFire">Github</a>.</p>
