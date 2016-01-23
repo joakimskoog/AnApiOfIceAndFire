@@ -55,7 +55,7 @@ It has the following attributes:
     <tr>
       <td>released</td>
       <td>date</td>
-      <td>The date, in ISO 8601 format, that this book was released</td>
+      <td>The date, in ISO 8601 format, which this book was released</td>
     </tr>
     <tr>
       <td>characters</td>
