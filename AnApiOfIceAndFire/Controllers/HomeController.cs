@@ -20,7 +20,7 @@ namespace AnApiOfIceAndFire.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "An API of Ice And Fire";
             ViewBag.StripeDonationCurrency = _settings.StripeDonationCurrency;
             ViewBag.StripePublicKey = _settings.StripePublicKey;
             ViewBag.StripeDonationAmountInCents = _settings.StripeDonationAmountInCents;
