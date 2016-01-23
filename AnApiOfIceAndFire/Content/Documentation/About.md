@@ -3,7 +3,7 @@
 
 An API of Ice And Fire is the world's greatest source for quantified and structured data from the universe of Ice and Fire (and the HBO series Game of Thrones).
 
-We give you access to data about all **Books**, **Characters** and **Houses** in an easy to use [JSON](http://json.org/) format.
+We give you access to data about all the **Books**, **Characters** and **Houses** in an easy to use [JSON](http://json.org/) format.
 
 ## Who are you?
 
