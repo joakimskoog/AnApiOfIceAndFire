@@ -45,7 +45,7 @@ It has the following attributes:
     <tr>
       <td>country</td>
       <td>string</td>
-      <td>The country that this book was published in.</td>
+      <td>The country which this book was published in.</td>
     </tr>
     <tr>
       <td>mediaType</td>
