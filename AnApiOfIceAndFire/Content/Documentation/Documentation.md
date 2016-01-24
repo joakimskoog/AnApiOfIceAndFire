@@ -85,13 +85,28 @@ These links can then be used to navigate to other pages of results.
 ### Rate Limiting
 
 
-Text about rate limiting here...
+To prevent malicious usage of our API we've a limit on the number of requests a given IP address can make to the API. This limit is set to 5000 requests per day. There should be no reason for hitting the limit if you implement proper caching strategies in your client. If you happen to hit the limit you'll receive a [403 Forbidden](https://en.wikipedia.org/wiki/HTTP_403) on all your requests for the remainder of the 24 hour time period.
 
 <a name="caching"></a>
 ### Caching
 
 
-Text about caching here...
+To help our server and your client we provide a few ways for you to use caching. Each API response includes the [ETag-header](https://en.wikipedia.org/wiki/HTTP_ETag) and the Last-Modified header.
+These headers can be used to ask our server if the data has changed or not. If the data has not changed you will receive an empty response body with a [304 Not Modified](https://tools.ietf.org/html/rfc7232#section-4.1).
+If the data has changed you will receive a 200 with the updated data.
+
+**To use the ETag, include the following header in your request:**
+``` command-line
+If-None-Match: "your_etag_here"
+```
+
+
+**To use Last-Modified, include the following header in your request:**
+``` command-line
+If-Modified-Since: "date_here"
+```
+
+We advice you to use the above mentioned caching strategies, this will increase the speed of your client as well as save us bandwidth.
 
 <a name="versioning"></a>
 ### Versioning
