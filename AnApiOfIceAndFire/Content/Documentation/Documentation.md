@@ -87,6 +87,12 @@ These links can then be used to navigate to other pages of results.
 
 Text about rate limiting here...
 
+<a name="caching"></a>
+### Caching
+
+
+Text about caching here...
+
 <a name="versioning"></a>
 ### Versioning
 
