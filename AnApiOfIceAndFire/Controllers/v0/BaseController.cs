@@ -34,15 +34,16 @@ namespace AnApiOfIceAndFire.Controllers.v0
         [HttpGet]
         public virtual async Task<IHttpActionResult> Get(int id)
         {
-            var model = await _modelService.GetAsync(id);
-            if (model == null)
-            {
-                return NotFound();
-            }
+            throw new Exception("Testing exception logging");
+            //var model = await _modelService.GetAsync(id);
+            //if (model == null)
+            //{
+            //    return NotFound();
+            //}
 
-            var mappedModel = _modelMapper.Map(model, Url);
+            //var mappedModel = _modelMapper.Map(model, Url);
 
-            return Ok(mappedModel);
+            //return Ok(mappedModel);
         }
 
         [HttpHead]
