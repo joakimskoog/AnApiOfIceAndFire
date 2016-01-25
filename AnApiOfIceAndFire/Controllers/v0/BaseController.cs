@@ -35,15 +35,15 @@ namespace AnApiOfIceAndFire.Controllers.v0
         public virtual async Task<IHttpActionResult> Get(int id)
         {
             throw new Exception("Testing unhandled exception for Application Insights");
-            var model = await _modelService.GetAsync(id);
-            if (model == null)
-            {
-                return NotFound();
-            }
+            //var model = await _modelService.GetAsync(id);
+            //if (model == null)
+            //{
+            //    return NotFound();
+            //}
 
-            var mappedModel = _modelMapper.Map(model, Url);
+            //var mappedModel = _modelMapper.Map(model, Url);
 
-            return Ok(mappedModel);
+            //return Ok(mappedModel);
         }
 
         [HttpHead]
