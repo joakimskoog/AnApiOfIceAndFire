@@ -31,6 +31,9 @@ namespace AnApiOfIceAndFire
             //Replace the default one with our own so that we can supply a custom message instead of stack trace.
             config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
 
+            //Add a logger that logs exceptions to Application Insight
+            config.Services.Add(typeof(IExceptionLogger), new ApplicationInsightExceptionLogger());
+
             //Use indented to make it more readable for the consumer, using gzip is better for bandwidth anyway.
             config.Formatters.JsonFormatter.SerializerSettings.Formatting = Formatting.Indented;
 
