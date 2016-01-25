@@ -13,7 +13,7 @@ If you're interested in using a native implementation, please take a look at the
 ### Current Version
 
 
-The current version of the API is 0. 
+The current version of the API is 1. 
 
 <a name="authentication"></a>
 ### Authentication
@@ -122,7 +122,7 @@ Custom media types are used in An API of Ice And Fire to let consumers choose wh
 
 You specify a version like so:
 
-    application/vnd.anapioficeandfire+json; version=0
+    application/vnd.anapioficeandfire+json; version=1
 
 # Resources
 - - -

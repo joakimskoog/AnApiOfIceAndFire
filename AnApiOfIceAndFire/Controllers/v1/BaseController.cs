@@ -4,12 +4,11 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Domain.Services;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models.v0.Mappers;
 
-namespace AnApiOfIceAndFire.Controllers.v0
+namespace AnApiOfIceAndFire.Controllers.v1
 {
     public abstract class BaseController<TModel, TOutputModel> : ApiController
     {

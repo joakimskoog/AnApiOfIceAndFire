@@ -224,11 +224,11 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\DocumentationController.cs" />
-    <Compile Include="Controllers\v0\BaseController.cs" />
-    <Compile Include="Controllers\v0\BooksController.cs" />
-    <Compile Include="Controllers\v0\CharactersController.cs" />
+    <Compile Include="Controllers\v1\BaseController.cs" />
+    <Compile Include="Controllers\v1\BooksController.cs" />
+    <Compile Include="Controllers\v1\CharactersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\v0\HousesController.cs" />
+    <Compile Include="Controllers\v1\HousesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

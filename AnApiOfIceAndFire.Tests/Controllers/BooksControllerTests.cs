@@ -9,7 +9,7 @@ using System.Web.Http;
 using System.Web.Http.Hosting;
 using System.Web.Http.Results;
 using System.Web.Http.Routing;
-using AnApiOfIceAndFire.Controllers.v0;
+using AnApiOfIceAndFire.Controllers.v1;
 using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Domain.Services;
 using AnApiOfIceAndFire.Models.v0;
