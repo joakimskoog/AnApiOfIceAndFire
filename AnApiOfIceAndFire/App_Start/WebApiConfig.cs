@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
+using System.Web.Http.ExceptionHandling;
 using AnApiOfIceAndFire.Infrastructure;
 using CacheCow.Server;
 using Newtonsoft.Json;
@@ -26,6 +27,9 @@ namespace AnApiOfIceAndFire
 
             //Adds a message handler that takes care of all caching for us (ETag and Last-Modified)
             config.MessageHandlers.Add(new CachingHandler(config));
+
+            //Replace the default one with our own so that we can supply a custom message instead of stack trace.
+            config.Services.Replace(typeof(IExceptionHandler), new GlobalExceptionHandler());
 
             //Use indented to make it more readable for the consumer, using gzip is better for bandwidth anyway.
             config.Formatters.JsonFormatter.SerializerSettings.Formatting = Formatting.Indented;

@@ -205,6 +205,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AcceptHeaderControllerSelector.cs" />
+    <Compile Include="Infrastructure\GlobalExceptionHandler.cs" />
     <Compile Include="Infrastructure\Html\HtmlHelperExtensions.cs" />
     <Compile Include="Infrastructure\IApiSettings.cs" />
     <Compile Include="Infrastructure\Links\HttpHeaderExtensions.cs" />
