@@ -34,6 +34,7 @@ namespace AnApiOfIceAndFire.Controllers.v0
         [HttpGet]
         public virtual async Task<IHttpActionResult> Get(int id)
         {
+            throw new Exception("Testing unhandled exception for Application Insights");
             var model = await _modelService.GetAsync(id);
             if (model == null)
             {
