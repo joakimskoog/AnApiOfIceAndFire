@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq.Expressions;
-using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Entities;
 using AnApiOfIceAndFire.Domain.Adapters;
 using AnApiOfIceAndFire.Domain.Models;
