@@ -16,7 +16,7 @@ namespace AnApiOfIceAndFire.Infrastructure
 
         public override void Log(ExceptionLoggerContext context)
         {
-            if (context != null && context.Exception != null)
+            if (context?.Exception != null)
             {
                 _telemetryClient.TrackException(context.Exception);
             }
