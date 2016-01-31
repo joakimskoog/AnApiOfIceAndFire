@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -33,6 +34,8 @@ namespace AnApiOfIceAndFire.Controllers.v1
         [HttpGet]
         public virtual async Task<IHttpActionResult> Get(int id)
         {
+            var sw = new Stopwatch();
+            sw.Start();
             var model = await _modelService.GetAsync(id);
             if (model == null)
             {
@@ -40,14 +43,17 @@ namespace AnApiOfIceAndFire.Controllers.v1
             }
 
             var mappedModel = _modelMapper.Map(model, Url);
-
-            return Ok(mappedModel);
+            
+            sw.Stop();
+            return Ok($"Operation took {sw.ElapsedMilliseconds} milliseconds");
         }
 
         [HttpHead]
         [HttpGet]
         public virtual async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize)
         {
+            var sw = new Stopwatch();
+            sw.Start();
             if (page == null)
             {
                 page = DefaultPage;
@@ -65,8 +71,10 @@ namespace AnApiOfIceAndFire.Controllers.v1
             var mappedModels = pagedModels.Select(pm => _modelMapper.Map(pm, Url));
             var pagingLinks = pagedModels.ToPagingLinks(Url, _routeName);
 
+            sw.Stop();
             var response = Request.CreateResponse(HttpStatusCode.OK, mappedModels);
             response.Headers.AddLinkHeader(pagingLinks);
+            response.Headers.Add("X-Operation-Duration-In-MS", $"{sw.ElapsedMilliseconds}");
 
             return response;
         }
