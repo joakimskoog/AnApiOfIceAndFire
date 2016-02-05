@@ -11,7 +11,6 @@ namespace AnApiOfIceAndFire.Data.Entities
         public string Died { get; set; }
 
         public string AliasesRaw { get; set; }
-        [NotMapped]
         public string[] Aliases
         {
             get { return AliasesRaw.Split(';'); }
@@ -19,7 +18,6 @@ namespace AnApiOfIceAndFire.Data.Entities
         }
 
         public string TitlesRaw { get; set; }
-        [NotMapped]
         public string[] Titles
         {
             get { return TitlesRaw.Split(';'); }
@@ -27,7 +25,6 @@ namespace AnApiOfIceAndFire.Data.Entities
         }
 
         public string TvSeriesRaw { get; set; }
-        [NotMapped]
         public string[] TvSeries
         {
             get { return TvSeriesRaw.Split(';'); }
@@ -35,7 +32,6 @@ namespace AnApiOfIceAndFire.Data.Entities
         }
 
         public string PlayedByRaw { get; set; }
-        [NotMapped]
         public string[] PlayedBy
         {
             get { return PlayedByRaw.Split(';'); }
@@ -51,13 +47,9 @@ namespace AnApiOfIceAndFire.Data.Entities
         public int? SpouseId { get; set; }
         public CharacterEntity Spouse { get; set; }
 
-        [InverseProperty("SwornMembers")]
         public ICollection<HouseEntity> Allegiances { get; set; } = new List<HouseEntity>();
 
-        [InverseProperty("Characters")]
         public ICollection<BookEntity> Books { get; set; } = new List<BookEntity>();
-
-        [InverseProperty("PovCharacters")]
         public ICollection<BookEntity> PovBooks { get; set; } = new List<BookEntity>();
     }
 }

@@ -7,6 +7,11 @@ namespace AnApiOfIceAndFire.Data.Configurations
     {
         public CharacterConfiguration()
         {
+            Ignore(c => c.Aliases)
+                .Ignore(c => c.Titles)
+                .Ignore(c => c.TvSeries)
+                .Ignore(c => c.PlayedBy);
+
             HasOptional(c => c.Father)
                 .WithMany()
                 .HasForeignKey(c => c.FatherId);
@@ -18,26 +23,7 @@ namespace AnApiOfIceAndFire.Data.Configurations
             HasOptional(c => c.Spouse)
                 .WithMany()
                 .HasForeignKey(c => c.SpouseId);
-
-
-            HasMany(c => c.Books)
-                .WithMany(b => b.Characters)
-                .Map(cb =>
-                {
-                    cb.MapLeftKey("BookId");
-                    cb.MapRightKey("CharacterId");
-                    cb.ToTable("BookCharacters");
-                });
-
-            HasMany(c => c.PovBooks)
-                .WithMany(b => b.PovCharacters)
-                .Map(cb =>
-                {
-                    cb.MapLeftKey("BookId");
-                    cb.MapRightKey("CharacterId");
-                    cb.ToTable("PovBookCharacters");
-                });
-
+       
             HasMany(c => c.Allegiances)
                 .WithMany(h => h.SwornMembers)
                 .Map(x =>

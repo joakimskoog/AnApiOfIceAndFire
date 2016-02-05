@@ -7,6 +7,10 @@ namespace AnApiOfIceAndFire.Data.Configurations
     {
         public HouseConfiguration()
         {
+            Ignore(h => h.Seats)
+                .Ignore(h => h.Titles)
+                .Ignore(h => h.AncestralWeapons);
+
             HasOptional(h => h.Founder)
                 .WithMany()
                 .HasForeignKey(h => h.FounderId);

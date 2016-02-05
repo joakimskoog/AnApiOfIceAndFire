@@ -12,8 +12,6 @@ namespace AnApiOfIceAndFire.Data.Entities
         public string ISBN { get; set; }
 
         public string AuthorsRaw { get; set; }
-
-        [NotMapped]
         public string[] Authors
         {
             get { return AuthorsRaw.Split(';'); }
@@ -26,10 +24,7 @@ namespace AnApiOfIceAndFire.Data.Entities
         public string Country { get; set; }
         public DateTime ReleaseDate { get; set; }
 
-        [InverseProperty("Books")]
         public ICollection<CharacterEntity> Characters { get; set; } = new List<CharacterEntity>();
-
-        [InverseProperty("PovBooks")]
         public ICollection<CharacterEntity> PovCharacters { get; set; } = new List<CharacterEntity>();
     }
 }

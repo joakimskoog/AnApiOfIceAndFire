@@ -13,7 +13,6 @@ namespace AnApiOfIceAndFire.Data.Entities
         public string DiedOut { get; set; }
 
         public string SeatsRaw { get; set; }
-        [NotMapped]
         public string[] Seats
         {
             get { return SeatsRaw.Split(','); }
@@ -21,7 +20,6 @@ namespace AnApiOfIceAndFire.Data.Entities
         }
 
         public string TitlesRaw { get; set; }
-        [NotMapped]
         public string[] Titles
         {
             get { return TitlesRaw.Split(';'); }
@@ -29,7 +27,6 @@ namespace AnApiOfIceAndFire.Data.Entities
         }
 
         public string AncestralWeaponsRaw { get; set; }
-        [NotMapped]
         public string[] AncestralWeapons
         {
             get { return AncestralWeaponsRaw.Split(';'); }
@@ -48,9 +45,7 @@ namespace AnApiOfIceAndFire.Data.Entities
         public int? OverlordId { get; set; }
         public HouseEntity Overlord { get; set; }
 
-        [InverseProperty("Allegiances")]
         public ICollection<CharacterEntity> SwornMembers { get; set; } = new List<CharacterEntity>();
-
         public ICollection<HouseEntity> CadetBranches { get; set; } = new List<HouseEntity>();
     }
 }
