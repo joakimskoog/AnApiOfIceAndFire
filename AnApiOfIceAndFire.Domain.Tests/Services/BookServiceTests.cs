@@ -10,6 +10,7 @@ using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Entities;
 using AnApiOfIceAndFire.Domain.Services;
 using Geymsla;
+using Geymsla.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 
@@ -128,10 +129,9 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
         public async Task GivenThatNoBooksExists_WhenTryingToGetPaginated_ThenPaginatedListIsEmpty()
         {
             var repository = MockRepository.GenerateMock<IReadOnlyRepository<BookEntity,int>>();
-            repository.Stub(x => x.GetAsync(null, CancellationToken.None, null))
+            repository.Stub(x => x.GetPaginatedListAsync(null, 0, 0, CancellationToken.None))
                 .IgnoreArguments()
-                .Return(Task.FromResult(Enumerable.Empty<BookEntity>()));
-            repository.Stub(x => x.GetAllAsQueryable()).Return(Enumerable.Empty<BookEntity>().AsQueryable());
+                .Return(Task.FromResult((IPagedList<BookEntity>)new PagedList<BookEntity>(Enumerable.Empty<BookEntity>().AsQueryable(), 1, 10)));
             var service = new BookService(repository);
 
             var paginatedBooks = await service.GetPaginatedAsync(1, 10);

@@ -8,6 +8,7 @@ using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Entities;
 using AnApiOfIceAndFire.Domain.Services;
 using Geymsla;
+using Geymsla.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 
@@ -123,10 +124,9 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
         public async Task GivenThatNoCharactersExists_WhenTryingToGetPaginated_ThenPaginatedListIsEmpty()
         {
             var repository = MockRepository.GenerateMock<IReadOnlyRepository<HouseEntity,int>>();
-            repository.Stub(x => x.GetAsync(null, CancellationToken.None, null))
+            repository.Stub(x => x.GetPaginatedListAsync(null, 0, 0, CancellationToken.None))
                 .IgnoreArguments()
-                .Return(Task.FromResult(Enumerable.Empty<HouseEntity>()));
-            repository.Stub(x => x.GetAllAsQueryable()).Return(Enumerable.Empty<HouseEntity>().AsQueryable());
+                .Return(Task.FromResult((IPagedList<HouseEntity>)new PagedList<HouseEntity>(Enumerable.Empty<HouseEntity>().AsQueryable(), 1, 10)));
             var service = new HouseService(repository);
 
             var paginatedCharacters = await service.GetPaginatedAsync(1, 10);

@@ -13,13 +13,7 @@ namespace AnApiOfIceAndFire
             var jqueryBundle = new ScriptBundle("~/bundles/jquery", "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
                 .Include("~/Scripts/jquery-{version}.min.js");
             jqueryBundle.CdnFallbackExpression = "window.jQuery";
-            
             bundles.Add(jqueryBundle);
-
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-            //            "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",

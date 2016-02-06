@@ -45,6 +45,7 @@ namespace AnApiOfIceAndFire
             // NOTE: To load from web.config uncomment the line below. Make sure to add a Microsoft.Practices.Unity.Configuration to the using statements.
             // container.LoadConfiguration();    
 
+            container.RegisterType<ISecondLevelCacheSettings, DefaultSecondLevelCacheSettings>(new InjectionConstructor(true, TimeSpan.FromHours(12)));
             container.RegisterType<DbContext, AnApiOfIceAndFireContext>();
             container.RegisterType<IReadOnlyRepository<BookEntity, int>, EntityFrameworkRepository<BookEntity, int>>();
             container.RegisterType<IReadOnlyRepository<CharacterEntity, int>, EntityFrameworkRepository<CharacterEntity, int>>();

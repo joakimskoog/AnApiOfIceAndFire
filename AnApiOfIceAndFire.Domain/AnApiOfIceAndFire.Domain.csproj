@@ -39,7 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Geymsla, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Geymsla.1.0.0\lib\Geymsla.dll</HintPath>
+      <HintPath>..\packages\Geymsla.2.0.1\lib\Geymsla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
