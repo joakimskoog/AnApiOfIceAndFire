@@ -7,5 +7,8 @@
 5. Submit a pull request that is up to date with the master branch
 6. Watch us accept it and deploy it to production
 
+##Worth noting
+* All contributions are welcome, it doesn't matter if it's a big feature or a small data fix.
+
 ##Development
 Coming soon...
