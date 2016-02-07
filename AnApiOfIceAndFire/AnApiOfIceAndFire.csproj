@@ -222,6 +222,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DataFeederActivator.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
@@ -305,6 +306,10 @@
     <Content Include="Scripts\jquery-2.2.0.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnApiOfIceAndFire.Data.Feeder\AnApiOfIceAndFire.Data.Feeder.csproj">
+      <Project>{87b77990-9b47-4e21-b418-5c7af63bf787}</Project>
+      <Name>AnApiOfIceAndFire.Data.Feeder</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj">
       <Project>{34374ae3-ddbd-4937-b7d2-67878b9baf57}</Project>
       <Name>AnApiOfIceAndFire.Data</Name>
