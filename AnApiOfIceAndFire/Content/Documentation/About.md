@@ -29,14 +29,3 @@ An API of Ice And Fire is built with [ASP.NET Web API 2](https://msdn.microsoft.
 The A Song of Ice And Fire series and its data is the property of [George R.R. Martin](http://www.georgerrmartin.com/). The data is used without claim of ownership.
 
 This project uses a BSD license.
-
-## Contributors
-
-
-An API of Ice And Fire would not be the same without the help from the following people:
-- [Joakim Skoog](https://github.com/joakimskoog)
-
-
-
-
-
