@@ -1,3 +1,9 @@
 ﻿p {
     margin: 1em 0;
 }
+
+#documentation pre {
+    /*min-height: 300px;*/
+    max-height: 300px;
+    overflow-y: auto;
+}
