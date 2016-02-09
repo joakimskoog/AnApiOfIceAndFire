@@ -1,4 +1,70 @@
 ﻿<div class="row">
+    <div class="col-sm-2 col-lg-2 col-md-2"></div>
+    <div class="col-sm-8 col-lg-8 col-md-8">
+        <h1 class="text-center">Try it out for yourself!</h1>
+        <div class="input-group">
+            <span class="input-group-addon">http://anapioficeandfire.com/api/</span>
+            <input type="text" class="form-control" id="request-url-input" aria-describedby="basic-addon3" placeholder="characters/583">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" onclick="makeRequest(); return false;">Request</button>
+            </span>
+        </div>
+        <small>Psst, want to see something cool? Try <a href="#" onClick="updateRequestUrl('books/1/'); return false;"><i>books/1</i></a>, <a href="#" onClick="updateRequestUrl('characters/583'); return false;"><i>characters/583</i></a> or <a href="#" onClick="updateRequestUrl('houses/378'); return false;"><i>houses/378</i></a></small>
+
+        <h4>Response:</h4>
+        <div class="well">
+            <pre id="responseOutput" class="pre-scrollable">
+{
+        "url": "http://anapioficeandfire.com/api/characters/583",
+        "name": "Jon Snow",
+        "culture": "Northmen",
+        "born": "In 283 AC",
+        "died": "",
+        "titles": [
+                "Lord Commander of the Night's Watch"
+        ],
+        "aliases": [
+                "Lord Snow",
+                "Ned Stark's Bastard",
+                "The Snow of Winterfell",
+                "The Crow-Come-Over",
+                "The 998th Lord Commander of the Night's Watch",
+                "The Bastard of Winterfell",
+                "The Black Bastard of the Wall",
+                "Lord Crow"
+        ],
+        "father": "",
+        "mother": "",
+        "spouse": "",
+        "allegiances": [
+                "http://anapioficeandfire.com/api/houses/362"
+        ],
+        "books": [
+                "http://anapioficeandfire.com/api/books/5"
+        ],
+        "povBooks": [
+                "http://anapioficeandfire.com/api/books/1",
+                "http://anapioficeandfire.com/api/books/2",
+                "http://anapioficeandfire.com/api/books/3",
+                "http://anapioficeandfire.com/api/books/8"
+        ],
+        "tvSeries": [
+                "Season 1",
+                "Season 2",
+                "Season 3",
+                "Season 4",
+                "Season 5"
+        ],
+        "playedBy": [
+                "Kit Harington"
+        ]
+}
+            </pre>
+        </div>
+    </div>
+    <div class="col-sm-2 col-lg-2 col-md-2"></div>
+</div>
+<div class="row">
     <div class="col-sm-1 col-lg-1 col-md-1"></div>
     <div class="col-sm-3 col-lg-3 col-md-3">
         <h2>What is this?</h2>
@@ -32,4 +98,35 @@
         </p>
     </div>
     <div class="col-sm-1 col-lg-1 col-md-1"></div>
+
+    <script type="text/javascript">
+        function updateRequestUrl(url) {
+            $('#request-url-input').val(url);
+            makeRequest();
+        }
+
+        function makeRequest() {
+            var url = $('#request-url-input').val();
+            if (url == '') { //User submitted empty url or did not change the placeholder text.
+                url = 'characters/583';
+            }
+            url = 'api/' + url;
+
+            $.ajax({
+                url: url,
+                context: document.body
+            }).complete(function (data) {
+                if (data['status'] == 200) {
+                    var jsonData = $.parseJSON(data['responseText']);
+                    $('#responseOutput').text(JSON.stringify(jsonData, null, '\t'));
+                }
+                else if (data['status'] == 404) {
+                    $('#responseOutput').text(data['status'] + ' ' + data['statusText']);
+                } else {
+                    $('#responseOutput').text('Something went wrong!');
+                }
+            });
+        }
+
+    </script>
 </div>
