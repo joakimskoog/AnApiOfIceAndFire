@@ -2,10 +2,10 @@
 ### Characters
 
 
-A Character resource is an individual within the Ice And Fire universe. 
+A Character is an individual within the Ice And Fire universe. 
 
-It has the following attributes:
-<table class="table table-striped table-hover">
+
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>

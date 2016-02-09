@@ -2,8 +2,7 @@
 ### Books
 
 
-It has the following attributes:
-<table class="table table-striped table-hover">
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -82,50 +81,50 @@ $ curl "http://www.anapioficeandfire.com/api/books"
 **Example response:**
 ``` command-line
 [
-{
-"url": "http://www.anapioficeandfire.com/api/books/1",
-"name": "A Game of Thrones",
-"isbn": "978-0553103540",
-"authors": [
-"George R. R. Martin"
-],
-"numberOfPages": 694,
-"publisher": "Bantam Books",
-"country": "United States",
-"mediaType": "Hardcover",
-"released": "1996-08-01T00:00:00",
-"characters": [
-"http://www.anapioficeandfire.com/api/characters/2",
-...
-],
-"povCharacters": [
-"http://www.anapioficeandfire.com/api/characters/148",
-...
-]
-},
-{
-"url": "http://www.anapioficeandfire.com/api/books/2",
-"name": "A Clash of Kings",
-"isbn": "978-0553108033",
-"authors": [
-"George R. R. Martin"
-],
-"numberOfPages": 768,
-"publisher": "Bantam Books",
-"country": "United States",
-"mediaType": "Hardcover",
-"released": "1999-02-02T00:00:00",
-"characters": [
-"http://www.anapioficeandfire.com/api/characters/2",
-...
-],
-"povCharacters": [
-"http://www.anapioficeandfire.com/api/characters/148",
-...
-]
-},
-...
-]
+  {
+    "url": "http://www.anapioficeandfire.com/api/books/1",
+    "name": "A Game of Thrones",
+    "isbn": "978-0553103540",
+    "authors": [
+      "George R. R. Martin"
+    ],
+    "numberOfPages": 694,
+    "publisher": "Bantam Books",
+    "country": "United States",
+    "mediaType": "Hardcover",
+    "released": "1996-08-01T00:00:00",
+    "characters": [
+      "http://www.anapioficeandfire.com/api/characters/2",
+      ...
+    ],
+    "povCharacters": [
+      "http://www.anapioficeandfire.com/api/characters/148",
+      ...
+    ]
+  },
+  {
+    "url": "http://www.anapioficeandfire.com/api/books/2",
+    "name": "A Clash of Kings",
+    "isbn": "978-0553108033",
+    "authors": [
+      "George R. R. Martin"
+    ],
+    "numberOfPages": 768,
+    "publisher": "Bantam Books",
+    "country": "United States",
+    "mediaType": "Hardcover",
+    "released": "1999-02-02T00:00:00",
+    "characters": [
+      "http://www.anapioficeandfire.com/api/characters/2",
+      ...
+    ],
+    "povCharacters": [
+      "http://www.anapioficeandfire.com/api/characters/148",
+      ...
+    ]
+  },
+  ...
+ ]
 ```
 
 #### Get specific book
@@ -139,24 +138,24 @@ $ curl "http://www.anapioficeandfire.com/api/books/1"
 **Example response:**
 ``` command-line
 {
-"url": "http://www.anapioficeandfire.com/api/books/1",
-"name": "A Game of Thrones",
-"isbn": "978-0553103540",
-"authors": [
-"George R. R. Martin"
-],
-"numberOfPages": 694,
-"publisher": "Bantam Books",
-"country": "United States",
-"mediaType": "Hardcover",
-"released": "1996-08-01T00:00:00",
-"characters": [
-"http://www.anapioficeandfire.com/api/characters/2",
-...
-],
-"povCharacters": [
-"http://www.anapioficeandfire.com/api/characters/148",
-...
-]
+  "url": "http://www.anapioficeandfire.com/api/books/1",
+  "name": "A Game of Thrones",
+  "isbn": "978-0553103540",
+  "authors": [
+    "George R. R. Martin"
+  ],
+  "numberOfPages": 694,
+  "publisher": "Bantam Books",
+  "country": "United States",
+  "mediaType": "Hardcover",
+  "released": "1996-08-01T00:00:00",
+  "characters": [
+    "http://www.anapioficeandfire.com/api/characters/2",
+    ...
+  ],
+  "povCharacters": [
+    "http://www.anapioficeandfire.com/api/characters/148",
+    ...
+  ]
 }
 ```
