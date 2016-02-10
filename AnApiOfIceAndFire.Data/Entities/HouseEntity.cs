@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace AnApiOfIceAndFire.Data.Entities
 {
@@ -14,21 +15,21 @@ namespace AnApiOfIceAndFire.Data.Entities
         public string SeatsRaw { get; set; }
         public string[] Seats
         {
-            get { return SeatsRaw.Split(','); }
-            set { SeatsRaw = string.Join(",", value); }
+            get { return SeatsRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries); }
+            set { SeatsRaw = string.Join(";", value); }
         }
 
         public string TitlesRaw { get; set; }
         public string[] Titles
         {
-            get { return TitlesRaw.Split(';'); }
+            get { return TitlesRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries); }
             set { TitlesRaw = string.Join(";", value); }
         }
 
         public string AncestralWeaponsRaw { get; set; }
         public string[] AncestralWeapons
         {
-            get { return AncestralWeaponsRaw.Split(';'); }
+            get { return AncestralWeaponsRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries); }
             set { AncestralWeaponsRaw = string.Join(";", value); }
         }
 

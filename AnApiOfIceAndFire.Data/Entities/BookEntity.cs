@@ -13,7 +13,7 @@ namespace AnApiOfIceAndFire.Data.Entities
         public string AuthorsRaw { get; set; }
         public string[] Authors
         {
-            get { return AuthorsRaw.Split(';'); }
+            get { return AuthorsRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries); }
             set { AuthorsRaw = string.Join(";", value); }
         }
 
