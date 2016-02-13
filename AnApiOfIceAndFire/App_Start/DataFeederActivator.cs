@@ -1,4 +1,9 @@
-﻿[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(AnApiOfIceAndFire.DataFeederActivator), "Start")]
+﻿using System.Diagnostics;
+using System.Web;
+using AnApiOfIceAndFire.Data;
+using AnApiOfIceAndFire.Data.Feeder;
+
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(AnApiOfIceAndFire.DataFeederActivator), "Start")]
 
 namespace AnApiOfIceAndFire
 {
@@ -7,10 +12,14 @@ namespace AnApiOfIceAndFire
         public static void Start()
         {
             /*
-             * Uncomment the row below if you want to create a local database and fill it with data.
+             * Uncomment the rows below if you want to create a local database and fill it with data.
              * Note that this can take up to 2 minutes the first time. After that it only takes a few seconds.
              */
-            //Feeder.FeedDatabase(new AnApiOfIceAndFireContext(), "urlToBooksHere", "urlToCharactersHere", "urlToHousesHere", s => Debug.WriteLine(s));
+            //var booksPath = HttpContext.Current.Server.MapPath(@"~/bin/Data/books.json");
+            //var charactersPath = HttpContext.Current.Server.MapPath(@"~/bin/Data/characters.json");
+            //var housesPath = HttpContext.Current.Server.MapPath(@"~/bin/Data/houses.json");
+
+            //Feeder.FeedDatabase(new AnApiOfIceAndFireContext(), booksPath, charactersPath,housesPath, s => Debug.WriteLine(s));
         }
     }
 }
