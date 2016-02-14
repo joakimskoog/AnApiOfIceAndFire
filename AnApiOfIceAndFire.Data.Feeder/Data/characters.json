@@ -1,6 +1,6 @@
 [
 {"Id":1,"Name":"","Culture":"Braavosi","Titles":[],"Aliases":["The Daughter of the Dusk"],"Born":"","Died":"","Father":null,"Mother":null,"Spouse":null,"Children":[],"Allegiances":[],"Books":[5],"PovBooks":[],"PlayedBy":[""],"TvSeries":[]},
-{"Id":2,"Name":"","Culture":"","Titles":[],"Aliases":["Hodor"],"Born":"","Died":"","Father":null,"Mother":null,"Spouse":null,"Children":[],"Allegiances":[362],"Books":[1,2,3,5,8],"PovBooks":[],"PlayedBy":["Kristian Nairn"],"TvSeries":["Season 1","Season 2","Season 3","Season 4"]},
+{"Id":2,"Name":"Walder","Culture":"","Titles":[],"Aliases":["Hodor"],"Born":"","Died":"","Father":null,"Mother":null,"Spouse":null,"Children":[],"Allegiances":[362],"Books":[1,2,3,5,8],"PovBooks":[],"PlayedBy":["Kristian Nairn"],"TvSeries":["Season 1","Season 2","Season 3","Season 4"]},
 {"Id":3,"Name":"","Culture":"","Titles":[],"Aliases":["Lamprey"],"Born":"","Died":"","Father":null,"Mother":null,"Spouse":null,"Children":[],"Allegiances":[15],"Books":[3],"PovBooks":[],"PlayedBy":[""],"TvSeries":[]},
 {"Id":4,"Name":"","Culture":"Braavosi","Titles":[],"Aliases":["The Merling Queen"],"Born":"","Died":"","Father":null,"Mother":null,"Spouse":null,"Children":[],"Allegiances":[],"Books":[5,8],"PovBooks":[],"PlayedBy":[""],"TvSeries":[]},
 {"Id":5,"Name":"","Culture":"","Titles":[],"Aliases":["Old Crackbones"],"Born":"","Died":"","Father":null,"Mother":null,"Spouse":null,"Children":[],"Allegiances":[],"Books":[5],"PovBooks":[],"PlayedBy":[""],"TvSeries":[]},
