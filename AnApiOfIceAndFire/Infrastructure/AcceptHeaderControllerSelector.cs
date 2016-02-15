@@ -158,7 +158,7 @@ namespace AnApiOfIceAndFire.Infrastructure
 
                     if (version == null)
                     {
-                        return _defaultControllerVersions[controllerName];
+                        return GetDefaultControllerVersion(controllerName);
                     }
 
                     int parsedVersion = -1;
@@ -171,7 +171,19 @@ namespace AnApiOfIceAndFire.Infrastructure
                 }
             }
 
-            return _defaultControllerVersions[controllerName];
+            return GetDefaultControllerVersion(controllerName);
+        }
+
+        private int? GetDefaultControllerVersion(string controllerName)
+        {
+            int defaultVersion = -1;
+
+            if (_defaultControllerVersions.TryGetValue(controllerName, out defaultVersion))
+            {
+                return defaultVersion;
+            }
+
+            return null;
         }
     }
 }
