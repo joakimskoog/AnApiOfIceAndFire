@@ -5,14 +5,17 @@ using System.Web.Http;
 using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Domain.Models.Filters;
 using AnApiOfIceAndFire.Domain.Services;
-using AnApiOfIceAndFire.Models.v0;
-using AnApiOfIceAndFire.Models.v0.Mappers;
+using AnApiOfIceAndFire.Infrastructure.Links;
+using AnApiOfIceAndFire.Models.v1;
+using AnApiOfIceAndFire.Models.v1.Mappers;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
     public class BooksController : BaseController<IBook, Book, BookFilter>
     {
-        public BooksController(IModelService<IBook,BookFilter> modelService, IModelMapper<IBook, Book> modelMapper) : base(modelService, modelMapper, BookLinkCreator.BookRouteName) { }
+        public BooksController(IModelService<IBook, BookFilter> modelService, IModelMapper<IBook, Book> modelMapper, IPagingLinksFactory<BookFilter> pagingLinksFactory)
+            : base(modelService, modelMapper, pagingLinksFactory)
+        { }
 
         [HttpHead]
         [HttpGet]

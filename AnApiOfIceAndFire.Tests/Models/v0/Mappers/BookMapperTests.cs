@@ -7,7 +7,7 @@ using System.Web.Http;
 using System.Web.Http.Hosting;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Domain.Models;
-using AnApiOfIceAndFire.Models.v0.Mappers;
+using AnApiOfIceAndFire.Models.v1.Mappers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 
@@ -157,7 +157,7 @@ namespace AnApiOfIceAndFire.Tests.Models.v0.Mappers
 
             var mappedBook = mapper.Map(book, CreateUrlHelper(RequestedUri));
 
-            Assert.AreEqual(AnApiOfIceAndFire.Models.v0.MediaType.Hardcover, mappedBook.MediaType);
+            Assert.AreEqual(AnApiOfIceAndFire.Models.v1.MediaType.Hardcover, mappedBook.MediaType);
         }
 
         [TestMethod]

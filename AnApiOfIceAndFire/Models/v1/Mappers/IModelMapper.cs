@@ -1,6 +1,6 @@
 ﻿using System.Web.Http.Routing;
 
-namespace AnApiOfIceAndFire.Models.v0.Mappers
+namespace AnApiOfIceAndFire.Models.v1.Mappers
 {
     public interface IModelMapper<in TInput, out TOutput>
     {

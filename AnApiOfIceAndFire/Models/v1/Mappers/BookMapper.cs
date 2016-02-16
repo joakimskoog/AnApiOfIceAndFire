@@ -2,10 +2,9 @@
 using System.Linq;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Domain.Models;
-using static AnApiOfIceAndFire.Models.v0.BookLinkCreator;
-using static AnApiOfIceAndFire.Models.v0.CharacterLinkCreator;
+using MediaType = AnApiOfIceAndFire.Models.v1.MediaType;
 
-namespace AnApiOfIceAndFire.Models.v0.Mappers
+namespace AnApiOfIceAndFire.Models.v1.Mappers
 {
     public class BookMapper : IModelMapper<IBook, Book>
     {
@@ -22,9 +21,9 @@ namespace AnApiOfIceAndFire.Models.v0.Mappers
             if (input == null) throw new ArgumentNullException(nameof(input));
             if (urlHelper == null) throw new ArgumentNullException(nameof(urlHelper));
 
-            var bookUrl = CreateBookLink(input, urlHelper);
-            var characterUrls = input.Characters?.Select(c => CreateCharacterLink(c, urlHelper));
-            var povCharacterUrls = input.POVCharacters?.Select(c => CreateCharacterLink(c, urlHelper));
+            var bookUrl = BookLinkCreator.CreateBookLink(input, urlHelper);
+            var characterUrls = input.Characters?.Select(c => CharacterLinkCreator.CreateCharacterLink(c, urlHelper));
+            var povCharacterUrls = input.POVCharacters?.Select(c => CharacterLinkCreator.CreateCharacterLink(c, urlHelper));
             var mediaType = _mediaTypeMapper.Map(input.MediaType, urlHelper);
 
             return new Book(bookUrl, input.Name, input.ISBN, input.Authors, input.NumberOfPages, input.Publisher,

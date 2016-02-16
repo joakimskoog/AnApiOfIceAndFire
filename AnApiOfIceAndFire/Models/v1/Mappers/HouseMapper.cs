@@ -2,10 +2,8 @@
 using System.Linq;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Domain.Models;
-using static AnApiOfIceAndFire.Models.v0.CharacterLinkCreator;
-using static AnApiOfIceAndFire.Models.v0.HouseLinkCreator;
 
-namespace AnApiOfIceAndFire.Models.v0.Mappers
+namespace AnApiOfIceAndFire.Models.v1.Mappers
 {
     public class HouseMapper : IModelMapper<IHouse, House>
     {
@@ -14,13 +12,13 @@ namespace AnApiOfIceAndFire.Models.v0.Mappers
             if (input == null) throw new ArgumentNullException(nameof(input));
             if (urlHelper == null) throw new ArgumentNullException(nameof(urlHelper));
 
-            var url = CreateHouseLink(input, urlHelper);
-            var currentLordUrl = CreateCharacterLink(input.CurrentLord, urlHelper);
-            var heirUrl = CreateCharacterLink(input.Heir, urlHelper);
-            var founderUrl = CreateCharacterLink(input.Founder, urlHelper);
-            var swornMembersUrls = input.SwornMembers?.Select(c => CreateCharacterLink(c, urlHelper));
-            var overlordUrl = CreateHouseLink(input.Overlord, urlHelper);
-            var cadetBranchesUrls = input.CadetBranches?.Select(h => CreateHouseLink(h, urlHelper));
+            var url = HouseLinkCreator.CreateHouseLink(input, urlHelper);
+            var currentLordUrl = CharacterLinkCreator.CreateCharacterLink(input.CurrentLord, urlHelper);
+            var heirUrl = CharacterLinkCreator.CreateCharacterLink(input.Heir, urlHelper);
+            var founderUrl = CharacterLinkCreator.CreateCharacterLink(input.Founder, urlHelper);
+            var swornMembersUrls = input.SwornMembers?.Select(c => CharacterLinkCreator.CreateCharacterLink(c, urlHelper));
+            var overlordUrl = HouseLinkCreator.CreateHouseLink(input.Overlord, urlHelper);
+            var cadetBranchesUrls = input.CadetBranches?.Select(h => HouseLinkCreator.CreateHouseLink(h, urlHelper));
 
             return new House(url, input.Name)
             {

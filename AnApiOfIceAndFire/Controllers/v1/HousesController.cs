@@ -5,14 +5,16 @@ using System.Web.Http;
 using AnApiOfIceAndFire.Domain.Models;
 using AnApiOfIceAndFire.Domain.Models.Filters;
 using AnApiOfIceAndFire.Domain.Services;
-using AnApiOfIceAndFire.Models.v0;
-using AnApiOfIceAndFire.Models.v0.Mappers;
+using AnApiOfIceAndFire.Infrastructure.Links;
+using AnApiOfIceAndFire.Models.v1;
+using AnApiOfIceAndFire.Models.v1.Mappers;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
     public class HousesController : BaseController<IHouse, House, HouseFilter>
     {
-        public HousesController(IModelService<IHouse, HouseFilter> modelService, IModelMapper<IHouse, House> modelMapper) : base(modelService, modelMapper, HouseLinkCreator.HouseRouteName)
+        public HousesController(IModelService<IHouse, HouseFilter> modelService, IModelMapper<IHouse, House> modelMapper, IPagingLinksFactory<HouseFilter> pagingLinksFactory)
+            : base(modelService, modelMapper, pagingLinksFactory)
         {
         }
 
