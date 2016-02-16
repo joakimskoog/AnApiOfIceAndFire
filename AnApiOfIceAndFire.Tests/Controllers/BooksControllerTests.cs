@@ -11,6 +11,7 @@ using System.Web.Http.Results;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Controllers.v1;
 using AnApiOfIceAndFire.Domain.Models;
+using AnApiOfIceAndFire.Domain.Models.Filters;
 using AnApiOfIceAndFire.Domain.Services;
 using AnApiOfIceAndFire.Models.v0;
 using AnApiOfIceAndFire.Models.v0.Mappers;
@@ -36,15 +37,15 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         [ExpectedException(typeof(ArgumentNullException))]
         public void GivenThatModelMapperIsNull_WhenConstructingBooksController_ThenArgumentNullExceptionIsThrown()
         {
-            var controller = new BooksController(MockRepository.GenerateMock<IModelService<IBook>>(), null);
+            var controller = new BooksController(MockRepository.GenerateMock<IModelService<IBook,BookFilter>>(), null);
         }
 
         [TestMethod]
         public async Task GivenThatBookWithGivenIdDoesNotExist_WhenTryingToGetBook_ThenResultIsOfTypeNotFound()
         {
-            var service = MockRepository.GenerateMock<IModelService<IBook>>();
+            var service = MockRepository.GenerateMock<IModelService<IBook, BookFilter>>();
             service.Stub(x => x.GetAsync(Arg<int>.Is.Anything)).Return(Task.FromResult((IBook)null));
-            var controller = new BooksController(service, MockRepository.GenerateMock<IModelMapper<IBook, Book>>());
+            BaseController<IBook,Book,BookFilter> controller = new BooksController(service, MockRepository.GenerateMock<IModelMapper<IBook, Book>>());
 
             var result = await controller.Get(1);
 
@@ -54,7 +55,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         [TestMethod]
         public async Task GivenThatBookWithGivenIdExists_WhenTryingToGetBook_ThenResultContainsBook()
         {
-            var service = MockRepository.GenerateMock<IModelService<IBook>>();
+            var service = MockRepository.GenerateMock<IModelService<IBook, BookFilter>>();
             var book = MockRepository.GenerateMock<IBook>();
             book.Stub(x => x.Name).Return("book");
             book.Stub(x => x.Identifier).Return(1);
@@ -72,7 +73,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
                 .Return(new Book("someKindOfUrl/1", book.Name, book.ISBN, book.Authors, book.NumberOfPages,
                     book.Publisher, book.Country,
                     AnApiOfIceAndFire.Models.v0.MediaType.Hardcover, book.Released, new List<string>(), new List<string>()));
-            var controller = new BooksController(service, mapper);
+            BaseController<IBook, Book,BookFilter> controller = new BooksController(service, mapper);
 
 
             var result = await controller.Get(1);
@@ -86,8 +87,8 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         [TestMethod]
         public async Task GivenThatNoBooksExists_WhenTryingTogetAll_ThenResultContainsNoBooks()
         {
-            var service = MockRepository.GenerateMock<IModelService<IBook>>();
-            service.Stub(x => x.GetPaginatedAsync(Arg<int>.Is.Anything, Arg<int>.Is.Anything))
+            var service = MockRepository.GenerateMock<IModelService<IBook, BookFilter>>();
+            service.Stub(x => x.GetPaginatedAsync(0,0,null)).IgnoreArguments()
                 .Return(Task.FromResult((IPagedList<IBook>)new PagedList<IBook>(Enumerable.Empty<IBook>().AsQueryable(), 1, 1)));
             var mapper = MockRepository.GenerateMock<IModelMapper<IBook, Book>>();
             var urlHelper = MockRepository.GenerateMock<UrlHelper>();
@@ -111,8 +112,8 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         public async Task GivenThatOneBookExists_WhenTryingToGetAll_ThenResultContainsCorrectBook()
         {
             var book = CreateMockedBook(1);
-            var service = MockRepository.GenerateMock<IModelService<IBook>>();
-            service.Stub(x => x.GetPaginatedAsync(Arg<int>.Is.Anything, Arg<int>.Is.Anything))
+            var service = MockRepository.GenerateMock<IModelService<IBook, BookFilter>>();
+            service.Stub(x => x.GetPaginatedAsync(0,0)).IgnoreArguments()
                 .Return(Task.FromResult((IPagedList<IBook>)new PagedList<IBook>(new List<IBook> { book }.AsQueryable(), 1, 1)));
             var urlHelper = CreateUrlHelper("http://localhost/api/books/1");
             var mapper = new BookMapper(new MediaTypeMapper());

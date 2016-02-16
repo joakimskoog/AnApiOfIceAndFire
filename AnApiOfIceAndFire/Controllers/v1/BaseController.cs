@@ -10,17 +10,17 @@ using AnApiOfIceAndFire.Models.v0.Mappers;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
-    public abstract class BaseController<TModel, TOutputModel> : ApiController
+    public abstract class BaseController<TModel, TOutputModel, TFilter> : ApiController where TFilter : class
     {
         public const int DefaultPage = 1;
         public const int DefaultPageSize = 10;
         public const int MaximumPageSize = 50;
 
-        private readonly IModelService<TModel> _modelService;
+        private readonly IModelService<TModel, TFilter> _modelService;
         private readonly IModelMapper<TModel, TOutputModel> _modelMapper;
         private readonly string _routeName;
 
-        protected BaseController(IModelService<TModel> modelService, IModelMapper<TModel, TOutputModel> modelMapper, string routeName)
+        protected BaseController(IModelService<TModel, TFilter> modelService, IModelMapper<TModel, TOutputModel> modelMapper, string routeName)
         {
             if (modelService == null) throw new ArgumentNullException(nameof(modelService));
             if (modelMapper == null) throw new ArgumentNullException(nameof(modelMapper));
@@ -40,13 +40,11 @@ namespace AnApiOfIceAndFire.Controllers.v1
             }
 
             var mappedModel = _modelMapper.Map(model, Url);
-            
+
             return Ok(mappedModel);
         }
 
-        [HttpHead]
-        [HttpGet]
-        public virtual async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize)
+        protected async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, TFilter filter = null)
         {
             if (page == null)
             {
@@ -61,13 +59,13 @@ namespace AnApiOfIceAndFire.Controllers.v1
                 pageSize = MaximumPageSize;
             }
 
-            var pagedModels = await _modelService.GetPaginatedAsync(page.Value, pageSize.Value);
+            var pagedModels = await _modelService.GetPaginatedAsync(page.Value, pageSize.Value, filter);
             var mappedModels = pagedModels.Select(pm => _modelMapper.Map(pm, Url));
             var pagingLinks = pagedModels.ToPagingLinks(Url, _routeName);
 
             var response = Request.CreateResponse(HttpStatusCode.OK, mappedModels);
             response.Headers.AddLinkHeader(pagingLinks);
-            
+
             return response;
         }
     }
