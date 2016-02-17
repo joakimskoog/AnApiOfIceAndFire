@@ -102,6 +102,7 @@
     <Compile Include="IntegrationTests\BooksControllerTests.cs" />
     <Compile Include="IntegrationTests\CharactersControllerTests.cs" />
     <Compile Include="IntegrationTests\DbIntegrationTestHarness.cs" />
+    <Compile Include="IntegrationTests\HousesControllerTests.cs" />
     <Compile Include="IntegrationTests\TestCleanup.cs" />
     <Compile Include="Models\v0\Mappers\BookMapperTests.cs" />
     <Compile Include="Models\v0\Mappers\CharacterMapperTests.cs" />

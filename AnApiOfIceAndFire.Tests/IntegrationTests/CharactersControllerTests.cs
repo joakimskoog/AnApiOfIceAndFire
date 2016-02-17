@@ -104,7 +104,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
         }
 
         [TestMethod]
-        public async Task GivenTwoBooksAndOneMatchingNameFilterParameter_WhenTryingToGetCharacters_ThenOneCharacterIsReturned()
+        public async Task GivenTwoCharactersAndOneMatchingNameFilterParameter_WhenTryingToGetCharacters_ThenOneCharacterIsReturned()
         {
             SeedDatabase(
                 new CharacterEntity()
@@ -134,11 +134,11 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             IEnumerable<Character> characters;
             var result = await controller.Get(name: "characterTwo");
             result.TryGetContentValue(out characters);
-            var book = characters.ElementAt(0);
+            var character = characters.ElementAt(0);
 
             Assert.IsNotNull(characters);
             Assert.AreEqual(1, characters.Count());
-            Assert.AreEqual("characterTwo", book.Name);
+            Assert.AreEqual("characterTwo", character.Name);
         }
 
         [TestMethod]
@@ -174,11 +174,11 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             IEnumerable<Character> characters;
             var result = await controller.Get(culture:"cultureTwo");
             result.TryGetContentValue(out characters);
-            var book = characters.ElementAt(0);
+            var character = characters.ElementAt(0);
 
             Assert.IsNotNull(characters);
             Assert.AreEqual(1, characters.Count());
-            Assert.AreEqual("characterTwo", book.Name);
+            Assert.AreEqual("characterTwo", character.Name);
         }
 
         [TestMethod]
@@ -216,11 +216,11 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             IEnumerable<Character> characters;
             var result = await controller.Get(born: "201 AC");
             result.TryGetContentValue(out characters);
-            var book = characters.ElementAt(0);
+            var character = characters.ElementAt(0);
 
             Assert.IsNotNull(characters);
             Assert.AreEqual(1, characters.Count());
-            Assert.AreEqual("characterTwo", book.Name);
+            Assert.AreEqual("characterTwo", character.Name);
         }
 
         [TestMethod]
@@ -260,11 +260,11 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             IEnumerable<Character> characters;
             var result = await controller.Get(died: "202 AC");
             result.TryGetContentValue(out characters);
-            var book = characters.ElementAt(0);
+            var character = characters.ElementAt(0);
 
             Assert.IsNotNull(characters);
             Assert.AreEqual(1, characters.Count());
-            Assert.AreEqual("characterTwo", book.Name);
+            Assert.AreEqual("characterTwo", character.Name);
         }
 
         [TestMethod]
@@ -303,11 +303,11 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             IEnumerable<Character> characters;
             var result = await controller.Get(isAlive: true);
             result.TryGetContentValue(out characters);
-            var book = characters.ElementAt(0);
+            var character = characters.ElementAt(0);
 
             Assert.IsNotNull(characters);
             Assert.AreEqual(1, characters.Count());
-            Assert.AreEqual("characterTwo", book.Name);
+            Assert.AreEqual("characterTwo", character.Name);
         }
 
         private static UrlHelper CreateUrlHelper(string requestUri)
