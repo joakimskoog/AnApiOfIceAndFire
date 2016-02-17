@@ -41,8 +41,13 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
         {
             SeedDatabase(new BookEntity
             {
-                Id = 1, Name = "bookOne", ReleaseDate = new DateTime(2000, 1, 1), Authors = new[] { "George R.R. Martin" },
-                ISBN = "isbn", Publisher = "publisher", Country = "USA"
+                Id = 1,
+                Name = "bookOne",
+                ReleaseDate = new DateTime(2000, 1, 1),
+                Authors = new[] { "George R.R. Martin" },
+                ISBN = "isbn",
+                Publisher = "publisher",
+                Country = "USA"
             });
             var controller = CreateBooksController();
             controller.Url = CreateUrlHelper("http://localhost.com/api/books/1");
@@ -88,9 +93,9 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
                 Country = "USA"
             });
             var controller = CreateBooksController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/books/1");
+            controller.Url = CreateUrlHelper("http://localhost.com/api/books");
             controller.Configuration = new HttpConfiguration();
-            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/books/1"));
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/books"));
 
             IEnumerable<Book> books;
             var result = await controller.Get();
@@ -100,10 +105,119 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             Assert.AreEqual(3, books.Count());
         }
 
-   
+        [TestMethod]
+        public async Task GivenTwoBooksNameFilterParamterMatchingOneBook_WhenTryingToGetBooks_ThenOneBookIsReturned()
+        {
+            SeedDatabase(new BookEntity
+            {
+                Id = 1,
+                Name = "bookOne",
+                ReleaseDate = new DateTime(2000, 1, 1),
+                Authors = new[] { "George R.R. Martin" },
+                ISBN = "isbn",
+                Publisher = "publisher",
+                Country = "USA"
+            }, new BookEntity()
+            {
+                Id = 2,
+                Name = "bookTwo",
+                ReleaseDate = new DateTime(2000, 1, 1),
+                Authors = new[] { "George R.R. Martin" },
+                ISBN = "isbn",
+                Publisher = "publisher",
+                Country = "USA"
+            });
 
-        //public async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, 
-        //    string name = null, DateTime? fromReleaseDate = null, DateTime? toReleaseDate = null)
+            var controller = CreateBooksController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/books");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/books"));
+
+            IEnumerable<Book> books;
+            var result = await controller.Get(name: "bookTwo");
+            result.TryGetContentValue(out books);
+            var book = books.ElementAt(0);
+
+            Assert.IsNotNull(books);
+            Assert.AreEqual(1, books.Count());
+            Assert.AreEqual("bookTwo", book.Name);
+        }
+
+        [TestMethod]
+        public async Task GivenTwoBooksWithOneMatchingDateFilterParameters_WhenTryingToGetBooks_ThenOneBookIsReturned()
+        {
+            SeedDatabase(new BookEntity
+            {
+                Id = 1,
+                Name = "bookOne",
+                ReleaseDate = new DateTime(2000, 1, 1),
+                Authors = new[] { "George R.R. Martin" },
+                ISBN = "isbn",
+                Publisher = "publisher",
+                Country = "USA"
+            }, new BookEntity()
+            {
+                Id = 2,
+                Name = "bookTwo",
+                ReleaseDate = new DateTime(2005, 1, 1),
+                Authors = new[] { "George R.R. Martin" },
+                ISBN = "isbn",
+                Publisher = "publisher",
+                Country = "USA"
+            });
+
+            var controller = CreateBooksController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/books");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/books"));
+
+            IEnumerable<Book> books;
+            var result = await controller.Get(fromReleaseDate: new DateTime(2004, 1, 1), toReleaseDate: new DateTime(2005, 12, 12));
+            result.TryGetContentValue(out books);
+            var book = books.ElementAt(0);
+
+            Assert.IsNotNull(books);
+            Assert.AreEqual(1, books.Count());
+            Assert.AreEqual("bookTwo", book.Name);
+        }
+
+        [TestMethod]
+        public async Task GivenTwoBooksAndOneBookMatchesFilterParamters_WhenTryingToGetBooks_ThenOneBookIsReturned()
+        {
+            SeedDatabase(new BookEntity
+            {
+                Id = 1,
+                Name = "bookOne",
+                ReleaseDate = new DateTime(2000, 1, 1),
+                Authors = new[] { "George R.R. Martin" },
+                ISBN = "isbn",
+                Publisher = "publisher",
+                Country = "USA"
+            }, new BookEntity()
+            {
+                Id = 2,
+                Name = "bookTwo",
+                ReleaseDate = new DateTime(2005, 1, 1),
+                Authors = new[] { "George R.R. Martin" },
+                ISBN = "isbn",
+                Publisher = "publisher",
+                Country = "USA"
+            });
+
+            var controller = CreateBooksController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/books");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/books"));
+
+            IEnumerable<Book> books;
+            var result = await controller.Get(name:"bookTwo", fromReleaseDate: new DateTime(2004, 1, 1), toReleaseDate: new DateTime(2005, 12, 12));
+            result.TryGetContentValue(out books);
+            var book = books.ElementAt(0);
+
+            Assert.IsNotNull(books);
+            Assert.AreEqual(1, books.Count());
+            Assert.AreEqual("bookTwo", book.Name);
+        }
 
         private static UrlHelper CreateUrlHelper(string requestUri)
         {
