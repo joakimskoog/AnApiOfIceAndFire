@@ -180,8 +180,50 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             Assert.AreEqual("characterTwo", book.Name);
         }
 
+        [TestMethod]
+        public async Task GivenTwoCharactersWithOneMatchingBornFilterParameter_WhenTryingToGetCharacters_ThenOneCharacterIsReturned()
+        {
+            SeedDatabase(
+                new CharacterEntity()
+                {
+                    Id = 1,
+                    Name = "characterOne",
+                    Aliases = new[] { "aliasOne" },
+                    PlayedBy = new[] { "actorOne" },
+                    Titles = new[] { "titleOne" },
+                    TvSeries = new[] { "seriesOne" },
+                    Culture = "cultureOne",
+                    Born = "200 AC"
+                },
+                new CharacterEntity()
+                {
+                    Id = 2,
+                    Name = "characterTwo",
+                    Aliases = new[] { "aliasOne" },
+                    PlayedBy = new[] { "actorOne" },
+                    Titles = new[] { "titleOne" },
+                    TvSeries = new[] { "seriesOne" },
+                    Culture = "cultureTwo",
+                    Born = "201 AC"
+                });
+
+            var controller = CreateCharactersController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/characters");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/characters"));
+
+            IEnumerable<Character> characters;
+            var result = await controller.Get(born: "201 AC");
+            result.TryGetContentValue(out characters);
+            var book = characters.ElementAt(0);
+
+            Assert.IsNotNull(characters);
+            Assert.AreEqual(1, characters.Count());
+            Assert.AreEqual("characterTwo", book.Name);
+        }
+
         
-        //public string Born { get; set; }
+        
         //public string Died { get; set; }
         //public bool? IsAlive { get; set; }
 
