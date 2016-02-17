@@ -29,7 +29,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
             _modelService = modelService;
             _modelMapper = modelMapper;
             _pagingLinksFactory = pagingLinksFactory;
-            }
+        }
 
         [HttpGet]
         public virtual async Task<IHttpActionResult> Get(int id)
