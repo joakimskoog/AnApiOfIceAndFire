@@ -49,7 +49,7 @@ namespace AnApiOfIceAndFire.Domain.Services
                 }
                 if (filter.IsAlive.HasValue)
                 {
-                    characterEntities = characterEntities.Where(x => x.Died.Equals(string.Empty));
+                    characterEntities = characterEntities.Where(x => string.IsNullOrEmpty(x.Died));
                 }
 
                 return characterEntities;
