@@ -100,6 +100,7 @@
     <Compile Include="Infrastructure\Links\LinkTests.cs" />
     <Compile Include="Infrastructure\Links\PagedListExtensionsTests.cs" />
     <Compile Include="IntegrationTests\BooksControllerTests.cs" />
+    <Compile Include="IntegrationTests\CharactersControllerTests.cs" />
     <Compile Include="IntegrationTests\DbIntegrationTestHarness.cs" />
     <Compile Include="IntegrationTests\TestCleanup.cs" />
     <Compile Include="Models\v0\Mappers\BookMapperTests.cs" />
