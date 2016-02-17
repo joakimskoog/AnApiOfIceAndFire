@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -37,12 +39,12 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
         {
             SeedDatabase(new CharacterEntity()
             {
-                Id  = 1,
+                Id = 1,
                 Name = "characterOne",
-                Aliases = new[] {"aliasOne"},
-                PlayedBy = new[] {"actorOne"},
-                Titles = new[] {"titleOne"},
-                TvSeries = new[] {"seriesOne"} 
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" }
             });
             var controller = CreateCharactersController();
             controller.Url = CreateUrlHelper("http://localhost.com/api/characters/1");
@@ -55,6 +57,94 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             Assert.AreEqual("characterOne", characterResult.Name);
             Assert.AreEqual("http://localhost.com/api/characters/1", characterResult.URL);
         }
+
+        [TestMethod]
+        public async Task GivenThatThreeCharactersExistsAndNoFilterParameterInRequest_WhenTryingToGetCharacters_ThenAllCharactersAreReturned()
+        {
+            SeedDatabase(new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterOne",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" }
+            },
+            new CharacterEntity()
+            {
+                Id = 2,
+                Name = "characterTwo",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" }
+            },
+            new CharacterEntity()
+            {
+                Id = 3,
+                Name = "characterThree",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" }
+            });
+
+            var controller = CreateCharactersController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/characters");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/characters"));
+
+            IEnumerable<Character> characters;
+            var result = await controller.Get();
+            result.TryGetContentValue(out characters);
+
+            Assert.IsNotNull(characters);
+            Assert.AreEqual(3, characters.Count());
+        }
+
+        [TestMethod]
+        public async Task GivenTwoBooksAndOneMatchingNameFilterParameter_WhenTryingToGetCharacters_ThenOneCharacterIsReturned()
+        {
+            SeedDatabase(
+                new CharacterEntity()
+                {
+                    Id = 1,
+                    Name = "characterOne",
+                    Aliases = new[] { "aliasOne" },
+                    PlayedBy = new[] { "actorOne" },
+                    Titles = new[] { "titleOne" },
+                    TvSeries = new[] { "seriesOne" }
+                },
+                new CharacterEntity()
+                {
+                    Id = 2,
+                    Name = "characterTwo",
+                    Aliases = new[] { "aliasOne" },
+                    PlayedBy = new[] { "actorOne" },
+                    Titles = new[] { "titleOne" },
+                    TvSeries = new[] { "seriesOne" }
+                });
+
+            var controller = CreateCharactersController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/characters");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/characters"));
+
+            IEnumerable<Character> characters;
+            var result = await controller.Get(name: "characterTwo");
+            result.TryGetContentValue(out characters);
+            var book = characters.ElementAt(0);
+
+            Assert.IsNotNull(characters);
+            Assert.AreEqual(1, characters.Count());
+            Assert.AreEqual("characterTwo", book.Name);
+        }
+
+        
+        //public string Culture { get; set; }
+        //public string Born { get; set; }
+        //public string Died { get; set; }
+        //public bool? IsAlive { get; set; }
 
         private static UrlHelper CreateUrlHelper(string requestUri)
         {
@@ -94,7 +184,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             var cacheSettings = MockRepository.GenerateMock<ISecondLevelCacheSettings>();
             cacheSettings.Stub(x => x.ShouldUseSecondLevelCache).Return(false);
 
-            return new CharactersController(new CharacterService(new EntityFrameworkRepository<CharacterEntity, int>(DbContext, cacheSettings)), new CharacterMapper(), 
+            return new CharactersController(new CharacterService(new EntityFrameworkRepository<CharacterEntity, int>(DbContext, cacheSettings)), new CharacterMapper(),
                 new CharacterPagingLinksFactory());
         }
     }
