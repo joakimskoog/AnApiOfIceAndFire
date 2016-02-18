@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Linq.Expressions;
 using AnApiOfIceAndFire.Data.Entities;
@@ -50,11 +51,11 @@ namespace AnApiOfIceAndFire.Domain.Services
                 }
                 if (filter.HasTitles.HasValue)
                 {
-                    houseEntities = houseEntities.Where(x => x.Titles.Length > 0);
+                    houseEntities = houseEntities.Where(x => !string.IsNullOrEmpty(x.TitlesRaw));
                 }
                 if (filter.HasSeats.HasValue)
                 {
-                    houseEntities = houseEntities.Where(x => x.Seats.Length > 0);
+                    houseEntities = houseEntities.Where(x => !string.IsNullOrEmpty(x.SeatsRaw));
                 }
                 if (filter.HasDiedOut.HasValue)
                 {
@@ -62,7 +63,7 @@ namespace AnApiOfIceAndFire.Domain.Services
                 }
                 if (filter.HasAncestralWeapons.HasValue)
                 {
-                    houseEntities = houseEntities.Where(x => x.AncestralWeapons.Length > 0);
+                    houseEntities = houseEntities.Where(x => !string.IsNullOrEmpty(x.AncestralWeaponsRaw));
                 }
 
                 return houseEntities;
