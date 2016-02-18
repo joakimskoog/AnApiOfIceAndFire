@@ -8,9 +8,11 @@ namespace AnApiOfIceAndFire.Data
     {
         public DbSet<BookEntity> Books { get; set; }
         public DbSet<CharacterEntity> Characters { get; set; }
-        public DbSet<HouseEntity> Houses { get; set; }   
+        public DbSet<HouseEntity> Houses { get; set; }
 
-        public AnApiOfIceAndFireContext() : base("AnApiOfIceAndFire_db")
+        public AnApiOfIceAndFireContext() : this("AnApiOfIceAndFire_db") { }
+
+        internal AnApiOfIceAndFireContext(string nameOrConnectionString) : base(nameOrConnectionString)
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;

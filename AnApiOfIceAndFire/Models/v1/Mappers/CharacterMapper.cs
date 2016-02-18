@@ -2,11 +2,8 @@
 using System.Linq;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Domain.Models;
-using static AnApiOfIceAndFire.Models.v0.BookLinkCreator;
-using static AnApiOfIceAndFire.Models.v0.CharacterLinkCreator;
-using static AnApiOfIceAndFire.Models.v0.HouseLinkCreator;
 
-namespace AnApiOfIceAndFire.Models.v0.Mappers
+namespace AnApiOfIceAndFire.Models.v1.Mappers
 {
     public class CharacterMapper : IModelMapper<ICharacter, Character>
     {
@@ -15,13 +12,13 @@ namespace AnApiOfIceAndFire.Models.v0.Mappers
             if (input == null) throw new ArgumentNullException(nameof(input));
             if (urlHelper == null) throw new ArgumentNullException(nameof(urlHelper));
 
-            var url = CreateCharacterLink(input, urlHelper);
-            var fatherUrl = CreateCharacterLink(input.Father, urlHelper);
-            var motherUrl = CreateCharacterLink(input.Mother, urlHelper);
-            var spouseUrl = CreateCharacterLink(input.Spouse, urlHelper);
-            var booksUrls = input.Books?.Select(b => CreateBookLink(b, urlHelper));
-            var povBooksUrls = input.PovBooks?.Select(b => CreateBookLink(b, urlHelper));
-            var allegiances = input.Allegiances?.Select(h => CreateHouseLink(h, urlHelper));
+            var url = CharacterLinkCreator.CreateCharacterLink(input, urlHelper);
+            var fatherUrl = CharacterLinkCreator.CreateCharacterLink(input.Father, urlHelper);
+            var motherUrl = CharacterLinkCreator.CreateCharacterLink(input.Mother, urlHelper);
+            var spouseUrl = CharacterLinkCreator.CreateCharacterLink(input.Spouse, urlHelper);
+            var booksUrls = input.Books?.Select(b => BookLinkCreator.CreateBookLink(b, urlHelper));
+            var povBooksUrls = input.PovBooks?.Select(b => BookLinkCreator.CreateBookLink(b, urlHelper));
+            var allegiances = input.Allegiances?.Select(h => HouseLinkCreator.CreateHouseLink(h, urlHelper));
 
             return new Character(url)
             {

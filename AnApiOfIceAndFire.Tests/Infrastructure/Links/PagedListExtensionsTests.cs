@@ -43,7 +43,7 @@ namespace AnApiOfIceAndFire.Tests.Infrastructure.Links
         {
             IPagedList<int> pagedList = new PagedList<int>(new List<int> { 1, 2, 3 }.AsQueryable(), 1, 10);
             var urlHelper = MockRepository.GenerateMock<UrlHelper>();
-            urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<object>.Is.Anything)).Return("https://localhost.com");
+            urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<IDictionary<string,object>>.Is.Anything)).Return("https://localhost.com");
             var pagingLinks = pagedList.ToPagingLinks(urlHelper, "SomeRouteName").ToList();
 
             Assert.AreEqual(2, pagingLinks.Count);
@@ -56,7 +56,7 @@ namespace AnApiOfIceAndFire.Tests.Infrastructure.Links
         {
             IPagedList<int> pagedList = new PagedList<int>(new List<int> { 1, 2, 3 }.AsQueryable(), 1, 1);
             var urlHelper = MockRepository.GenerateMock<UrlHelper>();
-            urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<object>.Is.Anything)).Return("https://localhost.com");
+            urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<IDictionary<string,object>>.Is.Anything)).Return("https://localhost.com");
             var pagingLinks = pagedList.ToPagingLinks(urlHelper, "SomeRouteName").ToList();
 
             Assert.AreEqual(3, pagingLinks.Count);
@@ -68,7 +68,7 @@ namespace AnApiOfIceAndFire.Tests.Infrastructure.Links
         {
             IPagedList<int> pagedList = new PagedList<int>(new List<int> { 1, 2, 3 }.AsQueryable(), 3, 1);
             var urlHelper = MockRepository.GenerateMock<UrlHelper>();
-            urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<object>.Is.Anything)).Return("https://localhost.com");
+            urlHelper.Stub(x => x.Link(Arg<string>.Is.Anything, Arg<IDictionary<string,object>>.Is.Anything)).Return("https://localhost.com");
             var pagingLinks = pagedList.ToPagingLinks(urlHelper, "SomeRouteName").ToList();
 
             Assert.AreEqual(3, pagingLinks.Count);

@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+
 // ReSharper disable InconsistentNaming
 
-namespace AnApiOfIceAndFire.Models.v0
+namespace AnApiOfIceAndFire.Models.v1
 {
     public class House
     {

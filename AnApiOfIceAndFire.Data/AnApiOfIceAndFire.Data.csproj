@@ -43,11 +43,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Geymsla, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Geymsla.EntityFramework.2.1.0\lib\Geymsla.dll</HintPath>
+      <HintPath>..\packages\Geymsla.EntityFramework.2.1.1\lib\Geymsla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Geymsla.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Geymsla.EntityFramework.2.1.0\lib\Geymsla.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Geymsla.EntityFramework.2.1.1\lib\Geymsla.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

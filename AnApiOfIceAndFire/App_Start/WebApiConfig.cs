@@ -10,9 +10,9 @@ using Microsoft.ApplicationInsights.Extensibility;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
-using static AnApiOfIceAndFire.Models.v0.BookLinkCreator;
-using static AnApiOfIceAndFire.Models.v0.CharacterLinkCreator;
-using static AnApiOfIceAndFire.Models.v0.HouseLinkCreator;
+using static AnApiOfIceAndFire.Models.v1.BookLinkCreator;
+using static AnApiOfIceAndFire.Models.v1.CharacterLinkCreator;
+using static AnApiOfIceAndFire.Models.v1.HouseLinkCreator;
 
 namespace AnApiOfIceAndFire
 {
