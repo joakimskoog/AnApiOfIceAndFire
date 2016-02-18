@@ -160,6 +160,42 @@ $ curl "http://www.anapioficeandfire.com/api/characters"
 ]
 ```
 
+#### Filtering characters
+
+
+There is also the possibility to include filter parameters in your request to the http://www.anapioficeandfire.com/api/characters endpoint. They are described below.
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Usage</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>?name=name_here</td>
+      <td>Only characters with the given name are included in the response</td>
+    </tr>
+    <tr>
+      <td>?culture=culture_here</td>
+      <td>Only characters with the given culture are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?born=birth_year_here</td>
+      <td>Only characters that were born this given year are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?died=death_year_here</td>
+      <td>Only characters that died this given year are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?isAlive=true_or_false</td>
+      <td>Only characters that are alive are included in the response.</td>
+    </tr>
+  </tbody>
+</table>
+
 #### Get specific character
 
 

@@ -12,7 +12,7 @@ namespace AnApiOfIceAndFire.Data
 
         public AnApiOfIceAndFireContext() : this("AnApiOfIceAndFire_db") { }
 
-        public AnApiOfIceAndFireContext(string nameOrConnectionString) : base(nameOrConnectionString)
+        internal AnApiOfIceAndFireContext(string nameOrConnectionString) : base(nameOrConnectionString)
         {
             Configuration.LazyLoadingEnabled = false;
             Configuration.ProxyCreationEnabled = false;
