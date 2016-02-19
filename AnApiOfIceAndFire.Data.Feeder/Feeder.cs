@@ -22,6 +22,7 @@ namespace AnApiOfIceAndFire.Data.Feeder
 
             sw.Restart();
             var characterDtos = JsonConvert.DeserializeObject<List<CharacterDto>>(File.ReadAllText(charactersUrl));
+            var biter = characterDtos.FirstOrDefault(x => x.Id == 1222);
             sw.Stop();
             printAction($"Deserialization of characters: {sw.ElapsedMilliseconds}");
 
@@ -104,7 +105,7 @@ namespace AnApiOfIceAndFire.Data.Feeder
             var charactersToInsert = characters.Where(x => !charactersInDatabase.ContainsKey(x.Id));
             EFBatchOperation.For(context, context.Characters).InsertAll(charactersToInsert);
             EFBatchOperation.For(context, context.Characters).UpdateAll(charactersToUpdate, x => x.ColumnsToUpdate(y => y.Name, y => y.Born, y => y.Culture,
-                y => y.Died, y => y.Aliases, y => y.PlayedBy, y => y.Titles, y => y.TvSeries, y => y.FatherId, y => y.MotherId, y => y.SpouseId));
+                y => y.Died, y => y.AliasesRaw, y => y.PlayedByRaw, y => y.TitlesRaw, y => y.TvSeriesRaw, y => y.FatherId, y => y.MotherId, y => y.SpouseId));
             sw.Stop();
             printAction($"Adding characters: {sw.ElapsedMilliseconds}");
 
