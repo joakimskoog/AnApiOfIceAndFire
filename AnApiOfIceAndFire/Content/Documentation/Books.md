@@ -127,6 +127,34 @@ $ curl "http://www.anapioficeandfire.com/api/books"
  ]
 ```
 
+#### Filtering books
+
+
+There is also the possibility to include filter parameters in your request to the http://www.anapioficeandfire.com/api/books endpoint. They are described below.
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Usage</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>?name=name_here</td>
+      <td>Only books with the given name are included in the response</td>
+    </tr>
+    <tr>
+      <td>?fromReleaseDate=date_here</td>
+      <td>Only books that were released after, or on, the given date are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?toReleaseDate=date_here</td>
+      <td>Only books that were released before, or on, the given date are included in the response.</td>
+      </tr>
+  </tbody>
+</table>
+
 #### Get specific book
 
 

@@ -1,4 +1,4 @@
-﻿namespace AnApiOfIceAndFire.Models.v0
+﻿namespace AnApiOfIceAndFire.Models.v1
 {
     public enum MediaType
     {
