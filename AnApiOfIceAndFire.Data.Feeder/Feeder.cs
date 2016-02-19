@@ -22,7 +22,7 @@ namespace AnApiOfIceAndFire.Data.Feeder
 
             sw.Restart();
             var characterDtos = JsonConvert.DeserializeObject<List<CharacterDto>>(File.ReadAllText(charactersUrl));
-            var biter = characterDtos.FirstOrDefault(x => x.Id == 1222);
+
             sw.Stop();
             printAction($"Deserialization of characters: {sw.ElapsedMilliseconds}");
 
