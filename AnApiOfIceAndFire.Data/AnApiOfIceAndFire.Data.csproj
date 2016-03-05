@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201601151730281_FixedSpellingMistakeInHouseEntity.Designer.cs">
       <DependentUpon>201601151730281_FixedSpellingMistakeInHouseEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603052139312_Gender.cs" />
+    <Compile Include="Migrations\201603052139312_Gender.Designer.cs">
+      <DependentUpon>201603052139312_Gender.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601151730281_FixedSpellingMistakeInHouseEntity.resx">
       <DependentUpon>201601151730281_FixedSpellingMistakeInHouseEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603052139312_Gender.resx">
+      <DependentUpon>201603052139312_Gender.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
