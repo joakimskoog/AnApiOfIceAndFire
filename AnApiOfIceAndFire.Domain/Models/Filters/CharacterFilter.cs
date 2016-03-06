@@ -7,5 +7,6 @@
         public string Born { get; set; }
         public string Died { get; set; }
         public bool? IsAlive { get; set; }
+        public Gender? Gender { get; set; }
     }
 }

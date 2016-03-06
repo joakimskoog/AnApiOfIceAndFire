@@ -310,6 +310,215 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             Assert.AreEqual("characterTwo", character.Name);
         }
 
+        [TestMethod]
+        public async Task GivenOneFemaleCharacter_WhenTryingToGetMaleCharacters_ThenEmptyResponseIsReturned()
+        {
+            SeedDatabase(new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterOne",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" },
+                Culture = "cultureOne",
+                Born = "200 AC",
+                Died = "201 AC",
+                IsFemale = true
+            });
+            var controller = CreateCharactersController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/characters");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/characters"));
+
+            IEnumerable<Character> characters;
+            var result = await controller.Get(gender: Gender.Male);
+            result.TryGetContentValue(out characters);
+            
+            Assert.IsTrue(!characters.Any());
+        }
+
+        [TestMethod]
+        public async Task GivenOneFemaleCharacter_WhenTryingToGetFemaleCharacters_ThenOnlyFemaleCharactersAreReturned()
+        {
+            SeedDatabase(new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterOne",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" },
+                Culture = "cultureOne",
+                Born = "200 AC",
+                Died = "201 AC",
+                IsFemale = true
+            }, new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterTwo",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" },
+                Culture = "cultureOne",
+                Born = "200 AC",
+                Died = "201 AC",
+                IsFemale = false
+            });
+            var controller = CreateCharactersController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/characters");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/characters"));
+
+            IEnumerable<Character> characters;
+            var result = await controller.Get(gender: Gender.Female);
+            result.TryGetContentValue(out characters);
+
+            foreach (var character in characters)
+            {
+                Assert.AreEqual(Gender.Female, character.Gender);
+            }
+        }
+
+        [TestMethod]
+        public async Task GivenOneMaleCharacter_WhenTryingToGetFemaleCharacters_ThenEmptyResponseIsReturned()
+        {
+            SeedDatabase(new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterOne",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" },
+                Culture = "cultureOne",
+                Born = "200 AC",
+                Died = "201 AC",
+                IsFemale = false
+            });
+            var controller = CreateCharactersController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/characters");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/characters"));
+
+            IEnumerable<Character> characters;
+            var result = await controller.Get(gender: Gender.Female);
+            result.TryGetContentValue(out characters);
+
+            Assert.IsTrue(!characters.Any());
+        }
+
+        [TestMethod]
+        public async Task GivenOneMaleCharacter_WhenTryingToGetMaleCharacters_ThenOnlyMaleCharactersAreReturned()
+        {
+            SeedDatabase(new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterOne",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" },
+                Culture = "cultureOne",
+                Born = "200 AC",
+                Died = "201 AC",
+                IsFemale = false
+            }, new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterTwo",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" },
+                Culture = "cultureOne",
+                Born = "200 AC",
+                Died = "201 AC",
+                IsFemale = true
+            }, new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterThree",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" },
+                Culture = "cultureOne",
+                Born = "200 AC",
+                Died = "201 AC",
+                IsFemale = null
+            });
+            var controller = CreateCharactersController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/characters");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/characters"));
+
+            IEnumerable<Character> characters;
+            var result = await controller.Get(gender: Gender.Male);
+            result.TryGetContentValue(out characters);
+
+            foreach (var character in characters)
+            {
+                Assert.AreEqual(Gender.Male, character.Gender);
+            }
+        }
+
+        [TestMethod]
+        public async Task GivenOneUnknownCharacter_WhenTryingToGetUnknownCharacters_ThenOnlyUnknownCharactersAreReturned()
+        {
+            SeedDatabase(new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterOne",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" },
+                Culture = "cultureOne",
+                Born = "200 AC",
+                Died = "201 AC",
+                IsFemale = null
+            }, new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterTwo",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" },
+                Culture = "cultureOne",
+                Born = "200 AC",
+                Died = "201 AC",
+                IsFemale = true
+            }, new CharacterEntity()
+            {
+                Id = 1,
+                Name = "characterThree",
+                Aliases = new[] { "aliasOne" },
+                PlayedBy = new[] { "actorOne" },
+                Titles = new[] { "titleOne" },
+                TvSeries = new[] { "seriesOne" },
+                Culture = "cultureOne",
+                Born = "200 AC",
+                Died = "201 AC",
+                IsFemale = false
+            });
+            var controller = CreateCharactersController();
+            controller.Url = CreateUrlHelper("http://localhost.com/api/characters");
+            controller.Configuration = new HttpConfiguration();
+            controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/characters"));
+
+            IEnumerable<Character> characters;
+            var result = await controller.Get(gender: Gender.Unknown);
+            result.TryGetContentValue(out characters);
+
+            foreach (var character in characters)
+            {
+                Assert.AreEqual(Gender.Unknown, character.Gender);
+            }
+        }
+
         private static UrlHelper CreateUrlHelper(string requestUri)
         {
             var requestMessage = new HttpRequestMessage(HttpMethod.Get, new Uri(requestUri));
@@ -348,7 +557,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             var cacheSettings = MockRepository.GenerateMock<ISecondLevelCacheSettings>();
             cacheSettings.Stub(x => x.ShouldUseSecondLevelCache).Return(false);
 
-            return new CharactersController(new CharacterService(new EntityFrameworkRepository<CharacterEntity, int>(DbContext, cacheSettings)), new CharacterMapper(),
+            return new CharactersController(new CharacterService(new EntityFrameworkRepository<CharacterEntity, int>(DbContext, cacheSettings)), new CharacterMapper(new GenderMapper()),
                 new CharacterPagingLinksFactory());
         }
     }

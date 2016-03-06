@@ -51,6 +51,21 @@ namespace AnApiOfIceAndFire.Domain.Services
                 {
                     characterEntities = characterEntities.Where(x => string.IsNullOrEmpty(x.Died));
                 }
+                if (filter.Gender.HasValue)
+                {
+                    if (filter.Gender.Value == Gender.Female)
+                    {
+                        characterEntities = characterEntities.Where(x => x.IsFemale.HasValue && x.IsFemale.Value);
+                    }
+                    else if (filter.Gender.Value == Gender.Male)
+                    {
+                        characterEntities = characterEntities.Where(x => x.IsFemale.HasValue && !x.IsFemale.Value);
+                    }
+                    else
+                    {
+                        characterEntities = characterEntities.Where(x => !x.IsFemale.HasValue);
+                    }
+                }
 
                 return characterEntities;
             };

@@ -254,12 +254,15 @@
     <Compile Include="Models\v1\BookPagingLinksFactory.cs" />
     <Compile Include="Models\v1\CharacterLinkCreator.cs" />
     <Compile Include="Models\v1\CharacterPagingLinksFactory.cs" />
+    <Compile Include="Models\v1\Gender.cs" />
+    <Compile Include="Models\v1\GenderExtensions.cs" />
     <Compile Include="Models\v1\HouseLinkCreator.cs" />
     <Compile Include="Models\v1\HousePagingLinksFactory.cs" />
     <Compile Include="Models\v1\Mappers\BookMapper.cs" />
     <Compile Include="Models\v1\Character.cs" />
     <Compile Include="Models\v1\House.cs" />
     <Compile Include="Models\v1\Mappers\CharacterMapper.cs" />
+    <Compile Include="Models\v1\Mappers\GenderMapper.cs" />
     <Compile Include="Models\v1\Mappers\HouseMapper.cs" />
     <Compile Include="Models\v1\Mappers\IModelMapper.cs" />
     <Compile Include="Models\v1\Mappers\MediaTypeMapper.cs" />

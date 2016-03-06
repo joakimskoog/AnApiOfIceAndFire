@@ -58,6 +58,7 @@
     <Compile Include="Models\Filters\BookFilter.cs" />
     <Compile Include="Models\Filters\CharacterFilter.cs" />
     <Compile Include="Models\Filters\HouseFilter.cs" />
+    <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\MediaTypeEntityExtensions.cs" />
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Adapters\BookEntityAdapter.cs" />
