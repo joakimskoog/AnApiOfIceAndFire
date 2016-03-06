@@ -7,6 +7,7 @@ namespace AnApiOfIceAndFire.Data.Feeder
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool? IsFemale { get; set; }
         public string Culture { get; set; }
         public string[] Titles { get; set; }
         public string[] OtherTitles { get; set; }
@@ -31,6 +32,7 @@ namespace AnApiOfIceAndFire.Data.Feeder
             ////Note that SequenceEqual will return false if the items are the same but in different orders.
             return Id == other.Id
                    && string.Equals(Name, other.Name)
+                   && IsFemale == other.IsFemale
                    && string.Equals(Culture, other.Culture)
                    && Titles.SequenceEqual(other.Titles) 
                    && OtherTitles.SequenceEqual(other.OtherTitles)
@@ -59,6 +61,7 @@ namespace AnApiOfIceAndFire.Data.Feeder
 
             hash = hash * 23 + Id.GetHashCode();
             hash = hash * 23 + Name.GetHashCode();
+            hash = hash*23 + IsFemale.GetHashCode();
             hash = hash * 23 + Culture.GetHashCode();
             hash = hash * 23 + Titles.GetHashCode();
             hash = hash * 23 + OtherTitles.GetHashCode();
