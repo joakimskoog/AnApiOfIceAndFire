@@ -9,6 +9,7 @@ namespace AnApiOfIceAndFire.Models.v1
     {
         public string URL { get; }
         public string Name { get; set; }
+        public Gender Gender { get; set; }
         public string Culture { get; set; }
         public string Born { get; set; }
         public string Died { get; set; }

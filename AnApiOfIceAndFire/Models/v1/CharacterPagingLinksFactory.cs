@@ -36,6 +36,10 @@ namespace AnApiOfIceAndFire.Models.v1
             {
                 routeValues.Add("isAlive", filter.IsAlive.Value);
             }
+            if (filter.Gender.HasValue)
+            {
+                routeValues.Add("gender", filter.Gender.Value);
+            }
 
             return pagedList.ToPagingLinks(urlHelper, CharacterLinkCreator.CharacterRouteName, routeValues);
         }

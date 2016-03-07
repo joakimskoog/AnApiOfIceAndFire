@@ -20,7 +20,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
 
         [HttpHead]
         [HttpGet]
-        public async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, string culture = null, string born = null, string died = null, bool? isAlive = null)
+        public async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, string culture = null, string born = null, string died = null, bool? isAlive = null, Models.v1.Gender? gender = null)
         {
             var characterFilter = new CharacterFilter
             {
@@ -28,7 +28,8 @@ namespace AnApiOfIceAndFire.Controllers.v1
                 Born = born,
                 Died = died,
                 Culture = culture,
-                IsAlive = isAlive
+                IsAlive = isAlive,
+                Gender = gender.ToDomainGender()
             };
 
             return await Get(page, pageSize, characterFilter);

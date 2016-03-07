@@ -52,6 +52,7 @@ namespace AnApiOfIceAndFire
             container.RegisterType<IReadOnlyRepository<BookEntity, int>, EntityFrameworkRepository<BookEntity, int>>();
             container.RegisterType<IReadOnlyRepository<CharacterEntity, int>, EntityFrameworkRepository<CharacterEntity, int>>();
             container.RegisterType<IReadOnlyRepository<HouseEntity, int>, EntityFrameworkRepository<HouseEntity, int>>();
+            container.RegisterType<IModelMapper<Domain.Models.Gender, Models.v1.Gender>, GenderMapper>();
             container.RegisterType<IModelMapper<MediaType, Models.v1.MediaType>, MediaTypeMapper>();
             container.RegisterType<IModelMapper<IBook, Book>, BookMapper>();
             container.RegisterType<IModelMapper<ICharacter, Character>, CharacterMapper>();

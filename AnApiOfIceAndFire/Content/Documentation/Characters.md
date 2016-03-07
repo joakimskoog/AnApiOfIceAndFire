@@ -2,7 +2,7 @@
 ### Characters
 
 
-A Character is an individual within the Ice And Fire universe. 
+A Character is an individual within the Ice And Fire universe.
 
 
 <table class="table table-bordered table-striped table-hover">
@@ -23,6 +23,11 @@ A Character is an individual within the Ice And Fire universe.
       <td>name</td>
       <td>string</td>
       <td>The name of this character.</td>
+    </tr>
+    <tr>
+      <td>gender</td>
+      <td>string</td>
+      <td>The gender of this character. Possible values are: Female, Male and Unknown.</td>
     </tr>
     <tr>
       <td>culture</td>
@@ -175,7 +180,11 @@ There is also the possibility to include filter parameters in your request to th
   <tbody>
     <tr>
       <td>?name=name_here</td>
-      <td>Only characters with the given name are included in the response</td>
+      <td>Only characters with the given name are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?gender=gender_here</td>
+      <td>Only characters with the given gender are included in the response.</td>
     </tr>
     <tr>
       <td>?culture=culture_here</td>

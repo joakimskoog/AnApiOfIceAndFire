@@ -6,6 +6,7 @@ namespace AnApiOfIceAndFire.Domain.Models
     {
         int Identifier { get; }
         string Name { get; }
+        Gender Gender { get; }
         string Culture { get; }
         string Born { get; }
         string Died { get; }

@@ -7,6 +7,14 @@ namespace AnApiOfIceAndFire.Models.v1.Mappers
 {
     public class CharacterMapper : IModelMapper<ICharacter, Character>
     {
+        private readonly IModelMapper<Domain.Models.Gender, Gender> _genderMapper;
+
+        public CharacterMapper(IModelMapper<Domain.Models.Gender, Gender> genderMapper)
+        {
+            if (genderMapper == null) throw new ArgumentNullException(nameof(genderMapper));
+            _genderMapper = genderMapper;
+        }
+
         public Character Map(ICharacter input, UrlHelper urlHelper)
         {
             if (input == null) throw new ArgumentNullException(nameof(input));
@@ -23,6 +31,7 @@ namespace AnApiOfIceAndFire.Models.v1.Mappers
             return new Character(url)
             {
                 Name = input.Name ?? string.Empty,
+                Gender = _genderMapper.Map(input.Gender, urlHelper),
                 Culture = input.Culture ?? string.Empty,
                 Born = input.Born ?? string.Empty,
                 Died = input.Died ?? string.Empty,
