@@ -1,9 +1,4 @@
-﻿using System.Diagnostics;
-using System.Web;
-using AnApiOfIceAndFire.Data;
-using AnApiOfIceAndFire.Data.Feeder;
-
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(AnApiOfIceAndFire.DataFeederActivator), "Start")]
+﻿[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(AnApiOfIceAndFire.DataFeederActivator), "Start")]
 
 namespace AnApiOfIceAndFire
 {
