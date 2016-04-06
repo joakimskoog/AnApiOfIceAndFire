@@ -31,19 +31,19 @@ namespace AnApiOfIceAndFire.Domain.Services
         {
             Func<IQueryable<CharacterEntity>, IQueryable<CharacterEntity>> charaterFilters = characterEntities =>
             {
-                if (!string.IsNullOrEmpty(filter.Name))
+                if (filter.Name != null)
                 {
                     characterEntities = characterEntities.Where(x => x.Name.Equals(filter.Name));
                 }
-                if (!string.IsNullOrEmpty(filter.Culture))
+                if (filter.Culture != null)
                 {
                     characterEntities = characterEntities.Where(x => x.Culture.Equals(filter.Culture));
                 }
-                if (!string.IsNullOrEmpty(filter.Born))
+                if (filter.Born != null)
                 {
                     characterEntities = characterEntities.Where(x => x.Born.Equals(filter.Born));
                 }
-                if (!string.IsNullOrEmpty(filter.Died))
+                if (filter.Died != null)
                 {
                     characterEntities = characterEntities.Where(x => x.Died.Equals(filter.Died));
                 }

@@ -33,15 +33,15 @@ namespace AnApiOfIceAndFire.Domain.Services
         {
             Func<IQueryable<HouseEntity>, IQueryable<HouseEntity>> houseFilters = houseEntities =>
             {
-                if (!string.IsNullOrEmpty(filter.Name))
+                if (filter.Name != null)
                 {
                     houseEntities = houseEntities.Where(x => x.Name.Equals(filter.Name));
                 }
-                if (!string.IsNullOrEmpty(filter.Region))
+                if (filter.Region != null)
                 {
                     houseEntities = houseEntities.Where(x => x.Region.Equals(filter.Region));
                 }
-                if (!string.IsNullOrEmpty(filter.Words))
+                if (filter.Words != null)
                 {
                     houseEntities = houseEntities.Where(x => x.Words.Equals(filter.Words));
                 }

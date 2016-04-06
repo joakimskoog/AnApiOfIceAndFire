@@ -20,7 +20,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
 
         [HttpHead]
         [HttpGet]
-        public async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = "", string region = "", string words = "", bool? hasWords = null, bool? hasTitles = null,
+        public async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, string region = null, string words = null, bool? hasWords = null, bool? hasTitles = null,
             bool? hasSeats = null, bool? hasDiedOut = null, bool? hasAncestralWeapons = null)
         {
             var houseFilter = new HouseFilter

@@ -28,7 +28,7 @@ namespace AnApiOfIceAndFire.Domain.Services
         {
             Func<IQueryable<BookEntity>, IQueryable<BookEntity>> bookFilters = bookEntities =>
             {
-                if (!string.IsNullOrEmpty(filter.Name))
+                if (filter.Name != null)
                 {
                     bookEntities = bookEntities.Where(x => x.Name.Equals(filter.Name));
                 }
