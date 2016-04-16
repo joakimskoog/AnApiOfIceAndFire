@@ -234,6 +234,7 @@
     <Compile Include="Controllers\v1\BooksController.cs" />
     <Compile Include="Controllers\v1\CharactersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\v1\EndpointsController.cs" />
     <Compile Include="Controllers\v1\HousesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -254,6 +255,7 @@
     <Compile Include="Models\v1\BookPagingLinksFactory.cs" />
     <Compile Include="Models\v1\CharacterLinkCreator.cs" />
     <Compile Include="Models\v1\CharacterPagingLinksFactory.cs" />
+    <Compile Include="Models\v1\Endpoints.cs" />
     <Compile Include="Models\v1\Gender.cs" />
     <Compile Include="Models\v1\GenderExtensions.cs" />
     <Compile Include="Models\v1\HouseLinkCreator.cs" />
@@ -286,6 +288,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Documentation\Root.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />

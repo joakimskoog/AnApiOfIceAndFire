@@ -70,6 +70,12 @@ namespace AnApiOfIceAndFire
             );
 
             config.Routes.MapHttpRoute(
+                name: "EndpointsApi",
+                routeTemplate: "api",
+                defaults: new { controller = "Endpoints", action = "Get" }
+            );
+
+            config.Routes.MapHttpRoute(
                 name: BookRouteName,
                 routeTemplate: "api/books/{id}",
                 defaults: new { id = RouteParameter.Optional }
