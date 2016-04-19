@@ -7,3 +7,11 @@
     max-height: 300px;
     overflow-y: auto;
 }
+
+.navbar-default .navbar-nav>li>a {
+    color: #333;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #333;
+}
