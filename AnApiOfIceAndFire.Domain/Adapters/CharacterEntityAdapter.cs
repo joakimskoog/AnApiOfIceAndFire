@@ -18,6 +18,27 @@ namespace AnApiOfIceAndFire.Domain.Adapters
         public IReadOnlyCollection<string> Titles => _characterEntity.Titles;
         public IReadOnlyCollection<string> Aliases => _characterEntity.Aliases;
 
+        private Gender? _gender;
+        public Gender Gender
+        {
+            get
+            {
+                if (_gender == null)
+                {
+                    if (_characterEntity.IsFemale.HasValue)
+                    {
+                        _gender = _characterEntity.IsFemale.Value ? Gender.Female : Gender.Male;
+                    }
+                    else
+                    {
+                        _gender = Gender.Unknown; 
+                    }
+                }
+
+                return _gender.Value;
+            }
+        }
+
         private ICharacter _father;
         public ICharacter Father
         {

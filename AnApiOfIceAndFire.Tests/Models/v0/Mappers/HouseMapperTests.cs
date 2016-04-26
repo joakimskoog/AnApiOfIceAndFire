@@ -8,7 +8,7 @@ using System.Web.Http;
 using System.Web.Http.Hosting;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Domain.Models;
-using AnApiOfIceAndFire.Models.v0.Mappers;
+using AnApiOfIceAndFire.Models.v1.Mappers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 

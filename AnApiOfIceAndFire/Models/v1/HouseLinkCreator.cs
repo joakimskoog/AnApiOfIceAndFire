@@ -1,7 +1,7 @@
 ﻿using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Domain.Models;
 
-namespace AnApiOfIceAndFire.Models.v0
+namespace AnApiOfIceAndFire.Models.v1
 {
     public static class HouseLinkCreator
     {

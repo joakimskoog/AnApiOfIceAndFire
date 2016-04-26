@@ -9,6 +9,7 @@ namespace AnApiOfIceAndFire.Data.Entities
         public string Culture { get; set; }
         public string Born { get; set; }
         public string Died { get; set; }
+        public bool? IsFemale { get; set; }
 
         public string AliasesRaw { get; set; }
         public string[] Aliases

@@ -43,11 +43,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Geymsla, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Geymsla.EntityFramework.2.1.0\lib\Geymsla.dll</HintPath>
+      <HintPath>..\packages\Geymsla.EntityFramework.2.1.1\lib\Geymsla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Geymsla.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Geymsla.EntityFramework.2.1.0\lib\Geymsla.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Geymsla.EntityFramework.2.1.1\lib\Geymsla.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201601151730281_FixedSpellingMistakeInHouseEntity.Designer.cs">
       <DependentUpon>201601151730281_FixedSpellingMistakeInHouseEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603052139312_Gender.cs" />
+    <Compile Include="Migrations\201603052139312_Gender.Designer.cs">
+      <DependentUpon>201603052139312_Gender.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601151730281_FixedSpellingMistakeInHouseEntity.resx">
       <DependentUpon>201601151730281_FixedSpellingMistakeInHouseEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603052139312_Gender.resx">
+      <DependentUpon>201603052139312_Gender.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

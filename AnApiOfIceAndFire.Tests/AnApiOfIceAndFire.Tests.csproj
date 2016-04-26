@@ -39,8 +39,24 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EFSecondLevelCache, Version=1.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EFSecondLevelCache.1.1.5.0\lib\net45\EFSecondLevelCache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Geymsla, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Geymsla.2.0.1\lib\Geymsla.dll</HintPath>
+      <HintPath>..\packages\Geymsla.EntityFramework.2.1.1\lib\Geymsla.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Geymsla.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Geymsla.EntityFramework.2.1.1\lib\Geymsla.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -52,11 +68,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
@@ -76,10 +95,16 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\BooksControllerTests.cs" />
+    <Compile Include="Controllers\EndpointsControllerTests.cs" />
     <Compile Include="Infrastructure\Links\HttpHeaderExtensionsTests.cs" />
     <Compile Include="Infrastructure\Links\LinkExtensionsTests.cs" />
     <Compile Include="Infrastructure\Links\LinkTests.cs" />
     <Compile Include="Infrastructure\Links\PagedListExtensionsTests.cs" />
+    <Compile Include="IntegrationTests\BooksControllerTests.cs" />
+    <Compile Include="IntegrationTests\CharactersControllerTests.cs" />
+    <Compile Include="IntegrationTests\DbIntegrationTestHarness.cs" />
+    <Compile Include="IntegrationTests\HousesControllerTests.cs" />
+    <Compile Include="IntegrationTests\TestCleanup.cs" />
     <Compile Include="Models\v0\Mappers\BookMapperTests.cs" />
     <Compile Include="Models\v0\Mappers\CharacterMapperTests.cs" />
     <Compile Include="Models\v0\Mappers\HouseMapperTests.cs" />
@@ -87,6 +112,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj">
+      <Project>{34374ae3-ddbd-4937-b7d2-67878b9baf57}</Project>
+      <Name>AnApiOfIceAndFire.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnApiOfIceAndFire.Domain\AnApiOfIceAndFire.Domain.csproj">
       <Project>{f1a3a89b-5ffe-412a-83cf-0740533ac7ab}</Project>
       <Name>AnApiOfIceAndFire.Domain</Name>

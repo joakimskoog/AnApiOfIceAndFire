@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Threading;
 using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data.Entities;
 using Geymsla;
@@ -10,9 +8,10 @@ using Geymsla.Collections;
 
 namespace AnApiOfIceAndFire.Domain.Services
 {
-    public abstract class BaseService<TModel, TEntity> : IModelService<TModel>
+    public abstract class BaseService<TModel, TEntity, TFilter> : IModelService<TModel,TFilter>
         where TEntity : BaseEntity
         where TModel : class
+        where TFilter : class
     {
         private readonly IReadOnlyRepository<TEntity, int> _repository;
         private readonly Expression<Func<TEntity, object>>[] _includeProperties;
@@ -31,20 +30,17 @@ namespace AnApiOfIceAndFire.Domain.Services
             return entity != null ? CreateModel(entity) : null;
         }
 
-        public async Task<IEnumerable<TModel>> GetAllAsync()
+        public async Task<IPagedList<TModel>> GetPaginatedAsync(int page, int pageSize, TFilter filter = null)
         {
-            var entities = await _repository.GetAllAsync(CancellationToken.None, _includeProperties);
-            if (entities == null)
+            var predicate = CreatePredicate(filter);
+            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderedPredicate = entities =>
             {
-                return Enumerable.Empty<TModel>();
-            }
-
-            return entities.Select(CreateModel);
-        }
-
-        public async Task<IPagedList<TModel>> GetPaginatedAsync(int page, int pageSize)
-        {
-            var pagedEntities = await _repository.GetPaginatedListAsync(e => e.OrderBy(x => x.Id), page, pageSize, CancellationToken.None, _includeProperties);
+                var filteredEntities = predicate(entities);
+                return filteredEntities.OrderBy(x => x.Id);
+            };
+           
+            var pagedEntities = await _repository.GetPaginatedListAsync(orderedPredicate, page, pageSize, _includeProperties);
+ 
             if (pagedEntities == null)
             {
                 return new PagedList<TModel>(Enumerable.Empty<TModel>().AsQueryable(), page, pageSize);
@@ -53,6 +49,18 @@ namespace AnApiOfIceAndFire.Domain.Services
             return pagedEntities.ConvertTo(CreateModel);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         protected abstract TModel CreateModel(TEntity entity);
+
+        /// <summary>
+        /// Creates a function that tests each element for a condition.
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
+        protected abstract Func<IQueryable<TEntity>, IQueryable<TEntity>> CreatePredicate(TFilter filter);
     }
 }

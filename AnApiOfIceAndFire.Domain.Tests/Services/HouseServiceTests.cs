@@ -4,7 +4,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Entities;
 using AnApiOfIceAndFire.Domain.Services;
 using Geymsla;
@@ -53,71 +52,6 @@ namespace AnApiOfIceAndFire.Domain.Tests.Services
 
             Assert.IsNotNull(character);
             Assert.AreEqual(1, character.Identifier);
-        }
-
-        //[TestMethod]
-        //public async Task GivenThatRepositoryReturnsNull_WhenTryingToGetAll_ThenReturnedListIsEmpty()
-        //{
-        //    var repository = MockRepository.GenerateMock<IReadOnlyRepository<HouseEntity,int>>();
-        //    repository.Stub(x => x.GetAllAsync(CancellationToken.None,null))
-        //        .IgnoreArguments()
-        //        .Return(Task.FromResult(Enumerabl));
-        //    var service = new HouseService(repository);
-
-        //    var characters = await service.GetAllAsync();
-
-        //    Assert.IsNotNull(characters);
-        //    Assert.AreEqual(0, characters.Count());
-        //}
-
-        [TestMethod]
-        public async Task GivenThatNoCharacterExists_WhenTryingToGetAll_ThenReturnedListIsEmpty()
-        {
-            var repository = MockRepository.GenerateMock<IReadOnlyRepository<HouseEntity,int>>();
-            repository.Stub(x => x.GetAllAsync(null, null, null))
-                .IgnoreArguments()
-                .Return(Task.FromResult(Enumerable.Empty<HouseEntity>()));
-            var service = new HouseService(repository);
-
-            var characters = await service.GetAllAsync();
-
-            Assert.IsNotNull(characters);
-            Assert.AreEqual(0, characters.Count());
-        }
-
-        [TestMethod]
-        public async Task GivenThatOneCharacterExists_WhenTryingToGetAll_ThenReturnedListContainsOneCharacter()
-        {
-            var repository = MockRepository.GenerateMock<IReadOnlyRepository<HouseEntity,int>>();
-            repository.Stub(x => x.GetAllAsync(CancellationToken.None,null))
-                .IgnoreArguments()
-                .Return(Task.FromResult(new List<HouseEntity> { new HouseEntity() { Id = 1 } }.AsEnumerable()));
-            var service = new HouseService(repository);
-
-            var characters = await service.GetAllAsync();
-
-            Assert.IsNotNull(characters);
-            Assert.AreEqual(1, characters.Count());
-        }
-
-        [TestMethod]
-        public async Task GivenThatTenCharactersExists_WhenTryingToGetAll_ThenReturnedListContainsTenCharacters()
-        {
-            var charactersToReturn = new List<HouseEntity>();
-            for (int i = 0; i < 10; i++)
-            {
-                charactersToReturn.Add(new HouseEntity() { Id = i });
-            }
-            var repository = MockRepository.GenerateMock<IReadOnlyRepository<HouseEntity,int>>();
-            repository.Stub(x => x.GetAllAsync(CancellationToken.None,null))
-                .IgnoreArguments()
-                .Return(Task.FromResult(charactersToReturn.AsEnumerable()));
-            var service = new HouseService(repository);
-
-            var characters = await service.GetAllAsync();
-
-            Assert.IsNotNull(characters);
-            Assert.AreEqual(10, characters.Count());
         }
 
         [TestMethod]

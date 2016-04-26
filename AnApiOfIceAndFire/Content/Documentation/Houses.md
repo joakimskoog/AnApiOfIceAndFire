@@ -106,12 +106,11 @@ $ curl "http://www.anapioficeandfire.com/api/houses"
 ```
 
 
-
 **Example response:**
 ``` command-line
 [
   {
-    "url": "http://localhost:8008/api/houses/1",
+    "url": "http://www.anapioficeandfire.com/api/houses/1",
     "name": "House Algood",
     "region": "The Westerlands",
     "coatOfArms": "A golden wreath, on a blue field with a gold border(Azure, a garland of laurel within a bordure or)",
@@ -120,7 +119,7 @@ $ curl "http://www.anapioficeandfire.com/api/houses"
     "seats": [],
     "currentLord": "",
     "heir": "",
-    "overlord": "http://localhost:8008/api/houses/229",
+    "overlord": "http://www.anapioficeandfire.com/api/houses/229",
     "founded": "",
     "founder": "",
     "diedOut": "",
@@ -129,7 +128,7 @@ $ curl "http://www.anapioficeandfire.com/api/houses"
     "swornMembers": []
   },
   {
-    "url": "http://localhost:8008/api/houses/2",
+    "url": "http://www.anapioficeandfire.com/api/houses/2",
     "name": "House Allyrion of Godsgrace",
     "region": "Dorne",
     "coatOfArms": "Gyronny Gules and Sable, a hand couped Or",
@@ -138,22 +137,70 @@ $ curl "http://www.anapioficeandfire.com/api/houses"
     "seats": [
       "Godsgrace"
     ],
-    "currentLord": "http://localhost:8008/api/characters/298",
-    "heir": "http://localhost:8008/api/characters/1922",
-    "overlord": "http://localhost:8008/api/houses/285",
+    "currentLord": "http://www.anapioficeandfire.com/api/characters/298",
+    "heir": "http://www.anapioficeandfire.com/api/characters/1922",
+    "overlord": "http://www.anapioficeandfire.com/api/houses/285",
     "founded": "",
     "founder": "",
     "diedOut": "",
     "ancestralWeapons": [],
     "cadetBranches": [],
     "swornMembers": [
-      "http://localhost:8008/api/characters/1301",
+      "http://www.anapioficeandfire.com/api/characters/1301",
       ...
     ]
   },
   ...
 ]
 ```
+
+#### Filtering houses
+
+
+There is also the possibility to include filter parameters in your request to the http://www.anapioficeandfire.com/api/houses endpoint. They are described below.
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Usage</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>?name=name_here</td>
+      <td>Only houses with the given name are included in the response</td>
+    </tr>
+    <tr>
+      <td>?region=region_here</td>
+      <td>Only houses that belong in the given region are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?words=words_here</td>
+      <td>Only houses that has the given words are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?hasWords=true_or_false</td>
+      <td>Only houses that have words are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?hasTitles=true_or_false</td>
+      <td>Only houses that have titles are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?hasSeats=true_or_false</td>
+      <td>Only houses that have seats are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?hasDiedOut=true_or_false</td>
+      <td>Only houses that are extinct are included in the response.</td>
+    </tr>
+    <tr>
+      <td>?hasAncestralWeapons=true_or_false</td>
+      <td>Only houses that have ancestral weapons are included in the response.</td>
+    </tr>
+  </tbody>
+</table>
 
 #### Get specific house
 

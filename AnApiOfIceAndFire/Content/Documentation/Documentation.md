@@ -85,7 +85,7 @@ These links can then be used to navigate to other pages of results.
 ### Rate Limiting
 
 
-To prevent malicious usage of our API we've a limit on the number of requests a given IP address can make to the API. This limit is set to 5000 requests per day. There should be no reason for hitting the limit if you implement proper caching strategies in your client. If you happen to hit the limit you'll receive a [403 Forbidden](https://en.wikipedia.org/wiki/HTTP_403) on all your requests for the remainder of the 24 hour time period.
+To prevent malicious usage of our API we've a limit on the number of requests a given IP address can make to the API. This limit is set to 20000 requests per day. There should be no reason for hitting the limit if you implement proper caching strategies in your client. If you happen to hit the limit you'll receive a [403 Forbidden](https://en.wikipedia.org/wiki/HTTP_403) on all your requests for the remainder of the 24 hour time period.
 
 <a name="caching"></a>
 ### Caching

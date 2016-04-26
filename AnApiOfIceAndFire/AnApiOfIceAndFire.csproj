@@ -73,11 +73,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Geymsla, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Geymsla.EntityFramework.2.1.0\lib\Geymsla.dll</HintPath>
+      <HintPath>..\packages\Geymsla.EntityFramework.2.1.1\lib\Geymsla.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Geymsla.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Geymsla.EntityFramework.2.1.0\lib\Geymsla.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Geymsla.EntityFramework.2.1.1\lib\Geymsla.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -234,6 +234,7 @@
     <Compile Include="Controllers\v1\BooksController.cs" />
     <Compile Include="Controllers\v1\CharactersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\v1\EndpointsController.cs" />
     <Compile Include="Controllers\v1\HousesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -244,22 +245,30 @@
     <Compile Include="Infrastructure\Html\HtmlHelperExtensions.cs" />
     <Compile Include="Infrastructure\IApiSettings.cs" />
     <Compile Include="Infrastructure\Links\HttpHeaderExtensions.cs" />
+    <Compile Include="Infrastructure\Links\IPagingLinksFactory.cs" />
     <Compile Include="Infrastructure\Links\Link.cs" />
     <Compile Include="Infrastructure\Links\LinkExtensions.cs" />
     <Compile Include="Infrastructure\Links\PagedListExtensions.cs" />
     <Compile Include="Infrastructure\WebConfigSettings.cs" />
-    <Compile Include="Models\v0\Book.cs" />
-    <Compile Include="Models\v0\BookLinkCreator.cs" />
-    <Compile Include="Models\v0\CharacterLinkCreator.cs" />
-    <Compile Include="Models\v0\HouseLinkCreator.cs" />
-    <Compile Include="Models\v0\Mappers\BookMapper.cs" />
-    <Compile Include="Models\v0\Character.cs" />
-    <Compile Include="Models\v0\House.cs" />
-    <Compile Include="Models\v0\Mappers\CharacterMapper.cs" />
-    <Compile Include="Models\v0\Mappers\HouseMapper.cs" />
-    <Compile Include="Models\v0\Mappers\IModelMapper.cs" />
-    <Compile Include="Models\v0\Mappers\MediaTypeMapper.cs" />
-    <Compile Include="Models\v0\MediaType.cs" />
+    <Compile Include="Models\v1\Book.cs" />
+    <Compile Include="Models\v1\BookLinkCreator.cs" />
+    <Compile Include="Models\v1\BookPagingLinksFactory.cs" />
+    <Compile Include="Models\v1\CharacterLinkCreator.cs" />
+    <Compile Include="Models\v1\CharacterPagingLinksFactory.cs" />
+    <Compile Include="Models\v1\Endpoints.cs" />
+    <Compile Include="Models\v1\Gender.cs" />
+    <Compile Include="Models\v1\GenderExtensions.cs" />
+    <Compile Include="Models\v1\HouseLinkCreator.cs" />
+    <Compile Include="Models\v1\HousePagingLinksFactory.cs" />
+    <Compile Include="Models\v1\Mappers\BookMapper.cs" />
+    <Compile Include="Models\v1\Character.cs" />
+    <Compile Include="Models\v1\House.cs" />
+    <Compile Include="Models\v1\Mappers\CharacterMapper.cs" />
+    <Compile Include="Models\v1\Mappers\GenderMapper.cs" />
+    <Compile Include="Models\v1\Mappers\HouseMapper.cs" />
+    <Compile Include="Models\v1\Mappers\IModelMapper.cs" />
+    <Compile Include="Models\v1\Mappers\MediaTypeMapper.cs" />
+    <Compile Include="Models\v1\MediaType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +288,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Documentation\Root.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />

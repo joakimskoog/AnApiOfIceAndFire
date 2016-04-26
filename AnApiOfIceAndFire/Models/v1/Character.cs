@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+
 // ReSharper disable InconsistentNaming
 
-namespace AnApiOfIceAndFire.Models.v0
+namespace AnApiOfIceAndFire.Models.v1
 {
     public class Character
     {
         public string URL { get; }
         public string Name { get; set; }
+        public Gender Gender { get; set; }
         public string Culture { get; set; }
         public string Born { get; set; }
         public string Died { get; set; }
