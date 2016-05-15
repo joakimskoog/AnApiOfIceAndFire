@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Web.Configuration;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Dispatcher;
 using System.Web.Http.ExceptionHandling;
 using AnApiOfIceAndFire.Infrastructure;
@@ -61,6 +62,7 @@ namespace AnApiOfIceAndFire
             //Replace the default IHttpControllerSelector with our own that selects controllers based on Accept header and namespaces.
             config.Services.Replace(typeof(IHttpControllerSelector), new AcceptHeaderControllerSelector(config));
 
+            EnableCrossSiteRequests(config);
             AddRoutes(config);
         }
 
@@ -97,6 +99,12 @@ namespace AnApiOfIceAndFire
                 routeTemplate: "api/houses/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+        }
+
+        private static void EnableCrossSiteRequests(HttpConfiguration config)
+        {
+            var cors = new EnableCorsAttribute(origins: "*", headers: "*", methods: "GET,HEAD");
+            config.EnableCors(cors);
         }
     }
 }
