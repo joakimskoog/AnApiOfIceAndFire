@@ -61,6 +61,11 @@ namespace AnApiOfIceAndFire
             //Replace the default IHttpControllerSelector with our own that selects controllers based on Accept header and namespaces.
             config.Services.Replace(typeof(IHttpControllerSelector), new AcceptHeaderControllerSelector(config));
 
+            AddRoutes(config);
+        }
+
+        private static void AddRoutes(HttpConfiguration config)
+        {
             //This is not super sexy but it's needed to be able to create URLs to other resources.
             //We can't use RouteAttributes since that messes with our controller selector, thus this is the "best" solution we can use.
             config.Routes.MapHttpRoute(
