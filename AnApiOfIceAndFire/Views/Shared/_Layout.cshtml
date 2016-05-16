@@ -15,7 +15,6 @@
 
         ga('create', 'UA-73388839-1', 'auto');
         ga('send', 'pageview');
-
     </script>
 </head>
 <body>
@@ -37,7 +36,6 @@
             </div>
         </div>
     </nav>
-
     <div class="container-fluid" style="margin-top: 60px">
         <div class="row">
             <div class="jumbotron text-center">
@@ -65,27 +63,11 @@
                             }
                         }(document, 'script', 'twitter-wjs');
                     </script>
-                    <a href="https://twitter.com/j_skoog" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow me</a>
-                    <script>
-                        !function (d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                            if (!d.getElementById(id)) {
-                                js = d.createElement(s);
-                                js.id = id;
-                                js.src = p + '://platform.twitter.com/widgets.js';
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }
-                        }(document, 'script', 'twitter-wjs');
-                    </script>
                     <iframe src="https://ghbtns.com/github-btn.html?user=joakimskoog&repo=AnApiOfIceAndFire&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
                 </span>
             </div>
         </div>
     </div>
-    @*<div class="container body-context pull-right">
-
-    </div>*@
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

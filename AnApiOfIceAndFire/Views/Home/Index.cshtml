@@ -65,8 +65,8 @@
     <div class="col-sm-2 col-lg-2 col-md-2"></div>
 </div>
 <div class="row">
-    <div class="col-sm-1 col-lg-1 col-md-1"></div>
-    <div class="col-sm-3 col-lg-3 col-md-3">
+    <div class="col-sm-2 col-lg-2 col-md-2"></div>
+    <div class="col-sm-4 col-lg-4 col-md-4">
         <h2>What is this?</h2>
         <p>An API of Ice And Fire is the world's greatest source for quantified and structured data from the universe of Ice and Fire (and the HBO series Game of Thrones).</p>
         <p>We've formatted all the data in a way so it's easily accessible for all developers via our API.</p>
@@ -77,28 +77,7 @@
             All data is accessible through our REST'ish Web API. Please consult our @Html.ActionLink("documentation", "Index", "Documentation", new { area = "" }, null) to get started.
         </p>
     </div>
-    <div class="col-sm-3 col-lg-3 col-md-3">
-        <h2>Support us</h2>
-        <p>Sadly, servers cost money. That's why all donations are welcome, please consider donating to help us pay for servers and beer.</p>
-        @using (Html.BeginForm("Charge", "Home", FormMethod.Post))
-        {
-            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                    data-key="@ViewBag.StripePublicKey"
-                    data-image=""
-                    data-name="An Api of Ice And Fire"
-                    data-description="Donate and keep us alive!"
-                    data-currency="@ViewBag.StripeDonationCurrency"
-                    data-amount="@ViewBag.StripeDonationAmountInCents">
-
-
-            </script>
-        }
-        <p>
-            You can also help by contributing to the project itself, it's completely open source and is available over at <a href="https://github.com/joakimskoog/AnApiOfIceAndFire">Github</a>.
-        </p>
-    </div>
-    <div class="col-sm-1 col-lg-1 col-md-1"></div>
-
+    <div class="col-sm-2 col-lg-2 col-md-2"></div>
     <script type="text/javascript">
         function updateRequestUrl(url) {
             $('#request-url-input').val(url);
@@ -127,6 +106,5 @@
                 }
             });
         }
-
     </script>
 </div>
