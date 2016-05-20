@@ -7,6 +7,7 @@ namespace AnApiOfIceAndFire.Data.Entities
     {
         public string Name { get; set; }
         public string CoatOfArms { get; set; }
+        public string CoatOfArmsImage { get; set; }
         public string Words { get; set; }
         public string Region { get; set; }
         public string Founded { get; set; }
