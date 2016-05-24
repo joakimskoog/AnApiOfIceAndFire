@@ -9,6 +9,7 @@ There exists helper libraries that will help you consume An API of Ice And Fire 
 
 <a name="library-node"></a>
 ### Node
+* [asoiaf-api](https://github.com/arbazsiddiqui/A-song-of-ice-and-fire-API) by [Arbaz Siddqiui](https://github.com/arbazsiddiqui)
 * [node-api-iceandfire](https://github.com/alexwebb2/node-api-iceandfire) by [Alex Webb](http://alexwebb.info/)
 
 <a name="library-python"></a>
