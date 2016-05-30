@@ -116,7 +116,7 @@ Custom media types are used in An API of Ice And Fire to let consumers choose wh
 
 <div class="alert alert-dismissible alert-warning">
 
-**Important:** If a version is not specified in the request the default version will be used. The default version may change in the future and can thus break the consumer's application. Make sure to **always** request a specific version in the ```Accept``` header as shown in the example below.
+**Important:** If a version is not specified in the request the request will fail. Make sure to **always** request a specific version in the ```Accept``` header as shown in the example below.
 
 </div>
 
