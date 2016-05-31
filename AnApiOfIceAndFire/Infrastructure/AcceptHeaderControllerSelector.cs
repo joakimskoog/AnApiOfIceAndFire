@@ -23,6 +23,8 @@ namespace AnApiOfIceAndFire.Infrastructure
         private readonly Lazy<IDictionary<string, HttpControllerDescriptor>> _controllers;
         private readonly ICollection<string> _duplicates;
 
+        private IDictionary<string, int> _defaultControllerVersions = new Dictionary<string, int>();
+
         public AcceptHeaderControllerSelector(HttpConfiguration configuration)
         {
             if (configuration == null) throw new ArgumentNullException(nameof(configuration));
@@ -45,7 +47,7 @@ namespace AnApiOfIceAndFire.Infrastructure
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            var version = GetVersionFromMediaType(request);
+            var version = GetVersionFromMediaType(request, controllerName);
             if (!version.HasValue)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
@@ -93,6 +95,10 @@ namespace AnApiOfIceAndFire.Infrastructure
                 var controllerName = t.Name.Remove(t.Name.Length - DefaultHttpControllerSelector.ControllerSuffix.Length);
                 var namespaceName = segments[segments.Length - 1];
 
+                //Calculate the default version for each controller, this will be the highest available version
+                int defaultVersionForController = CalculateDefaultVersion(controllerName.ToLower(), namespaceName);
+                _defaultControllerVersions[controllerName.ToLower()] = defaultVersionForController;
+
                 var key = string.Format(CultureInfo.InvariantCulture, "{0}.{1}", namespaceName, controllerName);
 
                 // Check for duplicate keys.
@@ -116,6 +122,19 @@ namespace AnApiOfIceAndFire.Infrastructure
             return dictionary;
         }
 
+        private int CalculateDefaultVersion(string controllerName, string namespaceName)
+        {
+            int defaultVersion = -1;
+            var namespaceAsInt = int.Parse(namespaceName.Remove(0, 1));
+
+            if (_defaultControllerVersions.TryGetValue(controllerName, out defaultVersion))
+            {
+                return namespaceAsInt > defaultVersion ? namespaceAsInt : defaultVersion;
+            }
+
+            return namespaceAsInt;
+        }
+
         // Get a value from the route data, if present.
         private static T GetRouteVariable<T>(IHttpRouteData routeData, string name)
         {
@@ -127,7 +146,7 @@ namespace AnApiOfIceAndFire.Infrastructure
             return default(T);
         }
 
-        private int? GetVersionFromMediaType(HttpRequestMessage request)
+        private int? GetVersionFromMediaType(HttpRequestMessage request, string controllerName)
         {
             var acceptHeader = request.Headers.Accept;
 
@@ -139,7 +158,7 @@ namespace AnApiOfIceAndFire.Infrastructure
 
                     if (version == null)
                     {
-                        return null;
+                        return GetDefaultControllerVersion(controllerName);
                     }
 
                     int parsedVersion = -1;
@@ -150,6 +169,18 @@ namespace AnApiOfIceAndFire.Infrastructure
 
                     return null;
                 }
+            }
+
+            return GetDefaultControllerVersion(controllerName);
+        }
+
+        private int? GetDefaultControllerVersion(string controllerName)
+        {
+            int defaultVersion = -1;
+
+            if (_defaultControllerVersions.TryGetValue(controllerName, out defaultVersion))
+            {
+                return defaultVersion;
             }
 
             return null;
