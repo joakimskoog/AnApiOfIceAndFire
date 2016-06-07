@@ -11,6 +11,7 @@ using AnApiOfIceAndFire.Models.v1.Mappers;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
+    [RoutePrefix("api/houses")]
     public class HousesController : BaseController<IHouse, House, HouseFilter>
     {
         public HousesController(IModelService<IHouse, HouseFilter> modelService, IModelMapper<IHouse, House> modelMapper, IPagingLinksFactory<HouseFilter> pagingLinksFactory)
@@ -18,6 +19,14 @@ namespace AnApiOfIceAndFire.Controllers.v1
         {
         }
 
+        [Route("{id:int}", Name = HouseLinkCreator.SingleHouseRouteName)]
+        [HttpGet]
+        public async Task<IHttpActionResult> Get(int id)
+        {
+            return await GetSingle(id);
+        }
+
+        [Route("", Name = HouseLinkCreator.MultipleHousesRouteName)]
         [HttpHead]
         [HttpGet]
         public async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, string region = null, string words = null, bool? hasWords = null, bool? hasTitles = null,

@@ -59,44 +59,11 @@ namespace AnApiOfIceAndFire
             //Remove the possibility to serialize models to XML since we don't want to support that at the moment.
             config.Formatters.Remove(config.Formatters.XmlFormatter);
 
-            //Replace the default IHttpControllerSelector with our own that selects controllers based on Accept header and namespaces.
-            config.Services.Replace(typeof(IHttpControllerSelector), new AcceptHeaderControllerSelector(config));
-
             EnableCrossSiteRequests(config);
-            AddRoutes(config);
-        }
 
-        private static void AddRoutes(HttpConfiguration config)
-        {
-            //This is not super sexy but it's needed to be able to create URLs to other resources.
-            //We can't use RouteAttributes since that messes with our controller selector, thus this is the "best" solution we can use.
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-            config.Routes.MapHttpRoute(
-                name: "EndpointsApi",
-                routeTemplate: "api",
-                defaults: new { controller = "Endpoints", action = "Get" }
-            );
-
-            config.Routes.MapHttpRoute(
-                name: BookRouteName,
-                routeTemplate: "api/books/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-            config.Routes.MapHttpRoute(
-                name: CharacterRouteName,
-                routeTemplate: "api/characters/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-            config.Routes.MapHttpRoute(
-                name: HouseRouteName,
-                routeTemplate: "api/houses/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }

@@ -12,8 +12,8 @@ namespace AnApiOfIceAndFire.Models.v1
         public IEnumerable<Link> Create<T>(IPagedList<T> pagedList, UrlHelper urlHelper, CharacterFilter filter)
         {
             if (pagedList == null) throw new ArgumentNullException(nameof(pagedList));
+            if (urlHelper == null) throw new ArgumentNullException(nameof(urlHelper));
             if (filter == null) throw new ArgumentNullException(nameof(filter));
-            if (pagedList == null) throw new ArgumentNullException(nameof(pagedList));
 
             var routeValues = new Dictionary<string, object>();
             if (!string.IsNullOrEmpty(filter.Name))
@@ -41,7 +41,7 @@ namespace AnApiOfIceAndFire.Models.v1
                 routeValues.Add("gender", filter.Gender.Value);
             }
 
-            return pagedList.ToPagingLinks(urlHelper, CharacterLinkCreator.CharacterRouteName, routeValues);
+            return pagedList.ToPagingLinks(urlHelper, CharacterLinkCreator.MultipleCharactersRouteName, routeValues);
         }
     }
 }

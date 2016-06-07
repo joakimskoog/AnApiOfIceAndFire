@@ -26,7 +26,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
         public async Task GivenThatNoHouseExists_WhenTryingToGetHouseWithidOne_ThenNoHouseIsReturnedAndResponseIsNotFound()
         {
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses/1");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses/1");
             controller.Configuration = new HttpConfiguration();
 
             var response = await controller.Get(id: 1);
@@ -48,7 +48,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             });
 
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses/1");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses/1");
             controller.Configuration = new HttpConfiguration();
 
             var response = await controller.Get(id: 1);
@@ -88,7 +88,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             });
 
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses");
             controller.Configuration = new HttpConfiguration();
             controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/houses"));
 
@@ -122,7 +122,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
                 });
 
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses");
             controller.Configuration = new HttpConfiguration();
             controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/houses"));
 
@@ -160,7 +160,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
                 });
 
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses");
             controller.Configuration = new HttpConfiguration();
             controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/houses"));
 
@@ -200,7 +200,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
                 });
 
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses");
             controller.Configuration = new HttpConfiguration();
             controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/houses"));
 
@@ -239,7 +239,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
                 });
 
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses");
             controller.Configuration = new HttpConfiguration();
             controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/houses"));
 
@@ -277,7 +277,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
                 });
 
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses");
             controller.Configuration = new HttpConfiguration();
             controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/houses"));
 
@@ -314,7 +314,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
                 });
 
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses");
             controller.Configuration = new HttpConfiguration();
             controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/houses"));
 
@@ -352,7 +352,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
                 });
 
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses");
             controller.Configuration = new HttpConfiguration();
             controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/houses"));
 
@@ -389,7 +389,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
                 });
 
             var controller = CreateHousesController();
-            controller.Url = CreateUrlHelper("http://localhost.com/api/houses");
+            controller.Url = Helper.CreateUrlHelper("http://localhost.com/api/houses");
             controller.Configuration = new HttpConfiguration();
             controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/houses"));
 
@@ -401,33 +401,6 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             Assert.IsNotNull(houses);
             Assert.AreEqual(1, houses.Count());
             Assert.AreEqual("houseTwo", house.Name);
-        }
-
-        private static UrlHelper CreateUrlHelper(string requestUri)
-        {
-            var requestMessage = new HttpRequestMessage(HttpMethod.Get, new Uri(requestUri));
-
-            var configuration = new HttpConfiguration();
-            configuration.Routes.MapHttpRoute(
-                name: "BooksApi",
-                routeTemplate: "api/books/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-            configuration.Routes.MapHttpRoute(
-               name: "CharactersApi",
-               routeTemplate: "api/characters/{id}",
-               defaults: new { id = RouteParameter.Optional }
-           );
-            configuration.Routes.MapHttpRoute(
-               name: "HousesApi",
-               routeTemplate: "api/houses/{id}",
-               defaults: new { id = RouteParameter.Optional }
-           );
-            requestMessage.Properties.Add(HttpPropertyKeys.HttpConfigurationKey, configuration);
-
-            var urlHelper = new UrlHelper(requestMessage);
-
-            return urlHelper;
         }
 
         private void SeedDatabase(params HouseEntity[] books)

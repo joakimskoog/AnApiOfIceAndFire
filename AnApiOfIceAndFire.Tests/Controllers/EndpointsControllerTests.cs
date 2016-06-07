@@ -16,7 +16,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         [TestMethod]
         public void GivenThatABunchOfControllersExists_WhenTryingToGet_ThenReturnedEndpointsContainsCorrectUrls()
         {
-            var urlHelper = CreateUrlHelper("http://localhost.com");
+            var urlHelper = Helper.CreateUrlHelper("http://localhost.com");
             var controller = new EndpointsController()
             {
                 Url = urlHelper
@@ -29,33 +29,6 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             Assert.AreEqual("http://localhost.com/api/books", endpointsContent.Books);
             Assert.AreEqual("http://localhost.com/api/characters", endpointsContent.Characters);
             Assert.AreEqual("http://localhost.com/api/houses", endpointsContent.Houses);
-        }
-
-        private static UrlHelper CreateUrlHelper(string requestUri)
-        {
-            var requestMessage = new HttpRequestMessage(HttpMethod.Get, new Uri(requestUri));
-
-            var configuration = new HttpConfiguration();
-            configuration.Routes.MapHttpRoute(
-                name: "BooksApi",
-                routeTemplate: "api/books/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-            configuration.Routes.MapHttpRoute(
-               name: "CharactersApi",
-               routeTemplate: "api/characters/{id}",
-               defaults: new { id = RouteParameter.Optional }
-           );
-            configuration.Routes.MapHttpRoute(
-               name: "HousesApi",
-               routeTemplate: "api/houses/{id}",
-               defaults: new { id = RouteParameter.Optional }
-           );
-            requestMessage.Properties.Add(HttpPropertyKeys.HttpConfigurationKey, configuration);
-
-            var urlHelper = new UrlHelper(requestMessage);
-
-            return urlHelper;
         }
     }
 }

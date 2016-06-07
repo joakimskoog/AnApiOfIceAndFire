@@ -11,12 +11,21 @@ using AnApiOfIceAndFire.Models.v1.Mappers;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
+    [RoutePrefix("api/books")]
     public class BooksController : BaseController<IBook, Book, BookFilter>
     {
         public BooksController(IModelService<IBook, BookFilter> modelService, IModelMapper<IBook, Book> modelMapper, IPagingLinksFactory<BookFilter> pagingLinksFactory)
             : base(modelService, modelMapper, pagingLinksFactory)
         { }
 
+        [Route("{id:int}", Name = BookLinkCreator.SingleBookRouteName)]
+        [HttpGet]
+        public async Task<IHttpActionResult> Get(int id)
+        {
+            return await GetSingle(id);
+        }
+
+        [Route("", Name = BookLinkCreator.MultipleBooksRouteName)]
         [HttpHead]
         [HttpGet]
         public async Task<HttpResponseMessage> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, DateTime? fromReleaseDate = null, DateTime? toReleaseDate = null)

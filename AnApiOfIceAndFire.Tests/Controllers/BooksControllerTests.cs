@@ -32,7 +32,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         {
             var service = MockRepository.GenerateMock<IModelService<IBook, BookFilter>>();
             service.Stub(x => x.GetAsync(Arg<int>.Is.Anything)).Return(Task.FromResult((IBook)null));
-            BaseController<IBook, Book, BookFilter> controller = new BooksController(service, MockRepository.GenerateMock<IModelMapper<IBook, Book>>(), MockRepository.GenerateMock<IPagingLinksFactory<BookFilter>>());
+            BooksController controller = new BooksController(service, MockRepository.GenerateMock<IModelMapper<IBook, Book>>(), MockRepository.GenerateMock<IPagingLinksFactory<BookFilter>>());
 
             var result = await controller.Get(1);
 
@@ -60,7 +60,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
                 .Return(new Book("someKindOfUrl/1", book.Name, book.ISBN, book.Authors, book.NumberOfPages,
                     book.Publisher, book.Country,
                     AnApiOfIceAndFire.Models.v1.MediaType.Hardcover, book.Released, new List<string>(), new List<string>()));
-            BaseController<IBook, Book, BookFilter> controller = new BooksController(service, mapper, MockRepository.GenerateMock<IPagingLinksFactory<BookFilter>>());
+            BooksController controller = new BooksController(service, mapper, MockRepository.GenerateMock<IPagingLinksFactory<BookFilter>>());
 
 
             var result = await controller.Get(1);
@@ -114,7 +114,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             {
                 Configuration = new HttpConfiguration(),
                 Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com")),
-                Url = CreateUrlHelper("http://localhost.com")
+                Url = Helper.CreateUrlHelper("http://localhost.com")
             };
 
 
@@ -140,33 +140,6 @@ namespace AnApiOfIceAndFire.Tests.Controllers
             book.Stub(x => x.Authors).Return(new List<string> { "authorOne" });
 
             return book;
-        }
-
-        private static UrlHelper CreateUrlHelper(string requestUri)
-        {
-            var requestMessage = new HttpRequestMessage(HttpMethod.Get, new Uri(requestUri));
-
-            var configuration = new HttpConfiguration();
-            configuration.Routes.MapHttpRoute(
-                name: "BooksApi",
-                routeTemplate: "api/books/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-            configuration.Routes.MapHttpRoute(
-               name: "CharactersApi",
-               routeTemplate: "api/characters/{id}",
-               defaults: new { id = RouteParameter.Optional }
-           );
-            configuration.Routes.MapHttpRoute(
-               name: "HousesApi",
-               routeTemplate: "api/houses/{id}",
-               defaults: new { id = RouteParameter.Optional }
-           );
-            requestMessage.Properties.Add(HttpPropertyKeys.HttpConfigurationKey, configuration);
-
-            var urlHelper = new UrlHelper(requestMessage);
-
-            return urlHelper;
         }
     }
 }
