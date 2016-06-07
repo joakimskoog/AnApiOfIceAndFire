@@ -7,9 +7,11 @@ using System.Web.Http;
 using System.Web.Http.Hosting;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Domain.Models;
+using AnApiOfIceAndFire.Models.v1;
 using AnApiOfIceAndFire.Models.v1.Mappers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
+using MediaType = AnApiOfIceAndFire.Domain.Models.MediaType;
 
 namespace AnApiOfIceAndFire.Tests.Models.v0.Mappers
 {
@@ -196,17 +198,17 @@ namespace AnApiOfIceAndFire.Tests.Models.v0.Mappers
 
             var configuration = new HttpConfiguration();
             configuration.Routes.MapHttpRoute(
-                name: "BooksApi",
+                name: BookLinkCreator.SingleBookRouteName,
                 routeTemplate: "api/books/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
             configuration.Routes.MapHttpRoute(
-               name: "CharactersApi",
+               name: CharacterLinkCreator.SingleCharacterRouteName,
                routeTemplate: "api/characters/{id}",
                defaults: new { id = RouteParameter.Optional }
            );
             configuration.Routes.MapHttpRoute(
-               name: "HousesApi",
+               name: HouseLinkCreator.SingleHouseRouteName,
                routeTemplate: "api/houses/{id}",
                defaults: new { id = RouteParameter.Optional }
            );

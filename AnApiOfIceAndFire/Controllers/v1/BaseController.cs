@@ -31,8 +31,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
             _pagingLinksFactory = pagingLinksFactory;
         }
 
-        [HttpGet]
-        public virtual async Task<IHttpActionResult> Get(int id)
+        protected virtual async Task<IHttpActionResult> GetSingle(int id)
         {
             var model = await _modelService.GetAsync(id);
             if (model == null)

@@ -5,12 +5,13 @@ namespace AnApiOfIceAndFire.Controllers.v1
 {
     public class EndpointsController : ApiController
     {
+        [Route("api", Name = "EndpointsApi")]
         [HttpGet]
         public IHttpActionResult Get()
         {
-            var booksUrl = Url.Link(BookLinkCreator.BookRouteName, new { });
-            var charactersUrl = Url.Link(CharacterLinkCreator.CharacterRouteName, new { });
-            var housesUrl = Url.Link(HouseLinkCreator.HouseRouteName, new { });
+            var booksUrl = BookLinkCreator.CreateBooksLink(Url);
+            var charactersUrl = CharacterLinkCreator.CreateCharactersLink(Url);
+            var housesUrl = HouseLinkCreator.CreateHousesLink(Url);
 
             return Ok(new Endpoints
             {

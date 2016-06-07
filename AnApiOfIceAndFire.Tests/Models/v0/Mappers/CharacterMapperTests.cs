@@ -260,17 +260,17 @@ namespace AnApiOfIceAndFire.Tests.Models.v0.Mappers
 
             var configuration = new HttpConfiguration();
             configuration.Routes.MapHttpRoute(
-                name: BookLinkCreator.BookRouteName,
+                name: BookLinkCreator.SingleBookRouteName,
                 routeTemplate: "api/books/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
             configuration.Routes.MapHttpRoute(
-               name: CharacterLinkCreator.CharacterRouteName,
+               name: CharacterLinkCreator.SingleCharacterRouteName,
                routeTemplate: "api/characters/{id}",
                defaults: new { id = RouteParameter.Optional }
            );
             configuration.Routes.MapHttpRoute(
-               name: HouseLinkCreator.HouseRouteName,
+               name: HouseLinkCreator.SingleHouseRouteName,
                routeTemplate: "api/houses/{id}",
                defaults: new { id = RouteParameter.Optional }
            );

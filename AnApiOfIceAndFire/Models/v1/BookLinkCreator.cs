@@ -5,13 +5,21 @@ namespace AnApiOfIceAndFire.Models.v1
 {
     public static class BookLinkCreator
     {
-        public const string BookRouteName = "BooksApi";
+        public const string SingleBookRouteName = "SingleBooksApi";
+        public const string MultipleBooksRouteName = "MultipleBooksApi";
 
         public static string CreateBookLink(IBook book, UrlHelper urlHelper)
         {
             if (book == null) return string.Empty;
 
-            return urlHelper.Link(BookRouteName, new {id = book.Identifier});
+            return urlHelper.Link(SingleBookRouteName, new {id = book.Identifier});
+        }
+
+        public static string CreateBooksLink(UrlHelper urlHelper)
+        {
+            if (urlHelper == null) return string.Empty;
+
+            return urlHelper.Link(MultipleBooksRouteName, new {});
         }
     }
 }
