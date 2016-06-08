@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using AnApiOfIceAndFire.Data.Entities;
-using AnApiOfIceAndFire.Domain.Adapters;
+using AnApiOfIceAndFire.Domain.Characters;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 // ReSharper disable ObjectCreationAsStatement
 

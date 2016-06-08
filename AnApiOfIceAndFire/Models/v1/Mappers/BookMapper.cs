@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Http.Routing;
-using AnApiOfIceAndFire.Domain.Models;
+using AnApiOfIceAndFire.Domain.Books;
 using MediaType = AnApiOfIceAndFire.Models.v1.MediaType;
 
 namespace AnApiOfIceAndFire.Models.v1.Mappers
 {
     public class BookMapper : IModelMapper<IBook, Book>
     {
-        private readonly IModelMapper<Domain.Models.MediaType, MediaType> _mediaTypeMapper;
+        private readonly IModelMapper<Domain.Books.MediaType, MediaType> _mediaTypeMapper;
 
-        public BookMapper(IModelMapper<Domain.Models.MediaType, MediaType> mediaTypeMapper)
+        public BookMapper(IModelMapper<Domain.Books.MediaType, MediaType> mediaTypeMapper)
         {
             if (mediaTypeMapper == null) throw new ArgumentNullException(nameof(mediaTypeMapper));
             _mediaTypeMapper = mediaTypeMapper;

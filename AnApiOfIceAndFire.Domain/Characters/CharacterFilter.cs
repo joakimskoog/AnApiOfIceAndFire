@@ -1,4 +1,4 @@
-﻿namespace AnApiOfIceAndFire.Domain.Models.Filters
+﻿namespace AnApiOfIceAndFire.Domain.Characters
 {
     public class CharacterFilter
     {

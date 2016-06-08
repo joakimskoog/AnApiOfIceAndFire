@@ -6,20 +6,18 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.Hosting;
 using System.Web.Http.Results;
 using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Controllers.v1;
-using AnApiOfIceAndFire.Domain.Models;
-using AnApiOfIceAndFire.Domain.Models.Filters;
-using AnApiOfIceAndFire.Domain.Services;
+using AnApiOfIceAndFire.Domain;
+using AnApiOfIceAndFire.Domain.Books;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models.v1;
 using AnApiOfIceAndFire.Models.v1.Mappers;
 using Geymsla.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
-using MediaType = AnApiOfIceAndFire.Domain.Models.MediaType;
+using MediaType = AnApiOfIceAndFire.Domain.Books.MediaType;
 
 namespace AnApiOfIceAndFire.Tests.Controllers
 {
@@ -126,7 +124,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers
         }
 
         private static IBook CreateMockedBook(int id, string name = "bookName", string isbn = "isbn", int numberOfPages = 100, string publisher = "publisher",
-            string country = "country", MediaType mediaType = MediaType.Hardcover)
+            string country = "country", MediaType mediaType = Domain.Books.MediaType.Hardcover)
         {
             var book = MockRepository.GenerateMock<IBook>();
             book.Stub(x => x.Identifier).Return(id);

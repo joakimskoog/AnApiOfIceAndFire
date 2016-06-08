@@ -1,7 +1,7 @@
 ﻿using System;
 using AnApiOfIceAndFire.Data.Entities;
 
-namespace AnApiOfIceAndFire.Domain.Models
+namespace AnApiOfIceAndFire.Domain.Books
 {
     public static class MediaTypeEntityExtensions
     {

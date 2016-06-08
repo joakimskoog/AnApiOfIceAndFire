@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using AnApiOfIceAndFire.Data.Entities;
-using AnApiOfIceAndFire.Domain.Adapters;
-using AnApiOfIceAndFire.Domain.Models;
+using AnApiOfIceAndFire.Domain.Books;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 // ReSharper disable ObjectCreationAsStatement
 

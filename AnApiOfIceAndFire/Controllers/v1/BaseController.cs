@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using AnApiOfIceAndFire.Domain.Services;
+using AnApiOfIceAndFire.Domain;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models.v1.Mappers;
 

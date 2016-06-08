@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Http.Routing;
-using AnApiOfIceAndFire.Domain.Models;
+using AnApiOfIceAndFire.Domain.Characters;
 
 namespace AnApiOfIceAndFire.Models.v1.Mappers
 {
     public class CharacterMapper : IModelMapper<ICharacter, Character>
     {
-        private readonly IModelMapper<Domain.Models.Gender, Gender> _genderMapper;
+        private readonly IModelMapper<Domain.Characters.Gender, Gender> _genderMapper;
 
-        public CharacterMapper(IModelMapper<Domain.Models.Gender, Gender> genderMapper)
+        public CharacterMapper(IModelMapper<Domain.Characters.Gender, Gender> genderMapper)
         {
             if (genderMapper == null) throw new ArgumentNullException(nameof(genderMapper));
             _genderMapper = genderMapper;

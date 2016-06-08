@@ -1,4 +1,4 @@
-﻿namespace AnApiOfIceAndFire.Domain.Models
+﻿namespace AnApiOfIceAndFire.Domain.Characters
 {
     public enum Gender
     {

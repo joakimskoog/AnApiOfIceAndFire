@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.Hosting;
 using System.Web.Http.Results;
-using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Controllers.v1;
 using AnApiOfIceAndFire.Data.Entities;
-using AnApiOfIceAndFire.Domain.Services;
+using AnApiOfIceAndFire.Domain.Houses;
 using AnApiOfIceAndFire.Models.v1;
 using AnApiOfIceAndFire.Models.v1.Mappers;
 using Geymsla.EntityFramework;

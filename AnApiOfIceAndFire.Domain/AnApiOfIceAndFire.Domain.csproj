@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AnApiOfIceAndFire.Domain</RootNamespace>
     <AssemblyName>AnApiOfIceAndFire.Domain</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,23 +54,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adapters\CharacterEntityAdapter.cs" />
-    <Compile Include="Adapters\HouseEntityAdapter.cs" />
-    <Compile Include="Models\Filters\BookFilter.cs" />
-    <Compile Include="Models\Filters\CharacterFilter.cs" />
-    <Compile Include="Models\Filters\HouseFilter.cs" />
-    <Compile Include="Models\Gender.cs" />
-    <Compile Include="Models\MediaTypeEntityExtensions.cs" />
-    <Compile Include="Services\BaseService.cs" />
-    <Compile Include="Adapters\BookEntityAdapter.cs" />
-    <Compile Include="Services\BookService.cs" />
-    <Compile Include="Services\CharacterService.cs" />
-    <Compile Include="Services\HouseService.cs" />
-    <Compile Include="Services\IModelService.cs" />
-    <Compile Include="Models\IBook.cs" />
-    <Compile Include="Models\ICharacter.cs" />
-    <Compile Include="Models\IHouse.cs" />
-    <Compile Include="Models\MediaType.cs" />
+    <Compile Include="Characters\CharacterEntityAdapter.cs" />
+    <Compile Include="Houses\HouseEntityAdapter.cs" />
+    <Compile Include="Books\BookFilter.cs" />
+    <Compile Include="Characters\CharacterFilter.cs" />
+    <Compile Include="Houses\HouseFilter.cs" />
+    <Compile Include="Characters\Gender.cs" />
+    <Compile Include="Books\MediaTypeEntityExtensions.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Books\BookEntityAdapter.cs" />
+    <Compile Include="Books\BookService.cs" />
+    <Compile Include="Characters\CharacterService.cs" />
+    <Compile Include="Houses\HouseService.cs" />
+    <Compile Include="IModelService.cs" />
+    <Compile Include="Books\IBook.cs" />
+    <Compile Include="Characters\ICharacter.cs" />
+    <Compile Include="Houses\IHouse.cs" />
+    <Compile Include="Books\MediaType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

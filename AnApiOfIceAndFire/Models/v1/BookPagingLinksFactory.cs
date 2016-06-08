@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Http.Routing;
-using AnApiOfIceAndFire.Domain.Models;
-using AnApiOfIceAndFire.Domain.Models.Filters;
+using AnApiOfIceAndFire.Domain.Books;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using Geymsla.Collections;
 

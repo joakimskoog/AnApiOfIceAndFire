@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using AnApiOfIceAndFire.Domain.Books;
+using AnApiOfIceAndFire.Domain.Houses;
 
-namespace AnApiOfIceAndFire.Domain.Models
+namespace AnApiOfIceAndFire.Domain.Characters
 {
     public interface ICharacter
     {

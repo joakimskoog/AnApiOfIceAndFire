@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data.Entities;
-using AnApiOfIceAndFire.Domain.Services;
+using AnApiOfIceAndFire.Domain.Houses;
 using Geymsla;
 using Geymsla.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

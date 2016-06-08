@@ -1,5 +1,5 @@
 ﻿using System.Web.Http.Routing;
-using AnApiOfIceAndFire.Domain.Models;
+using AnApiOfIceAndFire.Domain.Houses;
 
 namespace AnApiOfIceAndFire.Models.v1
 {

@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Linq.Expressions;
 using AnApiOfIceAndFire.Data.Entities;
-using AnApiOfIceAndFire.Domain.Adapters;
-using AnApiOfIceAndFire.Domain.Models;
-using AnApiOfIceAndFire.Domain.Models.Filters;
 using Geymsla;
 
-namespace AnApiOfIceAndFire.Domain.Services
+namespace AnApiOfIceAndFire.Domain.Houses
 {
     public class HouseService : BaseService<IHouse, HouseEntity, HouseFilter>
     {

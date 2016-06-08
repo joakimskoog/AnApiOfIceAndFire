@@ -4,15 +4,15 @@ namespace AnApiOfIceAndFire.Models.v1
 {
     public static class GenderExtensions
     {
-        public static Domain.Models.Gender? ToDomainGender(this Gender? gender)
+        public static Domain.Characters.Gender? ToDomainGender(this Gender? gender)
         {
             if (!gender.HasValue) return null;
 
             switch (gender)
             {
-                case Gender.Female: return Domain.Models.Gender.Female;
-                case Gender.Male: return Domain.Models.Gender.Male;
-                case Gender.Unknown: return Domain.Models.Gender.Unknown;
+                case Gender.Female: return Domain.Characters.Gender.Female;
+                case Gender.Male: return Domain.Characters.Gender.Male;
+                case Gender.Unknown: return Domain.Characters.Gender.Unknown;
                 default: throw new ArgumentException($"Invalid Gender: {gender}");
             }
         }

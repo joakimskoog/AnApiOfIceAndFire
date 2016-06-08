@@ -2,9 +2,10 @@ using System;
 using System.Data.Entity;
 using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Entities;
-using AnApiOfIceAndFire.Domain.Models;
-using AnApiOfIceAndFire.Domain.Models.Filters;
-using AnApiOfIceAndFire.Domain.Services;
+using AnApiOfIceAndFire.Domain;
+using AnApiOfIceAndFire.Domain.Books;
+using AnApiOfIceAndFire.Domain.Characters;
+using AnApiOfIceAndFire.Domain.Houses;
 using AnApiOfIceAndFire.Infrastructure;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models.v1;
@@ -12,7 +13,8 @@ using AnApiOfIceAndFire.Models.v1.Mappers;
 using Geymsla;
 using Geymsla.EntityFramework;
 using Microsoft.Practices.Unity;
-using MediaType = AnApiOfIceAndFire.Domain.Models.MediaType;
+using Gender = AnApiOfIceAndFire.Domain.Characters.Gender;
+using MediaType = AnApiOfIceAndFire.Domain.Books.MediaType;
 
 namespace AnApiOfIceAndFire
 {
@@ -52,7 +54,7 @@ namespace AnApiOfIceAndFire
             container.RegisterType<IReadOnlyRepository<BookEntity, int>, EntityFrameworkRepository<BookEntity, int>>();
             container.RegisterType<IReadOnlyRepository<CharacterEntity, int>, EntityFrameworkRepository<CharacterEntity, int>>();
             container.RegisterType<IReadOnlyRepository<HouseEntity, int>, EntityFrameworkRepository<HouseEntity, int>>();
-            container.RegisterType<IModelMapper<Domain.Models.Gender, Models.v1.Gender>, GenderMapper>();
+            container.RegisterType<IModelMapper<Gender, Models.v1.Gender>, GenderMapper>();
             container.RegisterType<IModelMapper<MediaType, Models.v1.MediaType>, MediaTypeMapper>();
             container.RegisterType<IModelMapper<IBook, Book>, BookMapper>();
             container.RegisterType<IModelMapper<ICharacter, Character>, CharacterMapper>();

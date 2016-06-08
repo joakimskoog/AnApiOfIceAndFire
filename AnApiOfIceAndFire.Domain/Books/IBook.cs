@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using AnApiOfIceAndFire.Domain.Characters;
+
 // ReSharper disable InconsistentNaming
 
-namespace AnApiOfIceAndFire.Domain.Models
+namespace AnApiOfIceAndFire.Domain.Books
 {
     public interface IBook
     {

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Web.Http.Routing;
-using AnApiOfIceAndFire.Domain.Models;
+using AnApiOfIceAndFire.Domain.Books;
 using AnApiOfIceAndFire.Models.v1.Mappers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

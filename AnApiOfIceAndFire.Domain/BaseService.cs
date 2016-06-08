@@ -6,7 +6,7 @@ using AnApiOfIceAndFire.Data.Entities;
 using Geymsla;
 using Geymsla.Collections;
 
-namespace AnApiOfIceAndFire.Domain.Services
+namespace AnApiOfIceAndFire.Domain
 {
     public abstract class BaseService<TModel, TEntity, TFilter> : IModelService<TModel,TFilter>
         where TEntity : BaseEntity

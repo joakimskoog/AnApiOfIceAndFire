@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using AnApiOfIceAndFire.Data.Entities;
-using AnApiOfIceAndFire.Domain.Models;
+using AnApiOfIceAndFire.Domain.Characters;
 
-namespace AnApiOfIceAndFire.Domain.Adapters
+namespace AnApiOfIceAndFire.Domain.Books
 {
     public class BookEntityAdapter : IBook
     {

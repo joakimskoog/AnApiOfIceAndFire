@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AnApiOfIceAndFire.Domain.Models.Filters
+namespace AnApiOfIceAndFire.Domain.Books
 {
     public class BookFilter
     {

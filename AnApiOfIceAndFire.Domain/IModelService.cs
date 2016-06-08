@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Geymsla.Collections;
 
-namespace AnApiOfIceAndFire.Domain.Services
+namespace AnApiOfIceAndFire.Domain
 {
     public interface IModelService<T, in TFilter> where TFilter : class
     {

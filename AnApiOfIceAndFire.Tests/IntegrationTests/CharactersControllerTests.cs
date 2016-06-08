@@ -4,17 +4,16 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.Hosting;
 using System.Web.Http.Results;
-using System.Web.Http.Routing;
 using AnApiOfIceAndFire.Controllers.v1;
 using AnApiOfIceAndFire.Data.Entities;
-using AnApiOfIceAndFire.Domain.Services;
 using AnApiOfIceAndFire.Models.v1;
 using AnApiOfIceAndFire.Models.v1.Mappers;
 using Geymsla.EntityFramework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
+using AnApiOfIceAndFire.Domain.Characters;
+using Gender = AnApiOfIceAndFire.Models.v1.Gender;
 // ReSharper disable PossibleMultipleEnumeration
 
 namespace AnApiOfIceAndFire.Tests.IntegrationTests
@@ -372,7 +371,7 @@ namespace AnApiOfIceAndFire.Tests.IntegrationTests
             controller.Request = new HttpRequestMessage(HttpMethod.Get, new Uri("http://localhost.com/api/characters"));
 
             IEnumerable<Character> characters;
-            var result = await controller.Get(gender: Gender.Female);
+            var result = await controller.Get(gender: AnApiOfIceAndFire.Models.v1.Gender.Female);
             result.TryGetContentValue(out characters);
 
             foreach (var character in characters)
