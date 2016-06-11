@@ -13,9 +13,12 @@ namespace AnApiOfIceAndFire
         public const string AllowedAcceptHeaderMediaTypeParameter = "version";
 
 
-        public static void Register() 
-		{
-			GlobalConfiguration.Configuration.EnableHeaderVersioning(new HeaderVersioningOptions(AllowedAcceptHeaderMediaType, AllowedAcceptHeaderMediaTypeParameter, DefaultVersionResolving.UseLatestIfEmpty, "v"));
-		}
+        public static void Register()
+        {
+            GlobalConfiguration.Configuration.EnableHeaderVersioning(new HeaderVersioningOptions(AllowedAcceptHeaderMediaType,
+                AllowedAcceptHeaderMediaTypeParameter, DefaultVersionResolving.UseLatestIfEmpty,
+                requestVersion => $"v{requestVersion}"
+                ));
+        }
     }
 }

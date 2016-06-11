@@ -81,8 +81,8 @@
       <HintPath>..\packages\Geymsla.EntityFramework.2.1.1\lib\Geymsla.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Headmaster, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Headmaster.1.0.0\lib\net461\Headmaster.dll</HintPath>
+    <Reference Include="Headmaster, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Headmaster.1.1.0\lib\net461\Headmaster.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Headmaster.Core, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
