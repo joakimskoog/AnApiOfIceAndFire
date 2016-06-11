@@ -9,9 +9,13 @@ namespace AnApiOfIceAndFire
 {
     public class HeaderVersioningConfig
     {
-		public static void Register() 
+        public const string AllowedAcceptHeaderMediaType = "application/vnd.anapioficeandfire+json";
+        public const string AllowedAcceptHeaderMediaTypeParameter = "version";
+
+
+        public static void Register() 
 		{
-			GlobalConfiguration.Configuration.EnableHeaderVersioning(new HeaderVersioningOptions("application/vnd.anapioficeandfire+json", "version", DefaultVersionResolving.UseLatestIfEmpty, "v"));
+			GlobalConfiguration.Configuration.EnableHeaderVersioning(new HeaderVersioningOptions(AllowedAcceptHeaderMediaType, AllowedAcceptHeaderMediaTypeParameter, DefaultVersionResolving.UseLatestIfEmpty, "v"));
 		}
     }
 }

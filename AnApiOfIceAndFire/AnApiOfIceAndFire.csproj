@@ -258,7 +258,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\AcceptHeaderControllerSelector.cs" />
     <Compile Include="Infrastructure\ApplicationInsightExceptionLogger.cs" />
     <Compile Include="Infrastructure\GlobalExceptionHandler.cs" />
     <Compile Include="Infrastructure\Html\HtmlHelperExtensions.cs" />

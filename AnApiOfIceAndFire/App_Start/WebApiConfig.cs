@@ -2,7 +2,6 @@
 using System.Web.Configuration;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using System.Web.Http.Dispatcher;
 using System.Web.Http.ExceptionHandling;
 using AnApiOfIceAndFire.Infrastructure;
 using CacheCow.Server;
@@ -11,9 +10,6 @@ using Microsoft.ApplicationInsights.Extensibility;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
-using static AnApiOfIceAndFire.Models.v1.BookLinkCreator;
-using static AnApiOfIceAndFire.Models.v1.CharacterLinkCreator;
-using static AnApiOfIceAndFire.Models.v1.HouseLinkCreator;
 
 namespace AnApiOfIceAndFire
 {
@@ -51,9 +47,9 @@ namespace AnApiOfIceAndFire
             config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
 
             //Add our own media type to enable versioning via the accept header. Make this sexier, maybe use reflection to reflect all current namespaces?
-            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue(AcceptHeaderControllerSelector.AllowedAcceptHeaderMediaType)
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue(HeaderVersioningConfig.AllowedAcceptHeaderMediaType)
             {
-                Parameters = { new NameValueHeaderValue(AcceptHeaderControllerSelector.AllowedAcceptHeaderMediaTypeParamter, "1") }
+                Parameters = { new NameValueHeaderValue(HeaderVersioningConfig.AllowedAcceptHeaderMediaTypeParameter, "1") }
             });
 
             //Remove the possibility to serialize models to XML since we don't want to support that at the moment.
