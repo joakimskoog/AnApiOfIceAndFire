@@ -10,6 +10,7 @@ using Geymsla.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 using AnApiOfIceAndFire.Domain.Books;
+// ReSharper disable UnusedVariable
 
 namespace AnApiOfIceAndFire.Domain.Tests.Services
 {
