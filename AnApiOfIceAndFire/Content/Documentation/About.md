@@ -8,7 +8,7 @@ We give you access to data about all the **Books**, **Characters** and **Houses*
 ## Who are you?
 
 
-I'm [Joakim Skoog](https://github.com/joakimskoog) and I build cool, cloud-based logistics software over at [Centiro](https://www.centiro.com/). If you have questions or thoughts about this API don't hesitate to send me a [tweet](https://twitter.com/j_skoog) or an [email](mailto:info@anapioficeandfire.com).
+I'm [Joakim Skoog](https://github.com/joakimskoog) and I build cool stuff over at [Nelly.com](https://nelly.com). If you have questions or thoughts about this API don't hesitate to send me a [tweet](https://twitter.com/j_skoog) or an [email](mailto:info@anapioficeandfire.com).
 
 ## Why did you build this?
 
