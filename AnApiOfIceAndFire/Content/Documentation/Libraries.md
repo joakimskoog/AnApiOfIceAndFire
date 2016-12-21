@@ -25,3 +25,7 @@ There exists helper libraries that will help you consume An API of Ice And Fire 
 * [IceAndFireKit](https://github.com/murphb52/IceAndFireKit) by [Brian Murphy](https://github.com/murphb52)
 * [IceAndFireLoader](https://github.com/ujell/IceAndFireLoader) by [Yucel Uzun](https://github.com/ujell)
 * [WesterosKit](https://github.com/fitomad/WesterosKit) by [Adolfo](https://github.com/fitomad)
+
+<a name="library-haskell"></a>
+### Haskell
+* [anapioficeandfire-haskell](https://github.com/kberger/anapioficeandfire-haskell) by [Karl Berger]((https://github.com/kberger)
