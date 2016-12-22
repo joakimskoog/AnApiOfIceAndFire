@@ -28,4 +28,4 @@ There exists helper libraries that will help you consume An API of Ice And Fire 
 
 <a name="library-haskell"></a>
 ### Haskell
-* [anapioficeandfire-haskell](https://github.com/kberger/anapioficeandfire-haskell) by [Karl Berger]((https://github.com/kberger)
+* [anapioficeandfire-haskell](https://github.com/kberger/anapioficeandfire-haskell) by [Karl Berger](https://github.com/kberger)
