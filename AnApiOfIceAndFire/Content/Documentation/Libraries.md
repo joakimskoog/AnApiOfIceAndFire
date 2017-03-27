@@ -24,6 +24,10 @@ There exists helper libraries that will help you consume An API of Ice And Fire 
 ### Python
 * [anapioficeandfire-python](https://github.com/joakimskoog/anapioficeandfire-python) by the author of An API of Ice And Fire, [Joakim Skoog](https://github.com/joakimskoog)
 
+<a name="library-ruby"></a>
+### Ruby
+* [game_of_thrones_api](https://github.com/jzntam/game_of_thrones_api) by [Jason Tam](https://github.com/jzntam)
+
 <a name="library-swift"></a>
 ### Swift
 * [IceAndFireKit](https://github.com/murphb52/IceAndFireKit) by [Brian Murphy](https://github.com/murphb52)
