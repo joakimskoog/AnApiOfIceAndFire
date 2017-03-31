@@ -22,7 +22,7 @@ There exists helper libraries that will help you consume An API of Ice And Fire 
 
 <a name="library-python"></a>
 ### Python
-* [anapioficeandfire-python](https://github.com/joakimskoog/anapioficeandfire-python) by the author of An API of Ice And Fire, [Joakim Skoog](https://github.com/joakimskoog)
+* [anapioficeandfire-python](https://github.com/joakimskoog/anapioficeandfire-python) by the author of An API of Ice And Fire, [Joakim Skoog](http://joakimskoog.me/)
 
 <a name="library-ruby"></a>
 ### Ruby
