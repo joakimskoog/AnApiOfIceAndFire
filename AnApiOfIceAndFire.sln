@@ -1,19 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnApiOfIceAndFire", "src\AnApiOfIceAndFire\AnApiOfIceAndFire.csproj", "{F5E02BFB-4A53-4867-B55C-D8F1CFFC316F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire", "src\AnApiOfIceAndFire\AnApiOfIceAndFire.csproj", "{F5E02BFB-4A53-4867-B55C-D8F1CFFC316F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{38881ED6-B7BA-4273-B421-2ED256FECF7B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{83A9DFF2-D534-4ACE-B65C-F1D7B5916A35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnApiOfIceAndFire.Tests", "tests\AnApiOfIceAndFire.Tests\AnApiOfIceAndFire.Tests.csproj", "{AA0E58ED-EBE1-470F-B5FB-36259DBCA79B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire.Tests", "tests\AnApiOfIceAndFire.Tests\AnApiOfIceAndFire.Tests.csproj", "{AA0E58ED-EBE1-470F-B5FB-36259DBCA79B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnApiOfIceAndFire.Data", "src\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj", "{1B7AEDDD-542D-437B-9D24-D04B6184EA90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire.Data", "src\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj", "{1B7AEDDD-542D-437B-9D24-D04B6184EA90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnApiOfIceAndFire.Data.Tests", "tests\AnApiOfIceAndFire.Data.Tests\AnApiOfIceAndFire.Data.Tests.csproj", "{6596AA15-FDFE-495A-B4DF-DDB8988E8FCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire.Data.Tests", "tests\AnApiOfIceAndFire.Data.Tests\AnApiOfIceAndFire.Data.Tests.csproj", "{6596AA15-FDFE-495A-B4DF-DDB8988E8FCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{B8D0279E-3777-4BCE-821F-CCC20F60621F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
