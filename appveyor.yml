@@ -28,7 +28,7 @@ build:
   verbosity: normal
 
 test_script:
-  - dotnet test \AnApiOfIceAndFire.Tests\AnApiOfIceAndFire.Tests.csproj
+  - dotnet test tests\AnApiOfIceAndFire.Tests\AnApiOfIceAndFire.Tests.csproj
 
 #test:
 #  assemblies:
