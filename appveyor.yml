@@ -27,7 +27,7 @@ build:
   project: AnApiOfIceAndFire.sln    # path to Visual Studio solution or project   
   verbosity: normal
 
-#test_script:
+test_script:
   - dotnet test
 
 #test:
