@@ -1,0 +1,32 @@
+os: Visual Studio 2017
+
+configuration: Release
+
+# Do not build on tags (GitHub only)
+skip_tags: true
+
+# Do not build when changing these files
+skip_commits:
+  files:
+  - LICENSE.md
+  - README.md
+
+branches:
+  only:
+    - release
+  
+init:
+  - git config --global core.autocrlf input  
+
+before_build:
+  - dotnet --info
+  - nuget restore  
+
+build:
+  parallel: true                 # enable MSBuild parallel builds
+  project: AnApiOfIceAndFire.sln    # path to Visual Studio solution or project   
+  verbosity: normal
+
+test:
+  assemblies:
+    - '**\*.Tests.dll'
