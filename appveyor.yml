@@ -10,10 +10,10 @@ skip_commits:
   files:
   - LICENSE.md
   - README.md
-
+  
 branches:
   only:
-    - release
+    - aspnetcore11-port
   
 init:
   - git config --global core.autocrlf input  
