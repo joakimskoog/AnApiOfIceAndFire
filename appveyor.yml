@@ -27,9 +27,9 @@ build:
   project: AnApiOfIceAndFire.sln    # path to Visual Studio solution or project   
   verbosity: normal
 
-test_script:
-  - dotnet xunit
+#test_script:
+#  - dotnet xunit
 
-#test:
-#  assemblies:
-#    - '**\*.Tests.dll'
+test:
+  assemblies:
+    - '**\*.Tests.dll'
