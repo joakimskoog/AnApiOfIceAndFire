@@ -28,8 +28,8 @@ build:
   verbosity: normal
 
 #test_script:
-#  - dotnet xunit
+  - dotnet test
 
-test:
-  assemblies:
-    - '**\*.Tests.dll'
+#test:
+#  assemblies:
+#    - '**\*.Tests.dll'
