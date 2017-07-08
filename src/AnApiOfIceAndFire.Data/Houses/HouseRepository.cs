@@ -1,28 +1,44 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
+using Dapper;
+using Dapper.Contrib.Extensions;
 using SimplePagedList;
 
 namespace AnApiOfIceAndFire.Data.Houses
 {
-    public class HouseRepository : IEntityRepository<HouseEntity, HouseFilter>
+    public class HouseRepository : BaseRepository<HouseEntity, HouseFilter>
     {
-        private readonly string _connectionString;
-
-        public HouseRepository(string connectionString)
+        public HouseRepository(string connectionString) : base(connectionString)
         {
-            if (connectionString == null) throw new ArgumentNullException(nameof(connectionString));
-            _connectionString = connectionString;
         }
 
-        public Task<HouseEntity> GetEntityAsync(int id)
+        public override Task<HouseEntity> GetEntityAsync(int id)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public async Task<IPagedList<HouseEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, HouseFilter filter = null)
+        public override Task<IPagedList<HouseEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, HouseFilter filter = null)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
+        protected override async Task InsertRelationships(HouseEntity house, SqlTransaction transaction, SqlConnection connection)
+        {
+            var insertTasks = new List<Task>();
+
+            foreach (var cadetBranch in house.CadetBranchIdentifiers)
+            {
+                var task = connection.ExecuteAsync("INSERT INTO dbo.house_cadetbranch_link VALUES(@HouseId, @CadetBranchHouseId)", new
+                {
+                    HouseId = house.Id,
+                    CadetBranchHouseId = cadetBranch
+                }, transaction);
+                insertTasks.Add(task);
+            }
+
+            await Task.WhenAll(insertTasks);
+        }
     }
 }

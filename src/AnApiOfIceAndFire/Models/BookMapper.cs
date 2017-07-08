@@ -17,7 +17,8 @@ namespace AnApiOfIceAndFire.Models
             var characterUrls = from.CharacterIdentifiers.Select(urlHelper.LinkToCharacter);
             var povCharacterUrls = from.PovCharacterIdentifiers.Select(urlHelper.LinkToCharacter);
 
-            return new Book(bookUrl, from.Name, from.ISBN, from.Authors, from.NumberOfPages, from.Publisher, from.Country, from.MediaType, from.ReleaseDate, characterUrls, povCharacterUrls);
+            return new Book(bookUrl, from.Name, from.ISBN, from.ParseAuthors(), from.NumberOfPages, from.Publisher,
+                from.Country, from.MediaType, from.ReleaseDate, characterUrls, povCharacterUrls);
         }
     }
 }

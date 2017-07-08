@@ -1,4 +1,5 @@
 ﻿using System;
+using AnApiOfIceAndFire.Data.Books;
 
 namespace AnApiOfIceAndFire.DataFeeder
 {
@@ -15,5 +16,21 @@ namespace AnApiOfIceAndFire.DataFeeder
         public DateTime ReleaseDate { get; set; }
         public int? PrecededBy { get; set; }
         public int? FollowedBy { get; set; }
+
+        public BookEntity ToBookEntity()
+        {
+            return new BookEntity()
+            {
+                Id = Id,
+                Name = Name,
+                ISBN = ISBN,
+                Country = Country,
+                NumberOfPages = NumberOfPages,
+                Publisher = Publisher,
+                ReleaseDate = ReleaseDate,
+                MediaType = MediaTypeParser.ParseMediaType(MediaType),
+                Authors = string.Join(";", Authors)
+            };
+        }
     }
 }

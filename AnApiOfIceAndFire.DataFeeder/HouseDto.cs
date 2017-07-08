@@ -1,4 +1,6 @@
-﻿namespace AnApiOfIceAndFire.DataFeeder
+﻿using AnApiOfIceAndFire.Data.Houses;
+
+namespace AnApiOfIceAndFire.DataFeeder
 {
     public class HouseDto
     {
@@ -17,5 +19,27 @@
         public string DiedOut { get; set; }
         public string[] AncestralWeapons { get; set; }
         public int[] CadetBranches { get; set; }
+
+        public HouseEntity ToHouseEntity()
+        {
+            return new HouseEntity()
+            {
+                Id = Id,
+                Name = Name,
+                CoatOfArms = CoatOfArms,
+                DiedOut = DiedOut,
+                Region = Region,
+                Words = Words,
+                CurrentLordId = CurrentLord,
+                Founded = Founded,
+                FounderId = Founder,
+                HeirId = Heir,
+                OverlordId = Overlord,
+                CadetBranchIdentifiers = CadetBranches,
+                Titles = string.Join(";", Titles),
+                Seats = string.Join(";", Seats),
+                AncestralWeapons = string.Join(";", AncestralWeapons),
+            };
+        }
     }
 }

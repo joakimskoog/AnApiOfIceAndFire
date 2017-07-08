@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using SimplePagedList;
 
 namespace AnApiOfIceAndFire.Data
@@ -8,5 +9,7 @@ namespace AnApiOfIceAndFire.Data
         Task<TEntity> GetEntityAsync(int id);
 
         Task<IPagedList<TEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, TEntityFilter filter = null);
+
+        Task InsertEntitiesAsync(List<TEntity> entities);
     }
 }

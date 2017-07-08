@@ -1,31 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using AnApiOfIceAndFire.Data.Characters;
 using Dapper.Contrib.Extensions;
 
 namespace AnApiOfIceAndFire.Data.Books
 {
+    [Table("books")]
     public class BookEntity : BaseEntity
     {
         public string ISBN { get; set; }
+        public string Authors { get; set; }
+        public int NumberOfPages { get; set; }
+        public string Publisher { get; set; }
+        public MediaType MediaType { get; set; }
+        public string Country { get; set; }
+        public DateTime ReleaseDate { get; set; }
 
-        internal string AuthorsRaw { get; set; } = "";
+        [Computed]
+        public ICollection<int> CharacterIdentifiers { get; internal set; } = new List<int>();
 
-        public string[] Authors
+        [Computed]
+        public ICollection<int> PovCharacterIdentifiers { get; internal set; } = new List<int>();
+
+        public string[] ParseAuthors()
         {
-            get => AuthorsRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            internal set => AuthorsRaw = string.Join(";", value);
+            return Authors.Split(new[] { SplitDelimiter }, StringSplitOptions.RemoveEmptyEntries);
         }
-        
-        public int NumberOfPages { get;  set; }
-        public string Publisher { get;  set; }
-        public MediaType MediaType { get;  set; }
-        public string Country { get;  set; }
-        public DateTime ReleaseDate { get;  set; }
-
-        public ICollection<int> CharacterIdentifiers { get; set; } = new List<int>();
-
-        public ICollection<int> PovCharacterIdentifiers { get; set; } = new List<int>();
     }
 }

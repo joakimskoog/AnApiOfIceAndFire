@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
+using System.Linq;
 using AnApiOfIceAndFire.Data.Books;
+using AnApiOfIceAndFire.Data.Characters;
+using AnApiOfIceAndFire.Data.Houses;
 using Dapper;
+using Dapper.Contrib.Extensions;
 using Newtonsoft.Json;
 
 namespace AnApiOfIceAndFire.DataFeeder
@@ -15,7 +19,7 @@ namespace AnApiOfIceAndFire.DataFeeder
             "create_books_table.sql", "create_characters_table.sql", "create_houses_table.sql",
             "create_book_character_link_table.sql", "create_character_house_link.sql", "create_house_cadetbranch_link.sql"
         };
-        
+
         static void Main(string[] args)
         {
             if (args.Length == 0)
@@ -28,13 +32,13 @@ namespace AnApiOfIceAndFire.DataFeeder
             var connectionString = args[2];
             Console.WriteLine($"Looking for needed files in {folder}");
 
-            var books = GetDtoData<BookDto>(folder, "books.json");
+            var books = GetDtoData<BookDto>(folder, "books.json").Select(b => b.ToBookEntity()).ToList();
             Console.WriteLine($"Parsed {books.Count} number of books");
 
-            var characters = GetDtoData<CharacterDto>(folder, "characters.json");
+            var characters = GetDtoData<CharacterDto>(folder, "characters.json").Select(c => c.ToCharacterEntity()).ToList();
             Console.WriteLine($"Parsed {characters.Count} number of characters");
 
-            var houses = GetDtoData<HouseDto>(folder, "houses.json");
+            var houses = GetDtoData<HouseDto>(folder, "houses.json").Select(h => h.ToHouseEntity()).ToList();
             Console.WriteLine($"Parsed {houses.Count} number of houses");
 
             using (var connection = new SqlConnection(initialConnectionString))
@@ -44,6 +48,7 @@ namespace AnApiOfIceAndFire.DataFeeder
                 Console.WriteLine($"Created database: {result}");
             }
 
+
             using (var connection = new SqlConnection(connectionString))
             {
                 foreach (var initScript in InitScripts)
@@ -52,114 +57,19 @@ namespace AnApiOfIceAndFire.DataFeeder
                     connection.Execute(scriptData);
 
                 }
-                Console.WriteLine("Finished creating tables");
-
-                foreach (var book in books)
-                {
-                    var mediaType = MediaTypeParser.ParseMediaType(book.MediaType);
-                    connection.Execute("INSERT INTO dbo.books VALUES(@Id, @Name, @ISBN, @Authors, @NumberOfPages, @Publisher, @MediaType, @Country, @ReleaseDate)",
-                        new
-                        {
-                            book.Id,
-                            book.Name,
-                            book.ISBN,
-                            Authors = string.Join(";", book.Authors),
-                            book.NumberOfPages,
-                            book.Publisher,
-                            MediaType = mediaType,
-                            book.Country,
-                            book.ReleaseDate
-                        });
-                }
-                Console.WriteLine("Finished inserting book data");
-
-                foreach (var character in characters)
-                {
-                    connection.Execute(
-                        "INSERT INTO dbo.characters VALUES(@Id, @Name, @Culture, @Born, @Died, @IsFemale, @Aliases, @Titles, @TvSeries, @PlayedBy," +
-                        "@FatherId, @MotherId, @SpouseId)", new
-                        {
-                            character.Id,
-                            character.Name,
-                            character.IsFemale,
-                            character.Culture,
-                            Titles = string.Join(";", character.Titles),
-                            Aliases = string.Join(";", character.Aliases),
-                            character.Born,
-                            character.Died,
-                            FatherId = character.Father,
-                            MotherId = character.Mother,
-                            SpouseId = character.Spouse,
-                            PlayedBy = string.Join(";", character.PlayedBy),
-                            TvSeries = string.Join(";", character.TvSeries)
-                        });
-
-                    foreach (var book in character.Books)
-                    {
-                        connection.Execute(
-                            "INSERT INTO dbo.book_character_link VALUES(@BookId, @CharacterId, @Type)", new
-                            {
-                                BookId = book,
-                                CharacterId = character.Id,
-                                Type = 0
-                            });
-                    }
-                    foreach (var povBook in character.PovBooks)
-                    {
-                        connection.Execute(
-                            "INSERT INTO dbo.book_character_link VALUES(@BookId, @CharacterId, @Type)", new
-                            {
-                                BookId = povBook,
-                                CharacterId = character.Id,
-                                Type = 1
-                            });
-                    }
-
-                    foreach (var allegiance in character.Allegiances)
-                    {
-                        connection.Execute("INSERT INTO dbo.character_house_link VALUES(@CharacterId, @HouseId)", new
-                        {
-                            CharacterId = character.Id,
-                            HouseId = allegiance
-                        });
-                    }
-                }
-                Console.WriteLine("Finished inserting character data");
-
-                foreach (var house in houses)
-                {
-                    var result = connection.Execute(
-                        "INSERT INTO dbo.houses VALUES(@Id, @Name, @CoatOfArms, @Words, @Region, @Founded, @DiedOut, @Seats, @Titles, @AncestralWeapons," +
-                        "@FounderId, @CurrentLordId, @HeirId, @OverlordId)", new
-                        {
-                            house.Id,
-                            house.Name,
-                            house.CoatOfArms,
-                            house.Words,
-                            house.Region,
-                            house.Founded,
-                            house.DiedOut,
-                            Seats = string.Join(";", house.Seats),
-                            Titles = string.Join(";", house.Titles),
-                            AncestralWeapons = string.Join(";", house.AncestralWeapons),
-                            FounderId = house.Founder,
-                            CurrentLordId = house.CurrentLord,
-                            HeirId = house.Heir,
-                            OverlordId = house.Overlord,
-                        });
-
-                    foreach (var cadetBranch in house.CadetBranches)
-                    {
-                        connection.Execute("INSERT INTO dbo.house_cadetbranch_link VALUES(@HouseId, @CadetBranchHouseId)", new
-                        {
-                            HouseId = house.Id,
-                            CadetBranchHouseId = cadetBranch
-                        });
-                    }
-                }
-
-                Console.WriteLine("Finished inserting house data");
             }
+
+            var bookRepo = new BookRepository(connectionString);
+            bookRepo.InsertEntitiesAsync(books).GetAwaiter().GetResult();
+            Console.WriteLine("Finished inserting book data");
+
+            var characterRepo = new CharacterRepository(connectionString);
+            characterRepo.InsertEntitiesAsync(characters).GetAwaiter().GetResult();
+            Console.WriteLine("Finished inserting character data");
+
+            var houseRepo = new HouseRepository(connectionString);
+            houseRepo.InsertEntitiesAsync(houses).GetAwaiter().GetResult();
+            Console.WriteLine("Finished inserting house data");
         }
 
         private static string GetScriptData(string folder, string file)

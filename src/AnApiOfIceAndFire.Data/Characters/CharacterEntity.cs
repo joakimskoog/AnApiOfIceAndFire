@@ -1,50 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
+using Dapper.Contrib.Extensions;
 
 namespace AnApiOfIceAndFire.Data.Characters
 {
+    [Table("characters")]
     public class CharacterEntity : BaseEntity
     {
-        public string Culture { get; internal set; }
-        public string Born { get; internal set; }
-        public string Died { get; internal set; }
-        public bool? IsFemale { get; internal set; }
+        public string Culture { get; set; }
+        public string Born { get; set; }
+        public string Died { get; set; }
+        public bool? IsFemale { get; set; }
+        public string Aliases { get; set; }
+        public string Titles { get; set; }
+        public string TvSeries { get; set; }
+        public string PlayedBy { get; set; }
 
-        internal string AliasesRaw { get; set; }
-        public string[] Aliases
+        public int? FatherId { get; set; }
+        public int? MotherId { get; set; }
+        public int? SpouseId { get; set; }
+
+        [Computed]
+        public ICollection<int> AllegianceIdentifiers { get;  set; } = new List<int>();
+
+        [Computed]
+        public ICollection<int> BookIdentifiers { get;  set; } = new List<int>();
+
+        [Computed]
+        public ICollection<int> PovBookIdentifiers { get;  set; } = new List<int>();
+
+        public string[] ParseAliases()
         {
-            get => AliasesRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            internal set => AliasesRaw = string.Join(";", value);
+            return Aliases.Split(SplitDelimiter);
         }
 
-        internal string TitlesRaw { get; set; }
-        public string[] Titles
+        public string[] ParseTitles()
         {
-            get => TitlesRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            internal set => TitlesRaw = string.Join(";", value);
+            return Titles.Split(SplitDelimiter);
         }
 
-        internal string TvSeriesRaw { get; set; }
-        public string[] TvSeries
+        public string[] ParseTvSeries()
         {
-            get => TvSeriesRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            internal set => TvSeriesRaw = string.Join(";", value);
+            return TvSeries.Split(SplitDelimiter);
         }
 
-        internal string PlayedByRaw { get; set; }
-        public string[] PlayedBy
+        public string[] ParsePlayedBy()
         {
-            get => PlayedByRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            internal set => PlayedByRaw = string.Join(";", value);
+            return PlayedBy.Split(SplitDelimiter);
         }
-
-        public int? FatherId { get; internal set; }
-        public int? MotherId { get; internal set; }
-        public int? SpouseId { get; internal set; }
-        
-        public ICollection<int> AllegianceIdentifiers { get; internal set; } = new List<int>();
-
-        public ICollection<int> BookIdentifiers { get; internal set; } = new List<int>();
-        public ICollection<int> PovBookIdentifiers { get; internal set; } = new List<int>();
     }
 }

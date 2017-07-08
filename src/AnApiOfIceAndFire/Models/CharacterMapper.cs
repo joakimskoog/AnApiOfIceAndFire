@@ -33,10 +33,10 @@ namespace AnApiOfIceAndFire.Models
                 Spouse = spouseUrl,
                 Books = bookUrls,
                 PovBooks = povBookUrls,
-                Aliases = from.Aliases,
-                Titles = from.Titles,
-                PlayedBy = from.PlayedBy,
-                TvSeries = from.TvSeries,
+                Aliases = from.ParseAliases(),
+                Titles = from.ParseTitles(),
+                PlayedBy = from.ParsePlayedBy(),
+                TvSeries = from.ParseTvSeries(),
                 Allegiances = allegianceUrls
             };
         }

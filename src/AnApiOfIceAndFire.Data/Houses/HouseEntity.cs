@@ -1,43 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
+using Dapper.Contrib.Extensions;
 
 namespace AnApiOfIceAndFire.Data.Houses
 {
+    [Table("houses")]
     public class HouseEntity : BaseEntity
     {
-        public string CoatOfArms { get; internal set; }
-        public string Words { get; internal set; }
-        public string Region { get; internal set; }
-        public string Founded { get; internal set; }
-        public string DiedOut { get; internal set; }
+        public string CoatOfArms { get;  set; }
+        public string Words { get;  set; }
+        public string Region { get;  set; }
+        public string Founded { get;  set; }
+        public string DiedOut { get;  set; }
 
-        internal string SeatsRaw { get; set; }
-        public string[] Seats
+        public string Seats { get; set; }
+        public string Titles { get; set; }
+        public string AncestralWeapons { get; set; }
+
+        public int? FounderId { get;  set; }
+        public int? CurrentLordId { get;  set; }
+        public int? HeirId { get;  set; }
+        public int? OverlordId { get;  set; }
+
+        [Computed]
+        public ICollection<int> SwornMemberIdentifiers { get;  set; } = new List<int>();
+
+        [Computed]
+        public ICollection<int> CadetBranchIdentifiers { get;  set; } = new List<int>();
+
+        public string[] ParseSeats()
         {
-            get => SeatsRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            internal set => SeatsRaw = string.Join(";", value);
+            return Seats.Split(SplitDelimiter);
         }
 
-        internal string TitlesRaw { get; set; }
-        public string[] Titles
+        public string[] ParseTitles()
         {
-            get => TitlesRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            internal set => TitlesRaw = string.Join(";", value);
+            return Titles.Split(SplitDelimiter);
         }
 
-        internal string AncestralWeaponsRaw { get; set; }
-        public string[] AncestralWeapons
+        public string[] ParseAncestralWeapons()
         {
-            get => AncestralWeaponsRaw.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            internal set => AncestralWeaponsRaw = string.Join(";", value);
+            return AncestralWeapons.Split(SplitDelimiter);
         }
-
-        public int? FounderId { get; internal set; }
-        public int? CurrentLordId { get; internal set; }
-        public int? HeirId { get; internal set; }
-        public int? OverlordId { get; internal set; }
-        
-        public ICollection<int> SwornMemberIdentifiers { get; internal set; } = new List<int>();
-        public ICollection<int> CadetBranchIdentifiers { get; internal set; } = new List<int>();
     }
 }

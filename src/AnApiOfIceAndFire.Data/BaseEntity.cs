@@ -1,8 +1,14 @@
-﻿namespace AnApiOfIceAndFire.Data
+﻿using Dapper;
+using Dapper.Contrib.Extensions;
+
+namespace AnApiOfIceAndFire.Data
 {
     public abstract class BaseEntity
     {
-        public int Id { get; internal set; }
-        public string Name { get; internal set; }
+        public const char SplitDelimiter = ';';
+
+        [ExplicitKey]
+        public int Id { get;  set; }
+        public string Name { get;  set; }
     }
 }
