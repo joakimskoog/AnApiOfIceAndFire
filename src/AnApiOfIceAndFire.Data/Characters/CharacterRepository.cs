@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper;
+using Microsoft.Extensions.Options;
 using SimplePagedList;
 
 namespace AnApiOfIceAndFire.Data.Characters
@@ -13,13 +14,13 @@ namespace AnApiOfIceAndFire.Data.Characters
                                                             SELECT* FROM dbo.character_house_link WHERE CharacterId = @Id
                                                             SELECT* FROM dbo.book_character_link WHERE CharacterId = @Id";
 
-        public CharacterRepository(string connectionString) : base(connectionString)
+        public CharacterRepository(IOptions<ConnectionOptions> options) : base(options)
         {
         }
 
         public override async Task<CharacterEntity> GetEntityAsync(int id)
         {
-            using (var connection = new SqlConnection(ConnectionString))
+            using (var connection = new SqlConnection(Options.ConnectionString))
             {
                 using (var reader = await connection.QueryMultipleAsync(SelectSingleCharacterQuery, new {Id = id}))
                 {

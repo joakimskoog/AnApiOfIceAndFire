@@ -2,7 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AnApiOfIceAndFire.Data;
+using AnApiOfIceAndFire.Data.Books;
+using AnApiOfIceAndFire.Data.Characters;
+using AnApiOfIceAndFire.Data.Houses;
 using AnApiOfIceAndFire.Infrastructure.Versioning;
+using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -57,6 +62,16 @@ namespace AnApiOfIceAndFire
                 options.ApiVersionSelector = new CurrentImplementationApiVersionSelector(options);
                 options.CreateBadRequest = (request, code, message, detail) => new BadRequestObjectResult(new { message = "Given API version is not supported" });
             });
+
+            services.Configure<ConnectionOptions>(Configuration.GetSection("ConnectionStrings"));
+            
+            services.AddSingleton<IModelMapper<BookEntity, Book>, BookMapper>();
+            services.AddSingleton<IModelMapper<CharacterEntity, Character>, CharacterMapper>();
+            services.AddSingleton<IModelMapper<HouseEntity, House>, HouseMapper>();
+
+            services.AddSingleton<IEntityRepository<BookEntity, BookFilter>, BookRepository>();
+            services.AddSingleton<IEntityRepository<CharacterEntity, CharacterFilter>, CharacterRepository>();
+            services.AddSingleton<IEntityRepository<HouseEntity, HouseFilter>, HouseRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,8 +80,6 @@ namespace AnApiOfIceAndFire
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-
-            //var cors = new EnableCorsAttribute(origins: "*", headers: "*", methods: "GET,HEAD");
             //config.EnableCors(cors);
             app.UseCors(cors =>
             {

@@ -4,16 +4,19 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper.Contrib.Extensions;
 using SimplePagedList;
+using Microsoft.Extensions.Options;
 
 namespace AnApiOfIceAndFire.Data
 {
     public abstract class BaseRepository<TEntity, TEntityFilter> : IEntityRepository<TEntity, TEntityFilter> where TEntityFilter : class where TEntity : BaseEntity
     {
-        protected readonly string ConnectionString;
+        protected readonly ConnectionOptions Options;
 
-        protected BaseRepository(string connectionString)
+
+        protected BaseRepository(IOptions<ConnectionOptions> options)
         {
-            ConnectionString = connectionString ?? throw new ArgumentNullException(nameof(connectionString));
+            if (options == null) throw new ArgumentNullException(nameof(options));
+            Options = options.Value;
         }
 
         public abstract Task<TEntity> GetEntityAsync(int id);
@@ -22,7 +25,7 @@ namespace AnApiOfIceAndFire.Data
 
         public async Task InsertEntitiesAsync(List<TEntity> entities)
         {
-            using (var connection = new SqlConnection(ConnectionString))
+            using (var connection = new SqlConnection(Options.ConnectionString))
             {
                 connection.Open();
                 using (var trans = connection.BeginTransaction())
@@ -55,5 +58,10 @@ namespace AnApiOfIceAndFire.Data
         {
             return Task.CompletedTask;
         }
+    }
+
+    public class ConnectionOptions
+    {
+        public string ConnectionString { get; set; }
     }
 }

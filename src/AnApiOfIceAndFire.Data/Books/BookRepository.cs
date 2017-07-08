@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Dapper;
 using Dapper.Contrib.Extensions;
+using Microsoft.Extensions.Options;
 using SimplePagedList;
 
 namespace AnApiOfIceAndFire.Data.Books
@@ -14,13 +15,13 @@ namespace AnApiOfIceAndFire.Data.Books
         private const string SelectSingleBookQuery = @"SELECT* FROM dbo.books WHERE Id = @Id
                                                        SELECT* FROM dbo.book_character_link WHERE BookId = @Id";
 
-        public BookRepository(string connectionString) : base(connectionString)
+        public BookRepository(IOptions<ConnectionOptions> options) : base(options)
         {
         }
 
         public override async Task<BookEntity> GetEntityAsync(int id)
         {
-            using (var connection = new SqlConnection(ConnectionString))
+            using (var connection = new SqlConnection(Options.ConnectionString))
             {
                 using (var reader = await connection.QueryMultipleAsync(SelectSingleBookQuery, new { Id = id }))
                 {

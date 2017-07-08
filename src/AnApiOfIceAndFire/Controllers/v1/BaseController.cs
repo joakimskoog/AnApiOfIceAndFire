@@ -54,15 +54,12 @@ namespace AnApiOfIceAndFire.Controllers.v1
 
             var pagedModels = await _repository.GetPaginatedEntitiesAsync(page.Value, pageSize.Value, filter);
             var mappedModels = pagedModels.Select(pm => _modelMapper.Map(pm, Url));
-            //Create paging links
-            //HttpResponseMessage r;
-            //new HttpResponseMessage()
-            //var a = new ObjectResult(null);
-            //a.
-            //Ok()
 
+            //Create paging links here
+            //var pagingLinks = _pagingLinksFactory.Create(pagedModels, Url, filter);
 
-            //response.Headers.AddLinkHeader(null);
+            //var response = Request.CreateResponse(HttpStatusCode.OK, mappedModels);
+            //response.Headers.AddLinkHeader(pagingLinks);
 
             //return response;
 
@@ -72,11 +69,3 @@ namespace AnApiOfIceAndFire.Controllers.v1
 }
 
 
-//var pagedModels = await _modelService.GetPaginatedAsync(page.Value, pageSize.Value, filter);
-//var mappedModels = pagedModels.Select(pm => _modelMapper.Map(pm, Url));
-//var pagingLinks = _pagingLinksFactory.Create(pagedModels, Url, filter);
-
-//var response = Request.CreateResponse(HttpStatusCode.OK, mappedModels);
-//response.Headers.AddLinkHeader(pagingLinks);
-
-//return response;
