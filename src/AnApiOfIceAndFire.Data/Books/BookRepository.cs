@@ -18,17 +18,13 @@ namespace AnApiOfIceAndFire.Data.Books
         {
         }
 
-        //Id Name    ISBN Authors NumberOfPages Publisher   MediaType Country ReleaseDate BookId  CharacterId Type
-        //1	A Game of Thrones	978-0553103540	George R.R.Martin 694	Bantam Books	0	United States	1996-08-01 00:00:00.0000000	1	2	0
-
-
         public override async Task<BookEntity> GetEntityAsync(int id)
         {
             using (var connection = new SqlConnection(ConnectionString))
             {
                 using (var reader = await connection.QueryMultipleAsync(SelectSingleBookQuery, new { Id = id }))
                 {
-                    var book = reader.ReadFirstOrDefault<BookEntity>();
+                    var book = await reader.ReadFirstOrDefaultAsync<BookEntity>();
 
                     if (book != null)
                     {

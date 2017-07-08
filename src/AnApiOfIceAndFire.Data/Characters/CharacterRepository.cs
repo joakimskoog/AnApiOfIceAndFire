@@ -9,13 +9,48 @@ namespace AnApiOfIceAndFire.Data.Characters
 {
     public class CharacterRepository : BaseRepository<CharacterEntity, CharacterFilter>
     {
+        private const string SelectSingleCharacterQuery = @"SELECT* FROM dbo.characters WHERE Id = @Id
+                                                            SELECT* FROM dbo.character_house_link WHERE CharacterId = @Id
+                                                            SELECT* FROM dbo.book_character_link WHERE CharacterId = @Id";
+
         public CharacterRepository(string connectionString) : base(connectionString)
         {
         }
 
-        public override Task<CharacterEntity> GetEntityAsync(int id)
+        public override async Task<CharacterEntity> GetEntityAsync(int id)
         {
-            throw new NotImplementedException();
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                using (var reader = await connection.QueryMultipleAsync(SelectSingleCharacterQuery, new {Id = id}))
+                {
+                    var character = await reader.ReadFirstOrDefaultAsync<CharacterEntity>();
+
+                    if (character != null)
+                    {
+                        foreach (var allegiance in await reader.ReadAsync())
+                        {
+                            var houseId = allegiance.HouseId;
+                            character.AllegianceIdentifiers.Add(houseId);
+                        }
+                        foreach (var book in await reader.ReadAsync())
+                        {
+                            var bookId = book.BookId;
+                            var type = book.Type;
+
+                            if (type == 0)
+                            {
+                                character.BookIdentifiers.Add(bookId);
+                            }
+                            else
+                            {
+                                character.PovBookIdentifiers.Add(bookId);
+                            }
+                        }
+                    }
+
+                    return character;
+                }
+            }
         }
 
         public override Task<IPagedList<CharacterEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, CharacterFilter filter = null)
