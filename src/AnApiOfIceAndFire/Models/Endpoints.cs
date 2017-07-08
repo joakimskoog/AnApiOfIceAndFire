@@ -2,7 +2,7 @@
 
 namespace AnApiOfIceAndFire.Models
 {
-    public class EndpointsModel
+    public class Endpoints
     {
         /// <summary>
         /// The URL to the Books resource
@@ -19,7 +19,7 @@ namespace AnApiOfIceAndFire.Models
         /// </summary>
         public string Houses { get; }
 
-        public EndpointsModel(string booksUrl, string charactersUrl, string housesUrl)
+        public Endpoints(string booksUrl, string charactersUrl, string housesUrl)
         {
             if (string.IsNullOrEmpty(booksUrl)) throw new ArgumentException(nameof(booksUrl));
             if (string.IsNullOrEmpty(charactersUrl)) throw new ArgumentException(nameof(charactersUrl));

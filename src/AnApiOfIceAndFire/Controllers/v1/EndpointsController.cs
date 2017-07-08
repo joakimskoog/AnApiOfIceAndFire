@@ -14,7 +14,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
             var charactersUrl = Url.Link(CharactersController.MultipleCharactersRouteName, new { });
             var housesUrl = Url.Link(HousesController.MultipleHousesRouteName, new { });
 
-            var endpoints = new EndpointsModel(booksUrl, charactersUrl, housesUrl);
+            var endpoints = new Endpoints(booksUrl, charactersUrl, housesUrl);
 
             return Ok(endpoints);
         }

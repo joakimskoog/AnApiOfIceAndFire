@@ -28,7 +28,7 @@ namespace AnApiOfIceAndFire.Tests.Controllers.v1
                 Url = url.Object
             };
 
-            var endpoints = (sut.Get() as OkObjectResult)?.Value as EndpointsModel;
+            var endpoints = (sut.Get() as OkObjectResult)?.Value as Endpoints;
 
             Assert.NotNull(endpoints);
             Assert.Equal(BooksUrl, endpoints.Books);
