@@ -19,4 +19,4 @@ namespace AnApiOfIceAndFire.Controllers.v1
             return Ok(endpoints);
         }
     }
-}
+} 

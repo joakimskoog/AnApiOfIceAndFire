@@ -7,6 +7,6 @@ namespace AnApiOfIceAndFire.Data
     {
         Task<TEntity> GetEntityAsync(int id);
 
-        IPagedList<TEntity> GetPaginatedEntitiesAsync(int page, int pageSize, TEntityFilter filter = null);
+        Task<IPagedList<TEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, TEntityFilter filter = null);
     }
 }

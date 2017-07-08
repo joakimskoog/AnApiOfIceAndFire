@@ -2,20 +2,21 @@
 using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Characters;
+using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
     [ApiVersion("1")]
     [Route("api/characters")]
-    public class CharactersController : BaseController<CharacterEntity, CharacterFilter>
+    public class CharactersController : BaseController<CharacterEntity, CharacterFilter, Character>
     {
         public const string SingleCharacterRouteName = "SingleCharacterEndpoint";
         public const string MultipleCharactersRouteName = "MultipleCharactersEndpoint";
 
-        public CharactersController(IEntityRepository<CharacterEntity, CharacterFilter> repository) : base(repository)
+        public CharactersController(IEntityRepository<CharacterEntity, CharacterFilter> repository, IModelMapper<CharacterEntity, Character> modelMapper) : base(repository, modelMapper)
         {
-            
+
         }
 
         [HttpGet]
@@ -30,7 +31,17 @@ namespace AnApiOfIceAndFire.Controllers.v1
         [Route("", Name = MultipleCharactersRouteName)]
         public IActionResult Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, string culture = null, string born = null, string died = null, bool? isAlive = null, Gender? gender = null)
         {
-            return Ok("MultipleCharacters");
+            var characterFilter = new CharacterFilter()
+            {
+                Name = name,
+                Gender = gender,
+                Culture = culture,
+                Born = born,
+                Died = died,
+                IsAlive = isAlive
+            };
+
+            return null;
         }
     }
 }

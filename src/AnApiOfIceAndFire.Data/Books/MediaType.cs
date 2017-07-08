@@ -1,4 +1,6 @@
-﻿namespace AnApiOfIceAndFire.Data.Books
+﻿using System;
+
+namespace AnApiOfIceAndFire.Data.Books
 {
     public enum MediaType
     {
@@ -7,4 +9,5 @@
         GraphicNovel = 2,
         Paperback = 3,
     }
+
 }
