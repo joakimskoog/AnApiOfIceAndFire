@@ -48,7 +48,7 @@ namespace AnApiOfIceAndFire
                 //We want to represent our enums with their names instead of their numerical values. This is to make it more readable for the consumer.
                 opts.SerializerSettings.Converters.Add(new StringEnumConverter());
             });
-            
+
             services.AddApiVersioning(options =>
             {
                 options.AssumeDefaultVersionWhenUnspecified = true;
@@ -65,6 +65,13 @@ namespace AnApiOfIceAndFire
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+
+            //var cors = new EnableCorsAttribute(origins: "*", headers: "*", methods: "GET,HEAD");
+            //config.EnableCors(cors);
+            app.UseCors(cors =>
+            {
+                cors.AllowAnyOrigin().AllowAnyHeader().WithMethods("GET", "HEAD");
+            });
             app.UseMvc();
         }
     }
