@@ -43,6 +43,10 @@ namespace AnApiOfIceAndFire.Controllers.v1
             {
                 page = DefaultPage;
             }
+            if (page < 1)
+            {
+                page = DefaultPage;
+            }
             if (pageSize == null)
             {
                 pageSize = DefaultPageSize;
