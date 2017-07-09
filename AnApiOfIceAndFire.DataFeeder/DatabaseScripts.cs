@@ -12,8 +12,8 @@
         public static readonly string DeleteDatabase = @"DROP DATABASE [anapioficeandfire]";
 
         public static readonly string TruncateAllTables =
-                    @"TRUNCATE TABLE anapioficeandfire.dbo.books TRUNCATE TABLE anapioficeandfire.dbo.characters TRUNCATE TABLE anapioficeandfire.dbo.houses 
-                    TRUNCATE TABLE anapioficeandfire.dbo.book_character_link TRUNCATE TABLE anapioficeandfire.dbo.character_house_link TRUNCATE TABLE anapioficeandfire.dbo.house_cadetbranch_link";
+                    @"TRUNCATE TABLE dbo.books TRUNCATE TABLE dbo.characters TRUNCATE TABLE dbo.houses 
+                    TRUNCATE TABLE dbo.book_character_link TRUNCATE TABLE dbo.character_house_link TRUNCATE TABLE dbo.house_cadetbranch_link";
 
 
         public static readonly string CreateBooksTable =

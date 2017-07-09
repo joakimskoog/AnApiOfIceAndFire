@@ -15,7 +15,7 @@ namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
         {
             var options = new OptionsWrapper<ConnectionOptions>(new ConnectionOptions()
             {
-                ConnectionString = DbFixture.ConnectionString
+                ConnectionString = DbFixture.MasterConnection
             });
             var repo = new BookRepository(options);
 
@@ -27,9 +27,9 @@ namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
 
     public class DbFixture : IDisposable
     {
-        
-        public const string MasterConnection = @"Server=(local)\SQL2016;Database=master;User ID = sa; Password=Password12!";
-        public const string ConnectionString = @"Server=(local)\SQL2016;Database=anapioficeandfire;User ID = sa; Password=Password12!";
+
+        public const string MasterConnection = @"Server=(local)\SQL2014;Database=master;User ID = sa; Password=Password12!";
+      //  public const string ConnectionString = @"Server=(local)\SQL2014;Database=anapioficeandfire;User ID = sa; Password=Password12!";
 
 
         //public const string MasterConnection = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets=true;";
@@ -40,9 +40,9 @@ namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
         {
             try
             {
-                DatabaseFeeder.CreateDatabase(MasterConnection);
-                DatabaseFeeder.CreateTables(ConnectionString);
-                
+                //DatabaseFeeder.CreateDatabase(MasterConnection);
+                DatabaseFeeder.CreateTables(MasterConnection);
+
             }
             catch (Exception)
             {
