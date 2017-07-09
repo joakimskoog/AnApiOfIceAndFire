@@ -15,6 +15,7 @@ namespace AnApiOfIceAndFire.DataFeeder
             var dbConnectionString = args[1];
 
             DatabaseFeeder.RunAllScripts(masterConnectionString, dbConnectionString, @"..\..\data\");
+            Console.ReadLine();
         }
     }
 }
