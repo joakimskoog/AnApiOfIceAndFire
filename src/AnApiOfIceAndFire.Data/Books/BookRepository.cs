@@ -66,8 +66,8 @@ namespace AnApiOfIceAndFire.Data.Books
             }
             if (filter.ToReleaseDate != null)
             {
-                builder.Where("ReleaseDate <= @FromReleaseDate", new { filter.FromReleaseDate });
-                countBuilder.Where("ReleaseDate >= @FromReleaseDate", new { filter.FromReleaseDate });
+                builder.Where("ReleaseDate <= @ToReleaseDate", new { filter.ToReleaseDate });
+                countBuilder.Where("ReleaseDate >= @ToReleaseDate", new { filter.ToReleaseDate });
             }
 
             var rowsToSkip = (page - 1) * pageSize;
