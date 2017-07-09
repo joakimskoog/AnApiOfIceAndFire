@@ -52,15 +52,15 @@ namespace AnApiOfIceAndFire.DataFeeder
             }
         }
 
-        public static void RunAllScripts(string masterConnectionString, string dbConnectionString)
+        public static void RunAllScripts(string masterConnectionString, string dbConnectionString, string folder)
         {
-            var books = GetDtoData<BookDto>(@"..\..\..\..\..\data\books.json").Select(b => b.ToBookEntity()).ToList();
+            var books = GetDtoData<BookDto>(folder+"books.json").Select(b => b.ToBookEntity()).ToList();
             Console.WriteLine($"Parsed {books.Count} number of books");
 
-            var characters = GetDtoData<CharacterDto>(@"..\..\..\..\..\data\characters.json").Select(c => c.ToCharacterEntity()).ToList();
+            var characters = GetDtoData<CharacterDto>(folder+"characters.json").Select(c => c.ToCharacterEntity()).ToList();
             Console.WriteLine($"Parsed {characters.Count} number of characters");
 
-            var houses = GetDtoData<HouseDto>(@"..\..\..\..\..\data\houses.json").Select(h => h.ToHouseEntity()).ToList();
+            var houses = GetDtoData<HouseDto>(folder+"houses.json").Select(h => h.ToHouseEntity()).ToList();
             Console.WriteLine($"Parsed {houses.Count} number of houses");
 
 #if DEBUG

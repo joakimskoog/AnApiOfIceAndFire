@@ -24,7 +24,7 @@ namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
 
         public DbFixture()
         {
-            DatabaseFeeder.RunAllScripts(MasterConnection, ConnectionString);
+            DatabaseFeeder.RunAllScripts(MasterConnection, ConnectionString, @"..\..\..\..\..\data\");
         }
 
         public void Dispose()

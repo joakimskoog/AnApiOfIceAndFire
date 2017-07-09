@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using AnApiOfIceAndFire.Data.Characters;
 using Dapper;
-using Dapper.Contrib.Extensions;
 using Microsoft.Extensions.Options;
 using SimplePagedList;
 
