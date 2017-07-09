@@ -16,8 +16,13 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire.Data.Tests", "tests\AnApiOfIceAndFire.Data.Tests\AnApiOfIceAndFire.Data.Tests.csproj", "{6596AA15-FDFE-495A-B4DF-DDB8988E8FCD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{B8D0279E-3777-4BCE-821F-CCC20F60621F}"
+	ProjectSection(SolutionItems) = preProject
+		data\books.json = data\books.json
+		data\characters.json = data\characters.json
+		data\houses.json = data\houses.json
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnApiOfIceAndFire.DataFeeder", "AnApiOfIceAndFire.DataFeeder\AnApiOfIceAndFire.DataFeeder.csproj", "{A2544BE8-ACA2-4EFE-9D90-ACF9F680738E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire.DataFeeder", "data\AnApiOfIceAndFire.DataFeeder\AnApiOfIceAndFire.DataFeeder.csproj", "{A2544BE8-ACA2-4EFE-9D90-ACF9F680738E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

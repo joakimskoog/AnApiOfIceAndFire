@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AnApiOfIceAndFire.DataFeeder": {
+      "commandName": "Project",
+      "commandLineArgs": "\"Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;\" \"Server=localhost\\SQLEXPRESS;Database=anapioficeandfire;Trusted_Connection=True;MultipleActiveResultSets=true;\""
+    }
+  }
+}

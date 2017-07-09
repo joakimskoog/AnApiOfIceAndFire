@@ -11,13 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Microsoft.ApplicationInsights">
-      <HintPath>..\..\..\..\..\.nuget\packages\microsoft.applicationinsights\2.2.0\lib\netstandard1.5\Microsoft.ApplicationInsights.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\src\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -86,26 +86,26 @@ namespace AnApiOfIceAndFire.Data.Characters
             {
                 if (filter.IsAlive.Value)
                 {
-                    builder.Where("Died = @AliveDead", new { AliveDead = "''" });
-                    countBuilder.Where("Died = @AliveDead", new { AliveDead = "''" });
+                    builder.Where("Died = ''");
+                    countBuilder.Where("Died = ''");
                 }
                 else
                 {
-                    builder.Where("Died <> @DiedDead", new { DiedDead = "''" });
-                    countBuilder.Where("Died <> @DiedDead", new { DiedDead = "''" });
+                    builder.Where("Died <> ''");
+                    countBuilder.Where("Died <> ''");
                 }
             }
             if (filter.Gender.HasValue)
             {
                 if (filter.Gender.Value == Gender.Female)
                 {
-                    builder.Where("IsFemale = @IsFemale", new { IsFemale = 1 });
-                    countBuilder.Where("IsFemale = @IsFemale", new { IsFemale = 1 });
+                    builder.Where("IsFemale = @IsFemaleFemale", new { IsFemaleFemale = 1 });
+                    countBuilder.Where("IsFemale = @IsFemaleFemale", new { IsFemaleFemale = 1 });
                 }
                 else if (filter.Gender.Value == Gender.Male)
                 {
-                    builder.Where("IsFemale = @IsFemale", new { IsFemale = 0 });
-                    countBuilder.Where("IsFemale = @IsFemale", new { IsFemale = 0 });
+                    builder.Where("IsFemale = @IsFemaleMale", new { IsFemaleMale = 0 });
+                    countBuilder.Where("IsFemale = @IsFemaleMale", new { IsFemaleMale = 0 });
                 }
             }
 

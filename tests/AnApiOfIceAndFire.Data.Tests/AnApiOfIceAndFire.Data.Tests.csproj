@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AnApiOfIceAndFire.DataFeeder\AnApiOfIceAndFire.DataFeeder.csproj" />
+    <ProjectReference Include="..\..\data\AnApiOfIceAndFire.DataFeeder\AnApiOfIceAndFire.DataFeeder.csproj" />
     <ProjectReference Include="..\..\src\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj" />
   </ItemGroup>
 
