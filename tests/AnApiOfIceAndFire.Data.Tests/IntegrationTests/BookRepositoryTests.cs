@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data.Books;
-using AnApiOfIceAndFire.Data.Characters;
 using Microsoft.Extensions.Options;
 using Xunit;
 
 namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
 {
     [Collection("DbCollection")]
-    public class BookRepositoryTests : IClassFixture<DbFixture>
+    public class BookRepositoryTests
     {
         [Fact]
         public async Task GetEntityAsync_NoBookWithGivenId_NullIsReturned()

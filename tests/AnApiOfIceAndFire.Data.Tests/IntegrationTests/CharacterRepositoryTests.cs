@@ -6,7 +6,7 @@ using Xunit;
 namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
 {
     [Collection("DbCollection")]
-    public class CharacterRepositoryTests : IClassFixture<DbFixture>
+    public class CharacterRepositoryTests
     {
         [Fact]
         public async Task GetEntityAsync_NoCharacterWithGivenId_NullIsReturned()
@@ -17,13 +17,13 @@ namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
             });
             var repo = new CharacterRepository(options);
 
-            var book = await repo.GetEntityAsync(9001);
+            var character = await repo.GetEntityAsync(9001);
 
-            Assert.Null(book);
+            Assert.Null(character);
         }
 
         [Fact]
-        public async Task GetEntityAsync_BookWithGivenId_ThatCharacterIsReturned()
+        public async Task GetEntityAsync_CharacterWithGivenId_ThatCharacterIsReturned()
         {
             var options = new OptionsWrapper<ConnectionOptions>(new ConnectionOptions()
             {
