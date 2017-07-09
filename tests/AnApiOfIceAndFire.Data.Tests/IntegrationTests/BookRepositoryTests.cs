@@ -27,8 +27,13 @@ namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
 
     public class DbFixture : IDisposable
     {
-        public const string MasterConnection = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets=true;";
-        public const string ConnectionString = @"Server=localhost\SQLEXPRESS;Database=anapioficeandfire;Trusted_Connection=True;MultipleActiveResultSets=true;";
+        
+        public const string MasterConnection = @"Server=(local)\SQL2016;Database=master;User ID = sa; Password=Password12!";
+        public const string ConnectionString = @"Server=(local)\SQL2016;Database=anapioficeandfire;User ID = sa; Password=Password12!";
+
+
+        //public const string MasterConnection = @"Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;MultipleActiveResultSets=true;";
+        //public const string ConnectionString = @"Server=localhost\SQLEXPRESS;Database=anapioficeandfire;Trusted_Connection=True;MultipleActiveResultSets=true;";
 
 
         public DbFixture()
