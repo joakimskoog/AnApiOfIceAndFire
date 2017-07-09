@@ -29,6 +29,7 @@ build:
 
 test_script:
   - dotnet test tests\AnApiOfIceAndFire.Tests\AnApiOfIceAndFire.Tests.csproj
+  - dotnet test tests\AnApiOfIceAndFire.Data.Tests\AnApiOfIceAndFire.Data.Tests.csproj
 
 #test:
 #  assemblies:
