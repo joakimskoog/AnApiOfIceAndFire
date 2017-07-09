@@ -2,5 +2,167 @@
     ViewData["Title"] = "An API of Ice And Fire";
 }
 
+<div id="layout-main-container" class="row">
+    <div id="layout-content" class="large-12 columns">
+        <section id="hero-content" class="row">
+            <div class="large-12 columns">
+                <article>
+                    <header id="page-header">
+                        <h1>An API of Ice And Fire</h1>
+                        <h4>All the data from the universe of Ice And Fire you've ever wanted!</h4>
+                    </header>
+                    
+                </article>
+            </div>
+        </section>
+        <section id="request-content" class="row">
+            <div class="large-12 columns">
+                <div class="small-12 medium-12 column padded bg-blue boxy" id="project-search">
+                    <h3>Try it out!</h3>
+                    <div class="input-group">
+                        <input class="input-group-field" id="request-url-input" name="q" type="text" value="https://anapioficeandfire.com/api/characters/583"/>
+                        <small>Psst, need a hint? Try <a href="#" onClick="updateRequestUrl('https://anapioficeandfire.com/api/books/1'); return false;">/books/1</a>, 
+                            <a href="#" onClick="updateRequestUrl('https://anapioficeandfire.com/api/characters/583'); return false;">/characters/583</a> or 
+                        <a href="#" onClick="updateRequestUrl('https://anapioficeandfire.com/api/houses/378'); return false;">/houses/378</a></small>
+                        <div class="input-group-button">
+                            <div id="search-button" class="button" type="button" onclick="makeRequest(); return false;">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </div>
+                        </div>
 
-<h1>Index</h1>
+                    </div>
+
+                    <div>
+                        <h4>Response:</h4>
+                        <pre id="response-output" class="scrollable">
+{
+        "url": "http://anapioficeandfire.com/api/characters/583",
+        "name": "Jon Snow",
+        "culture": "Northmen",
+        "born": "In 283 AC",
+        "died": "",
+        "titles": [
+                "Lord Commander of the Night's Watch"
+        ],
+        "aliases": [
+                "Lord Snow",
+                "Ned Stark's Bastard",
+                "The Snow of Winterfell",
+                "The Crow-Come-Over",
+                "The 998th Lord Commander of the Night's Watch",
+                "The Bastard of Winterfell",
+                "The Black Bastard of the Wall",
+                "Lord Crow"
+        ],
+        "father": "",
+        "mother": "",
+        "spouse": "",
+        "allegiances": [
+                "http://anapioficeandfire.com/api/houses/362"
+        ],
+        "books": [
+                "http://anapioficeandfire.com/api/books/5"
+        ],
+        "povBooks": [
+                "http://anapioficeandfire.com/api/books/1",
+                "http://anapioficeandfire.com/api/books/2",
+                "http://anapioficeandfire.com/api/books/3",
+                "http://anapioficeandfire.com/api/books/8"
+        ],
+        "tvSeries": [
+                "Season 1",
+                "Season 2",
+                "Season 3",
+                "Season 4",
+                "Season 5"
+        ],
+        "playedBy": [
+                "Kit Harington"
+        ]
+}         
+</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="content" class="row">
+            <div class="large-12 columns">
+                <div class="row" id="get-involved">
+                    <div class="small-12 medium-12 column">
+                        <div class="table padded bg-red">
+                            <div class="row align-middle">
+                                <div class="small-12 medium-3 column">
+                                    <h3>GET STARTED</h3>
+                                </div>
+                                <div class="small-12 medium-3 column white-box" style="height: 286px;">
+                                    <div class="callout">
+                                        <h2>
+                                            <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                        </h2>
+                                        <p>The world's greatest source for quantified and structured data from the universe of Ice and Fire (and the HBO series Game of Thrones).</p>
+                                    </div>
+                                </div>
+                                <div class="small-12 medium-3 column white-box" style="height: 286px;">
+
+                                    <div class="callout">
+                                        <h2>
+                                            <i class="fa fa-github" aria-hidden="true"></i>
+                                        </h2>
+                                        <p>
+                                            The API is open source! <a href="https://github.com/joakimskoog/AnApiOfIceAndFire">Contribute</a> directly to the API by writing code, documentation or posting bugs!
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="small-12 medium-3 column white-box" style="height: 286px;">
+                                    <div class="callout">
+                                        <h2>
+                                            <i class="fa fa-book" aria-hidden="true"></i>
+                                        </h2>
+                                        <p>
+                                            All data is accessible through our HTTP API with SDKs in a bunch of different languages. Check out the <a asp-area="" asp-controller="Documentation" asp-action="Index">documentation</a> to get started.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    makeRequest();
+
+    function updateRequestUrl(url) {
+        document.getElementById('request-url-input').value = url;
+        makeRequest();
+    }
+
+    function makeRequest() {
+        var url = document.getElementById('request-url-input').value;
+
+        var request = new XMLHttpRequest();
+
+        request.onreadystatechange = function() {
+            if (request.readyState == XMLHttpRequest.DONE) {
+                if (request.status == 200) {
+                    var jsonData = JSON.parse(request.responseText);
+                    document.getElementById('response-output').innerHTML = JSON.stringify(jsonData, null, '\t');
+                } else if (request.status == 404) {
+                    document.getElementById('response-output').innerHTML =
+                        'Could not find any resource that matches the request, try again!';
+                } else {
+                    document.getElementById('response-output').innerHTML =
+                        'Somethin went wrong. If this keeps happening, please post an issue at: https://github.com/joakimskoog/AnApiOfIceAndFire/issues';
+                }
+            }
+        };
+
+        request.open('GET', url);
+        request.send();
+    }
+</script>

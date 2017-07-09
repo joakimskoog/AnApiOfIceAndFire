@@ -3,23 +3,79 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"]</title>
-    
+
     <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
     </environment>
     <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+              asp-fallback-href="~/lib/font-awesome/css/font-awesome.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />/>
     </environment>
 </head>
 <body>
-    <div>
+    <div data-sticky-container class="sticky-container">
+        <header id="site-header" class="sticky" style="position: fixed;">
+            @*todo: Implement menu for mobile*@
+            <div class="row align-middle">
+                <div class="large-12 columns">
+                    <div class="top-bar" id="nav-menu">
+                        <article>
+                            <div class="top-bar-right">
+                                <ul id="sitenav" class="dropdown menu" data-dropdown-menu="vsahs1-dropdown-menu" role="menubar">
+                                    <li class="selected" role="menuitem">
+                                        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a asp-area="" asp-controller="About" asp-action="Index">About</a>
+                                    </li>
+                                    <li role="menuitem">
+                                        <a asp-area="" asp-controller="Documentation" asp-action="Index">Documentation</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <main id="main" style="margin-top: 82px;">
         @RenderBody()
+    </main>
+    <div id="footer-container">
+        <footer id="site-footer" class="bg-gray">
+            <div class="row align-middle">
+                <div class="large-12 columns">
+                    <div class="row">
+                        <div class="small-12 medium-5 column credits">
+                            <span class="copyright small-12 medium-8 column">&copy; @DateTime.Now.Year - Joakim Skoog</span>
+                        </div>
+                        <div class="small-12 medium-4 column icons">
+                            <ul class="social">
+                                <li>
+                                    <a href="https://github.com/joakimskoog/AnApiOfIceAndFire">
+                                        <i class="fa fa-github-square" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/j_skoog">
+                                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </footer>
     </div>
 </body>
 </html>

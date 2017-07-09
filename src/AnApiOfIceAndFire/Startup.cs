@@ -20,6 +20,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using Microsoft.AspNetCore.Http;
 
 namespace AnApiOfIceAndFire
 {
@@ -65,6 +66,8 @@ namespace AnApiOfIceAndFire
                 options.CreateBadRequest = (request, code, message, detail) => new BadRequestObjectResult(new { message = "Given API version is not supported" });
             });
 
+            services.AddResponseCompression();
+
             services.Configure<ConnectionOptions>(Configuration.GetSection("ConnectionStrings"));
 
             services.AddSingleton<IPagingLinksFactory<BookFilter>, BookPagingLinksFactory>();
@@ -86,13 +89,25 @@ namespace AnApiOfIceAndFire
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            //config.EnableCors(cors);
+            if (env.IsDevelopment())
+            {
+                app.UseBrowserLink();
+            }
+
+            app.UseResponseCompression();
+
             app.UseCors(cors =>
             {
                 cors.AllowAnyOrigin().AllowAnyHeader().WithMethods("GET", "HEAD");
             });
 
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                OnPrepareResponse = ctx =>
+                {
+                    ctx.Context.Response.Headers.Append("Cache-Control", "public, max-age=3600");
+                }
+            });
 
             app.UseMiddleware<ErrorHandlingMiddleware>();
 
