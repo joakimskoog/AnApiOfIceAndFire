@@ -5,17 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\css\site.css" />
-    <Content Include="wwwroot\css\site.min.css" />
-    <Content Include="wwwroot\lib\font-awesome\css\font-awesome.min.css" />
-    <Content Include="wwwroot\lib\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="wwwroot\lib\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="wwwroot\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="wwwroot\lib\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="wwwroot\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="wwwroot\lib\font-awesome\fonts\FontAwesome.otf" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
