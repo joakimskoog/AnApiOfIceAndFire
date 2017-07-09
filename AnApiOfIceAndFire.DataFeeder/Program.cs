@@ -1,24 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Books;
 using AnApiOfIceAndFire.Data.Characters;
 using AnApiOfIceAndFire.Data.Houses;
-using Dapper;
-using Dapper.Contrib.Extensions;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 
 namespace AnApiOfIceAndFire.DataFeeder
 {
-    //todo: Make this whole thing prettier later on
     class Program
     {
-        private static readonly string[] InitScripts = {
-            "create_books_table.sql", "create_characters_table.sql", "create_houses_table.sql",
-            "create_book_character_link_table.sql", "create_character_house_link.sql", "create_house_cadetbranch_link.sql"
-        };
 
         static void Main(string[] args)
         {
@@ -41,33 +35,26 @@ namespace AnApiOfIceAndFire.DataFeeder
             var houses = GetDtoData<HouseDto>(folder, "houses.json").Select(h => h.ToHouseEntity()).ToList();
             Console.WriteLine($"Parsed {houses.Count} number of houses");
 
-            using (var connection = new SqlConnection(initialConnectionString))
+            DatabaseFeeder.CreateDatabase(initialConnectionString);
+            Console.WriteLine("Created database");
+
+            DatabaseFeeder.CreateTables(connectionString);
+            Console.WriteLine("Created tables");
+
+            var options = new OptionsWrapper<ConnectionOptions>(new ConnectionOptions()
             {
-                var createDbScript = GetScriptData(folder, "create_database.sql");
-                int result = connection.Execute(createDbScript);
-                Console.WriteLine($"Created database: {result}");
-            }
+                ConnectionString = connectionString
+            });
 
-
-            using (var connection = new SqlConnection(connectionString))
-            {
-                foreach (var initScript in InitScripts)
-                {
-                    var scriptData = GetScriptData(folder, initScript);
-                    connection.Execute(scriptData);
-
-                }
-            }
-
-            var bookRepo = new BookRepository(connectionString);
+            var bookRepo = new BookRepository(options);
             bookRepo.InsertEntitiesAsync(books).GetAwaiter().GetResult();
             Console.WriteLine("Finished inserting book data");
 
-            var characterRepo = new CharacterRepository(connectionString);
+            var characterRepo = new CharacterRepository(options);
             characterRepo.InsertEntitiesAsync(characters).GetAwaiter().GetResult();
             Console.WriteLine("Finished inserting character data");
 
-            var houseRepo = new HouseRepository(connectionString);
+            var houseRepo = new HouseRepository(options);
             houseRepo.InsertEntitiesAsync(houses).GetAwaiter().GetResult();
             Console.WriteLine("Finished inserting house data");
         }

@@ -6,7 +6,7 @@ namespace AnApiOfIceAndFire.DataFeeder
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public bool? IsFemale { get; set; }
+        public bool IsFemale { get; set; }
         public string Culture { get; set; }
         public string[] Titles { get; set; }
         public string[] Aliases { get; set; }

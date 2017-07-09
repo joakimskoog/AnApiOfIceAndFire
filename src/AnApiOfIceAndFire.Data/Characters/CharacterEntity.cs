@@ -10,7 +10,7 @@ namespace AnApiOfIceAndFire.Data.Characters
         public string Culture { get; set; }
         public string Born { get; set; }
         public string Died { get; set; }
-        public bool? IsFemale { get; set; }
+        public bool IsFemale { get; set; }
         public string Aliases { get; set; }
         public string Titles { get; set; }
         public string TvSeries { get; set; }

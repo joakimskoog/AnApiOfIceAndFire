@@ -24,7 +24,7 @@ namespace AnApiOfIceAndFire.Models
             return new Character(url)
             {
                 Name = from.Name ?? string.Empty,
-                Gender = MapToGender(from.IsFemale),
+                Gender = from.IsFemale ? Gender.Female : Gender.Male,
                 Culture = from.Culture ?? string.Empty,
                 Born = from.Born ?? string.Empty,
                 Died = from.Died ?? string.Empty,
@@ -39,16 +39,6 @@ namespace AnApiOfIceAndFire.Models
                 TvSeries = from.ParseTvSeries(),
                 Allegiances = allegianceUrls
             };
-        }
-
-        private static Gender MapToGender(bool? isFemale)
-        {
-            if (isFemale.HasValue)
-            {
-                return isFemale.Value ? Gender.Female : Gender.Male;
-            }
-
-            return Gender.Unknown;
         }
     }
 }

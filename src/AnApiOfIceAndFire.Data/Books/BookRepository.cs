@@ -47,24 +47,24 @@ namespace AnApiOfIceAndFire.Data.Books
             }
         }
 
-        public override async Task<IPagedList<BookEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, BookFilter filter = null)
+        public override async Task<IPagedList<BookEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, BookFilter filter)
         {
             var builder = new SqlBuilder();
             var countBuilder = new SqlBuilder();
             var template = builder.AddTemplate("SELECT* FROM dbo.books /**where**/ ORDER BY ID OFFSET @RowsToSkip ROWS FETCH NEXT @PageSize ROWS ONLY");
             var countTemplate = countBuilder.AddTemplate("SELECT COUNT(Id) FROM dbo.books /**where**/");
 
-            if (!string.IsNullOrEmpty(filter?.Name))
+            if (!string.IsNullOrEmpty(filter.Name))
             {
                 builder.Where("Name = @Name", new { filter.Name });
                 countBuilder.Where("Name = @Name", new { filter.Name });
             }
-            if (filter?.FromReleaseDate != null)
+            if (filter.FromReleaseDate != null)
             {
                 builder.Where("ReleaseDate >= @FromReleaseDate", new { filter.FromReleaseDate });
                 countBuilder.Where("ReleaseDate >= @FromReleaseDate", new { filter.FromReleaseDate });
             }
-            if (filter?.ToReleaseDate != null)
+            if (filter.ToReleaseDate != null)
             {
                 builder.Where("ReleaseDate <= @FromReleaseDate", new { filter.FromReleaseDate });
                 countBuilder.Where("ReleaseDate >= @FromReleaseDate", new { filter.FromReleaseDate });

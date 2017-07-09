@@ -21,7 +21,7 @@ namespace AnApiOfIceAndFire.Data
 
         public abstract Task<TEntity> GetEntityAsync(int id);
 
-        public abstract Task<IPagedList<TEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, TEntityFilter filter = default(TEntityFilter));
+        public abstract Task<IPagedList<TEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, TEntityFilter filter);
 
         public async Task InsertEntitiesAsync(List<TEntity> entities)
         {
