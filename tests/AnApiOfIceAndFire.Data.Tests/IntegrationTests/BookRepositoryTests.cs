@@ -151,11 +151,12 @@ namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
         }
     }
 
+    //todo: Fix this so we dont have to rely on compile flags when testing in our CI tool. It's kind of hard to maintain, find out if AppVeyor has a better way.
     public class DbFixture : IDisposable
     {
 #if RELEASE
-        public const string MasterConnection = @"Server =(local)\SQL2014;Database=master;User ID = sa; Password=Password12!";
-        public const string ConnectionString = @"Server=(local)\SQL2014;Database=master;User ID = sa; Password=Password12!";
+        public const string MasterConnection = @"Server =(local)\SQL2014;Database=master;User ID = sa; Password=Password12!;MultipleActiveResultSets=true;";
+        public const string ConnectionString = @"Server=(local)\SQL2014;Database=master;User ID = sa; Password=Password12!;MultipleActiveResultSets=true;";
 #endif
 
 #if DEBUG
