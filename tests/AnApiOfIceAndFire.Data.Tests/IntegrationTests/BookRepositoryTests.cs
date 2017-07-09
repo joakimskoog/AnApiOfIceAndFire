@@ -155,7 +155,7 @@ namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
     {
 #if RELEASE
         public const string MasterConnection = @"Server =(local)\SQL2014;Database=master;User ID = sa; Password=Password12!";
-        public const string ConnectionString = @"Server=(local)\SQL2014;Database=anapioficeandfire;User ID = sa; Password=Password12!";
+        public const string ConnectionString = @"Server=(local)\SQL2014;Database=master;User ID = sa; Password=Password12!";
 #endif
 
 #if DEBUG
