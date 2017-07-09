@@ -184,8 +184,9 @@ namespace AnApiOfIceAndFire.Data.Tests.IntegrationTests
 
         public void Dispose()
         {
+#if DEBUG
             DatabaseFeeder.CleanDatabase(MasterConnection);
-            Debug.WriteLine("dead");
+#endif
 
         }
     }
