@@ -28,7 +28,7 @@ build:
   verbosity: normal
 
 services:
-  - mssql2016
+  - mssql2014
 
 test_script:
   - dotnet test tests\AnApiOfIceAndFire.Tests\AnApiOfIceAndFire.Tests.csproj
