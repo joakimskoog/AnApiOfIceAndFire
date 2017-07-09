@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Books;
+using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,10 +16,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
         public const string SingleBookRouteName = "SingleBookEndpoint";
         public const string MultipleBooksRouteName = "MultipleBooksEndpoint";
 
-        public BooksController(IEntityRepository<BookEntity,BookFilter> repository, IModelMapper<BookEntity, Book> modelMapper) : base(repository, modelMapper)
-        {
-            
-        }
+ 
 
         [HttpGet]
         [Route("{id:int}", Name = SingleBookRouteName)]
@@ -29,7 +28,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
         [HttpGet]
         [HttpHead]
         [Route("", Name = MultipleBooksRouteName)]
-        public IActionResult Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, DateTime? fromReleaseDate = null, DateTime? toReleaseDate = null)
+        public async Task<IActionResult> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, DateTime? fromReleaseDate = null, DateTime? toReleaseDate = null)
         {
             var bookFilter = new BookFilter()
             {
@@ -39,7 +38,11 @@ namespace AnApiOfIceAndFire.Controllers.v1
             };
 
 
-            return null;
+            return await Get(page, pageSize, bookFilter);
+        }
+
+        public BooksController(IEntityRepository<BookEntity, BookFilter> repository, IModelMapper<BookEntity, Book> modelMapper, IPagingLinksFactory<BookFilter> pagingLinksFactory) : base(repository, modelMapper, pagingLinksFactory)
+        {
         }
     }
 }

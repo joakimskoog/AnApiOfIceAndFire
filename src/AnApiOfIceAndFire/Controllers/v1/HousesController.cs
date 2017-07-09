@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Houses;
+using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,9 +15,8 @@ namespace AnApiOfIceAndFire.Controllers.v1
         public const string SingleHouseRouteName = "SingleHouseEndpoint";
         public const string MultipleHousesRouteName = "MultipleHousesEndpoint";
 
-        public HousesController(IEntityRepository<HouseEntity, HouseFilter> repository, IModelMapper<HouseEntity, House> modelMapper) : base(repository, modelMapper)
+        public HousesController(IEntityRepository<HouseEntity, HouseFilter> repository, IModelMapper<HouseEntity, House> modelMapper, IPagingLinksFactory<HouseFilter> pagingLinksFactory) : base(repository, modelMapper, pagingLinksFactory)
         {
-            
         }
 
         [HttpGet]
@@ -29,10 +29,9 @@ namespace AnApiOfIceAndFire.Controllers.v1
         [HttpGet]
         [HttpHead]
         [Route("", Name = MultipleHousesRouteName)]
-        public IActionResult Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, string region = null, string words = null,
+        public async Task<IActionResult> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, string region = null, string words = null,
             bool? hasWords = null, bool? hasTitles = null, bool? hasSeats = null, bool? hasDiedOut = null, bool? hasAncestralWeapons = null)
         {
-            
             var houseFilter = new HouseFilter()
             {
                 Name = name,
@@ -45,7 +44,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
                 HasWords = hasWords
             };
 
-            return null;
+            return await Get(page, pageSize, houseFilter);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Characters;
+using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,9 +15,8 @@ namespace AnApiOfIceAndFire.Controllers.v1
         public const string SingleCharacterRouteName = "SingleCharacterEndpoint";
         public const string MultipleCharactersRouteName = "MultipleCharactersEndpoint";
 
-        public CharactersController(IEntityRepository<CharacterEntity, CharacterFilter> repository, IModelMapper<CharacterEntity, Character> modelMapper) : base(repository, modelMapper)
+        public CharactersController(IEntityRepository<CharacterEntity, CharacterFilter> repository, IModelMapper<CharacterEntity, Character> modelMapper, IPagingLinksFactory<CharacterFilter> pagingLinksFactory) : base(repository, modelMapper, pagingLinksFactory)
         {
-
         }
 
         [HttpGet]
@@ -29,7 +29,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
         [HttpGet]
         [HttpHead]
         [Route("", Name = MultipleCharactersRouteName)]
-        public IActionResult Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, string culture = null, string born = null, string died = null, bool? isAlive = null, Gender? gender = null)
+        public async Task<IActionResult> Get(int? page = DefaultPage, int? pageSize = DefaultPageSize, string name = null, string culture = null, string born = null, string died = null, bool? isAlive = null, Gender? gender = null)
         {
             var characterFilter = new CharacterFilter()
             {
@@ -41,7 +41,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
                 IsAlive = isAlive
             };
 
-            return null;
+            return await Get(page, pageSize, characterFilter);
         }
     }
 }

@@ -6,6 +6,8 @@ using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Books;
 using AnApiOfIceAndFire.Data.Characters;
 using AnApiOfIceAndFire.Data.Houses;
+using AnApiOfIceAndFire.Infrastructure;
+using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Infrastructure.Versioning;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Builder;
@@ -64,7 +66,11 @@ namespace AnApiOfIceAndFire
             });
 
             services.Configure<ConnectionOptions>(Configuration.GetSection("ConnectionStrings"));
-            
+
+            services.AddSingleton<IPagingLinksFactory<BookFilter>, BookPagingLinksFactory>();
+            services.AddSingleton<IPagingLinksFactory<CharacterFilter>, CharacterPagingLinksFactory>();
+            services.AddSingleton<IPagingLinksFactory<HouseFilter>, HousePagingLinksFactory>();
+
             services.AddSingleton<IModelMapper<BookEntity, Book>, BookMapper>();
             services.AddSingleton<IModelMapper<CharacterEntity, Character>, CharacterMapper>();
             services.AddSingleton<IModelMapper<HouseEntity, House>, HouseMapper>();
@@ -85,6 +91,9 @@ namespace AnApiOfIceAndFire
             {
                 cors.AllowAnyOrigin().AllowAnyHeader().WithMethods("GET", "HEAD");
             });
+
+            app.UseMiddleware<ErrorHandlingMiddleware>();
+
             app.UseMvc();
         }
     }
