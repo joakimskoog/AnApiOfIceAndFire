@@ -27,6 +27,9 @@ build:
   project: AnApiOfIceAndFire.sln    # path to Visual Studio solution or project   
   verbosity: normal
 
+services:
+  - mssql2016
+
 test_script:
   - dotnet test tests\AnApiOfIceAndFire.Tests\AnApiOfIceAndFire.Tests.csproj
   - dotnet test tests\AnApiOfIceAndFire.Data.Tests\AnApiOfIceAndFire.Data.Tests.csproj
