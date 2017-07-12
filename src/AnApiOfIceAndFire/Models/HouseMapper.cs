@@ -10,7 +10,7 @@ namespace AnApiOfIceAndFire.Models
     {
         public House Map(HouseEntity @from, IUrlHelper urlHelper)
         {
-            if (@from == null) throw new ArgumentNullException(nameof(@from));
+            if (@from == null) return null;
             if (urlHelper == null) throw new ArgumentNullException(nameof(urlHelper));
 
             var url = urlHelper.LinkToHouse(from.Id);

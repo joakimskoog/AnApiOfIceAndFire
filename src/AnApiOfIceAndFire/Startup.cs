@@ -67,8 +67,10 @@ namespace AnApiOfIceAndFire
             });
 
             services.AddResponseCompression();
+            services.AddMemoryCache();
 
             services.Configure<ConnectionOptions>(Configuration.GetSection("ConnectionStrings"));
+
 
             services.AddSingleton<IPagingLinksFactory<BookFilter>, BookPagingLinksFactory>();
             services.AddSingleton<IPagingLinksFactory<CharacterFilter>, CharacterPagingLinksFactory>();

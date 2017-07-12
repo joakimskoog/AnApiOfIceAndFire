@@ -6,6 +6,7 @@ using AnApiOfIceAndFire.Data.Books;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
@@ -16,7 +17,10 @@ namespace AnApiOfIceAndFire.Controllers.v1
         public const string SingleBookRouteName = "SingleBookEndpoint";
         public const string MultipleBooksRouteName = "MultipleBooksEndpoint";
 
- 
+        public BooksController(IEntityRepository<BookEntity, BookFilter> repository, IModelMapper<BookEntity, Book> modelMapper, IPagingLinksFactory<BookFilter> pagingLinksFactory, IMemoryCache memoryCache) :
+            base(repository, modelMapper, pagingLinksFactory, memoryCache, "Books")
+        {
+        }
 
         [HttpGet]
         [Route("{id:int}", Name = SingleBookRouteName)]
@@ -39,10 +43,6 @@ namespace AnApiOfIceAndFire.Controllers.v1
 
 
             return await Get(page, pageSize, bookFilter);
-        }
-
-        public BooksController(IEntityRepository<BookEntity, BookFilter> repository, IModelMapper<BookEntity, Book> modelMapper, IPagingLinksFactory<BookFilter> pagingLinksFactory) : base(repository, modelMapper, pagingLinksFactory)
-        {
         }
     }
 }

@@ -5,6 +5,7 @@ using AnApiOfIceAndFire.Data.Houses;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
@@ -15,7 +16,8 @@ namespace AnApiOfIceAndFire.Controllers.v1
         public const string SingleHouseRouteName = "SingleHouseEndpoint";
         public const string MultipleHousesRouteName = "MultipleHousesEndpoint";
 
-        public HousesController(IEntityRepository<HouseEntity, HouseFilter> repository, IModelMapper<HouseEntity, House> modelMapper, IPagingLinksFactory<HouseFilter> pagingLinksFactory) : base(repository, modelMapper, pagingLinksFactory)
+
+        public HousesController(IEntityRepository<HouseEntity, HouseFilter> repository, IModelMapper<HouseEntity, House> modelMapper, IPagingLinksFactory<HouseFilter> pagingLinksFactory, IMemoryCache memoryCache) : base(repository, modelMapper, pagingLinksFactory, memoryCache, "Houses")
         {
         }
 
