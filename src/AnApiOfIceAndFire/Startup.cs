@@ -71,7 +71,6 @@ namespace AnApiOfIceAndFire
 
             services.Configure<ConnectionOptions>(Configuration.GetSection("ConnectionStrings"));
 
-
             services.AddSingleton<IPagingLinksFactory<BookFilter>, BookPagingLinksFactory>();
             services.AddSingleton<IPagingLinksFactory<CharacterFilter>, CharacterPagingLinksFactory>();
             services.AddSingleton<IPagingLinksFactory<HouseFilter>, HousePagingLinksFactory>();

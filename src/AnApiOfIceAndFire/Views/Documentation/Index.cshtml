@@ -71,7 +71,7 @@
                                 <h5>Things worth noting:</h5>
 
                                 <ol>
-                                    <li>Information about the pagination is included in <a href="http://tools.ietf.org/html/rfc5988">the Link header</a></li>
+                                    <li>Information about the pagination is included in <a href="https://tools.ietf.org/html/rfc5988">the Link header</a></li>
                                     <li>Page numbering is 1-based</li>
                                     <li>You can specify how many items you want to receive per page, the maximum is 50</li>
                                 </ol>
@@ -82,15 +82,15 @@
                                 </p>
                                 <p>Let's make a request for the first page of characters with a page size of 10. Since we're only interested in the pagination information we provide the -I parameter to say that we only care about the headers.</p>
 
-                                <code>$ curl -I "http://www.anapioficeandfire.com/api/characters?page=1&pageSize=10"</code>
+                                <code>$ curl -I "https://www.anapioficeandfire.com/api/characters?page=1&pageSize=10"</code>
                                 <p>
                                     <strong>Here's the link header in the response:</strong>
                                 </p>
                                 <code>
 
-                                    Link: &lt;http://www.anapioficeandfire.com/api/characters?page=2&amp;pageSize=10&gt;; rel="next",
-                                    &lt;http://www.anapioficeandfire.com/api/characters?page=1&amp;pageSize=10&gt;; rel="first",
-                                    &lt;http://www.anapioficeandfire.com/api/characters?page=214&amp;pageSize=10&gt;; rel="last"
+                                    Link: &lt;https://www.anapioficeandfire.com/api/characters?page=2&amp;pageSize=10&gt;; rel="next",
+                                    &lt;https://www.anapioficeandfire.com/api/characters?page=1&amp;pageSize=10&gt;; rel="first",
+                                    &lt;https://www.anapioficeandfire.com/api/characters?page=214&amp;pageSize=10&gt;; rel="last"
                                 </code>
                                 <p></p>
                                 <h5>Possible link types:</h5>
@@ -151,12 +151,12 @@
                                 <h4>Root</h4>
                                 <p>The Root resource contains information about all available resources in the API.</p>
                                 <h5>Example request:</h5>
-                                <code>$ curl "http://www.anapioficeandfire.com/api"</code>
+                                <code>$ curl "https://www.anapioficeandfire.com/api"</code>
                                 <h5>Example response:</h5>
                                 <pre><code>{
-    "books": "http://www.anapioficeandfire.com/api/books",
-    "characters": "http://www.anapioficeandfire.com/api/characters",
-    "houses": "http://www.anapioficeandfire.com/api/houses"
+    "books": "https://www.anapioficeandfire.com/api/books",
+    "characters": "https://www.anapioficeandfire.com/api/characters",
+    "houses": "https://www.anapioficeandfire.com/api/houses"
  }
 </code></pre>
                                 <p></p>
@@ -232,13 +232,13 @@
 
 
                                     <h5>List all books:</h5>
-                                    <code>$ curl "http://www.anapioficeandfire.com/api/books"</code>
+                                    <code>$ curl "https://www.anapioficeandfire.com/api/books"</code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
                                     <pre><code>[
   {
-    "url": "http://www.anapioficeandfire.com/api/books/1",
+    "url": "https://www.anapioficeandfire.com/api/books/1",
     "name": "A Game of Thrones",
     "isbn": "978-0553103540",
     "authors": [
@@ -250,16 +250,16 @@
     "mediaType": "Hardcover",
     "released": "1996-08-01T00:00:00",
     "characters": [
-      "http://www.anapioficeandfire.com/api/characters/2",
+      "https://www.anapioficeandfire.com/api/characters/2",
       ...
     ],
     "povCharacters": [
-      "http://www.anapioficeandfire.com/api/characters/148",
+      "https://www.anapioficeandfire.com/api/characters/148",
       ...
     ]
   },
   {
-    "url": "http://www.anapioficeandfire.com/api/books/2",
+    "url": "https://www.anapioficeandfire.com/api/books/2",
     "name": "A Clash of Kings",
     "isbn": "978-0553108033",
     "authors": [
@@ -271,11 +271,11 @@
     "mediaType": "Hardcover",
     "released": "1999-02-02T00:00:00",
     "characters": [
-      "http://www.anapioficeandfire.com/api/characters/2",
+      "https://www.anapioficeandfire.com/api/characters/2",
       ...
     ],
     "povCharacters": [
-      "http://www.anapioficeandfire.com/api/characters/148",
+      "https://www.anapioficeandfire.com/api/characters/148",
       ...
     ]
   },
@@ -312,12 +312,12 @@
                                     </table>
 
                                     <h5>Get specific book</h5>
-                                    <code>$ curl "http://www.anapioficeandfire.com/api/books/1"</code>
+                                    <code>$ curl "https://www.anapioficeandfire.com/api/books/1"</code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
                                     <pre><code>{
-  "url": "http://www.anapioficeandfire.com/api/books/1",
+  "url": "https://www.anapioficeandfire.com/api/books/1",
   "name": "A Game of Thrones",
   "isbn": "978-0553103540",
   "authors": [
@@ -329,11 +329,11 @@
   "mediaType": "Hardcover",
   "released": "1996-08-01T00:00:00",
   "characters": [
-    "http://www.anapioficeandfire.com/api/characters/2",
+    "https://www.anapioficeandfire.com/api/characters/2",
     ...
   ],
   "povCharacters": [
-    "http://www.anapioficeandfire.com/api/characters/148",
+    "https://www.anapioficeandfire.com/api/characters/148",
     ...
   ]
 }</code></pre>
@@ -436,13 +436,13 @@
                                         </tbody>
                                     </table>
                                     <h5>List all characters:</h5>
-                                    <code>$ curl "http://www.anapioficeandfire.com/api/characters"</code>
+                                    <code>$ curl "https://www.anapioficeandfire.com/api/characters"</code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
                                     <pre><code>[
   {
-    "url": "http://www.anapioficeandfire.com/api/characters/1",
+    "url": "https://www.anapioficeandfire.com/api/characters/1",
     "name": "",
     "culture": "Braavosi",
     "born": "",
@@ -456,14 +456,14 @@
     "spouse": "",
     "allegiances": [],
     "books": [
-      "http://www.anapioficeandfire.com/api/books/5"
+      "https://www.anapioficeandfire.com/api/books/5"
     ],
     "povBooks": [],
     "tvSeries": [],
     "playedBy": []
   },
   {
-    "url": "http://www.anapioficeandfire.com/api/characters/2",
+    "url": "https://www.anapioficeandfire.com/api/characters/2",
     "name": "",
     "culture": "",
     "born": "",
@@ -476,10 +476,10 @@
     "mother": "",
     "spouse": "",
     "allegiances": [
-      "http://www.anapioficeandfire.com/api/houses/362"
+      "https://www.anapioficeandfire.com/api/houses/362"
     ],
     "books": [
-      "http://www.anapioficeandfire.com/api/books/1",
+      "https://www.anapioficeandfire.com/api/books/1",
       ...
     ],
     "povBooks": [],
@@ -542,12 +542,12 @@
 
 
                                     <h5>Get specific character</h5>
-                                    <code>$ curl "http://www.anapioficeandfire.com/api/characters/823"</code>
+                                    <code>$ curl "https://www.anapioficeandfire.com/api/characters/823"</code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
                                     <pre><code>{
-  "url": "http://www.anapioficeandfire.com/api/characters/823",
+  "url": "https://www.anapioficeandfire.com/api/characters/823",
   "name": "Petyr Baelish",
   "culture": "Valemen",
   "born": "In 268 AC, at the Fingers",
@@ -563,13 +563,13 @@
   ],
   "father": "",
   "mother": "",
-  "spouse": "http://www.anapioficeandfire.com/api/characters/688",
+  "spouse": "https://www.anapioficeandfire.com/api/characters/688",
   "allegiances": [
-    "http://www.anapioficeandfire.com/api/houses/10",
-    "http://www.anapioficeandfire.com/api/houses/11"
+    "https://www.anapioficeandfire.com/api/houses/10",
+    "https://www.anapioficeandfire.com/api/houses/11"
   ],
   "books": [
-    "http://www.anapioficeandfire.com/api/books/1",
+    "https://www.anapioficeandfire.com/api/books/1",
     ...
   ],
   "povBooks": [],
@@ -683,13 +683,13 @@
                                     </table>
 
                                     <h5>List all houses:</h5>
-                                    <code>$ curl "http://www.anapioficeandfire.com/api/houses"</code>
+                                    <code>$ curl "https://www.anapioficeandfire.com/api/houses"</code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
                                     <pre><code>[
   {
-    "url": "http://www.anapioficeandfire.com/api/houses/1",
+    "url": "https://www.anapioficeandfire.com/api/houses/1",
     "name": "House Algood",
     "region": "The Westerlands",
     "coatOfArms": "A golden wreath, on a blue field with a gold border",
@@ -698,7 +698,7 @@
     "seats": [],
     "currentLord": "",
     "heir": "",
-    "overlord": "http://www.anapioficeandfire.com/api/houses/229",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/229",
     "founded": "",
     "founder": "",
     "diedOut": "",
@@ -707,7 +707,7 @@
     "swornMembers": []
   },
   {
-    "url": "http://www.anapioficeandfire.com/api/houses/2",
+    "url": "https://www.anapioficeandfire.com/api/houses/2",
     "name": "House Allyrion of Godsgrace",
     "region": "Dorne",
     "coatOfArms": "Gyronny Gules and Sable, a hand couped Or",
@@ -716,16 +716,16 @@
     "seats": [
       "Godsgrace"
     ],
-    "currentLord": "http://www.anapioficeandfire.com/api/characters/298",
-    "heir": "http://www.anapioficeandfire.com/api/characters/1922",
-    "overlord": "http://www.anapioficeandfire.com/api/houses/285",
+    "currentLord": "https://www.anapioficeandfire.com/api/characters/298",
+    "heir": "https://www.anapioficeandfire.com/api/characters/1922",
+    "overlord": "https://www.anapioficeandfire.com/api/houses/285",
     "founded": "",
     "founder": "",
     "diedOut": "",
     "ancestralWeapons": [],
     "cadetBranches": [],
     "swornMembers": [
-      "http://www.anapioficeandfire.com/api/characters/1301",
+      "https://www.anapioficeandfire.com/api/characters/1301",
       ...
     ]
   },
@@ -789,12 +789,12 @@
 
 
                                     <h5>Get specific house</h5>
-                                    <code>$ curl "http://www.anapioficeandfire.co/api/houses/10"</code>
+                                    <code>$ curl "https://www.anapioficeandfire.co/api/houses/10"</code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
                                     <pre><code>{
-  "url": "http://www.anapioficeandfire.com/api/houses/10",
+  "url": "https://www.anapioficeandfire.com/api/houses/10",
   "name": "House Baelish of Harrenhal",
   "region": "The Riverlands",
   "coatOfArms": "A field of silver mockingbirds, on a green field",
@@ -806,20 +806,20 @@
   "seats": [
     "Harrenhal"
   ],
-  "currentLord": "http://www.anapioficeandfire.com/api/characters/823",
+  "currentLord": "https://www.anapioficeandfire.com/api/characters/823",
   "heir": "",
-  "overlord": "http://www.anapioficeandfire.com/api/houses/16",
+  "overlord": "https://www.anapioficeandfire.com/api/houses/16",
   "founded": "299 AC",
-  "founder": "http://www.anapioficeandfire.com/api/characters/823",
+  "founder": "https://www.anapioficeandfire.com/api/characters/823",
   "diedOut": "",
   "ancestralWeapons": [],
   "cadetBranches": [],
   "swornMembers": [
-    "http://www.anapioficeandfire.com/api/characters/651",
-    "http://www.anapioficeandfire.com/api/characters/804",
-    "http://www.anapioficeandfire.com/api/characters/823",
-    "http://www.anapioficeandfire.com/api/characters/957",
-    "http://www.anapioficeandfire.com/api/characters/970"
+    "https://www.anapioficeandfire.com/api/characters/651",
+    "https://www.anapioficeandfire.com/api/characters/804",
+    "https://www.anapioficeandfire.com/api/characters/823",
+    "https://www.anapioficeandfire.com/api/characters/957",
+    "https://www.anapioficeandfire.com/api/characters/970"
   ]
 }</code></pre>
                                     <p></p>
