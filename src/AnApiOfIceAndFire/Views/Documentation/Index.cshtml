@@ -13,35 +13,7 @@
                     </header>
                     <div class="row">
                         <div class="small-12 column show-for-small-only">
-
-                            <h4>Overview</h4>
-                            <div class="list-group">
-                                <a href="#intro" class="list-group-item">Introduction</a>
-                                <a href="#current-version" class="list-group-item">Current Version</a>
-                                <a href="#authentication" class="list-group-item">Authentication</a>
-                                <a href="#pagination" class="list-group-item">Pagination</a>
-                                <a href="#rate-limiting" class="list-group-item">Rate Limiting</a>
-                                <a href="#caching" class="list-group-item">Caching</a>
-                                <a href="#versioning" class="list-group-item">Versioning</a>
-                            </div>
-                            <h4>Resources</h4>
-                            <div class="list-group">
-                                <a href="#root" class="list-group-item">Root</a>
-                                <a href="#books" class="list-group-item">Books</a>
-                                <a href="#characters" class="list-group-item">Characters</a>
-                                <a href="#houses" class="list-group-item">Houses</a>
-                            </div>
-                            <h4>Libraries</h4>
-                            <div class="list-group">
-                                <a href="#library-elixir" class="list-group-item">Elixir</a>
-                                <a href="#library-graphql" class="list-group-item">GraphQL</a>
-                                <a href="#library-haskell" class="list-group-item">Haskell</a>
-                                <a href="#library-node" class="list-group-item">Node</a>
-                                <a href="#library-python" class="list-group-item">Python</a>
-                                <a href="#library-ruby" class="list-group-item">Ruby</a>
-                                <a href="#library-swift" class="list-group-item">Swift</a>
-                            </div>
-
+                            @Html.Partial("_Menu")
                         </div>
                         <div class="small-12 medium-8 column">
                             <hr />
@@ -826,97 +798,10 @@
                                 </div>
                             </div>
 
-                            <h3>Libraries</h3>
-                            <hr />
-                            <p>There exists helper libraries that will help you consume An API of Ice And Fire in a specific programming language.</p>
-
-                            <div>
-                                <a name="library-elixir"></a>
-                                <h4>Elixir</h4>
-                                <ul>
-                                    <li>
-                                        <a href="https://github.com/sotojuan/maester">maester</a> by <a href="https://github.com/sotojuan">Juan Soto</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <a name="library-graphql"></a>
-                                <h4>GraphQL</h4>
-                                <ul>
-                                    <li>
-                                        <a href="https://github.com/afram/iceandfire-graphql">iceandfire-graphql</a> by <a href="https://github.com/afram">Marwan Butrous</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <a name="library-haskell"></a>
-                                <h4>Haskell</h4>
-                                <ul>
-                                    <li>
-                                        <a href="https://github.com/kberger/anapioficeandfire-haskell">anapioficeandfire-haskell</a> by <a href="https://github.com/kberger">Karl Berger</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <a name="library-node"></a>
-                                <h4>Node</h4>
-                                <ul>
-                                    <li><a href="https://github.com/arbazsiddiqui/A-song-of-ice-and-fire-API">asoiaf-api</a> by <a href="https://github.com/arbazsiddiqui">Arbaz Siddqiui</a></li>
-                                    <li><a href="https://github.com/alexwebb2/node-api-iceandfire">node-api-iceandfire</a> by <a href="http://alexwebb.info/">Alex Webb</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <a name="library-python"></a>
-                                <h4>Python</h4>
-                                <ul>
-                                    <li><a href="https://github.com/joakimskoog/anapioficeandfire-python">anapioficeandfire-python</a> by the author of An API of ice And Fire, <a href="https://joakimskoog.me/">Joakim Skoog</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <a name="library-ruby"></a>
-                                <h4>Ruby</h4>
-                                <ul>
-                                    <li><a href="https://github.com/jzntam/game_of_thrones_api">game_of_thrones_api</a> by <a href="https://github.com/jzntam">Jason Tam</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <a name="library-swift"></a>
-                                <h4>Swift</h4>
-                                <ul>
-                                    <li><a href="https://github.com/murphb52/IceAndFireKit">IceAndFireKit</a> by <a href="https://github.com/murphb52">Brian Murphy</a></li>
-                                    <li><a href="https://github.com/ujell/IceAndFireLoader">IceAndFireLoader</a> by <a href="https://github.com/ujell">Yucel Uzun</a></li>
-                                    <li><a href="https://github.com/fitomad/WesterosKit">WesterosKit</a> by <a href="https://github.com/fitomad">Adolfo</a></li>
-                                </ul>
-                            </div>
+                            @Html.Partial("_Libraries")
                         </div>
                         <div class="small-12 medium-4 column hide-for-small-only">
-                            <h4>Overview</h4>
-                            <div class="list-group">
-                                <a href="#intro" class="list-group-item">Introduction</a>
-                                <a href="#current-version" class="list-group-item">Current Version</a>
-                                <a href="#authentication" class="list-group-item">Authentication</a>
-                                <a href="#pagination" class="list-group-item">Pagination</a>
-                                <a href="#rate-limiting" class="list-group-item">Rate Limiting</a>
-                                <a href="#caching" class="list-group-item">Caching</a>
-                                <a href="#versioning" class="list-group-item">Versioning</a>
-                            </div>
-                            <h4>Resources</h4>
-                            <div class="list-group">
-                                <a href="#root" class="list-group-item">Root</a>
-                                <a href="#books" class="list-group-item">Books</a>
-                                <a href="#characters" class="list-group-item">Characters</a>
-                                <a href="#houses" class="list-group-item">Houses</a>
-                            </div>
-                            <h4>Libraries</h4>
-                            <div class="list-group">
-                                <a href="#library-elixir" class="list-group-item">Elixir</a>
-                                <a href="#library-graphql" class="list-group-item">GraphQL</a>
-                                <a href="#library-haskell" class="list-group-item">Haskell</a>
-                                <a href="#library-node" class="list-group-item">Node</a>
-                                <a href="#library-python" class="list-group-item">Python</a>
-                                <a href="#library-ruby" class="list-group-item">Ruby</a>
-                                <a href="#library-swift" class="list-group-item">Swift</a>
-                            </div>
+                            @Html.Partial("_Menu")
                         </div>
                     </div>
                 </article>
