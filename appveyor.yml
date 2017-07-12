@@ -10,6 +10,7 @@ skip_commits:
   files:
   - LICENSE.md
   - README.md
+  - CONTRIBUTING.md
     
 init:
   - git config --global core.autocrlf input  
