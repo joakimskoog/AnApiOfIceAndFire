@@ -8,7 +8,7 @@ namespace AnApiOfIceAndFire.DataFeeder
         {
             if (args.Length == 0)
             {
-                throw new ArgumentException("Please specify the folder where all scripts and data resides!");
+                throw new ArgumentException("Please specify the connection strings!");
             }
 
             var masterConnectionString = args[0];

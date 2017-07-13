@@ -44,8 +44,7 @@ namespace AnApiOfIceAndFire
             // Add framework services.
             services.AddMvc().AddJsonOptions(opts =>
             {
-                //Use indented to make it more readable for the consumer, using gzip is better for bandwidth anyway.
-                opts.SerializerSettings.Formatting = Formatting.Indented;
+                opts.SerializerSettings.Formatting = Formatting.None;
 
                 //Use camelCase for naming of properties since it's more of a standard
                 opts.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
