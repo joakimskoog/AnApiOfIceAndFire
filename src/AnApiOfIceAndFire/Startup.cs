@@ -98,7 +98,7 @@ namespace AnApiOfIceAndFire
 
             app.UseCors(cors =>
             {
-                cors.AllowAnyOrigin().AllowAnyHeader().WithMethods("GET", "HEAD");
+                cors.AllowAnyOrigin().AllowAnyHeader().WithExposedHeaders("Link").WithMethods("GET", "HEAD");
             });
 
             app.UseStaticFiles(new StaticFileOptions()
