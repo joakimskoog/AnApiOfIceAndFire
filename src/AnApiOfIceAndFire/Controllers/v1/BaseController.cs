@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
-using Newtonsoft.Json;
+// ReSharper disable StaticMemberInGenericType
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
@@ -85,8 +82,7 @@ namespace AnApiOfIceAndFire.Controllers.v1
             var pagingLinks = _pagingLinksFactory.Create(pagedModels, Url, filter);
 
             Response.Headers.AddLinkHeader(pagingLinks);
-
-
+            
             return Ok(mappedModels);
         }
     }

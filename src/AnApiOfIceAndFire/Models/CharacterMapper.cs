@@ -17,9 +17,9 @@ namespace AnApiOfIceAndFire.Models
             var fatherUrl = urlHelper.LinkToCharacter(from.FatherId);
             var motherUrl = urlHelper.LinkToCharacter(from.MotherId);
             var spouseUrl = urlHelper.LinkToCharacter(from.SpouseId);
-            var bookUrls = from.BookIdentifiers.Select(urlHelper.LinkToBook);
-            var povBookUrls = from.PovBookIdentifiers.Select(urlHelper.LinkToBook);
-            var allegianceUrls = from.AllegianceIdentifiers.Select(urlHelper.LinkToHouse);
+            var bookUrls = from.BookIdentifiers.Select(urlHelper.LinkToBook).ToArray();
+            var povBookUrls = from.PovBookIdentifiers.Select(urlHelper.LinkToBook).ToArray();
+            var allegianceUrls = from.AllegianceIdentifiers.Select(urlHelper.LinkToHouse).ToArray();
 
             return new Character(url)
             {

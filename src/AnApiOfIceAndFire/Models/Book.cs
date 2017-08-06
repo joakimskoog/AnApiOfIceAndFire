@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AnApiOfIceAndFire.Data.Books;
+// ReSharper disable InconsistentNaming
 
 namespace AnApiOfIceAndFire.Models
 {
@@ -24,7 +25,7 @@ namespace AnApiOfIceAndFire.Models
         /// <summary>
         /// The authors of this book
         /// </summary>
-        public IEnumerable<string> Authors { get; }
+        public string[] Authors { get; }
 
         /// <summary>
         /// The number of pages in this book
@@ -54,15 +55,15 @@ namespace AnApiOfIceAndFire.Models
         /// <summary>
         /// The character resource URLs that are in this book
         /// </summary>
-        public IEnumerable<string> Characters { get; }
+        public string[] Characters { get; }
 
         /// <summary>
         /// The character resource URLs that have at least one POV chapter in this book
         /// </summary>
-        public IEnumerable<string> POVCharacters { get; }
+        public string[] POVCharacters { get; }
 
-        public Book(string url, string name, string isbn, IEnumerable<string> authors, int numberOfPages, string publisher,
-            string country, MediaType mediaType, DateTime released, IEnumerable<string> characters = null, IEnumerable<string> povCharacters = null)
+        public Book(string url, string name, string isbn, string[] authors, int numberOfPages, string publisher,
+            string country, MediaType mediaType, DateTime released, string[] characters = null, string[] povCharacters = null)
         {
             URL = url ?? throw new ArgumentNullException(nameof(url));
             Name = name ?? throw new ArgumentNullException(nameof(name));
@@ -73,8 +74,8 @@ namespace AnApiOfIceAndFire.Models
             Country = country ?? throw new ArgumentNullException(nameof(country));
             MediaType = mediaType;
             Released = released;
-            Characters = characters ?? new List<string>();
-            POVCharacters = povCharacters ?? new List<string>();
+            Characters = characters ?? new string[0];
+            POVCharacters = povCharacters ?? new string[0];
         }
     }
 }

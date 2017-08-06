@@ -14,8 +14,8 @@ namespace AnApiOfIceAndFire.Models
             if (urlHelper == null) throw new ArgumentNullException(nameof(urlHelper));
 
             var bookUrl = urlHelper.LinkToBook(from.Id);
-            var characterUrls = from.CharacterIdentifiers.Select(urlHelper.LinkToCharacter);
-            var povCharacterUrls = from.PovCharacterIdentifiers.Select(urlHelper.LinkToCharacter);
+            var characterUrls = from.CharacterIdentifiers.Select(urlHelper.LinkToCharacter).ToArray();
+            var povCharacterUrls = from.PovCharacterIdentifiers.Select(urlHelper.LinkToCharacter).ToArray();
 
             return new Book(bookUrl, from.Name, from.ISBN, from.ParseAuthors(), from.NumberOfPages, from.Publisher,
                 from.Country, from.MediaType, from.ReleaseDate, characterUrls, povCharacterUrls);
