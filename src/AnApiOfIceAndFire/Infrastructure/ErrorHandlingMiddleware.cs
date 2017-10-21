@@ -29,7 +29,8 @@ namespace AnApiOfIceAndFire.Infrastructure
 
         private static async Task HandleExceptionAsync(HttpContext context)
         {
-            var result = JsonConvert.SerializeObject("Something went wrong. If this keeps happening, please file an issue at https://github.com/joakimskoog/AnApiOfIceAndFire/issues");
+            var result = JsonConvert.SerializeObject("Something went terribly wrong! https://www.youtube.com/watch?v=t3otBjVZzT0");
+
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
