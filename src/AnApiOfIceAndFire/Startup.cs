@@ -62,7 +62,6 @@ namespace AnApiOfIceAndFire
                 options.DefaultApiVersion = new ApiVersion(1, 0);
                 options.ApiVersionReader = new AcceptHeaderVersionReader();
                 options.ApiVersionSelector = new CurrentImplementationApiVersionSelector(options);
-                options.CreateBadRequest = (request, code, message, detail) => new BadRequestObjectResult(new { message = "Given API version is not supported" });
             });
 
             services.AddResponseCompression();

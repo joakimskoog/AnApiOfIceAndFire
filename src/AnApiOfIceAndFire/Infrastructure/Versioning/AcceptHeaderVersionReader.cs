@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.Extensions.Primitives;
 
 namespace AnApiOfIceAndFire.Infrastructure.Versioning
 {
@@ -13,6 +14,11 @@ namespace AnApiOfIceAndFire.Infrastructure.Versioning
         public const string MediaType = "application/vnd.anapioficeandfire+json";
         public const string MediaTypeParameter = "version";
 
+        public void AddParameters(IApiVersionParameterDescriptionContext context)
+        {
+            context.AddParameter(MediaTypeParameter, ApiVersionParameterLocation.MediaTypeParameter);
+        }
+
         public string Read(HttpRequest request)
         {
             var acceptHeader = request?.GetTypedHeaders()?.Accept;
@@ -23,12 +29,17 @@ namespace AnApiOfIceAndFire.Infrastructure.Versioning
 
             foreach (var mime in acceptHeader.OrderByDescending(m => m.Quality))
             {
-                if (string.Equals(mime.MediaType, MediaType, StringComparison.OrdinalIgnoreCase))
+                if (StringSegment.Equals(mime.MediaType, MediaType, StringComparison.OrdinalIgnoreCase))
                 {
-                    var versionParameter = mime.Parameters.FirstOrDefault(p => string.Equals(p.Name, MediaTypeParameter, StringComparison.OrdinalIgnoreCase));
-                    var version = versionParameter?.Value;
+                    var versionParameter = mime.Parameters.FirstOrDefault(p => StringSegment.Equals(p.Name, MediaTypeParameter, StringComparison.OrdinalIgnoreCase));
 
-                    return string.Equals(version, string.Empty) ? null : version;
+                    var version = versionParameter?.Value;
+                    if (version == null || StringSegment.Equals(version, StringSegment.Empty))
+                    {
+                        return null;
+                    }
+
+                    return version.ToString();
                 }
             }
 
