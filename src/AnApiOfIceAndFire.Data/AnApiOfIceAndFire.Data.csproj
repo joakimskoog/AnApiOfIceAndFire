@@ -8,7 +8,7 @@
     <PackageReference Include="Dapper" Version="1.50.5" />
     <PackageReference Include="Dapper.Contrib" Version="1.50.5" />
     <PackageReference Include="Dapper.SqlBuilder" Version="1.50.5" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.2.0" />
     <PackageReference Include="SimplePagedList" Version="2.0.1" />
   </ItemGroup>
 
