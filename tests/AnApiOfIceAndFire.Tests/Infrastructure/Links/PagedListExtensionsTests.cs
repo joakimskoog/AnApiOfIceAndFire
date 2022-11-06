@@ -13,24 +13,10 @@ namespace AnApiOfIceAndFire.Tests.Infrastructure.Links
     public class PagedListExtensionsTests
     {
         [Fact]
-        public void PagedListIsNull_WhenCreatingPagingLinks_ArgumentNullExceptionIsThrown()
-        {
-            IPagedList<int> pagedList = null;
-            Assert.Throws<ArgumentNullException>(() => pagedList.ToPagingLinks(new UrlHelper(new ActionContext()), "routeName"));
-        }
-
-        [Fact]
         public void UrlHelperIsNull_WhenCreatingPagingLinks_ArgumentNullExceptionIsThrown()
         {
             IPagedList<int> pagedList = new PagedList<int>(new List<int> { 1, 2, 3 }.AsQueryable(), 1, 1);
             Assert.Throws<ArgumentNullException>(() => pagedList.ToPagingLinks(null, "routeName"));
-        }
-
-        [Fact]
-        public void RouteNameIsNull_WhenCreatingPagingLinks_ArgumentNullExceptionIsThrown()
-        {
-            IPagedList<int> pagedList = new PagedList<int>(new List<int> { 1, 2, 3 }.AsQueryable(), 1, 1);
-            Assert.Throws<ArgumentNullException>(() => pagedList.ToPagingLinks(new UrlHelper(new ActionContext()), null));
         }
 
         [Fact]

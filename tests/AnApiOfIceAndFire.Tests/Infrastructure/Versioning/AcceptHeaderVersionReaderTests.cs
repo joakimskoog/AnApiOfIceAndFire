@@ -1,6 +1,5 @@
 ﻿using AnApiOfIceAndFire.Infrastructure.Versioning;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.Extensions.Primitives;
 using Xunit;
 
@@ -13,7 +12,7 @@ namespace AnApiOfIceAndFire.Tests.Infrastructure.Versioning
         {
             var sut = new AcceptHeaderVersionReader();
 
-            var version = sut.Read(new DefaultHttpRequest(new DefaultHttpContext()));
+            var version = sut.Read(new DefaultHttpContext().Request);
 
             Assert.Null(version);
         }
@@ -22,7 +21,7 @@ namespace AnApiOfIceAndFire.Tests.Infrastructure.Versioning
         public void AcceptHeaderWithIncorrectMediaType_WhenReadingVersion_NullIsReturned()
         {
             var sut = new AcceptHeaderVersionReader();
-            var request = new DefaultHttpRequest(new DefaultHttpContext());
+            var request = new DefaultHttpContext().Request;
             request.Headers.Add("Accept", new StringValues("application/json"));
 
             var version = sut.Read(request);
@@ -34,7 +33,7 @@ namespace AnApiOfIceAndFire.Tests.Infrastructure.Versioning
         public void AcceptHeaderWithCorrectMediaTypeButIncorrectParameter_ReadingVersion_NullIsReturned()
         {
             var sut = new AcceptHeaderVersionReader();
-            var request = new DefaultHttpRequest(new DefaultHttpContext());
+            var request = new DefaultHttpContext().Request;
             request.Headers.Add("Accept", new StringValues($"{AcceptHeaderVersionReader.MediaType}; wrong=abc"));
 
             var version = sut.Read(request);
@@ -46,7 +45,7 @@ namespace AnApiOfIceAndFire.Tests.Infrastructure.Versioning
         public void CorrectHeaderButWithoutVersion_WhenReadingVersion_NullIsReturned()
         {
             var sut = new AcceptHeaderVersionReader();
-            var request = new DefaultHttpRequest(new DefaultHttpContext());
+            var request = new DefaultHttpContext().Request;
             request.Headers.Add("Accept", new StringValues($"{AcceptHeaderVersionReader.MediaType}; {AcceptHeaderVersionReader.MediaTypeParameter}="));
 
             var version = sut.Read(request);
@@ -58,7 +57,7 @@ namespace AnApiOfIceAndFire.Tests.Infrastructure.Versioning
         public void CorrectHeader_WhenReadingVersion_VersionIsReturned()
         {
             var sut = new AcceptHeaderVersionReader();
-            var request = new DefaultHttpRequest(new DefaultHttpContext());
+            var request = new DefaultHttpContext().Request;
             request.Headers.Add("Accept", new StringValues($"{AcceptHeaderVersionReader.MediaType}; {AcceptHeaderVersionReader.MediaTypeParameter}=1"));
 
             var version = sut.Read(request);
