@@ -2,6 +2,73 @@
     ViewData["Title"] = "Documentation";
 }
 
+<script>
+
+    const jsonCodeData = {
+        "root": {
+            "curl": "$ \"https://www.anapioficeandfire.com/api\"",
+                "python": "this is the python code snippet",
+                    "js": "this is the js code snippet"
+        },
+        "allBooks": {
+            "curl": "$ \"https://www.anapioficeandfire.com/api/books\"",
+                "python": "this is the python code snippet",
+                    "js": "this is the js code snippet"
+        },
+        "specificBook": {
+            "curl": "$ curl \"https://www.anapioficeandfire.com/api/books/1\"",
+                "python": "",
+                    "js": ""
+        },
+        "allCharacters": {
+            "curl": "$ curl \"https://www.anapioficeandfire.com/api/characters\"",
+                "python": "",
+                    "js": ""
+        },
+        "specificCharacter": {
+            "curl": "$ curl \"https://www.anapioficeandfire.com/api/characters/823\"",
+                "python": "",
+                    "js": ""
+        },
+        "allHouses": {
+            "curl": "$ curl \"https://www.anapioficeandfire.com/api/houses\"",
+                "python": "",
+                    "js": ""
+        },
+        "specificHouse": {
+            "curl": "$ curl \"https://www.anapioficeandfire.com/api/houses/10\"",
+                "python": "",
+                    "js": ""
+        }
+    }
+
+    const setCodeSnippet = (e) => {
+        const dropDownElem = document.getElementById(e.target.id);
+        const lang = e.target.value;
+        const key = e.target.id.slice(0, e.target.id.indexOf("-"));
+        const codeElem = document.getElementById(key + "-req-code");
+        const codeSnippet = jsonCodeData[key][lang];
+        codeElem.innerHTML = codeSnippet;
+    }
+
+    const dropDownIds = [
+        "root",
+        "allBooks",
+        "specificBook",
+        "allCharacters",
+        "specificCharacter",
+        "allHouses",
+        "specificHouse",
+    ]
+
+    document.addEventListener("DOMContentLoaded", () => {
+        dropDownIds.forEach(id => {
+            const elem = document.getElementById(id + "-req-lang");
+            elem.addEventListener("change", setCodeSnippet);
+        });
+    })
+
+</script>
 
 <div id="layout-main-container" class="row">
     <div id="layout-content" class="large-12 columns">
@@ -123,7 +190,12 @@
                                 <h4>Root</h4>
                                 <p>The Root resource contains information about all available resources in the API.</p>
                                 <h5>Example request:</h5>
-                                <code>$ curl "https://www.anapioficeandfire.com/api"</code>
+                                <select id="root-req-lang">
+                                    <option value="curl">cURL</option>
+                                    <option value="python">Python</option>
+                                    <option value="js">JavaScript</option>
+                                </select>
+                                <code id="root-req-code"></code>
                                 <h5>Example response:</h5>
                                 <pre><code>{
     "books": "https://www.anapioficeandfire.com/api/books",
@@ -204,7 +276,12 @@
 
 
                                     <h5>List all books:</h5>
-                                    <code>$ curl "https://www.anapioficeandfire.com/api/books"</code>
+                                    <select id="allBooks-req-lang">
+                                        <option value="curl">cURL</option>
+                                        <option value="python">Python</option>
+                                        <option value="js">JavaScript</option>
+                                    </select>
+                                    <code id="allBooks-req-code"></code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
@@ -284,7 +361,12 @@
                                     </table>
 
                                     <h5>Get specific book</h5>
-                                    <code>$ curl "https://www.anapioficeandfire.com/api/books/1"</code>
+                                    <select id="specificBook-req-lang">
+                                        <option value="curl">cURL</option>
+                                        <option value="python">Python</option>
+                                        <option value="js">JavaScript</option>
+                                    </select>
+                                    <code id="specificBook-req-code"></code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
@@ -408,7 +490,12 @@
                                         </tbody>
                                     </table>
                                     <h5>List all characters:</h5>
-                                    <code>$ curl "https://www.anapioficeandfire.com/api/characters"</code>
+                                    <select id="allCharacters-req-lang">
+                                        <option value="curl">cURL</option>
+                                        <option value="python">Python</option>
+                                        <option value="js">JavaScript</option>
+                                    </select>
+                                    <code id="allCharacters-req-code"></code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
@@ -514,7 +601,12 @@
 
 
                                     <h5>Get specific character</h5>
-                                    <code>$ curl "https://www.anapioficeandfire.com/api/characters/823"</code>
+                                    <select id="specificCharacter-req-lang">
+                                        <option value="curl">cURL</option>
+                                        <option value="python">Python</option>
+                                        <option value="js">JavaScript</option>
+                                    </select>
+                                    <code id="specificCharacter-req-code"></code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
@@ -655,7 +747,12 @@
                                     </table>
 
                                     <h5>List all houses:</h5>
-                                    <code>$ curl "https://www.anapioficeandfire.com/api/houses"</code>
+                                    <select id="allHouses-req-lang">
+                                        <option value="curl">cURL</option>
+                                        <option value="python">Python</option>
+                                        <option value="js">JavaScript</option>
+                                    </select>
+                                    <code id="allHouses-req-code"></code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
@@ -761,7 +858,12 @@
 
 
                                     <h5>Get specific house</h5>
-                                    <code>$ curl "https://www.anapioficeandfire.com/api/houses/10"</code>
+                                    <select id="specificHouse-req-lang">
+                                        <option value="curl">cURL</option>
+                                        <option value="python">Python</option>
+                                        <option value="js">JavaScript</option>
+                                    </select>
+                                    <code id="specificHouse-req-code"></code>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
