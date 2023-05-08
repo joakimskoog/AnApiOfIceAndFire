@@ -2,56 +2,53 @@
     ViewData["Title"] = "Documentation";
 }
 
+<style>
+    code {
+        display: block;
+    }
+</style>
+
 <script>
 
     const jsonCodeData = {
         "root": {
             "curl": "$ \"https://www.anapioficeandfire.com/api\"",
-                "python": "this is the python code snippet",
-                    "js": "this is the js code snippet"
+            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
+            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n ",
         },
         "allBooks": {
             "curl": "$ \"https://www.anapioficeandfire.com/api/books\"",
-                "python": "this is the python code snippet",
-                    "js": "this is the js code snippet"
+            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/books\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
+            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/books\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
         },
         "specificBook": {
             "curl": "$ curl \"https://www.anapioficeandfire.com/api/books/1\"",
-                "python": "",
-                    "js": ""
+            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/books/1\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
+            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/books/1\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
         },
         "allCharacters": {
             "curl": "$ curl \"https://www.anapioficeandfire.com/api/characters\"",
-                "python": "",
-                    "js": ""
+            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/characters\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
+            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/characters\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
         },
         "specificCharacter": {
             "curl": "$ curl \"https://www.anapioficeandfire.com/api/characters/823\"",
-                "python": "",
-                    "js": ""
+            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/characters/823\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
+            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/characters/823\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
         },
         "allHouses": {
             "curl": "$ curl \"https://www.anapioficeandfire.com/api/houses\"",
-                "python": "",
-                    "js": ""
+            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/houses\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
+            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/houses\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
         },
         "specificHouse": {
             "curl": "$ curl \"https://www.anapioficeandfire.com/api/houses/10\"",
-                "python": "",
-                    "js": ""
+            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/houses/10\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
+            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/houses/10\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
         }
     }
 
-    const setCodeSnippet = (e) => {
-        const dropDownElem = document.getElementById(e.target.id);
-        const lang = e.target.value;
-        const key = e.target.id.slice(0, e.target.id.indexOf("-"));
-        const codeElem = document.getElementById(key + "-req-code");
-        const codeSnippet = jsonCodeData[key][lang];
-        codeElem.innerHTML = codeSnippet;
-    }
-
-    const dropDownIds = [
+    const elemIdRoots = [
         "root",
         "allBooks",
         "specificBook",
@@ -61,10 +58,20 @@
         "specificHouse",
     ]
 
+    const setCodeSnippets = (e) => {
+        elemIdRoots.forEach(id => {
+            const codeElem = document.getElementById(id + "-req-code");
+            const codeSnippet = jsonCodeData[id][e.target.value];
+            codeElem.innerText = codeSnippet;
+            const dropDownElem = document.getElementById(id + "-req-lang");
+            dropDownElem.value = e.target.value;
+        })
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
-        dropDownIds.forEach(id => {
+        elemIdRoots.forEach(id => {
             const elem = document.getElementById(id + "-req-lang");
-            elem.addEventListener("change", setCodeSnippet);
+            elem.addEventListener("change", setCodeSnippets);
         });
     })
 
@@ -195,7 +202,9 @@
                                     <option value="python">Python</option>
                                     <option value="js">JavaScript</option>
                                 </select>
-                                <code id="root-req-code"></code>
+                                <pre>
+                                    <code id="root-req-code">$ curl "https://www.anapioficeandfire.com/api"</code>
+                                </pre>
                                 <h5>Example response:</h5>
                                 <pre><code>{
     "books": "https://www.anapioficeandfire.com/api/books",
@@ -281,7 +290,9 @@
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
-                                    <code id="allBooks-req-code"></code>
+                                    <pre>
+                                        <code id="allBooks-req-code">$ curl "https://www.anapioficeandfire.com/api/books"</code>
+                                    </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
@@ -366,7 +377,9 @@
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
-                                    <code id="specificBook-req-code"></code>
+                                    <pre>
+                                        <code id="specificBook-req-code">$ curl "https://www.anapioficeandfire.com/api/books/1"</code>
+                                    </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
@@ -495,7 +508,9 @@
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
-                                    <code id="allCharacters-req-code"></code>
+                                    <pre>
+                                        <code id="allCharacters-req-code">$ curl "https://www.anapioficeandfire.com/api/characters"</code>
+                                    </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
@@ -606,7 +621,9 @@
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
-                                    <code id="specificCharacter-req-code"></code>
+                                    <pre>
+                                        <code id="specificCharacter-req-code">$ curl "https://www.anapioficeandfire.com/api/characters/823"</code>
+                                    </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
@@ -752,7 +769,9 @@
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
-                                    <code id="allHouses-req-code"></code>
+                                    <pre>
+                                        <code id="allHouses-req-code">$ curl "https://www.anapioficeandfire.com/api/houses"</code>
+                                    </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
@@ -863,7 +882,9 @@
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
-                                    <code id="specificHouse-req-code"></code>
+                                    <pre>
+                                        <code id="specificHouse-req-code">$ curl "https://www.anapioficeandfire.com/api/houses/10"</code>
+                                    </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
