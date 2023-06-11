@@ -6,73 +6,81 @@
     code {
         display: block;
     }
+    .language-bash,
+    .language-python,
+    .language-js,
+    .language-json {
+        border: none;
+    }
 </style>
 
 <script>
 
-    const jsonCodeData = {
+    const get_python_code_snippet = (resourceName, resourceEndpoint) => {
+        return `import logging\nimport requests\n\nAN_API_OF_ICE_AND_FIRE_BASE_URL = "https://www.anapioficeandfire.com/api"\n\ndef get_${resourceName}():\n    url = f"{AN_API_OF_ICE_AND_FIRE_BASE_URL}/${resourceEndpoint}"\n    resp = requests.get(url)\n    if resp.status_code != 200:\n        logging.info(f"Error on request to {url}: {resp.text}")\n        return None\n    return resp.json()\n\n${resourceName} = get_${resourceName}()\nprint(${resourceName})`
+    }
+
+    const get_js_code_snippet = (resourceName, varName, resourceEndpoint) => {
+        return `const AN_API_OF_ICE_AND_FIRE_BASE_URL = "https://www.anapioficeandfire.com/api";\n\nconst get${resourceName} = async () => {\n  const url = \`\${AN_API_OF_ICE_AND_FIRE_BASE_URL}/${resourceEndpoint}\`;\n  const resp = await fetch(url);\n  if (resp.status !== 200) {\n    console.log(\`Error on request to \${url}: \${resp.statusText}\`);\n    return null;\n  };\n  return await resp.json();\n};\n\nconst ${varName} = get${resourceName}();\nconsole.log(${varName});`
+    }
+
+
+    const codeSnippets = {
         "root": {
-            "curl": "$ \"https://www.anapioficeandfire.com/api\"",
-            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
-            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n ",
+            "bash": "$ curl \"https://www.anapioficeandfire.com/api\"",
+            "python": get_python_code_snippet("root", ""),
+            "js": get_js_code_snippet("Root", "root", ""),
         },
         "allBooks": {
-            "curl": "$ \"https://www.anapioficeandfire.com/api/books\"",
-            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/books\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
-            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/books\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
+            "bash": "$ curl \"https://www.anapioficeandfire.com/api/books\"",
+            "python": get_python_code_snippet("books", "books"),
+            "js": get_js_code_snippet("Books", "books", "books"),
         },
         "specificBook": {
-            "curl": "$ curl \"https://www.anapioficeandfire.com/api/books/1\"",
-            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/books/1\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
-            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/books/1\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
+            "bash": "$ curl \"https://www.anapioficeandfire.com/api/books/1\"",
+            "python": get_python_code_snippet("book", "books/1"),
+            "js": get_js_code_snippet("Book", "book", "books/1"),
         },
         "allCharacters": {
-            "curl": "$ curl \"https://www.anapioficeandfire.com/api/characters\"",
-            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/characters\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
-            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/characters\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
+            "bash": "$ curl \"https://www.anapioficeandfire.com/api/characters\"",
+            "python": get_python_code_snippet("characters", "characters"),
+            "js": get_js_code_snippet("Characters", "characters", "characters"),
         },
         "specificCharacter": {
-            "curl": "$ curl \"https://www.anapioficeandfire.com/api/characters/823\"",
-            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/characters/823\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
-            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/characters/823\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
+            "bash": "$ curl \"https://www.anapioficeandfire.com/api/characters/823\"",
+            "python": get_python_code_snippet("character", "characters/823"),
+            "js": get_js_code_snippet("Character", "character", "characters/823"),
         },
         "allHouses": {
-            "curl": "$ curl \"https://www.anapioficeandfire.com/api/houses\"",
-            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/houses\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
-            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/houses\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
+            "bash": "$ curl \"https://www.anapioficeandfire.com/api/houses\"",
+            "python": get_python_code_snippet("houses", "houses"),
+            "js": get_js_code_snippet("Houses", "houses", "houses"),
         },
         "specificHouse": {
-            "curl": "$ curl \"https://www.anapioficeandfire.com/api/houses/10\"",
-            "python": "\nimport logging\nimport requests\nurl = \"https://www.anapioficeandfire.com/api/houses/10\"\nresp = requests.get(url)\nif resp.status_code == 200:\n    data = resp.json()\nelse:\n    logging.info(f\"Error on request to {url}: {resp.text}\")\n ",
-            "js": "\nconst loadData = async () => {\n  const url = \"https://www.anapioficeandfire.com/api/houses/10\";\n  const resp = await fetch(url);\n  if (resp.status === 200) {\n    const data = await resp.json();\n  } else {\n    console.log(\"Error on request. Error status code: \", resp.status)\n}\n "
+            "bash": "$ curl \"https://www.anapioficeandfire.com/api/houses/10\"",
+            "python": get_python_code_snippet("house", "houses/10"),
+            "js": get_js_code_snippet("House", "house", "houses/10"),
         }
     }
 
-    const elemIdRoots = [
-        "root",
-        "allBooks",
-        "specificBook",
-        "allCharacters",
-        "specificCharacter",
-        "allHouses",
-        "specificHouse",
-    ]
-
-    const setCodeSnippets = (e) => {
-        elemIdRoots.forEach(id => {
-            const codeElem = document.getElementById(id + "-req-code");
-            const codeSnippet = jsonCodeData[id][e.target.value];
-            codeElem.innerText = codeSnippet;
-            const dropDownElem = document.getElementById(id + "-req-lang");
+    const setCodeSnippetsText = (e) => {
+        Object.keys(codeSnippets).forEach(k => {
+            const codeElem = document.getElementById(`${k}-code`);
+            const codeSnippet = codeSnippets[k][e.target.value];
+            codeElem.innerHTML = codeSnippet;
+            codeElem.className = `language-${e.target.value}`
+            const dropDownElem = document.getElementById(`${k}-lang`);
             dropDownElem.value = e.target.value;
-        })
+        });
+        Prism.highlightAll();
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        elemIdRoots.forEach(id => {
-            const elem = document.getElementById(id + "-req-lang");
-            elem.addEventListener("change", setCodeSnippets);
+        Object.keys(codeSnippets).forEach(k => {
+            const elem = document.getElementById(`${k}-lang`);
+            elem.addEventListener("change", setCodeSnippetsText);
         });
+        Prism.highlightAll();
     })
 
 </script>
@@ -127,7 +135,7 @@
                                     You specify which page you want to access with the <code>?page</code> parameter, if you don't provide the <code>?page</code> parameter the first page will be returned. You can also specify the size of the page with the <code>?pageSize</code> parameter, if you don't provide the <code>?pageSize</code> parameter the default size of 10 will be used.
                                 </p>
                                 <p>Let's make a request for the first page of characters with a page size of 10. Since we're only interested in the pagination information we provide the -I parameter to say that we only care about the headers.</p>
-
+                                
                                 <code>$ curl -I "https://www.anapioficeandfire.com/api/characters?page=1&pageSize=10"</code>
                                 <p>
                                     <strong>Here's the link header in the response:</strong>
@@ -197,16 +205,16 @@
                                 <h4>Root</h4>
                                 <p>The Root resource contains information about all available resources in the API.</p>
                                 <h5>Example request:</h5>
-                                <select id="root-req-lang">
-                                    <option value="curl">cURL</option>
+                                <select id="root-lang">
+                                    <option value="bash">cURL</option>
                                     <option value="python">Python</option>
                                     <option value="js">JavaScript</option>
                                 </select>
                                 <pre>
-                                    <code id="root-req-code">$ curl "https://www.anapioficeandfire.com/api"</code>
+                                    <code class="language-bash line-numbers" id="root-code">$ curl "https://www.anapioficeandfire.com/api"</code>
                                 </pre>
                                 <h5>Example response:</h5>
-                                <pre><code>{
+                                <pre><code class="language-json line-numbers">{
     "books": "https://www.anapioficeandfire.com/api/books",
     "characters": "https://www.anapioficeandfire.com/api/characters",
     "houses": "https://www.anapioficeandfire.com/api/houses"
@@ -285,18 +293,18 @@
 
 
                                     <h5>List all books:</h5>
-                                    <select id="allBooks-req-lang">
-                                        <option value="curl">cURL</option>
+                                    <select id="allBooks-lang">
+                                        <option value="bash">cURL</option>
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
                                     <pre>
-                                        <code id="allBooks-req-code">$ curl "https://www.anapioficeandfire.com/api/books"</code>
+                                    <code class="language-bash line-numbers" id="allBooks-code">$ curl "https://www.anapioficeandfire.com/api/books"</code>
                                     </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
-                                    <pre><code>[
+                                    <pre><code class="language-json line-numbers">[
   {
     "url": "https://www.anapioficeandfire.com/api/books/1",
     "name": "A Game of Thrones",
@@ -372,18 +380,18 @@
                                     </table>
 
                                     <h5>Get specific book</h5>
-                                    <select id="specificBook-req-lang">
-                                        <option value="curl">cURL</option>
+                                    <select id="specificBook-lang">
+                                        <option value="bash">cURL</option>
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
                                     <pre>
-                                        <code id="specificBook-req-code">$ curl "https://www.anapioficeandfire.com/api/books/1"</code>
+                                        <code class="language-bash line-numbers" id="specificBook-code">$ curl "https://www.anapioficeandfire.com/api/books/1"</code>
                                     </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
-                                    <pre><code>{
+                                    <pre><code class="language-json line-numbers">{
   "url": "https://www.anapioficeandfire.com/api/books/1",
   "name": "A Game of Thrones",
   "isbn": "978-0553103540",
@@ -503,18 +511,18 @@
                                         </tbody>
                                     </table>
                                     <h5>List all characters:</h5>
-                                    <select id="allCharacters-req-lang">
-                                        <option value="curl">cURL</option>
+                                    <select id="allCharacters-lang">
+                                        <option value="bash">cURL</option>
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
                                     <pre>
-                                        <code id="allCharacters-req-code">$ curl "https://www.anapioficeandfire.com/api/characters"</code>
+                                        <code class="language-bash line-numbers" id="allCharacters-code">$ curl "https://www.anapioficeandfire.com/api/characters"</code>
                                     </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
-                                    <pre><code>[
+                                    <pre><code class="language-json line-numbers">[
   {
     "url": "https://www.anapioficeandfire.com/api/characters/1",
     "name": "",
@@ -616,18 +624,18 @@
 
 
                                     <h5>Get specific character</h5>
-                                    <select id="specificCharacter-req-lang">
-                                        <option value="curl">cURL</option>
+                                    <select id="specificCharacter-lang">
+                                        <option value="bash">cURL</option>
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
                                     <pre>
-                                        <code id="specificCharacter-req-code">$ curl "https://www.anapioficeandfire.com/api/characters/823"</code>
+                                        <code class="language-bash line-numbers" id="specificCharacter-code">$ curl "https://www.anapioficeandfire.com/api/characters/823"</code>
                                     </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
-                                    <pre><code>{
+                                    <pre><code class="language-json line-numbers">{
   "url": "https://www.anapioficeandfire.com/api/characters/823",
   "name": "Petyr Baelish",
   "culture": "Valemen",
@@ -764,18 +772,18 @@
                                     </table>
 
                                     <h5>List all houses:</h5>
-                                    <select id="allHouses-req-lang">
-                                        <option value="curl">cURL</option>
+                                    <select id="allHouses-lang">
+                                        <option value="bash">cURL</option>
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
                                     <pre>
-                                        <code id="allHouses-req-code">$ curl "https://www.anapioficeandfire.com/api/houses"</code>
+                                        <code class="language-bash line-numbers" id="allHouses-code">$ curl "https://www.anapioficeandfire.com/api/houses"</code>
                                     </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
-                                    <pre><code>[
+                                    <pre><code class="language-json line-numbers">[
   {
     "url": "https://www.anapioficeandfire.com/api/houses/1",
     "name": "House Algood",
@@ -877,18 +885,18 @@
 
 
                                     <h5>Get specific house</h5>
-                                    <select id="specificHouse-req-lang">
-                                        <option value="curl">cURL</option>
+                                    <select id="specificHouse-lang">
+                                        <option value="bash">cURL</option>
                                         <option value="python">Python</option>
                                         <option value="js">JavaScript</option>
                                     </select>
                                     <pre>
-                                        <code id="specificHouse-req-code">$ curl "https://www.anapioficeandfire.com/api/houses/10"</code>
+                                        <code class="language-bash line-numbers" id="specificHouse-code">$ curl "https://www.anapioficeandfire.com/api/houses/10"</code>
                                     </pre>
                                     <p>
                                         <strong>Example response:</strong>
                                     </p>
-                                    <pre><code>{
+                                    <pre><code class="language-json line-numbers">{
   "url": "https://www.anapioficeandfire.com/api/houses/10",
   "name": "House Baelish of Harrenhal",
   "region": "The Riverlands",
