@@ -3,6 +3,10 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 	<ItemGroup>
+	  <None Include="wwwroot\script.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Chutzpah" Version="4.4.13" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
 	</ItemGroup>
 	<ItemGroup>
