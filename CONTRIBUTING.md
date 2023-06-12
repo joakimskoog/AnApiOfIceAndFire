@@ -13,7 +13,7 @@
 
 ## How to set up local development
 1. Fork this repository
-2. Git clone your fork (for more information about forking and cloning refer [here](https://docs.github.com/en/get-started/quickstart/contributing-to-projects))
+2. Git clone your fork (for information on forking and cloning refer [here](https://docs.github.com/en/get-started/quickstart/contributing-to-projects))
 3. Download and install [Visual Studio Community 2022](https://visualstudio.microsoft.com/vs/community/). .NET 6.0 requires the 2022 version.
 4. Download and install [.NET 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0). On Windows, to check which architecture version you need to download (x86, x64, Arm64) search for and open System Information in the Windows search bar and then look for System Type.
 5. Right click on the `AnApiOfIceAndFire.sln` file in the top level directory of the project and open with Visual Studio 2022.
