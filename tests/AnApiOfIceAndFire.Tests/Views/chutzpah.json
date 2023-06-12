@@ -1,0 +1,15 @@
+{
+  "Framework": "jasmine",
+  "TestHarnessLocationMode": "SettingsFileAdjacent",
+  "References": [
+    { "Path": "../../../src/AnApiOfIceAndFire/wwwroot/script.js" },
+    { "Path": "https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" }
+  ],
+  "Tests": [
+    { "Path": "test.js" }
+  ],
+  "Engine": "JSDom",
+  "Server": {
+    "Enabled": true
+  }
+}

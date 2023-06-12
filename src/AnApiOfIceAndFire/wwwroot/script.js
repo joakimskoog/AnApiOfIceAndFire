@@ -1,5 +1,4 @@
 // contains functionality for rendering highlighted code examples for each resource in Documentation/Index.cshtml
-
 const maybeAddForwardSlash = (resourceEndpoint) => {
     return resourceEndpoint ? `/${resourceEndpoint}` : resourceEndpoint;
 }
