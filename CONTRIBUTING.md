@@ -21,7 +21,11 @@
 7. You should now be able to access the project running locally on https://localhost:7007. If you encounter an error message about your connection not being secure and you are running Chrome, refer to [this](https://stackoverflow.com/questions/44066709/your-connection-is-not-private-neterr-cert-common-name-invalid) Stack Overflow post.
 
 ## How to run frontend tests
-1. Click Manage NuGet Packages and find and install Chutzpah
+*** Note ***
+As of 6/14/2023, the tests in the first two describe functions pass, however, the tests for the event listener functions in the third describe function will not pass and instead error out with a message about a reference to JSDOM. I wasn't able to find a way to pass in a reference to JSDOM in the test file with Chutzpah, and didn't see anything about marking tests to skip in the documentation.
+1. Click Manage NuGet Packages and find and install [Chutzpah](https://mmanela.github.io/chutzpah/)
 2. If it was installed globally it should be installed under %userprofile%/.nuget (for me this is C:\Users\benja\\.nuget). You'll need the path to the exectuable in the chutzpah packages folder to run the tests. The executable should be named `chutzpah.console.exe`
 3. Once you've located the exectuable run `[[path/to/exectuable]] [[path/to/test.js]] /openInBrowser [[your preferred browser]]` (The relative path to test.js from root of the project is `.\tests\AnApiOfIceAndFire.Tests\Views\test.js`)
 4. I'm not sure why, but passing the /openInBrowser option was the only way I was able to get the relative path to script.js to resolve so the tests would run.
+
+
