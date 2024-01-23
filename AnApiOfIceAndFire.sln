@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire", "src\AnApiOfIceAndFire\AnApiOfIceAndFire.csproj", "{F5E02BFB-4A53-4867-B55C-D8F1CFFC316F}"
 EndProject
@@ -23,11 +23,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{B8D0279E-3
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire.DataFeeder", "data\AnApiOfIceAndFire.DataFeeder\AnApiOfIceAndFire.DataFeeder.csproj", "{A2544BE8-ACA2-4EFE-9D90-ACF9F680738E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6B56F03-DBAB-4E8F-AE2D-5959415343C2}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

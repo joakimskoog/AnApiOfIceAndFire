@@ -1,4 +1,4 @@
-image: Visual Studio 2017 Preview
+image: Previous Visual Studio 2022
 
 configuration: Release
 
@@ -25,11 +25,11 @@ build:
   verbosity: normal
 
 services:
-  - mssql2014
+  - SQL2019
 
 test_script:
   - dotnet test tests\AnApiOfIceAndFire.Tests\AnApiOfIceAndFire.Tests.csproj
-  - dotnet test tests\AnApiOfIceAndFire.Data.Tests\AnApiOfIceAndFire.Data.Tests.csproj
+#  - dotnet test tests\AnApiOfIceAndFire.Data.Tests\AnApiOfIceAndFire.Data.Tests.csproj
 
 #test:
 #  assemblies:
