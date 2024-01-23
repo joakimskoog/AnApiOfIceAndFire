@@ -1,5 +1,7 @@
-Copyright (c) 2016, Joakim Skoog
+Copyright (c) 2016-2024, Joakim Skoog 
 All rights reserved.
+
+The A Song of Ice And Fire series and its data is the property of George R.R. Martin. The data is used without claim of ownership.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
