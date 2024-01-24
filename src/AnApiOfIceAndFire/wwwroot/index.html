@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <title>An API of Ice And Fire</title>
+    <link rel="stylesheet" href="site.css" />   
+</head>
+<body>
+    <div class="container">
+        <header>
+            <section>
+                <h1>An API of Ice And Fire</h1>
+                <p class="subtitle">All the data from the universe of Ice And Fire you've ever wanted!</p>
+                <p>Made by <a href="https://github.com/joakimskoog">Joakim Skoog</a>, it's the world's greatest source for quantified and structured data from the universe of Ice and Fire (and the HBO series Game of Thrones).</p>
+            </section>
+        </header>
+        <hr />
+        <main>
+            <section>
+                <h2>Sandbox</h2>
+                <p class="subtitle">Play around with the API without build an integration yourself</p>
+                <form>
+                    <label for="url">https://anapioficeandfire.com/api/</label>
+                    <input type="text" id="url" placeholder="characters/581" />
+                    <button type="submit">Request</button>
+                    <p class="hint">Psst, need a hint? Try <a href="#" onClick="updateRequestUrl('books/1'); return false;">/books/1</a>, <a href="#" onClick="updateRequestUrl('characters/583'); return false;">/characters/583</a> or <a href="#" onClick="updateRequestUrl('houses/378'); return false;">/houses/378</a></p>
+                </form>
+                <pre id="response-output">
+{
+        "url": "https://anapioficeandfire.com/api/characters/583",
+        "name": "Jon Snow",
+        "culture": "Northmen",
+        "born": "In 283 AC",
+        "died": "",
+        "titles": [
+                "Lord Commander of the Night's Watch"
+        ],
+        "aliases": [
+                "Lord Snow",
+                "Ned Stark's Bastard",
+                "The Snow of Winterfell",
+                "The Crow-Come-Over",
+                "The 998th Lord Commander of the Night's Watch",
+                "The Bastard of Winterfell",
+                "The Black Bastard of the Wall",
+                "Lord Crow"
+        ],
+        "father": "",
+        "mother": "",
+        "spouse": "",
+        "allegiances": [
+                "https://anapioficeandfire.com/api/houses/362"
+        ],
+        "books": [
+                "https://anapioficeandfire.com/api/books/5"
+        ],
+        "povBooks": [
+                "https://anapioficeandfire.com/api/books/1",
+                "https://anapioficeandfire.com/api/books/2",
+                "https://anapioficeandfire.com/api/books/3",
+                "https://anapioficeandfire.com/api/books/8"
+        ],
+        "tvSeries": [
+                "Season 1",
+                "Season 2",
+                "Season 3",
+                "Season 4",
+                "Season 5"
+        ],
+        "playedBy": [
+                "Kit Harington"
+        ]
+}      
+            </pre>
+            </section>
+            <hr />
+            <section>
+                <h2>Open source</h2>
+                <p>The API is open source! <a href="https://github.com/joakimskoog/AnApiOfIceAndFire">Contribute</a> directly to the API by writing code, documentation or posting bugs!</p>
+            </section>
+            <hr />
+            <section>
+                <h2>Documentation</h2>
+                <p>All data is accessible through our HTTP API with SDKs in a bunch of different languages. Check out the <a href="https://github.com/joakimskoog/AnApiOfIceAndFire/wiki" target="_blank">documentation</a> to get started.</p>
+            </section>
+        </main>
+        <hr />
+        <footer>
+            <p>© 2016 - 2024, Joakim Skoog</p>
+        </footer>
+    </div>
+
+    <script type="text/javascript">
+        makeRequest();
+
+        function updateRequestUrl(url) {
+            document.getElementById('url').value = url;
+            makeRequest();
+        }
+
+        function makeRequest() {
+            var url = document.getElementById('url').value;
+            if (url == '') {
+                url = 'characters/581'
+            }
+
+            var request = new XMLHttpRequest();
+
+            request.onreadystatechange = function () {
+                if (request.readyState == XMLHttpRequest.DONE) {
+                    if (request.status == 200) {
+                        var jsonData = JSON.parse(request.responseText);
+                        document.getElementById('response-output').innerHTML = JSON.stringify(jsonData, null, '\t');
+                    } else if (request.status == 404) {
+                        document.getElementById('response-output').innerHTML =
+                            'Could not find any resource that matches the request, try again!';
+                    } else {
+                        document.getElementById('response-output').innerHTML =
+                            'Something went wrong. If this keeps happening, please post an issue at: https://github.com/joakimskoog/AnApiOfIceAndFire/issues';
+                    }
+                }
+            };
+
+            request.open('GET', 'api/' + url);
+            request.send();
+        }
+    </script>
+</body>
+</html>

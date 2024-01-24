@@ -85,13 +85,11 @@ namespace AnApiOfIceAndFire
             });
             app.UseResponseCompression();
 
-            app.UseStaticFiles();
+            app.UseFileServer();
 
             app.UseRouting();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.MapControllers();
 
             app.Run();
         }
