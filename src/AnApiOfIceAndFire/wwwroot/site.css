@@ -1,0 +1,126 @@
+﻿html, input {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    line-height: 1.5;
+    color: #333;
+}
+
+body {
+    padding: 1.5rem 1.5rem 3rem 1.5rem;
+    margin: 0;
+    font-size: 1rem;
+    background-color: #fff
+}
+
+.container {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2 {
+    margin-top: 0;
+    line-height: 1;
+    text-rendering: optimizelegibility
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem
+}
+
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem
+}
+
+    p.subtitle {
+        font-size: 1.25rem;
+        color: #555
+    }
+
+    p.hint {
+        font-size: 0.8rem;
+    }
+
+a {
+    color: #1b75d0;
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+}
+
+    form label {
+        margin: 0;
+        border: 1px solid #ddd;
+        padding: 0.5rem;
+        border-right-width: 0;
+        background-color: #e6e6e6;
+        color: #555;
+    }
+
+    form input {
+        flex: 1;
+        vertical-align: middle;
+        padding: 0.5rem;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-width: 0;
+        border-right-width: 1px;
+    }
+
+        form input:focus {
+            border: 1px solid #333;
+            outline: none;
+        }
+
+    form button {
+        padding: 0.5rem 1rem;
+        background-color: #333;
+        color: white;
+        border: none;
+    }
+
+        form button:hover {
+            background-color: #000;
+            cursor: pointer;
+        }
+
+@media (min-width: 640px) {
+    form {
+        flex-direction: row;
+    }
+
+        form input {
+            border-right-width: 0;
+            border-bottom-width: 1px;
+        }
+}
+
+pre {
+    max-height: 30rem;
+    overflow-y: auto;
+    background-color: #fbfbfb;
+}
+
+footer {
+    margin-top: 3rem;
+}
+
+    footer p {
+        margin-bottom: 0;
+    }
