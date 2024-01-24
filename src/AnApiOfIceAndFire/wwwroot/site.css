@@ -29,7 +29,7 @@ h1 {
 }
 
 h2 {
-    margin-top: 2rem;
+    margin-top: 3rem;
     margin-bottom: 1rem
 }
 
@@ -56,15 +56,6 @@ a {
     a:hover {
         text-decoration: underline;
     }
-
-
-hr {
-    background-color: #eee;
-    border: 0;
-    height: 1px;
-    width: 10rem;
-    margin: 2.5rem 0;
-}
 
 form {
     display: flex;
@@ -125,3 +116,11 @@ pre {
     overflow-y: auto;
     background-color: #fbfbfb;
 }
+
+footer {
+    margin-top: 3rem;
+}
+
+    footer p {
+        margin-bottom: 0;
+    }
