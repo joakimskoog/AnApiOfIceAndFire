@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Characters;
 using AnApiOfIceAndFire.Infrastructure.Links;
@@ -9,7 +8,6 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
-    [ApiVersion("1")]
     [Route("api/characters")]
     public class CharactersController : BaseController<CharacterEntity, CharacterFilter, Character>
     {

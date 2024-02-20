@@ -21,7 +21,7 @@
                 <p class="subtitle">Play around with the API without build an integration yourself</p>
                 <form>
                     <label for="url">https://anapioficeandfire.com/api/</label>
-                    <input type="text" id="url" placeholder="characters/581" />
+                    <input type="text" id="url" placeholder="characters/583" />
                     <button type="submit">Request</button>
                     <p class="hint">Psst, need a hint? Try <a href="#" onClick="updateRequestUrl('books/1'); return false;">/books/1</a>, <a href="#" onClick="updateRequestUrl('characters/583'); return false;">/characters/583</a> or <a href="#" onClick="updateRequestUrl('houses/378'); return false;">/houses/378</a></p>
                 </form>
@@ -98,7 +98,7 @@
         function makeRequest() {
             var url = document.getElementById('url').value;
             if (url == '') {
-                url = 'characters/581'
+                url = 'characters/583'
             }
 
             var request = new XMLHttpRequest();
