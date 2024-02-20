@@ -3,12 +3,10 @@ using AnApiOfIceAndFire.Data.Books;
 using AnApiOfIceAndFire.Data.Characters;
 using AnApiOfIceAndFire.Data.Houses;
 using AnApiOfIceAndFire.Infrastructure.Links;
-using AnApiOfIceAndFire.Infrastructure.Versioning;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text.Json;
@@ -23,16 +21,8 @@ namespace AnApiOfIceAndFire
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
-
-            builder.Services.AddApiVersioning(options =>
-            {
-                options.AssumeDefaultVersionWhenUnspecified = true;
-                options.DefaultApiVersion = new ApiVersion(1, 0);
-                options.ApiVersionReader = new AcceptHeaderVersionReader();
-                options.ApiVersionSelector = new CurrentImplementationApiVersionSelector(options);
-            });
-
+            builder.Services.AddControllers();
+            
             builder.Services.AddResponseCaching();
             builder.Services.AddMemoryCache();
             builder.Services.AddResponseCompression();

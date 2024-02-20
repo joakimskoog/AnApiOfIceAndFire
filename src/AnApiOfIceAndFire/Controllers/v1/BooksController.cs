@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.Http;
 using System.Threading.Tasks;
 using AnApiOfIceAndFire.Data;
 using AnApiOfIceAndFire.Data.Books;
@@ -10,7 +9,6 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
-    [ApiVersion("1")]
     [Route("api/books")]
     public class BooksController : BaseController<BookEntity, BookFilter, Book>
     {
