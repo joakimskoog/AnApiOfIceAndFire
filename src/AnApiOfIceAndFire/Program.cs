@@ -2,11 +2,14 @@
 using AnApiOfIceAndFire.Data.Books;
 using AnApiOfIceAndFire.Data.Characters;
 using AnApiOfIceAndFire.Data.Houses;
+using AnApiOfIceAndFire.Database;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Text.Json;
@@ -22,12 +25,15 @@ namespace AnApiOfIceAndFire
 
             // Add services to the container.
             builder.Services.AddControllers();
-            
+
             builder.Services.AddResponseCaching();
             builder.Services.AddMemoryCache();
             builder.Services.AddResponseCompression();
 
-            builder.Services.Configure<ConnectionOptions>(builder.Configuration.GetSection("ConnectionStrings"));
+            builder.Services.AddDbContext<IceAndFireDbContext>(options => options
+                .UseSqlite(builder.Configuration.GetConnectionString("AnApiOfIceAndFireDatabase"))
+                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+            //builder.Services.Configure<ConnectionOptions>(builder.Configuration.GetSection("ConnectionStrings"));
 
             builder.Services.AddSingleton<IPagingLinksFactory<BookFilter>, BookPagingLinksFactory>();
             builder.Services.AddSingleton<IPagingLinksFactory<CharacterFilter>, CharacterPagingLinksFactory>();

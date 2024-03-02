@@ -1,0 +1,2135 @@
+id,name,gender,culture,born,died
+1,,female,Braavosi,,
+2,Walder,male,,,
+3,,male,,,
+4,,female,Braavosi,,
+5,,male,,,
+6,,female,Braavosi,,
+7,,female,,,
+8,,male,,,
+9,,female,,,
+10,,female,Braavosi,,
+11,,female,Braavosi,"In 263 AC or 264 AC",
+12,Balon Greyjoy,male,,,"299 AC, at Pyke"
+13,Chayle,male,,,"In 299 AC, at Winterfell"
+14,Gillam,male,,,
+15,High Septon,male,,,
+16,Margaery Tyrell,female,Westeros,"In 283 AC, at Highgarden",
+17,Melicent,female,,,
+18,Meribald,male,,"In 247 AC or 248 AC, at the riverlands",
+19,Moelle,female,,,
+20,Mordane,female,,,"In 298 AC, at King's Landing"
+21,Nysterica,female,,,
+22,Ollidor,male,,,
+23,Osmynd,male,,,
+24,Raynard,male,,,
+25,Scolera,female,,,
+26,Torbert,male,,,
+27,Tywin Lannister,male,,"In 242 AC","In 300 AC, at King's Landing"
+28,Unella,female,,,
+29,Abelar Hightower,male,,,
+30,Addam Frey,male,,,
+31,Addam Marbrand,male,,,
+32,Addam Osgrey,male,,"In 183 AC or 184 AC","In 196 AC, at Redgrass Field"
+33,Addam Velaryon,male,Valyrian,"In 114 AC, at Hull","In 130 AC, at Tumbleton"
+34,Addison Hill,male,,"At Cornfield",
+35,Aegon Blackfyre,male,Valyrian,"In 184 AC","In 196 AC, at Redgrass Field"
+36,Aegon Frey,male,,"In 249 AC (roughly)","In 299 AC, at the Twins"
+37,Aegon Frey,male,,"In or between 253 AC and 272 AC",
+38,Aegon I,male,,"27 BC, at Dragonstone","37 AC, at Dragonstone"
+39,Aegon II,male,,"107 AC, at King's Landing","131 AC, at King's Landing"
+40,Aegon III,male,Valyrian,"120 AC, at Dragonstone","157 AC, at King's Landing"
+41,Aegon IV,male,,"135 AC, at King's Landing","184 AC, at King's Landing"
+42,Aegon Targaryen,male,Valyrian,"In 281 AC or 282 AC, at Dragonstone","In 283 AC (Supposedly), at King's Landing"
+43,Aegon Targaryen,male,Valyrian,"In 26 AC","In 43 AC, at Gods Eye"
+44,Aegon Targaryen,male,Valyrian,,
+45,Aegon Targaryen,male,Valyrian,"In or between 50 AC and 59 AC",
+46,Aegon V,male,,"200 AC, at King's Landing","259 AC, at Summerhall"
+47,Aegor Rivers,male,,"In 172 AC","In 241 AC, at the Disputed Lands"
+48,Aelinor Penrose,female,Valyrian,,
+49,Aemma Arryn,female,,"In 82 AC","In 105 AC"
+50,Aemon Blackfyre,male,Valyrian,"In 184 AC","In 196 AC, at Redgrass Field"
+51,Aemon Costayne,male,,,
+52,Aemon Estermont,male,Stormlands,,
+53,Aemon Rivers,male,,,
+54,Aemon Targaryen,male,Valyrian,"In 198 AC, at King's Landing","In 300 AC, at the Cinnamon Wind, off the coast of Dorne, at the Summer Sea"
+55,Aemond Targaryen,male,Valyrian,"In 110 AC","In 130 AC, at the Gods Eye"
+56,Aenys Frey,male,,"In or between 240 AC and 247 AC","In 300 AC, at Near Winterfell"
+57,Aenys I,male,,"7 AC, at Dragonstone","42 AC, at Dragonstone"
+58,Aerion Targaryen,male,Valyrian,"In or between 191 AC and 194 AC","In 232 AC"
+59,Aerion Targaryen,male,Valyrian,"At Dragonstone","At Dragonstone"
+60,Aeron Greyjoy,male,Ironborn,"In or between 269 AC and 273 AC, at Pyke",
+61,Aerys I,male,,"or between 172 AC and 176 AC, at King's Landing","221 AC"
+62,Aerys II,male,,"244 AC, at King's Landing","283 AC, at the Red Keep in King's Landing"
+63,Aglantine,female,,,
+64,Aladale Wynch,male,Ironborn,,"In 300 AC, at Bridge of Skulls"
+65,Alan,male,,"In Age of Heroes",
+66,Alannys Harlaw,female,Ironborn,,
+67,Albar Royce,male,,,
+68,Alekyne Florent,male,,,
+69,Alerie Hightower,female,,"In or between 257 AC and 263 AC, at Oldtown",
+70,Alesander Frey,male,,"In or between 265 AC and 281 AC",
+71,Alesander Staedmon,male,,,
+72,Alester Florent,male,,"At Brightwater Keep","In 300 AC, at Dragonstone"
+73,Alester Norcross,male,,"In 290 AC or 291 AC",
+74,Alester Oakheart,male,,,"At Prince's Pass"
+75,Alester Tyrell,male,Andal,,
+76,Alicent Hightower,female,,"In 88 AC","In 133 AC"
+77,Alla Tyrell,female,,"In or around 286 AC (roughly)",
+78,Allar Deem,male,,,"In 299 AC, at The Narrow Sea"
+79,Alliser Thorne,male,,"In 248 AC (roughly)",
+80,Allyria Dayne,female,,,
+81,Alyce Graceford,female,,,
+82,Alyn Ambrose,male,,,
+83,Alyn Cockshaw,male,,,"In 211 AC, at Whitewalls"
+84,Alyn Connington,male,,,
+85,Alyn Estermont,male,Stormlands,,
+86,Alyn Frey,male,,"In 295 AC or 296 AC",
+87,Alyn Haigh,male,,"In or between 256 AC or 291 AC",
+88,Alyn Hunt,male,,,
+89,Alyn Stackspear,male,,,
+90,Alyn Tarbeck,male,,,"In 43 AC, at Gods Eye"
+91,Alyn Velaryon,male,Valyrian,"In 115 AC or later, at Hull, Driftmark","In or between 171 AC and 176 AC, at sea"
+92,Alys Arryn,female,,"In or between 218 AC and 249 AC",
+93,Alys Arryn,female,,,
+94,Alys Beesbury,female,,,
+95,Alys Frey,female,,,
+96,Alys Karstark,female,Northmen,"In 284 AC or 285 AC, at Karhold",
+97,Alys Karstark,female,Northmen,,
+98,Alys Karstark,female,Northmen,,
+99,Alysane Mormont,female,Northmen,"In or between ~273 AC and 278 AC",
+100,Alysanne Bulwer,female,,"In 291 AC",
+101,Alysanne Farman,female,,,
+102,Alysanne Hightower,female,,,
+103,Alysanne Lefford,female,,,
+104,Alysanne Osgrey,female,,"In 188 AC or 189 AC","In 209 AC, at King's Landing"
+105,Alysanne Targaryen,female,,"36 AC","99 AC or 100 AC"
+106,Alysanne Tarth,female,,,
+107,Alyssa Arryn,female,,,
+108,Alyssa Blackwood,female,,"In 253 AC or before","In or between 269 AC and 278 AC"
+109,Alyssa Targaryen,female,Valyrian,"In or between 51 AC and 60 AC",
+110,Alyssa Velaryon,female,Valyrian,"In 7 AC",
+111,Alyx Frey,female,,"In 282 AC",
+112,Amarei Crakehall,female,,"In 245 AC or before","In 264 AC"
+113,Ambrose Butterwell,male,,"In 160 AC or 161 AC",
+114,Amerei Frey,female,,"In 282 AC",
+115,Amory Lorch,male,,,"In 299 AC, at Harrenhal"
+116,Andar Royce,male,Valemen,"At Runestone",
+117,Anders Yronwood,male,,,
+118,Andrew Estermont,male,,,
+119,Andrey Charlton,male,,,"In 299 AC, at the Riverlands"
+120,Andros Brax,male,,,"In 298 AC, at Riverrun"
+121,Androw Ashford,male,Reach,"At Ashford",
+122,Androw Frey,male,,"In 295 AC or 296 AC",
+123,Annara Farring,female,,,
+124,Antario Jast,male,,,
+125,Anya Waynwood,female,,,
+126,Archibald Yronwood,male,,,
+127,Ardrian Celtigar,male,,"In 229 AC or later",
+128,Argella Durrandon,female,,,
+129,Argilac Durrandon,male,,,"2 BC, at south of Bronzegate in the Last Storm"
+130,Arianne Martell,female,Dornish,"In 276 AC, at Sunspear",
+131,Arianne Tarth,female,,,
+132,Arlan of Pennytree,male,,"In or between 149 AC and 153 AC, at Pennytree","In 209 AC, at the Reach"
+133,Armond Caswell,male,,,
+134,Arnolf Karstark,male,Northmen,"At Karhold",
+135,Aron Santagar,male,Dornish,,"In 299 AC, at King's Landing"
+136,Arra Norrey,female,Northern mountain clans,,
+137,Arrec Durrandon,male,,,
+138,Arron Qorgyle,male,,,
+139,Arstan Selmy,male,Westeros,,
+140,Arthor Karstark,male,Northmen,,
+141,Arthur Ambrose,male,,,
+142,Arthur Dayne,male,,,"In 283 AC, at the Tower of Joy"
+143,Artos Stark,male,Northmen,,
+144,Artys I Arryn,male,Andal,", at Giant's Lance",
+145,Arwood Frey,male,,"In or between 263 AC and 281 AC",
+146,Arwyn Frey,female,,"In 285 AC",
+147,Arwyn Oakheart,female,,,
+148,Arya Stark,female,Northmen,"In 289 AC, at Winterfell",
+149,Arys Oakheart,male,Reach,"At Old Oak","In 300 AC, at the Greenblood"
+150,Asha Greyjoy,female,Ironborn,"In 275 AC or 276 AC, at Pyke",
+151,Ashara Dayne,female,,,"In 283 AC, at Starfall"
+152,Aubrey Ambrose,male,,,
+153,Axell Florent,male,,,
+154,Baela Targaryen,female,Valyrian,"In 116 AC, at Pentos",
+155,Baelon Targaryen,male,Valyrian,"At Dragonstone",
+156,Baelon Targaryen,male,Valyrian,"In 105 AC, at King's Landing","In 105 AC, at King's Landing"
+157,Baelon Targaryen,male,Valyrian,"In or between 53 AC and 64 AC","In 101 AC"
+158,Baelor Blacktyde,male,Ironborn,,"In 300 AC, at Old Wyk"
+159,Baelor Hightower,male,,"At Oldtown",
+160,Baelor I,male,,"144 AC, at King's Landing","171 AC, at King's Landing"
+161,Baelor Targaryen,male,,"In 170 AC","In 209 AC, at Ashford"
+162,Balman Byrch,male,,,"In 300 AC, at Stokeworth"
+163,Balon Botley,male,Ironborn,,
+164,Balon Swann,male,Stormlands,,
+165,Barba Bracken,female,,"In 155 AC",
+166,Barbrey Dustin,female,Northmen,,
+167,Barre,male,,,
+168,Barristan Selmy,male,Westeros,"In 237 AC",
+169,Barth,male,,,"In 99 AC"
+170,Barthogan Stark,male,Northmen,,
+171,Bass,male,,,
+172,Bayard Norcross,male,,,
+173,Bellena Hawick,female,,,
+174,Ben Bushy,male,,,"In 299 AC, at the Blackwater Rush"
+175,Ben Plumm,male,,,
+176,Benedar Belmore,male,,,
+177,Benedict Broom,male,,,
+178,Benedict I Justman,male,Rivermen,,
+179,Benfred Tallhart,male,Northmen,"In After 281 AC","In 299 AC, at Stony Shore"
+180,Benfrey Frey,male,,"In or between 271 AC and 279 AC","In 299 AC, at the Twins"
+181,Benjen Stark,male,Northmen,"In 267 AC or later, at Winterfell",
+182,Benjen Stark,male,Northmen,,
+183,Benjen Stark,male,Northmen,,
+184,Bennard Brune,male,,,
+185,Bennarion Botley,male,Ironborn,,
+186,Bennis,male,,,
+187,Beony Beesbury,female,,,
+188,Beren Tallhart,male,Northmen,"In 289 AC",
+189,Berena Hornwood,female,Northmen,,
+190,Beric Dondarrion,male,,"In 276 AC or 277 AC, at Blackhaven","In 300 AC (his seventh and final death), at the riverlands"
+191,Beron Blacktyde,male,,,
+192,Beron Stark,male,Northmen,,
+193,Bertram Beesbury,male,,,
+194,Beth Cassel,female,Northmen,"In about 289 AC, at Winterfell",
+195,Betha Blackwood,female,,"At Raventree Hall",
+196,Bethany Bolton,female,Northmen,,
+197,Bethany Bracken,female,,"In 156 AC or later","In 178 AC"
+198,Bethany Redwyne,female,,,
+199,Bethany Rosby,female,,"In 265 AC or before","In or between 282 AC and 284 AC"
+200,Bonifer Hasty,male,,,
+201,Boremund Harlaw,male,Ironborn,,
+202,Boros Blount,male,,,
+203,Bowen Marsh,male,,,
+204,Bradamar Frey,male,,"In 289 AC",
+205,Brandon Norrey,male,Northern mountain clans,,
+206,Brandon Stark,male,Northmen,"In 262 AC, at Winterfell","In 282 AC, at King's Landing"
+207,Brandon Stark,male,Northmen,,
+208,Brandon Stark,male,Northmen,"In 290 AC, at Winterfell",
+209,Brandon Stark,male,First Men,,
+210,Brandon Stark,male,Northmen,,
+211,Brandon Stark,male,Northmen,,
+212,Brandon Stark,male,Northmen,,
+213,Brandon Stark,male,Northmen,,
+214,Brandon Tallhart,male,Northmen,"In 284 AC or 285 AC",
+215,Branston Cuy,male,,,
+216,Brienne of Tarth,female,,"In 280 AC",
+217,Bronn,male,,"In or between 264 AC and 268 AC",
+218,Bryan Fossoway,male,,,"In 299 AC, at Blackwater Rush"
+219,Bryan Frey,male,,"In or between 281 AC and 291 AC",
+220,Bryce Caron,male,,,"In 299 AC, at the Blackwater Rush"
+221,Bryen Caron,male,,,"In 289 AC"
+222,Bryen Farring,male,,,"In 300 AC, at the wolfswood"
+223,Brynden Tully,male,Rivermen,"In or between 242 AC and 245 AC",
+224,Buford Bulwer,male,,,
+225,Burton Crakehall,male,,,"In 299 AC, at the Riverlands"
+226,Calla Blackfyre,female,Valyrian,,
+227,Carellen Smallwood,female,,,
+228,Carolei Waynwood,female,,,
+229,Casper Wylde,male,,,
+230,Cassana Estermont,female,,,"In 278 AC, at Shipbreaker Bay, near Storm's End"
+231,Cassella Vaith,female,Dornish,,
+232,Catelyn Stark,female,Rivermen,"In 264 AC, at Riverrun","In 299 AC, at the Twins"
+233,Cedric Payne,male,,,"In 298 AC, at Riverlands"
+234,Cedrik Storm,male,,,
+235,Cerenna Lannister,female,,,
+236,Cerissa Brax,female,,,
+237,Cersei Frey,female,,"In 292 AC or 293 AC",
+238,Cersei Lannister,female,Westerman,"In 266 AC, at Casterly Rock",
+239,Ceryse Hightower,female,,"In 2 AC","In 45 AC, at King's Landing"
+240,Clarence Charlton,male,,,
+241,Clarence Crabb,male,,,
+242,Clarent Crakehall,male,,"At Crakehall","In 130 AC, at Gods Eye"
+243,Clayton Suggs,male,,,
+244,Clement Crabb,male,,,
+245,Clement Piper,male,Rivermen,,
+246,Cletus Yronwood,male,,,"In 300 AC, at Disputed Lands"
+247,Cley Cerwyn,male,Northmen,"In 284 AC or 285 AC, at Cerwyn","In 299 AC, at Winterfell"
+248,Cleyton Caswell,male,,,
+249,Colen of Greenpools,male,,,
+250,Colin Florent,male,,,
+251,Colmar Frey,male,,"In 288 AC",
+252,Corenna Swann,female,,,
+253,Corlys Velaryon,male,Valyrian,"In 53 AC","In 132 AC"
+254,Cortnay Penrose,male,,"At Parchments","In 299 AC, at Storm's End"
+255,Corwyn Corbray,male,,,"In 134 AC, at Runestone"
+256,Corwyn Corbray,male,Andal,,
+257,Crake,male,,"In Age of Heroes",
+258,Cregan Karstark,male,Northmen,"In 249 AC (roughly), at Karhold",
+259,Cregan Stark,male,Northmen,,"In or after 157 AC"
+260,Creighton Longbough,male,,"In or between 240 AC and 249 AC",
+261,Creighton Redfort,male,Valemen,,
+262,Cynthea Frey,female,,"In 290 AC",
+263,Cyrenna Swann,female,,"In 236 AC or before","In or between 249 AC and 257 AC"
+264,Dacey Mormont,female,Northmen,"In or between 252 AC or 277 AC","In 299 AC, at the Twins"
+265,Daella Targaryen,female,Valyrian,"In or between 54 AC and 66 AC","In 82 AC"
+266,Daella Targaryen,female,Valyrian,"In 199 AC",
+267,Daemon Blackfyre,male,Valyrian,"In 170 AC, at King's Landing","In 196 AC, at Redgrass Field"
+268,Daemon II Blackfyre,male,,"In 188 AC or 189 AC","In or between 211 AC and 219 AC"
+269,Daemon Targaryen,male,Valyrian,"In 81 AC","In 130 AC, at the Gods Eye"
+270,Daena Targaryen,female,Valyrian,"In 145 AC, at King's Landing",
+271,Daenerys Targaryen,female,,"In 172 AC",
+272,Daenora Targaryen,female,Valyrian,,
+273,Daeron I,male,,"143 AC, at King's Landing","161 AC, at Dorne"
+274,Daeron II,male,,"153 AC, at King's Landing","209 AC, at King's Landing"
+275,Daeron Targaryen,male,,"In 114 AC","In 130 AC, at Tumbleton"
+276,Daeron Targaryen,male,,"In 190 AC or 191 AC","In or between 221 AC and 233 AC"
+277,Daeron Vaith,male,Dornish,,
+278,Dagon Greyjoy,male,Ironborn,,
+279,Dagos Manwoody,male,,,
+280,Dalbridge,male,,"In 254 AC or before","In 299 AC, at Skirling Pass"
+281,Dale Drumm,male,,,
+282,Damion Lannister,male,,"In or between 257 AC and 272 AC",
+283,Damon Lannister,male,Westerman,,"In 210 AC"
+284,Damon Lannister,male,,"In 244 AC or 245 AC",
+285,Damon Marbrand,male,,,
+286,Damon Paege,male,,,
+287,Damon Shett,male,,,
+288,Damon Vypren,male,,"In 265 AC or later",
+289,Danelle Lothston,female,,,
+290,Danos Slynt,male,,,
+291,Danwell Frey,male,,"In or between 252 AC and 261 AC",
+292,Darlessa Marbrand,female,,,
+293,Daryn Hornwood,male,Northmen,,"In 298 AC, at the Whispering Wood"
+294,Daven Lannister,male,Westerman,"In 273 AC (roughly)",
+295,Deana Hardyng,female,,,
+296,Delena Florent,female,,,
+297,Della Frey,female,,"In 296 AC",
+298,Delonne Allyrion,female,Dornish,,
+299,Dennis Plumm,male,,,
+300,Denys Arryn,male,,,"In 283 AC, at Stoney Sept"
+301,Denys Darklyn,male,,,
+302,Denys Drumm,male,Ironborn,,
+303,Denys Mallister,male,,"In 245 AC or before, at Seagard",
+304,Denys Redwyne,male,,,
+305,Denyse Hightower,female,,,
+306,Desmond Grell,male,,"In or between 237 AC and 240 AC (roughly)",
+307,Desmond Redwyne,male,,,
+308,Devan Seaworth,male,,"In 287 AC",
+309,Deziel Dalt,male,,,
+310,Dick Follard,male,,,"In 299 AC, at Castle Black"
+311,Dickon Frey,male,,"In 294 AC",
+312,Dickon Manwoody,male,,,
+313,Dickon Tarly,male,,"In or between 287 AC and 290 AC",
+314,Domeric Bolton,male,,"In or between 279 AC and 281 AC (roughly)","In 297 AC"
+315,Donal Noye,male,,"In or between 244 AC and 252 AC","In 300 AC, at The Wall, near Castle Black"
+316,Donel Greyjoy,male,Ironborn,,
+317,Donella Hornwood,female,Northmen,"In or before 249 AC","In 299 AC, at Hornwood"
+318,Donnel,male,,,
+319,Donnel Drumm,male,Ironborn,,
+320,Donnel Haigh,male,,"In or between 255 AC and 282 AC",
+321,Donnel Locke,male,,,"In 299 AC, at the Twins"
+322,Donnel Swann,male,Stormlands,,
+323,Donnor Saltcliffe,male,Ironborn,,
+324,Donnor Stark,male,Northmen,,
+325,Dontos Hollard,male,,"In or between 261 AC and 263 AC, at near Duskendale","In 300 AC, at Blackwater Bay"
+326,Doran Martell,male,Dornish,"In 247 AC or 248 AC, at Sunspear",
+327,Dorna Swyft,female,,,
+328,Dorren Stark,male,Northmen,,
+329,Duncan,male,,"In 191 AC, 192 AC or 193 AC, at King's Landing","In 259 AC, at Summerhall"
+330,Duncan Targaryen,male,,"In or between 220 AC and 224 AC","In 259 AC, at Summerhall"
+331,Dunstan Drumm,male,Ironborn,"In 212 AC or later, at Old Wyk",
+332,Duram Bar Emmon,male,,"In 284 AC",
+333,Durran,male,First Men,"Age of Heroes",
+334,Dyanna Dayne,female,,,"In or between 201 AC and 209 AC"
+335,Dykk Harlaw,male,,,"In 299 AC, at Winterfell"
+336,Ebben,male,,,"In 299 AC, at Skirling Pass"
+337,Eddara Tallhart,female,Northmen,"In 289 AC or 290 AC",
+338,Eddard Karstark,male,Northmen,"At Karhold","In 298 AC, at the Whispering Wood"
+339,Eddard Stark,male,Northmen,"In 263 AC, at Winterfell","In 299 AC, at Great Sept of Baelor in King's Landing"
+340,Edderion Stark,male,Northmen,,
+341,Eddison Tollet,male,Valemen,,
+342,Eden Risley,male,,,
+343,Edgerran Oakheart,male,,,
+344,Edmund Ambrose,male,,,
+345,Edmund Waxley,male,,,
+346,Edmure Tully,male,Rivermen,"In or between 267 AC and 274 AC",
+347,Edmyn Tully,male,Rivermen,,
+348,Edric Dayne,male,,"In 287 AC, at Starfall",
+349,Edrick Stark,male,Northmen,,
+350,Edwyd Fossoway,male,,,"In 299 AC, at Blackwater Rush"
+351,Edwyle Stark,male,Northmen,,
+352,Edwyn Frey,male,,"In or between 259 AC and 278 AC",
+353,Edwyn Osgrey,male,,,"In 196 AC, at the Redgrass Field"
+354,Edwyn Stark,male,Northmen,,
+355,Eglantine,female,,,
+356,Elbert Arryn,male,,,"In 282 AC, at King's Landing"
+357,Eldon Estermont,male,Stormlands,"In or between 228 AC and 232 AC",
+358,Eldred Codd,male,Ironborn,,
+359,Eleanor Mooton,female,,"In 286 AC or 287 AC",
+360,Eleyna Westerling,female,,"In 287 AC, at Crag",
+361,Elia Martell,female,,"In 256 AC or 257 AC","In 283 AC, at King's Landing"
+362,Elinor Tyrell,female,,"In 286 AC (roughly)",
+363,Ella Lannister,female,,,
+364,Ellaria Sand,female,Dornish,,
+365,Ellery Vance,male,,,
+366,Ellyn Ever Sweet,female,,,
+367,Ellyn Reyne,female,,"At Castamere","In 261 AC, at Tarbeck Hall"
+368,Elmar Frey,male,,"In 290 AC",
+369,Elwood Meadows,male,Reach,"In 278 AC or 279 AC",
+370,Elyana Vypren,female,,"In or between 264 AC and 282 AC",
+371,Elyas Willum,male,,,
+372,Elyn Norridge,female,,,
+373,Elys Waynwood,male,,,
+374,Elys Westerling,male,,,
+375,Emberlei Frey,female,,"In 296 AC or 297 AC",
+376,Emmon Cuy,male,,"At Sunflower Hall","In 299 AC, at near Storm's End"
+377,Emmon Frey,male,,"In 237 AC or 238 AC",
+378,Emphyria Vance,female,,,
+379,Endrew Tarth,male,,,"In 299 AC, at Bridge of Skulls"
+380,Eon Hunter,male,,"In 220 AC or before (roughly)","In +/- 300 AC"
+381,Erena Glover,female,Northmen,"In 297 AC or 298 AC",
+382,Ermesande Hayford,female,,"In 298 AC",
+383,Erren Florent,male,,,
+384,Ethan Glover,male,Northmen,,"In 283 AC, at the Tower of Joy"
+385,Euron Greyjoy,male,Ironborn,"or before 267 AC",
+386,Eustace,male,,,
+387,Eustace Hunter,male,,,
+388,Eustace Osgrey,male,,"At Standfast",
+389,Eyron Stark,male,Northmen,,
+390,Ezzelyno,male,Braavosi,,
+391,Falena Stokeworth,female,,"In 125 AC",
+392,Falyse Stokeworth,female,,"In 265 AC or before","In 300 AC, at the Black Cells, Red Keep, King's Landing"
+393,Flement Brax,male,,,
+394,Forley Prester,male,,,
+395,Foss the Archer,male,,,
+396,Frankyln Fowler,male,Dornish,,
+397,Galbart Glover,male,Northmen,"At Deepwood Motte",
+398,Galladon Tarth,male,,"In either 275 AC, 276 AC or 277 AC","In either 284 AC or 285 AC"
+399,Galtry the Green,male,,,
+400,Gared,male,,"In or between 231 AC and 246 AC","In 297 AC, at Beyond the Wall"
+401,Garlan Tyrell,male,,"In 277 AC, at Highgarden",
+402,Garrett Paege,male,,,
+403,Garrison Prester,male,,,
+404,Garse Goodbrook,male,,,"At the Twins, in 299 AC"
+405,Garth Greenfield,male,Westerman,,
+406,Garth Greyfeather,male,,,"In 300 AC, at Beyond the Wall"
+407,Garth Hightower,male,,"At Oldtown",
+408,Garth Tyrell,male,,,
+409,Garth XII Gardener,male,,,
+410,Garth the Gardener,male,First Men,,
+411,Gawen Glover,male,Northmen,"In 295 AC or 296 AC",
+412,Gawen Swann,male,,"In 152 AC or before, at Stonehelm",
+413,Gawen Westerling,male,Westerman,,
+414,Gawen Wylde,male,,,"In 283 AC, at Storm's End"
+415,Genna Lannister,female,,"In 245 AC",
+416,Gerald Gower,male,,,
+417,Geremy Frey,male,,"In 263 AC","In or between 289 AC and 299 AC"
+418,Gerion Lannister,male,,"In 255 AC","In circa 291 AC"
+419,Germund Botley,male,Ironborn,,
+420,Gerold Grafton,male,,,
+421,Gerold Hightower,male,,,"In 283 AC, at Tower of Joy"
+422,Gerold Lannister,male,Westerman,,"In 244 AC"
+423,Gevin Harlaw,male,Ironborn,,"In 299 AC, at Winterfell"
+424,Gilbert Farring,male,,,
+425,Gilbert of the Vines,male,,,
+426,Gilwood Hunter,male,,"In or between 250 AC and 254 AC",
+427,Gladden Wylde,male,,,"In 298 AC, at the Mummer's Ford"
+428,Glendon Flowers,male,,"In 196 AC",
+429,Godric Borrell,male,Sistermen,"At Sweetsister",
+430,Godry Farring,male,,,
+431,Gormon Peake,male,,,"In 211 AC, at Whitewalls"
+432,Gormond Drumm,male,Ironborn,,
+433,Gormond Goodbrother,male,Ironborn,"In 282 AC or 283 AC",
+434,Gorold Goodbrother,male,Ironborn,,
+435,Gowen Baratheon,male,,,
+436,Gran Goodbrother,male,Ironborn,,
+437,Grance Morrigen,male,,,
+438,Grazdan mo Eraz,male,Ghiscari,"At Yunkai",
+439,Grenn,male,Westeros,"In 281 AC or 282 AC",
+440,Greydon Goodbrother,male,Ironborn,,
+441,Gulian Qorgyle,male,,,
+442,Gulian Swann,male,,"In 259 AC or before",
+443,Guncer Sunglass,male,,"At Sweetport Sound","In 299 AC, at Dragonstone"
+444,Gunthor Hightower,male,,,
+445,Guthor Grimm,male,,,
+446,Guyard Morrigen,male,,"In or between 278 AC and 283 AC, at Crows Nest","In 299 AC, at King's Landing"
+447,Gwayne Corbray,male,,,
+448,Gwayne Gaunt,male,,,"At Duskendale"
+449,Gwayne Hightower,male,,"In or between 88 AC and 96 AC","In 130 AC, at King's Landing"
+450,Gwin Goodbrother,female,Ironborn,,
+451,Gwynesse Harlaw,female,Ironborn,,
+452,Gwyneth Yronwood,female,Dornish,"In 287 AC or 288 AC",
+453,Gylbert Farwynd,male,Ironborn,,
+454,Gyles,male,,,
+455,Gyles Farwynd,male,Ironborn,,
+456,Gyles Grafton,male,,,
+457,Gyles III Gardener,male,,,
+458,Gyles Rosby,male,,,"In 300 AC, at King's Landing"
+459,Gysella Goodbrother,female,Ironborn,,
+460,Halleck Hoare,male,,,
+461,Hallis Mollen,male,Northmen,,
+462,Halmon Paege,male,,,
+463,Halys Hornwood,male,Northmen,,"In 298 AC, at the Green Fork"
+464,Harbert Paege,male,,,
+465,Harlan Grandison,male,,,"In 281 AC, at King's Landing"
+466,Harlan Hunter,male,,,
+467,Harlen Tyrell,male,Reach,,"In 5 AC, at Dorne"
+468,Harlon Botley,male,Ironborn,,
+469,Harlon Greyjoy,male,Ironborn,,"At Pyke"
+470,Harmen Uller,male,,,
+471,Harmond Umber,male,Northmen,,
+472,Harrag Hoare,male,Ironborn,,
+473,Harras Harlaw,male,Ironborn,,
+474,Harren Botley,male,Ironborn,,"In 299 AC, at Moat Cailin"
+475,Harren Hoare,male,Ironborn,,"2 BC, at Harrenhal"
+476,Harrion Karstark,male,Northmen,"At Karhold",
+477,Harrold Hardyng,male,Valemen,"In 281 AC or 282 AC",
+478,Harrold Osgrey,male,,,"At the Redgrass Field"
+479,Harrold Westerling,male,Westerman,,"In 112 AC"
+480,Harry Strickland,male,,,
+481,Harwin Strong,male,,"In 90 AC or before","In 120 AC, at Harrenhal"
+482,Harwood Fell,male,,,"In 300 AC, at Wolfswood"
+483,Harwood Stout,male,Northmen,,
+484,Harwyn Hoare,male,,,
+485,Harwyn Plumm,male,,,
+486,Harys Haigh,male,,"In or between 254 AC and 282 AC",
+487,Harys Swyft,male,,,
+488,Helaena Targaryen,female,,"In 109 AC","In 130 AC, at King's Landing"
+489,Helicent Uffering,female,,"In 171 AC (roughly)",
+490,Helman Tallhart,male,Northmen,"At Torrhen's Square","In 299 AC, at Duskendale"
+491,Herbert Bolling,male,,,
+492,Herrock Kenning,male,Ironborn,,
+493,Hilmar Drumm,male,Ironborn,,
+494,Hoare,male,,,
+495,Hoarfrost Umber,male,Northmen,,
+496,Hobber Redwyne,male,Reach,"At the Arbor",
+497,Hooded Man,male,,"In Age of Heroes",
+498,Horas Redwyne,male,Reach,"At the Arbor",
+499,Horton Redfort,male,Valemen,,
+500,Hosman Norcross,male,,,
+501,Hosteen Frey,male,,"In or between 250 AC and 258 AC",
+502,Hoster Frey,male,,"In 287 AC",
+503,Hoster Tully,male,Rivermen,"In or between 237 AC and 240 AC","In 299 AC, at Riverrun"
+504,Hother Umber,male,Northmen,"In 241 AC or before, at Last Hearth",
+505,Hotho Harlaw,male,Ironborn,,
+506,Howland Reed,male,Crannogmen,"In or between 260 AC and 265 AC, at Greywater Watch",
+507,Hubard Rambton,male,,,"In 299 AC, at Dragonstone"
+508,Hugh,male,Valemen,,"In 298 AC, at King's Landing"
+509,Hugh Beesbury,male,,,
+510,Hugh Grandison,male,,,
+511,Hugo Vance,male,,,
+512,Hugo Wull,male,Northern mountain clans,,
+513,Humfrey Beesbury,male,,,"In 209 AC, at Ashford"
+514,Humfrey Hardyng,male,,,"In 209 AC, at Ashford"
+515,Humfrey Hewett,male,,,
+516,Humfrey Swyft,male,,,
+517,Humfrey Wagstaff,male,,"In 230 AC, 231 AC or 232 AC",
+518,Hyle Hunt,male,,,
+519,Igon Vyrwel,male,,,
+520,Illifer,male,,"In 240 AC or before",
+521,Ilyn Payne,male,Westeros,,
+522,Imry Florent,male,,,"In 299 AC, at the Blackwater Rush"
+523,Jacelyn Bywater,male,,,"In 299 AC, at King's Landing"
+524,Jack Bulwer,male,,,"In 300 AC, at Beyond the Wall"
+525,Jack Musgood,male,Stormlands,,
+526,Jaehaerys I,male,,"34 AC, at King's Landing","103 AC, at King's Landing"
+527,Jaehaerys II,male,,"225 AC, at King's Landing","262 AC, at King's Landing"
+528,Jaime Frey,male,,"In 299 AC or 300 AC",
+529,Jaime Lannister,male,Westerlands,"In 266 AC, at Casterly Rock",
+530,Jammos Frey,male,,"In 266 AC or 267 AC",
+531,Janei Lannister,female,,"In 296 AC or 297 AC",
+532,Janna Tyrell,female,,,
+533,Janos Slynt,male,,"In or between 278 AC and 260 AC, at King's Landing","In 300 AC, at Castle Black"
+534,Janyce Hunter,female,,,
+535,Jared Frey,male,,"In 248 AC or 249 AC","In 300 AC (suspected)"
+536,Jaremy Rykker,male,,,"In 298 AC, at Castle Black"
+537,Jarman Buckwell,male,,,"In 300 AC (supposedly)"
+538,Jason Lannister,male,,,"In 130 AC, at the Red Fork"
+539,Jason Mallister,male,,"At Seagard",
+540,Jasper Arryn,male,,,
+541,Jasper Redfort,male,Valemen,,
+542,Jasper Waynwood,male,,,
+543,Jasper Wylde,male,,,"In 130 AC, at King's Landing"
+544,Jeffory Mallister,male,,,"At King's Landing"
+545,Jeffory Norcross,male,,,
+546,Jena Dondarrion,female,,,
+547,Jeor Mormont,male,Northmen,"In 230 AC","In 299 AC, at Craster's Keep"
+548,Jeyne Arryn,female,Valemen,,"In 134 AC, at Gulltown"
+549,Jeyne Beesbury,female,,,
+550,Jeyne Darry,female,Westeros,,
+551,Jeyne Farman,female,,,
+552,Jeyne Fossoway,female,,,
+553,Jeyne Goodbrook,female,,"In 293 AC",
+554,Jeyne Lothston,female,,"In 164 AC",
+555,Jeyne Lydden,female,,,
+556,Jeyne Marbrand,female,,,"In 255 AC"
+557,Jeyne Poole,female,Northmen,"At Winterfell",
+558,Jeyne Royce,female,,,
+559,Jeyne Swann,female,,,
+560,Jeyne Westerling,female,,"In 27 AC or before","In 47 AC or 48 AC"
+561,Jeyne Westerling,female,Westerman,"In 283 AC, at the Crag",
+562,Joanna Lannister,female,Westerman,"In or between 245 AC and 250 AC, at Casterly Rock","In 273 AC"
+563,Joanna Swyft,female,,,
+564,Jocelyn Swyft,female,,,
+565,Joffrey Baratheon,male,,"286 AC, at King's Landing","300 AC, at Red Keep, King's Landing"
+566,Joffrey Caswell,male,,"In 190 AC or 191 AC",
+567,Joffrey Lonmouth,male,,"In 99 AC or before","In 114 AC, at King's Landing"
+568,Johanna Lannister,female,,"At the Crag",
+569,Johanna Swann,female,,,
+570,John the Oak,male,,,
+571,Jojen Reed,male,Crannogmen,"In 286 AC, at Greywater Watch",
+572,Jon Arryn,male,Valemen,"In or between 217 AC and 220 AC (roughly), at the Eyrie","In 298 AC, at King's Landing"
+573,Jon Bettley,male,,,
+574,Jon Brax,male,,"In 296 AC",
+575,Jon Bulwer,male,,,
+576,Jon Connington,male,Stormlands,"In or between 263 AC and 265 AC",
+577,Jon Fossoway,male,Reach,,
+578,Jon Hollard,male,,,
+579,Jon Lynderly,male,,,
+580,Jon Myre,male,Ironborn,,
+581,Jon Penrose,male,,,
+582,Jon Redfort,male,Valemen,,
+583,Jon Snow,male,Northmen,"In 283 AC",
+584,Jon Stark,male,,,
+585,Jon Umber,male,Northmen,"At the Last Hearth",
+586,Jon Umber,male,Northmen,,"In 299 AC, at the Twins"
+587,Jon Wylde,male,,,
+588,Jonelle Cerwyn,female,Northmen,"In 267 AC, at Cerwyn",
+589,Jonnel Stark,male,,,
+590,Jonos Frey,male,,"In 291 AC",
+591,Jonos Stark,male,Northmen,,
+592,Jonothor Darry,male,,,"In 283 AC, at the Trident"
+593,Jorah Stark,male,Northmen,,
+594,Jorelle Mormont,female,Northmen,"In or between 278 AC and 289 AC",
+595,Jory Cassel,male,Northmen,"At Winterfell","In 298 AC, at King's Landing"
+596,Joseth Mallister,male,,,
+597,Josmyn Peckledon,male,,"In 284 AC or 285 AC",
+598,Josua Willum,male,,,
+599,Jothos Slynt,male,,,
+600,Joyeuse Erenford,female,,"In 282 AC or 283 AC",
+601,Justin Massey,male,,,
+602,Jyanna Frey,female,,,
+603,Karlon Stark,male,Northmen,,
+604,Karyl Vance,male,,"At Wayfarer's Rest",
+605,Kevan Lannister,male,,"In 244 AC","In 300 AC, at King's Landing"
+606,Kirth Vance,male,,,
+607,Kyle Condon,male,,,
+608,Kyle Royce,male,,,"At King's Landing"
+609,Kyra Frey,female,,"In or between 262 AC and 277 AC",
+610,Laena Velaryon,female,Valyrian,"In 93 AC","In 120 AC, at Driftmark"
+611,Laenor Velaryon.,male,Valyrian,"In 94 AC","In 120 AC, at Spicetown"
+612,Lambert Turnberry,male,,,
+613,Lancel Lannister,male,,"In 282 AC",
+614,Lancel V Lannister,male,,,
+615,Lann,male,,"In Age of Heroes",
+616,Lanna Lannister,female,,"In or between 271 AC and 286 AC",
+617,Larence Snow,male,Northmen,"In 286 AC",
+618,Larys Strong,male,,"In 91 AC or before",
+619,Leana Frey,female,,"In 299 AC or 300 AC",
+620,Lenwood Tawney,male,Ironborn,,
+621,Leo Blackbar,male,,,
+622,Leo Lefford,male,,,"In 299 AC, at Trident"
+623,Leo Tyrell,male,Reach,,
+624,Leo Tyrell,male,,,
+625,Leobald Tallhart,male,Northmen,"At Torrhen's Square","In 299 AC, at Winterfell"
+626,Leona Tyrell,female,,,
+627,Leona Woolfield,female,,,
+628,Leonella Lefford,female,,,
+629,Leslyn Haigh,male,,,
+630,Lester Morrigen,male,,,
+631,Lewyn Martell,male,Dornish,,"In 283 AC, at the Trident"
+632,Lewys Lydden,male,,,
+633,Lewys Piper,male,Rivermen,,
+634,Leyla Hightower,female,,,
+635,Leyton Hightower,male,,,
+636,Lia Serry,female,,,
+637,Liane Vance,female,,,
+638,Lollys Stokeworth,female,,"In 265 AC",
+639,Lomas Estermont,male,Stormlands,,
+640,Loras Tyrell,male,Reach,"In 282 AC, at Highgarden",
+641,Lord Ashford,male,Reach,,
+642,Lord Caswell,male,,,
+643,Lord Staunton,male,,,"In 129 AC, at Rook's Rest"
+644,Lorent Caswell,male,,,
+645,Lorent Lorch,male,,,
+646,Lorent Marbrand,male,Westerman,,"In 130 AC, at King's Landing"
+647,Lorent Tyrell,male,,,
+648,Lorra Royce,female,,,
+649,Lothar Frey,male,Rivermen,"In 265 AC or 266 AC, at Twins",
+650,Lothar Mallery,male,,,"In 298 AC, at Mummer's Ford"
+651,Lothor Brune,male,,,
+652,Lucamore Strong,male,,,
+653,Lucas Codd,male,Ironborn,,
+654,Lucas Corbray,male,,,
+655,Lucas Inchfield,male,,,"In 211 AC, at the Chequy Water"
+656,Lucas Lothston,male,,,
+657,Lucas Roote,male,,,"In 299 AC, at the Riverlands"
+658,Lucas Tyrell,male,,,
+659,Luceon Frey,male,,"In or between 249 AC and 257 AC",
+660,Lucias Vypren,male,,,
+661,Lucimore Botley,male,Ironborn,,
+662,Lucion Lannister,male,,"In or between 270 AC and 285 AC",
+663,Lucos Chyttering,male,,"In 283 AC",
+664,Luthor Tyrell,male,Reach,"At Highgarden",
+665,Luthor Tyrell,male,,,
+666,Luthor Tyrell,male,,,
+667,Lyanna Mormont,female,Northmen,"In 290 AC",
+668,Lyarra Stark,female,Northmen,,
+669,Lyessa Flint,female,Northmen,,
+670,Lyle Crakehall,male,,"At Crakehall",
+671,Lyman Beesbury,male,,"In 48 AC or 49 AC","In 129 AC, at King's Landing"
+672,Lyman Darry,male,,"In 290 AC or 291 AC","In 299 AC, at Darry"
+673,Lymond Goodbrook,male,,,
+674,Lymond Lychester,male,Rivermen,,
+675,Lymond Mallister,male,,,
+676,Lymond Vikary,male,,,
+677,Lyn Corbray,male,,"At Heart's Home",
+678,Lynesse Hightower,female,,,
+679,Lyonel Baratheon,male,,,"In or between 239 AC and 245 AC"
+680,Lyonel Bentley,male,,,"In 130 AC, at between Stokeworth and Duskendale"
+681,Lyonel Corbray,male,,"In 260 AC (roughly), at Heart's Home",
+682,Lyonel Frey,male,,"In or between 259 AC and 283 AC",
+683,Lyonel Selmy,male,,,
+684,Lyonel Strong,male,,,"In 120 AC, at Harrenhal"
+685,Lyonel Tyrell,male,Reach,,"In 159 AC or 160 AC, at Sandstone"
+686,Lyonel Tyrell,male,,,
+687,Lyra Mormont,female,Northmen,"In or between 277 AC and 288 AC",
+688,Lysa Arryn,female,,"In 266 AC or 267 AC, at Riverrun","In 300 AC, at the Eyrie"
+689,Lysa Meadows,female,,,
+690,Lythene Frey,female,,"In 251 AC and 259 AC",
+691,Mace Tyrell,male,,"In After 256 AC",
+692,Maege Mormont,female,Northmen,"In or between 239 AC and 257 AC",
+693,Maegelle Frey,female,,"In or between 249 AC and 266 AC",
+694,Maegor I,male,,"12 AC","48 AC, at King's Landing"
+695,Maekar I,male,,"or between 174 AC and 178 AC, at King's Landing","233 AC, at Starpike"
+696,Maelor Targaryen,male,,"In 127 AC, at King's Landing","In 130 AC, at Bitterbridge"
+697,Maelys I Blackfyre,male,Valyrian,,"In 260 AC, at Stepstones"
+698,Maldon Massey,male,First Men,,
+699,Mallador Locke,male,,,"In 299 AC, at Fist of the First Men"
+700,Malwyn Frey,male,,"In 284 AC",
+701,Mandon Moore,male,Valemen,,"In 299 AC, at the Blackwater Rush"
+702,Manfred Dondarrion,male,,,
+703,Manfred Lothston,male,,,
+704,Manfred Swann,male,,,
+705,Manfrey Martell,male,Dornish,,
+706,Manfryd Lothston,male,,,
+707,Manfryd Yew,male,,,
+708,Margot Lannister,female,,,
+709,Mariah Martell,female,Dornish,,
+710,Maric Seaworth,male,,,"In 299 AC, at Blackwater Rush"
+711,Marissa Frey,female,,"In 286 AC",
+712,Mariya Darry,female,,,
+713,Mark Mullendore,male,,,
+714,Mark Ryswell,male,Northmen,,"In 283 AC, at the Tower of Joy"
+715,Marlon Manderly,male,,"At White Harbor",
+716,Marna Locke,female,Northmen,,
+717,Maron Botley,male,,,
+718,Maron Greyjoy,male,Ironborn,"In 275 AC or before","In 289 AC, at Pyke"
+719,Maron Nymeros Martell,male,Dornish,,
+720,Maron Volmark,male,Ironborn,"In 283 AC or 284 AC",
+721,Marq Piper,male,Rivermen,"At Pinkmaiden Castle",
+722,Marq Rankenfell,male,,,
+723,Marsella Waynwood,female,,,
+724,Martyn Cassel,male,Northmen,,"In 284 AC, at the Tower of Joy"
+725,Martyn Lannister,male,,"In or between 285 AC and 287 AC",
+726,Martyn Mullendore,male,,,
+727,Marwyn Belmore,male,,,
+728,Mary Mertyns,female,Westeros,,
+729,Matarys Targaryen,male,,"In 184 AC or later","In 209 AC, at King's Landing"
+730,Mathis Frey,male,,"In 294 AC",
+731,Mathis Rowan,male,Reach,,
+732,Maynard Plumm,male,,,
+733,Medgar Tully,male,Rivermen,,"In or between 209 AC and 211 AC"
+734,Medger Cerwyn,male,Northmen,"At Cerwyn","In 299 AC, at Harrenhal"
+735,Meera Reed,female,Crannogmen,"In 283 AC, at Greywater Watch",
+736,Megga Tyrell,female,,"In 286 AC (roughly)",
+737,Melantha Blackwood,female,,,
+738,Melara Crane,female,,,
+739,Melara Hetherspoon,female,,"In 264 AC or 265 AC","In 276 AC"
+740,Meldred Merlyn,male,Ironborn,,
+741,Melesa Crakehall,female,,,
+742,Melessa Florent,female,,,
+743,Melisandre,female,Asshai,"At Unknown",
+744,Melissa Blackwood,female,,"In or between 156 AC and 160 AC",
+745,Melwyn Sarsfield,male,,,
+746,Meredyth Crane,female,,"At Red Lake",
+747,Merianne Frey,female,,"In 288 AC",
+748,Merlon Crakehall,male,,,
+749,Mern IX Gardener,male,,,", at the Field of Fire"
+750,Merrell Florent,male,,,
+751,Merrett Frey,male,Rivermen,"In 262 AC","In 300 AC, at Near Oldstones"
+752,Meryn Trant,male,,,
+753,Michael Mertyns,male,,,
+754,Mina Tyrell,female,,,
+755,Minisa Whent,female,Rivermen,,"At Riverrun"
+756,Monford Velaryon,male,Valyrian,,"In 299 AC, at Blackwater Rush"
+757,Monterys Velaryon,male,,"In 293 AC",
+758,Moqorro,male,,"At Volantis",
+759,Morgil Hastwyck,male,,,
+760,Moribald Chester,male,,,
+761,Morros Slynt,male,,,
+762,Mors Manwoody,male,,,
+763,Mors Martell,male,,"In 248 AC or 257 AC","In 248 AC or 258 AC"
+764,Mors Umber,male,Northmen,"In 235 AC or before, at Last Hearth",
+765,Morya Frey,female,,"In 268 AC or 269 AC",
+766,Moryn Tyrell,male,,,
+767,Murmison,male,,,"In 41 AC, at King's Landing"
+768,Mychel Redfort,male,Valemen,,
+769,Mylenda Caron,female,,"In or between 258 AC and 265 AC",
+770,Myles Manwoody,male,,,
+771,Myles Mooton,male,,,"In 283 AC, at Stoney Sept"
+772,Myles Smallwood,male,,,
+773,Myranda Lefford,female,,,
+774,Myranda Royce,female,,"In 279 AC (roughly)",
+775,Myrcella Baratheon,female,,"In 290 AC, at King's Landing",
+776,Myria Jordayne,female,,,
+777,Myriame Manderly,female,Northmen,,
+778,Myrielle Lannister,female,,,
+779,Naerys Targaryen,female,Valyrian,"In 138 AC, at King's Landing","In or between 179 AC and 184 AC, at King's Landing"
+780,Norbert Vance,male,,,
+781,Nymella Toland,female,Dornish,,
+782,Nymeria,female,Rhoynar,,
+783,Olene Tyrell,female,,,
+784,Olenna Redwyne,female,,"In 228 AC, at Arbor",
+785,Olymer Tyrell,male,,,
+786,Olyvar Frey,male,,"In 281 AC",
+787,Olyvar Oakheart,male,,,"In 161 AC"
+788,Ondrew Locke,male,Northmen,,
+789,Orbert Caswell,male,,,"At Castle Black"
+790,Orivel,male,,,
+791,Ormond Osgrey,male,,,
+792,Ormond Westerling,male,,,
+793,Ormond Yronwood,male,,,"At Yronwood"
+794,Ormund Baratheon,male,,,"In 260 AC, at Stepstones"
+795,Ormund Wylde,male,,,
+796,Orton Merryweather,male,,,
+797,Orys Baratheon,male,,"At Dragonstone (possibly)","In 38 AC"
+798,Osbert Serry,male,,,
+799,Osfryd Kettleblack,male,,,
+800,Osmund Frey,male,,"In 297 AC",
+801,Osmund Kettleblack,male,,,
+802,Osney Kettleblack,male,,,
+803,Ossifer Plumm,male,,,"In 176 AC"
+804,Oswell Kettleblack,male,,,
+805,Oswell Whent,male,Rivermen,,"In 283 AC, at Tower of Joy"
+806,Othell Yarwyck,male,,,
+807,Otho Bracken,male,,,
+808,Otto Hightower,male,,,"In 130 AC, at King's Landing"
+809,Ottyn Wythers,male,,"In 230 AC (roughly)","In 299 AC, at Fist of the First Men, Beyond the Wall"
+810,Owen Inchfield,male,,,
+811,Owen Norrey,male,Northern mountain clans,,"In 299 AC, at the Twins"
+812,Parmen Crane,male,,"At Red Lake",
+813,Pate,male,First Men,,
+814,Patrek Mallister,male,,,
+815,Paxter Redwyne,male,,,
+816,Pearse Caron,male,,,
+817,Perra Frey,female,,"In 294 AC",
+818,Perra Royce,female,,"In 221 AC or before","In or between 241 AC and 249 AC"
+819,Perriane Frey,female,,"In or between 241 AC and 248 AC",
+820,Perwyn Frey,male,,"In or between 270 AC and 278 AC",
+821,Perwyn Osgrey,male,,,
+822,Peter Plumm,male,,,
+823,Petyr Baelish,male,Valemen,"In 268 AC, at the Fingers",
+824,Petyr Frey,male,,"In 281 AC, at Twins","In 300 AC, at Oldstones"
+825,Philip Foote,male,,,
+826,Philip Plumm,male,,,
+827,Podrick Payne,male,,"In 286 AC or 287 AC",
+828,Preston Greenfield,male,Westerman,,"In 299 AC, at King's Landing"
+829,Pypar,male,,,
+830,Qarl Kenning,male,Ironborn,,
+831,Qarlton Chelsted,male,,,"In 283 AC, at King's Landing"
+832,Qhorin,male,,,"In 299 AC, at Skirling Pass"
+833,Qhorwyn Hoare,male,,,
+834,Qorgyle,male,,,"In 288 AC, at Castle Black"
+835,Quellon Botley,male,Ironborn,,
+836,Quellon Greyjoy,male,Ironborn,,"In 283 AC, at the mouth of the Mander"
+837,Quenten Banefort,male,,,
+838,Quentin Tyrell,male,,,"At Ashford"
+839,Quenton Greyjoy,male,Ironborn,,
+840,Quenton Hightower,male,,,"At Oldtown"
+841,Quenton Qoherys,male,,,
+842,Quentyn Ball,male,,,"At Near Redgrass Field"
+843,Quentyn Blackwood,male,,,"In 205 AC, at King's Landing"
+844,Quentyn Martell,male,Dornish,"In 281 AC, at Sunspear, Dorne","In 300 AC, at Meereen"
+845,Quentyn Qorgyle,male,,,
+846,Ralf Kenning,male,Ironborn,,"In 300 AC, at Moat Cailin"
+847,Ralf Stonehouse,male,Ironborn,,
+848,Ralph Buckler,male,,,
+849,Ramsay Snow,male,Northmen,"In 282 AC or before",
+850,Randyll Tarly,male,,,
+851,Ravella Swann,female,,,
+852,Raymun Darry,male,,,"In 298 AC, at Mummer's Ford"
+853,Raymun Fossoway,male,,,
+854,Raymund Frey,male,,"In 264 AC",
+855,Raymund Tyrell,male,,,
+856,Raynald Westerling,male,,"At Crag","In 299 AC (supposedly), at the Twins"
+857,Raynard Ruttiger,male,,,
+858,Red Alyn,male,,"At the Rosewood","In 300 AC, at Castle Black"
+859,Redwyn,male,,,
+860,Regenard Estren,male,,,
+861,Renfred Rykker,male,,,
+862,Renly Baratheon,male,Stormlands,"In 277 AC","In 299 AC, at Storm's End"
+863,Renly Norcross,male,,"In 296 AC or 297 AC",
+864,Reynard Webber,male,,,
+865,Rhae Targaryen,female,Valyrian,"In or between 201 AC and 209 AC",
+866,Rhaegar Frey,male,,"In or between 269 AC and 273 AC","In 300 AC (suspected)"
+867,Rhaegar Targaryen,male,Valyrian,"In 259 AC, at Summerhall","In 283 AC, at the Trident"
+868,Rhaegel Targaryen,male,Valyrian,"In or between 173 AC and 177 AC","In 215 AC"
+869,Rhaella Targaryen,female,Valyrian,"In 245 AC or 246 AC, at King's Landing","In 284 AC, at Dragonstone"
+870,Rhaelle Targaryen,female,,"In or between 229 AC and 233 AC",
+871,Rhaena Targaryen,female,,"In 116 AC, at Pentos",
+872,Rhaena Targaryen,female,Valyrian,"In 147 AC",
+873,Rhaena Targaryen,female,Valyrian,"In 23 AC",
+874,Rhaenyra Targaryen,female,Valyrian,"In 97 AC","In 130 AC, at Dragonstone"
+875,Rhaenys Targaryen,female,Valyrian,"In 74 AC","In 129 AC, at Rook's Rest"
+876,Rhaenys Targaryen,female,,"In 280 AC, at Dragonstone","In 283 AC, at King's Landing"
+877,Rhea Florent,female,,,
+878,Rhea Royce,female,,,"In 115 AC, at The Vale"
+879,Rhialta Vance,female,,,
+880,Rhonda Rowan,female,,,
+881,Richard Horpe,male,,,
+882,Richard Lonmouth,male,,,
+883,Richard Morrigen,male,,,
+884,Rickard Karstark,male,Northmen,"At Karhold","In 299 AC, at Riverrun (executed)"
+885,Rickard Ryswell,male,Northmen,,
+886,Rickard Stark,male,Northmen,,
+887,Rickard Stark,male,Northmen,"In or between 230 AC and 249 AC, at Winterfell","In 282 AC, at King's Landing"
+888,Rickard Thorne,male,,,"In 130 AC, at Bitterbridge"
+889,Rickard Tyrell,male,,,
+890,Rickard Wylde,male,,"In 295 AC",
+891,Rickon Stark,male,Northmen,"In 295 AC, at Winterfell",
+892,Robar Royce,male,Valemen,"In 277 AC (roughly), at Runestone","In 299 AC, at Near Storm's End"
+893,Robb Reyne,male,,,
+894,Robert Arryn,male,Valemen,"In 292 AC",
+895,Robert Ashford,male,Reach,"At Ashford",
+896,Robert Brax,male,,,"In 299 AC, at Riverlands"
+897,Robert Brax,male,,"In 290 AC",
+898,Robert Flowers,male,,,
+899,Robert Frey,male,,"In 286 AC",
+900,Robert Frey,male,,"In 283 AC",
+901,Robert I Baratheon,male,,"262 AC, at Storm's End","298 AC, at King's Landing"
+902,Robert Paege,male,,,
+903,Robett Glover,male,Northmen,"At Deepwood Motte",
+904,Robin Greyjoy,male,Ironborn,,"At Pyke"
+905,Robin Hill,male,,,
+906,Robin Hollard,male,,,
+907,Robin Moreland,male,,,
+908,Robin Peasebury,male,,,
+909,Robin Ryger,male,,"In or between 237 AC and 240 AC (roughly)",
+910,Robyn Rhysling,male,,,
+911,Robyn Ryswell,male,Northmen,,
+912,Rodrik Cassel,male,Northmen,,"In 299 AC, at Winterfell"
+913,Rodrik Greyjoy,male,Ironborn,"In 274 AC or before","In 289 AC, at Seagard"
+914,Rodrik Harlaw,male,Ironborn,,
+915,Rodrik Ryswell,male,Northmen,,
+916,Rodrik Stark,male,Northmen,,
+917,Rodrik Stark,male,Northmen,,
+918,Rodwell Stark,male,Northmen,,
+919,Roelle,female,,,
+920,Rohanne,female,Tyroshi,,"In or after 211 AC"
+921,Roland Crakehall,male,,,
+922,Roland Crakehall,male,,,
+923,Rollam Westerling,male,,"In 290 AC, at Crag",
+924,Rolland Darklyn,male,,,
+925,Rolland Storm,male,,,
+926,Rolland Uffering,male,,,
+927,Rolph Spicer,male,,,
+928,Ronald Connington,male,,,
+929,Ronald Vance,male,,,
+930,Ronnel Harclay,male,,,
+931,Ronnel Stout,male,Northmen,,
+932,Ronnet Connington,male,,"In 274 AC",
+933,Roose Bolton,male,Northmen,"In 260 AC or before, at the Dreadfort",
+934,Roose Ryswell,male,Northmen,,
+935,Roryn Drumm,male,Ironborn,,
+936,Rosamund Lannister,female,,,
+937,Roslin Frey,female,Rivermen,"In 282 AC or 283 AC",
+938,Rossart,male,,,"In 283 AC, at King's Landing"
+939,Royce Coldwater,male,,,
+940,Runcel Hightower,male,,,
+941,Rupert Brax,male,,,"In 299 AC, at Oxcross"
+942,Rupert Crabb,male,,,
+943,Russell Merryweather,male,,"In 293 AC or 294 AC, at Longtable",
+944,Ryam Florent,male,,,
+945,Ryam Redwyne,male,,,"In 105 AC, at King's Landing"
+946,Rycherd Crane,male,,,
+947,Ryella Frey,female,,"In 294 AC",
+948,Ryella Royce,female,,,
+949,Rylene Florent,female,,,
+950,Ryman Frey,male,,"In 246 AC, 247 AC or 248 AC","In 300 AC, at near the Twins"
+951,Saera Targaryen,female,Valyrian,"In or between 61 AC and 82 AC",
+952,Sallei Paege,female,,,
+953,Samwell Spicer,male,,,
+954,Samwell Tarly,male,Andal,"In 283 AC, at Horn Hill",
+955,Sandor Clegane,male,,"In 270 AC or 271 AC","In 300 AC (supposedly)"
+956,Sandor Frey,male,,"In 287 AC",
+957,Sansa Stark,female,Northmen,"In 286 AC, at Winterfell",
+958,Sargon Botley,male,Ironborn,,
+959,Sarra Frey,female,,"In 285 AC",
+960,Sarya Whent,female,,,
+961,Sawane Botley,male,Ironborn,,"In 299 AC, at Pyke"
+962,Sebastion Errol,male,,,
+963,Sebaston Farman,male,Westerman,,
+964,Sefton Staunton,male,,,
+965,Selmond Stackspear,male,,,
+966,Selwyn Tarth,male,,"In 245 AC or 246 AC",
+967,Serala of Myr,female,Myrish,"In Myr",
+968,Serra Frey,female,,"In 285 AC",
+969,Serwyn,male,,,
+970,Shadrich,male,,,
+971,Shaera Targaryen,female,Valyrian,"In 226 AC","In or after 259AC"
+972,Shella Whent,female,Rivermen,,"In +/- 300 AC"
+973,Shiera Crakehall,female,,,
+974,Shierle Swyft,female,,,
+975,Shireen Baratheon,female,,"In 289 AC, at Dragonstone",
+976,Shirei Frey,female,,"In 292 AC or 293 AC",
+977,Shyra Errol,female,,,
+978,Sigfry Stonetree,male,Ironborn,,
+979,Sigfryd Harlaw,male,Ironborn,,
+980,Sigorn,male,Thenn,"At Thenn",
+981,Simon Leygood,male,,,
+982,Simon Staunton,male,,,
+983,Simon Toyne,male,,,"In 281 AC, at the Kingswood"
+984,Stafford Lannister,male,Westerman,"In or between 246 AC and 253 AC","In 299 AC, at Oxcross"
+985,Steffarion Sparr,male,Ironborn,,
+986,Steffon Baratheon,male,,"In 246 AC, at Shipbreaker Bay","In 278 AC"
+987,Steffon Darklyn,male,,,"In 129 AC, at Dragonstone"
+988,Steffon Fossoway,male,,,
+989,Steffon Frey,male,,"In or between 263 AC and 280 AC",
+990,Steffon Hollard,male,,,
+991,Steffon Stackspear,male,,,
+992,Steffon Swyft,male,,,
+993,Steffon Varner,male,,,
+994,Stevron Frey,male,,"In 233 AC or 234 AC, at Twins","In 299 AC, at Oxcross"
+995,Stonesnake,male,,"In or between 250 AC and 253 AC",
+996,Sumner Crakehall,male,,,
+997,Sybell Spicer,female,,,
+998,Sybelle Glover,female,Northmen,,
+999,Sylva Santagar,female,Dornish,"In 276 AC or 277 AC, at Spottswood",
+1000,Sylwa Paege,female,,,
+1001,Symon Hollard,male,,,"At Duskendale"
+1002,Symon Santagar,male,,,
+1003,Symond Botley,male,Ironborn,,
+1004,Symond Frey,male,,"In or between 252 AC and 260 AC, at the Twins","In 300 AC (suspected), at The North"
+1005,Symond Templeton,male,,,
+1006,Taena of Myr,female,Myrish,"In 276 AC (roughly)",
+1007,Talbert Serry,male,,,"In 300 AC, at near the Shield Islands, the Reach"
+1008,Talla Tarly,female,,,
+1009,Tallad,male,,,
+1010,Tanda Stokeworth,female,,"At Stokeworth","In 300 AC, at Stokeworth"
+1011,Tanton Fossoway,male,,,
+1012,Terrance Lynderly,male,,,
+1013,Terrence Kenning,male,,,
+1014,Terrence Toyne,male,,,"In 178 AC"
+1015,The Sparr,female,Ironborn,,
+1016,The Stonehouse,female,Ironborn,,
+1017,Theo Wull,male,Northern mountain clans,,"In 283 AC, at Tower of Joy"
+1018,Theodan Wells,male,Northmen,,
+1019,Theodore Tyrell,male,,,
+1020,Theomar Smallwood,male,,,
+1021,Theomore Harlaw,male,,,
+1022,Theon Greyjoy,male,Ironborn,"In 278 AC or 279 AC, at Pyke",
+1023,Theon Stark,male,Northmen,,
+1024,Thoren Smallwood,male,,,"In 299 AC, at Fist of the First Men"
+1025,Tion Frey,male,,"In or between 279 AC and 284 AC","In 299 AC, at Riverrun"
+1026,Tion Lannister,male,,"In or between 211 AC and 219 AC","In 236 AC, at the Wendwater"
+1027,Titus Peake,male,,,
+1028,Tom Costayne,male,,,
+1029,Tommen Baratheon,male,,"291 AC",
+1030,Tommen Costayne,male,,,
+1031,Torren Liddle,male,Northern mountain clans,,
+1032,Torrence Teague,male,Rivermen,,
+1033,Torrhen Karstark,male,Northmen,"At Karhold","In 298 AC, at the Whispering Wood"
+1034,Torrhen Stark,male,Northmen,,
+1035,Trebor Jordayne,male,,,
+1036,Tremond Gargalen,male,Dornish,,
+1037,Tristan Mudd,male,,,
+1038,Tristan Ryger,male,,,
+1039,Tristifer Botley,male,Ironborn,"At Lordsport",
+1040,Tristifer IV Mudd,male,,,
+1041,Tristifer V,male,,,
+1042,Triston Sunderland,male,,,
+1043,Trystane Martell,male,Dornish,"In 287 AC",
+1044,Tya Lannister,female,,,
+1045,Tyana Wylde,female,,,
+1046,Tybolt Crakehall,male,,,
+1047,Tybolt Hetherspoon,male,,,
+1048,Tybolt Lannister,male,Westerman,,"In 212 AC"
+1049,Tygett Lannister,male,,"In 250 AC","In or after 285 AC"
+1050,Tyland Lannister,male,,,"In 133 AC"
+1051,Tyrek Lannister,male,,"In 286 AC","In 299 AC (allegedly), at King's Landing"
+1052,Tyrion Lannister,male,,"In 273 AC, at Casterly Rock",
+1053,Tysane Frey,female,,"In 292 AC",
+1054,Tyta Frey,female,,"In 269 AC or 270 AC",
+1055,Tytos Brax,male,,,
+1056,Tytos Frey,male,,"In or between 261 AC and 272 AC","In 299 AC, at the Twins"
+1057,Tytos Lannister,male,,"In 220 AC","In 267 AC, at Casterly Rock"
+1058,Tywin Frey,male,,"In 287 AC or 288 AC",
+1059,Tywin Frey,male,,"In 299 AC or 300 AC",
+1060,Ulrick Dayne,male,Dornish,,
+1061,Ulwyck Uller,male,,,
+1062,Urrigon Greyjoy,male,Ironborn,"In 268 AC or 269 AC","At Pyke"
+1063,Utherydes Wayn,male,,"In or between 237 AC and 241 AC (roughly)",
+1064,Uthor Tollett,male,Valemen,,
+1065,Uthor Underleaf,male,,"In or around 181 AC, 182 AC or 183 AC",
+1066,Vaemond Velaryon,male,Valyrian,,"In 126 AC"
+1067,Valarr Targaryen,male,Valyrian,"In or between 183 AC and 193 AC","In 209 AC, at King's Landing"
+1068,Vardis Egen,male,Valemen,"In or between 249 AC and 253 AC","In 298 AC, at the Eyrie"
+1069,Vayon Poole,male,,,"In 298 AC, at King's Landing"
+1070,Velaena Velaryon,female,Valyrian,,
+1071,Vickon Botley,male,Ironborn,,
+1072,Vickon Greyjoy,male,,,"In 33 AC"
+1073,Victaria Tyrell,female,,,
+1074,Victarion Greyjoy,male,Ironborn,"In 268 AC or before, at Pyke",
+1075,Victor Tyrell,male,,,
+1076,Viserys I,male,,"77 AC, at King's Landing","129 AC, at King's Landing"
+1077,Viserys II,male,,"122 AC, at Dragonstone","172 AC, at King's Landing"
+1078,Viserys Plumm,male,,"In 176 AC or 177 AC",
+1079,Viserys Targaryen,male,Valyrian,"In 276 AC, at King's Landing","In 298 AC, at Vaes Dothrak"
+1080,Vortimer Crane,male,,,
+1081,Walda Frey,female,,"In 290 AC or 291 AC",
+1082,Walda Frey,female,,"In 294 AC or 295 AC",
+1083,Walda Frey,female,,"In 280 AC or 281 AC",
+1084,Walda Frey,female,,"In 283 AC or 284 AC",
+1085,Walda Frey,female,,"In 288 AC or 289 AC",
+1086,Walda Rivers,female,,"In 294 AC or 295 AC",
+1087,Walda Rivers,female,,"In 295 AC",
+1088,Walder Brax,male,,"In 293 AC",
+1089,Walder Frey,male,,"In 291 AC",
+1090,Walder Frey,male,Rivermen,"In or between 260 AC and 280 AC",
+1091,Walder Frey,male,,"In 291 AC, at The Twins","In 300 AC, at Winterfell"
+1092,Walder Frey,male,,"In 285 AC",
+1093,Walder Frey,male,Rivermen,"In 208 AC",
+1094,Walder Goodbrook,male,,"In 290 AC",
+1095,Walder Haigh,male,,"In 294 AC or 295 AC",
+1096,Walder Rivers,male,Rivermen,,
+1097,Waldon Wynch,male,Ironborn,,
+1098,Wallace Waynwood,male,,"In or between 278 AC and 283 AC",
+1099,Walter Whent,male,Rivermen,,
+1100,Walton Frey,male,,"In or between 250 AC and 267 AC",
+1101,Walton Stark,male,,,
+1102,Waltyr Frey,male,,"In 289 AC",
+1103,Warryn Beesbury,male,,,
+1104,Waymar Royce,male,Valemen,"In 278 AC or 279 AC, at Runestone","In 297 AC, at the Haunted Forest, Beyond the Wall"
+1105,Wendel Frey,male,,"In 286 AC",
+1106,Wendel Manderly,male,,"In or between 254 AC and 263 AC, at White Harbor","In 299 AC, at the Twins"
+1107,Whalen Frey,male,,"In 267 AC or 268 AC",
+1108,Wilbert Osgrey,male,,,
+1109,Will,male,,,"In 297 AC, at Haunted Forest"
+1110,Willam Dustin,male,Northmen,,"In 283 AC, at the Tower of Joy"
+1111,Willam Stark,male,Northmen,"At Winterfell","In 226 AC, at Long Lake"
+1112,Willam Wythers,male,,,
+1113,Willas Tyrell,male,,"In or between 270 AC and 276 AC",
+1114,Willem Darry,male,,,"In 289 AC or 290 AC (roughly), at Braavos"
+1115,Willem Frey,male,,"In 289 AC or 290 AC",
+1116,Willem Lannister,male,,"In or between 285 AC and 287 AC","In 299 AC, at Riverrun"
+1117,Willem Wylde,male,,,
+1118,William Mooton,male,,,
+1119,Willis Fell,male,,,
+1120,Willis Wode,male,,,
+1121,Wyl Waynwood,male,,,"In 196 AC, at the Redgrass Field"
+1122,Wylis Manderly,male,,"In or between 252 AC and 262 AC, at White Harbor",
+1123,Wylla Manderly,female,,"In 284 AC or 285 AC, at White Harbor",
+1124,Wyman Manderly,male,,"In or between 239 AC and 242 AC, at White Harbour",
+1125,Wynafrei Whent,female,,,
+1126,Wynafryd Manderly,female,,"In 280 AC or 281 AC, at White Harbor",
+1127,Wynton Stout,male,Northmen,"In or before 219 AC",
+1128,Ygon Farwynd,male,,,
+1129,Ynys Yronwood,female,Dornish,,
+1130,Yohn Farwynd,male,Ironborn,,
+1131,Yohn Royce,male,Valemen,,
+1132,Yoren,male,Westeros,,"In 299 AC, at Gods Eye"
+1133,Ysilla Royce,female,Valemen,,
+1134,Zachery Frey,male,,"In 287 AC",
+1135,Zhoe Blanetree,female,,,
+1136,Zia Frey,female,,"In 285 AC",
+1137,Monster,male,Free Folk,"In 299 AC, at Craster's Keep",
+1138,Addam,male,,,
+1139,Aethan,male,,,
+1140,Aethelmure,male,,,
+1141,Aggar,male,,,"In 299 AC, at Winterfell"
+1142,Aggo,male,Dothraki,,
+1143,Agrivane,male,,,
+1144,Alan of Rosby,male,,,"In 300 AC, at the haunted forest"
+1145,Alaric of Eysen,male,,,
+1146,Alayaya,female,,"In 282 AC or 283 AC, at King's Landing",
+1147,Albett,male,,,
+1148,Alebelly,male,Northmen,,"In 299 AC, at Winterfell"
+1149,Alequo Adarys,male,Tyroshi,,
+1150,Alesandor Torrent,male,,,
+1151,Alfyn,male,Free Folk,,"In 299 AC"
+1152,Alia of Braavos,female,,,
+1153,All-for-Joffrey,male,,,"In 299 AC, at Riverlands"
+1154,Allaquo,male,Braavosi,,
+1155,Allard Seaworth,male,,,"In 299 AC, at Blackwater Bay"
+1156,Alvyn Sharp,male,Ironborn,,
+1157,Alyce,female,,,
+1158,Alyn,male,,,"In 298 AC, at Riverlands"
+1159,Alyn,male,,,
+1160,Alysanne Bracken,female,,,
+1161,Amabel,female,,,
+1162,Ambrode,male,Ironborn,,
+1163,Andrey Dalt,male,Dornish,,
+1164,Andrik,male,Ironborn,,
+1165,Anguy,male,,"At Dornish Marches",
+1166,Areo Hotah,male,Norvoshi,"In 257 AC or before, at Norvos",
+1167,Argrave the Defiant,male,,"At Nunny",
+1168,Armen,male,,,
+1169,Armistead Vance,male,Andal,,
+1170,Arneld,male,,,
+1171,Arnell,male,,,
+1172,Arron,male,,"At Fair Isle",
+1173,Arryk,male,,,
+1174,Arson,male,Free Folk,,
+1175,Arya Flint,female,Northern mountain clans,,
+1176,Assadora,female,Ibbenese,"At Ibben",
+1177,Aurane Waters,male,Valyrian,"In 277 AC or 278 AC",
+1178,Ayrmidon,male,Valyrian,,
+1179,Azor Ahai,male,Asshai,,
+1180,Azzak,male,Ghiscari,"At Meereen",
+1181,Bael,male,Free Folk,,
+1182,Baelish,male,Braavosi,,
+1183,Balaq,male,Summer Isles,,
+1184,Ballabar,male,,,
+1185,Bandy,male,Northmen,,
+1186,Bannen,male,,"At or near White Harbor","In 299 AC, at Craster's Keep"
+1187,Barbara Bracken,female,,,
+1188,Barra,female,,"In 298 AC, at King's Landing","In 299 AC, at King's Landing"
+1189,Barsena,female,Ghiscari,"In 270 AC (roughly)","In 300 AC, at Meereen"
+1190,Barth,male,,,
+1191,Bearded Ben,male,,,
+1192,Beardless Dick,male,,,
+1193,Becca,female,,,
+1194,Becca,female,,,"At Riverlands"
+1195,Beck,male,,"In 299 AC","At Donnelwood"
+1196,Bedwyck,male,,,
+1197,Belandra,female,,,
+1198,Belaquo,male,Ghiscari,,
+1199,Beldecar,male,,,
+1200,Belis,male,,,"At King's Landing"
+1201,Bella,female,,"In 283 AC, at Stoney Sept",
+1202,Bellegere Otherys,female,Braavosi,,
+1203,Bellegere Otherys,female,Braavosi,,
+1204,Bellonara Otherys,female,Braavosi,,
+1205,Belwas,male,Meereenese,,
+1206,Ben,male,,"In 293 AC or 294 AC, at the riverlands",
+1207,Ben,male,,,
+1208,Ben,male,,,
+1209,Benedict,male,,,
+1210,Bennet,male,,,
+1211,Beqqo,male,Braavosi,,
+1212,Bess Bracken,female,,,
+1213,Bessa,female,,,"At Hag's Mire"
+1214,Bessa,female,Northmen,,
+1215,Bethany,female,Braavosi,,
+1216,Bethany Fair-Fingers,female,,,
+1217,Betharios,female,,,
+1218,Bhakaz zo Loraq,male,Ghiscari,"At Meereen",
+1219,Bharbo,male,Dothraki,,
+1220,Big Belly Ben,male,,,
+1221,Big Boil,male,Free Folk,,
+1222,Biter,male,,,"In 300 AC, at the inn at the crossroads"
+1223,Black Bernarr,male,,,
+1224,Blane,male,,,
+1225,Bloodbeard,male,,,
+1226,Bluetooth,male,Ironborn,,
+1227,Bodger,male,Free Folk,,
+1228,Borcas,male,,,
+1229,Borroq,male,Free Folk,,
+1230,Bors,male,,,
+1231,Boy,male,,"At 284 AC",
+1232,Brea,female,Braavosi,,
+1233,Brella,female,,,
+1234,Brenett,male,,,
+1235,Briar,male,Free Folk,,
+1236,Brogg,male,Free Folk,,
+1237,Brown Bernarr,male,,,"In 299 AC, at Fist of the First Men"
+1238,Brusco,male,Braavosi,,
+1239,Bryan of Oldtown,male,Reach,"At Oldtown",
+1240,Bryen,male,,"In or before 220 AC",
+1241,Brynden Blackwood,male,,,
+1242,Brynden Rivers,male,Valyrian,"In 175 AC, at King's Landing","In 252 AC(presumed), at beyond the Wall"
+1243,Bump,male,Free Folk,,
+1244,Butterbumps,male,,,
+1245,Buu,female,,,
+1246,Byam Flint,male,,,"In 299 AC, at Craster's Keep"
+1247,Byan Votyris,male,Norvoshi,,
+1248,Byren Flowers,male,,,
+1249,Byron,male,,,
+1250,Cadwyl,male,Ironborn,,
+1251,Cadwyn,male,,,
+1252,Cafferen,male,,,"In 282 AC, at Ashford"
+1253,Caleotte,male,,,
+1254,Calon,male,Northmen,,
+1255,Camarron,male,Ghiscari,,"At Meereen"
+1256,Carrot,male,,,
+1257,Cass,female,,,
+1258,Castos,male,,,
+1259,Catelyn Bracken,female,,,
+1260,Cayn,male,Northmen,,"In 298 AC, at King's Landing"
+1261,Cedra,female,,,
+1262,Cellador,male,,,
+1263,Cerrick,male,Ironborn,,
+1264,Cetheres,male,,,
+1265,Chataya,female,Summer Isles,,
+1266,Chella daughter of Cheyk,female,Mountain clans,,
+1267,Chett,male,,"At Hag's Mire","In 299 AC, at Fist of the First Men"
+1268,Cheyk,female,,,
+1269,Chiggen,male,,,"In 298 AC, at Mountains of the Moon"
+1270,Chiswyck,male,,,"In 299 AC, at Harrenhal"
+1271,Clarence Crabb,male,,,
+1272,Clegane,male,,,
+1273,Clement,male,,"In 251 AC or 252 AC",
+1274,Cleon,male,Astapori,,"In 300 AC, at Astapor"
+1275,Cleos Frey,male,,"In or between 258 AC and 275 AC, at Casterly Rock","In 299 AC, at Riverlands"
+1276,Clifford Conklyn,male,,,
+1277,Clydas,male,,"In 240 AC or before",
+1278,Cohollo,male,Dothraki,,"In 298 AC, at Dothraki sea"
+1279,Coldhands,male,,,
+1280,Colemon,male,,,
+1281,Collio Quaynis,male,Tyroshi,,
+1282,Conn son of Coratt,male,,,"In 298 AC, at Green Fork of the river Trident, the Riverlands"
+1283,Conwy,male,,,
+1284,Coratt,male,,,
+1285,Corliss Penny,male,,,
+1286,Corlos,male,First Men,"In Age of Heroes",
+1287,Cosgrove,male,,,
+1288,Cossomo,male,Braavosi,,
+1289,Cotter Pyke,male,Ironborn,,
+1290,Courteny Greenhill,male,,,
+1291,Craghas Drahar,male,Myrish,,"In 108 AC"
+1292,Cragorn,male,,,"In 300 AC"
+1293,Craster,male,Free Folk,,"In 299 AC, at Craster's Keep"
+1294,Crawn son of Calor,male,Mountain clans,,
+1295,Cressen,male,,"In 219 AC or 220 AC","In 299 AC, at Dragonstone"
+1296,Cuger,male,,,
+1297,Cutjack,male,,,
+1298,Daario Naharis,male,Tyroshi,,
+1299,Dacks,male,,,
+1300,Daegon Shepherd,male,Ironborn,,
+1301,Daemon Sand,male,Dornish,"In 275 or 276 AC",
+1302,Daenaera Velaryon,female,Valyrian,"In 127 AC",
+1303,Daenerys Targaryen,female,Valyrian,"In 284 AC, at Dragonstone",
+1304,Daeryssa,female,,,
+1305,Dafyn Vance,male,,,
+1306,Dagmer,male,Ironborn,,
+1307,Dagon Ironmaker,male,Ironborn,,
+1308,Dake,male,,,"At Coldmoat"
+1309,Dake,male,,,
+1310,Dale Seaworth,male,,,"In 299 AC, at Blackwater Rush"
+1311,Dalla,female,Free Folk,,"In 300 AC, at Near Castle Black"
+1312,Dalla,female,,,
+1313,Damon,male,,,
+1314,Dan,male,Free Folk,,
+1315,Dancy,female,,,
+1316,Danny Flint,male,Northmen,,
+1317,Dareon,male,,,"In 300 AC, at Braavos"
+1318,Darla Deddings,female,,,
+1319,Davos Seaworth,male,Westeros,"In 260 AC or before, at King's Landing",
+1320,Del,male,Free Folk,"In 283 AC (roughly)","In 299 AC, at Queenscrown"
+1321,Delp,male,,,"In 299 AC, at Riverrun"
+1322,Denestan,male,,,
+1323,Dennett,male,,,
+1324,Denyo Terys,male,Braavosi,"In 287 AC or 288 AC",
+1325,Dermot,male,,,
+1326,Desmond,male,,,"In 298 AC, at King's Landing"
+1327,Devyn,male,Free Folk,,
+1328,Dhazzar,female,Ghiscari,"At Meereen",
+1329,Dick,male,,,"In 300 AC, at Winterfell"
+1330,Dick Crabb,male,,,"In 300 AC, at the Whispers"
+1331,Dirk,male,,,"In 300 AC, at Beyond the Wall"
+1332,Dobber,male,,,"In 299 AC, at Gods Eye"
+1333,Dolf son of Holger,male,,,
+1334,Donnel Hill,male,,,
+1335,Donnel Waynwood,male,,"In 277 AC or 278 AC",
+1336,Donnis,male,Northmen,,
+1337,Donyse,female,,,
+1338,Dorcas,female,,,
+1339,Dorea Sand,female,Dornish,"In 291 AC or 292 AC",
+1340,Doreah,female,Lysene,"In 278 or 279 AC","In 299 AC, at Red waste"
+1341,Dormund,male,Free Folk,,"In 300 AC, at The Wall"
+1342,Dornish Dilly,male,,,"In 299 AC, at Castle Black"
+1343,Doss,male,Free Folk,,
+1344,Draqaz,male,Ghiscari,"At Meereen",
+1345,Drennan,male,Ironborn,,"In 299 AC, at Winterfell"
+1346,Drogo,male,Dothraki,"In or around 267 AC","In 298 AC, at Dothraki sea"
+1347,Dryn,male,Free Folk,,
+1348,Dudley,male,,,
+1349,Dunaver,male,,,
+1350,Dunsen,male,,,
+1351,Dyah,female,Free Folk,,
+1352,Dywen,male,,,
+1353,Easy,male,,,"In 300 AC, at Castle Black"
+1354,Ebrose,male,,,
+1355,Edric Storm,male,,"In 287 AC",
+1356,Eggon,male,,,
+1357,Egon Emeros,male,Qartheen,,
+1358,Elaena Targaryen,female,Valyrian,"In 150 AC","In or after 220 AC"
+1359,Elder Brother,male,,"In 255 AC or 256 AC",
+1360,Eldiss,male,Ironborn,,
+1361,Elenei,female,,"In Age of Heroes",
+1362,Elia Sand,female,Dornish,"In 285 AC or 286 AC",
+1363,Elron,male,,,
+1364,Elwood,male,,,"In 299 AC, at Riverrun"
+1365,Elza,female,Meereenese,,"In 294 AC, at Meereen"
+1366,Emma,female,,"In 260 AC or before",
+1367,Emmett,male,,,
+1368,Emmond,male,Ironborn,,
+1369,Emrick,male,,"At Fair Isle",
+1370,Endehar,male,,,
+1371,Enger,male,,,
+1372,Erik Ironmaker,male,Ironborn,"In 211 AC or 212 AC",
+1373,Eroeh,female,Lhazareen,,"In 298 AC, at Dothraki Sea"
+1374,Erreck,male,,,
+1375,Erreg,male,Andal,,
+1376,Errok,male,Free Folk,,
+1377,Erryk,male,,,
+1378,Esgred,female,,,
+1379,Eustace,male,,,
+1380,Eustace Brune,male,,,
+1381,Ezzara,female,Ghiscari,"At Meereen",
+1382,Falia Flowers,female,,"In either 281 AC, 282 AC or 283 AC",
+1383,Farlen,male,,,"In 299 AC, at Winterfell"
+1384,Fern,female,,,
+1385,Ferny,female,Free Folk,,
+1386,Ferrego Antaryon,male,Braavosi,,
+1387,Ferret,male,,,
+1388,Florys the Fox,female,,,
+1389,Fogo,male,Dothraki,,"In 298 AC, at Dothraki sea"
+1390,Fornio,male,,,
+1391,Fralegg,male,Ironborn,,
+1392,Franklyn Frey,male,,,
+1393,Frenken,male,,,
+1394,Frenya,female,Free Folk,,"In 300 AC, at Winterfell"
+1395,Frynne,female,,,
+1396,Gage,male,,,
+1397,Galazza Galare,female,Ghiscari,"In 217 AC (roughly), at Meereen",
+1398,Galladon of Morne,male,,,
+1399,Gallard,male,,,
+1400,Galt,male,Mountain clans,,
+1401,Galyeon of Cuy,male,,,
+1402,Gareth,male,,,
+1403,Gareth Clifton,male,,,
+1404,Garigus,male,,,"At King's Landing"
+1405,Garin,male,Dornish,,
+1406,Garin,male,Rhoynar,,"At Chroyane"
+1407,Gariss,male,,,
+1408,Garizon,male,,,
+1409,Garrett Flowers,male,,,
+1410,Garse Flowers,male,,,
+1411,Garth Greenhand,male,First Men,,
+1412,Garth of Greenaway,male,,"At Greenaway","In 300 AC, at Beyond the Wall"
+1413,Garth of Oldtown,male,,,"In 299 AC, at Craster's Keep"
+1414,Gascoyne,male,,,
+1415,Gavin,male,Free Folk,,
+1416,Gelmarr,male,,,"In 299 AC, at Winterfell"
+1417,Gendel,male,Free Folk,,
+1418,Gendry,male,,"In 284 AC, at King's Landing",
+1419,Gerardys,male,,,"In 130 AC"
+1420,Gergen,male,,,
+1421,Gerold Dayne,male,Dornish,"In or between 270 AC and 274 AC",
+1422,Gerren,male,,,
+1423,Gerrick,male,Free folk,,
+1424,Gerris Drinkwater,male,Dornish,"In 275 AC",
+1425,Ghael,male,Astapori,,
+1426,Ghost of High Heart,female,,,
+1427,Gilly,female,Free Folk,"In either 282 AC, 283 AC or 284 AC, at Craster's Keep",
+1428,Glendon Hewett,male,,,
+1429,Goady,male,,,
+1430,Godwyn,male,,,
+1431,Goghor,male,Ghiscari,,
+1432,Goodwin,male,,,
+1433,Gorghan of Old Ghis,male,Ghiscari,,
+1434,Gormon Tyrell,male,,,
+1435,Gorne,male,Free Folk,,
+1436,Grazdan,male,Astapori,,"In 299 AC, at Astapor"
+1437,Grazdan mo Ullhor,male,Astapori,,"In 299 AC, at Astapor"
+1438,Grazdan the Great,male,Ghiscari,,
+1439,Grazdan zo Galare,male,Meereenese,,
+1440,Grazdar zo Galare,male,Ghiscari,"At Meereen",
+1441,Great Walrus,male,Free Folk,,
+1442,Gregor Clegane,male,,"In 265 AC or 266 AC","In 300 AC"
+1443,Gretchel,female,,,
+1444,Grey King,male,Ironborn,,", at watery halls of the Drowned God (alleged)"
+1445,Grey Worm,male,,,
+1446,Griffin King,male,First Men,,
+1447,Grigg,male,Free Folk,,
+1448,Grisel,female,,,
+1449,Grisella,female,Free Folk,,
+1450,Groleo,male,Pentoshi,,"In 300 AC, at Meereen"
+1451,Grubbs,male,,,"In 300 AC, at Beyond the Wall"
+1452,Grunt,male,Northmen,,
+1453,Gueren,male,,,
+1454,Gulian,male,,,
+1455,Gunthor son of Gurn,male,,,
+1456,Gurn,male,Mountain clans,,
+1457,Guyne,male,,,
+1458,Gyldayn,male,,,
+1459,Gyleno Dothare,male,Braavosi,,
+1460,Gyloro Dothare,male,Braavosi,,
+1461,Gynir,male,,,"In 299 AC, at Winterfell"
+1462,Haegon Blackfyre,male,Valyrian,"In or between 189 AC and 193 AC","In 219 AC"
+1463,Haggo,male,Dothraki,,"In 298 AC, at Dothraki sea"
+1464,Haggon,male,Free Folk,,
+1465,Hairy Hal,male,,,"In 300 AC, at Beyond the Wall"
+1466,Hake,male,,,"In 299 AC, at Fist of the First Men"
+1467,Hal,male,,,"In 299 AC"
+1468,Halder,male,,"In 281 AC or 282 AC",
+1469,Haldon,male,,,
+1470,Hali,female,Free Folk,,"In 298 AC, at the Wolfswood"
+1471,Hallyne,male,,,
+1472,Hamish,male,,,"In 300 AC, at King's Landing"
+1473,Harbert,male,,,
+1474,Hareth,male,,,
+1475,Hareth,male,,,
+1476,Harghaz,male,Ghiscari,,"In 300 AC, at Meereen"
+1477,Harle,male,Free Folk,,
+1478,Harle,male,Free Folk,,
+1479,Harma,female,Free Folk,,"In 300 AC, at The Wall"
+1480,Harmund Sharp,male,Ironborn,,
+1481,Harmune,male,,,
+1482,Harodon,male,,,
+1483,Harra,female,,,"In 299 AC, at Harrenhal"
+1484,Harrag Sharp,male,Ironborn,,"In 299 AC, at Winterfell"
+1485,Harren Half-Hoare,male,Ironborn,,
+1486,Harry Sawyer,male,,,
+1487,Harsley,male,,,"In 299 AC, at Pennytree"
+1488,Harwin,male,Northmen,"In 271 AC or later",
+1489,Hayhead,male,Northmen,,
+1490,Hazrak zo Loraq,male,Ghiscari,,
+1491,Hazzea,female,Ghiscari,"In 295 AC or 296 AC","In 300 AC, at plains outside Meereen"
+1492,Heke,male,,,"In 299 AC, at the North"
+1493,Helliweg,male,,,
+1494,Helly,female,,,
+1495,Helya,female,,,
+1496,Hendry Bracken,male,,,"In 299 AC, at Stone Hedge"
+1497,Henk,male,Free Folk,,
+1498,Henly,male,,,
+1499,Heward,male,Northmen,,"In 298 AC, at King's Landing"
+1500,Hibald,male,,,
+1501,Hizdahr zo Loraq,male,Ghiscari,,
+1502,Hobb,male,,,
+1503,Hod,male,,,
+1504,Hoke,male,,,
+1505,Holger,male,,,
+1506,Holly,female,Free Folk,"In 283 AC, 284 AC or 285 AC","In 300 AC, at Winterfell"
+1507,Hop-Robin,male,,,
+1508,Hot Pie,male,,,
+1509,Zollo,male,Dothraki,,
+1510,Zharaq zo Loraq,male,Ghiscari,,
+1511,Criston Cole,male,Stormlands,"In 82 AC, at Blackhaven","In 130 AC, at the Butcher's Ball south of the Gods Eye"
+1512,Howd,male,Free Folk,,
+1513,Hugh Hammer,male,,,"In 130 AC, at Tumbleton"
+1514,Hugor of the Hill,male,Andal,,
+1515,Hullen,male,Northmen,,"In 298 AC, at King's Landing"
+1516,Humfrey Clifton,male,,,
+1517,Hunnimore,male,,,
+1518,Husband,male,,,
+1519,Iggo,male,Dothraki,,"In 299 AC, at Riverlands"
+1520,Illyrio Mopatis,male,Pentoshi,"At Pentos",
+1521,Illyrio's first wife,female,Pentoshi,"At Pentos","At Pentos"
+1522,Ironbelly,male,,,
+1523,Irri,female,Dothraki,"In 283 AC or 284 AC",
+1524,Ithoke,male,Ghiscari,,
+1525,Jack,male,,,
+1526,Jacks,male,,,
+1527,Jaehaera Targaryen,female,Valyrian,"In 123 AC","In 133 AC, at King's Landing"
+1528,Jaehaerys Targaryen,male,,"In 123 AC","In 129 AC, at the Tower of the Hand at King's Landing"
+1529,Jafer Flowers,male,,,"In 298 AC, at the Haunted Forest"
+1530,Jaggot,male,,,
+1531,Jalabhar Xho,male,Summer Isles,,
+1532,Jaqen H'ghar,male,,,
+1533,Jarl,male,Free Folk,,"In 299 AC, at the Wall"
+1534,Jate,male,,,"In 300 AC, at Riverlands"
+1535,Jate Blackberry,male,,,
+1536,Jayde,female,,,
+1537,Jayne Bracken,female,,,
+1538,Jenny,female,,,"At King's Landing"
+1539,Jenny of Oldstones,female,,,
+1540,Jeren,male,,,
+1541,Jeyne,female,Braavosi,,
+1542,Jeyne,female,,,
+1543,Jeyne Heddle,female,,"In 281 AC or 282 AC",
+1544,Jeyne Rivers,female,,,
+1545,Jeyne Waters,female,Westeros,"In or between 171 AC and 176 AC",
+1546,Jezhene,female,Ghiscari,"At Meereen",
+1547,Jhaqo,male,Dothraki,,
+1548,Jhiqui,female,Dothraki,"In 284 AC",
+1549,Jhogo,male,Dothraki,"In or between 281 AC and 283 AC, at Dothraki sea",
+1550,Jodge,male,,,
+1551,Jommo,male,Dothraki,,
+1552,Jommy,male,,,
+1553,Jon Cupps,male,,,
+1554,Jon Heddle,male,,,
+1555,Jon Penny,male,,,
+1556,Jon Pox,male,,,"At Stepstones"
+1557,Jon Vance,male,,,
+1558,Jon Waters,male,,"In or between 171 AC and 176 AC",
+1559,Jonos Bracken,male,,"At Stone Hedge",
+1560,Jorah Mormont,male,Northmen,"In 254 AC (roughly)",
+1561,Joramun,male,Free Folk,,
+1562,Jorgen,male,,,
+1563,Jorquen,male,,,
+1564,Joseran,male,,,
+1565,Joseth,male,,,
+1566,Joss,male,,,
+1567,Joss,male,Braavosi,,
+1568,Joss Stilwood,male,,,
+1569,Joth Quickbow,male,,,"At riverlands"
+1570,Joy Hill,female,,"In 288 AC",
+1571,Jurne,male,,,
+1572,Jyana,female,Crannogmen,,
+1573,Jyck,male,,,"In 298 AC, at Mountains of the Moon"
+1574,Jynessa Blackmont,female,Dornish,,
+1575,Jyzene,female,,,
+1576,Kaeth,male,,"In 175 AC, 176 AC or 177 AC","In 257 AC or 258 AC, at King's Landing"
+1577,Karl,male,,,"In 300 AC, at the haunted forest"
+1578,Kedge Whiteye,male,,"In or between 251 AC and 260 AC",
+1579,Kedry,male,,,"In 300 AC, at off the coast of the Disputed Lands"
+1580,Kegs,male,,,
+1581,Kella,female,,,
+1582,Kemmett Pyke,male,Ironborn,,
+1583,Kenned,male,Ironborn,,"In 299 AC, at Winterfell"
+1584,Kennos of Kayce,male,,,
+1585,Ketter,male,,,
+1586,Kezmya,female,Ghiscari,"At Meereen",
+1587,Khorane Sathmantes,male,Lysene,,
+1588,Khrazz,male,Ghiscari,"In 277 AC (roughly)","In 300 AC, at Meereen"
+1589,Kiera of Tyrosh,female,Tyroshi,,
+1590,Kindly Man,male,Braavosi,,
+1591,Kirby Pimm,male,,,
+1592,Kojja Mo,female,Summer Isles,,
+1593,Koss,male,,,"In 299 AC, at Gods Eye"
+1594,Kraznys mo Nakloz,male,Astapori,,"In 299 AC, at Astapor"
+1595,Kromm,male,Ironborn,"At Iron Islands","In 299 AC, at Winterfell"
+1596,Kurleket,male,,,"In 298 AC, at Mountains of the Moon"
+1597,Kurz,male,,,"In 299 AC, at Riverlands"
+1598,Kyle,male,,,
+1599,Kyle,male,,,"In 299 AC, at the burning septry"
+1600,Kyleg,male,Free Folk,,
+1601,Kym,male,,,
+1602,Kyra,female,,"In 280 AC or 281 AC, at Winter Town","In 300 AC, at Forests near the Dreadfort"
+1603,Lady of the Leaves,female,,,
+1604,Lanna,female,,"In 285 AC or 286 AC",
+1605,Lanna,female,Braavosi,"In 286 AC",
+1606,Lark,male,Sistermen,,"In 299 AC, at the haunted forest"
+1607,Larra Blackmont,female,Dornish,,
+1608,Larra Rogare,female,Lysene,"In 115 AC, at Lys","In 145 AC, at Lys"
+1609,Larraq,male,Ghiscari,,
+1610,Layna,female,,"In or between 279 AC and 285 AC",
+1611,Leathers,male,Free Folk,"In 259 AC or before",
+1612,Left Hand Lew,male,,,
+1613,Lem,male,,,
+1614,Lem,male,,"In or around 161 AC",
+1615,Lenn,male,Free Folk,,
+1616,Lennocks,male,,,
+1617,Lenyl,male,Free Folk,,
+1618,Leonette Fossoway,female,,,
+1619,Lester,male,,,
+1620,Lew,male,Northmen,,
+1621,Lew,male,,,
+1622,Lewis Lanster,male,,"At Westeros",
+1623,Lewys,male,,,
+1624,Lharys,male,,,"In 298 AC, at Mountains of the Moon"
+1625,Lister,male,,,
+1626,Lommy,male,,,"In 299 AC, at Riverlands"
+1627,Lomys,male,,,
+1628,Lorcas,male,,"In 241 AC or before",
+1629,Lord Belgrave,male,,,
+1630,Lord of Bones,male,Free Folk,,"In 300 AC, at Castle Black"
+1631,Loren I Lannister,male,,,
+1632,Loreza Sand,female,Dornish,"In 293 AC",
+1633,Lorimer,male,,,"In 298 AC, at Riverlands"
+1634,Lormelle,male,,,
+1635,Lorren,male,,,"In 299 AC, at Winterfell"
+1636,Lothar,male,,,
+1637,Lotho Lornel,male,Braavosi,,
+1638,Lucan,male,,,"In 299 AC, at Harrenhal"
+1639,Lucantine Woodwright,male,,,
+1640,Lucas Blackwood,male,,,"In 299 AC, at the Twins"
+1641,Lucas Nayland,male,,,
+1642,Lucifer Hardy,male,,,
+1643,Luco Prestayn,male,Braavosi,,
+1644,Lucos,male,,,
+1645,Luke,male,,,
+1646,Luke,male,,"At Longtown",
+1647,Lum,male,,,
+1648,Luton,male,Northmen,,"In 300 AC, at Winterfell"
+1649,Luwin,male,Westeros,,"In 299 AC, at Winterfell"
+1650,Lyanna Stark,female,Northmen,"In 266 AC or 267 AC","In 283 AC, at Tower of Joy"
+1651,Lync,male,,,
+1652,Lyonel,male,,,
+1653,Lysono Maar,male,Lysene,"At Lys",
+1654,Mad Huntsman,male,,,
+1655,Maddy,female,,,
+1656,Maerie,female,,,"At Riverlands"
+1657,Maerie,female,,,"In 299 AC, at Riverlands"
+1658,Mag Mar Tun Doh Weg,male,,"At Beyond the Wall","In 300 AC, at Castle Black"
+1659,Maggy,female,,,
+1660,Mago,male,Dothraki,,
+1661,Malcolm,male,,,
+1662,Malleon,male,,,
+1663,Malliard,male,,,
+1664,Mallor,male,,,
+1665,Mallor,male,,,
+1666,Mance Rayder,male,Free folk,", at Beyond the Wall",
+1667,Marei,female,,"In 280 AC or before",
+1668,Marghaz zo Loraq,male,Ghiscari,"At Meereen",
+1669,Marianne Vance,female,,"In or between 262 AC and 293 AC",
+1670,Marillion,male,,"In 279 AC or 280 AC","In 300 AC, at the Eyrie"
+1671,Maris,female,Free folk,,
+1672,Maris the Maid,female,,,
+1673,Marq Grafton,male,,,"In 282 AC, at Gulltown"
+1674,Martyn Rivers,male,,,
+1675,Marwyn,male,,,
+1676,Marya Seaworth,female,,,
+1677,Masha Heddle,female,,,"In 298 AC, at the Riverlands"
+1678,Maslyn,male,,,"In 299 AC, at Fist of the First Men"
+1679,Mathos Mallarawan,male,Qartheen,,
+1680,Matrice,female,,,
+1681,Matt,male,,,"At the Riverlands"
+1682,Matthar,male,,,
+1683,Matthos Seaworth,male,,,"In 299 AC, at Blackwater Rush"
+1684,Mawney,male,,,"In 300 AC, at Beyond the Wall"
+1685,Maynard,male,,,
+1686,Mazdhan zo Loraq,male,Ghiscari,,
+1687,Mebble,male,,,
+1688,Medwick Tyrell,male,,,
+1689,Meg,female,,,
+1690,Megette,female,,,"In 159 AC"
+1691,Meha,female,Free Folk,,
+1692,Meizo Mahr,male,,,
+1693,Mela,female,,,
+1694,Melaquin,male,,,
+1695,Meliana,female,,,
+1696,Mellara Rivers,female,,,
+1697,Mellario,female,Norvoshi,"In or between 248 AC and 263 AC",
+1698,Mellei,female,,,
+1699,Mellos,male,,,
+1700,Melly,female,,,
+1701,Melwys Rivers,male,,,
+1702,Meralyn,male,Braavosi,,
+1703,Mero,male,Braavosi,,"In 299 AC, at Meereen"
+1704,Merrit,male,,,
+1705,Mezzara,female,Ghiscari,"At Meereen",
+1706,Mikken,male,Northmen,,"In 299 AC, at Winterfell"
+1707,Miklaz,male,Ghiscari,"At Meereen",
+1708,Mirri Maz Duur,female,Lhazareen,"In 257 AC, 258 AC or 259 AC, at Essos. Either in Lhazar, or in an unnamed Lhazareen settlement of the Dothraki sea.","In 299 AC, at the red waste"
+1709,Missandei,female,Naathi,"In 288 AC or 289 AC, at Naath",
+1710,Mohor,male,,,"In 298 AC, at Mountains of the Moon"
+1711,Mollander,male,,,
+1712,Mollos,male,,,
+1713,Moon Boy,male,,,
+1714,Moonshadow,female,,,
+1715,Mord,male,,,
+1716,Moredo Prestayn,male,Braavosi,,
+1717,Moreo Tumitis,male,,"In 268 AC or before",
+1718,Morgan Martell,male,Andal,,
+1719,Morgarth,male,,,
+1720,Morna White Mask,female,Free Folk,,
+1721,Moro,male,Dothraki,,
+1722,Morosh the Myrman,male,Myrish,,
+1723,Morra,female,,,
+1724,Morrec,male,,,"In 298 AC, at Mountains of the Moon"
+1725,Mors Martell,male,Dornish,,
+1726,Mortimer Boggs,male,,,
+1727,Morton Waynwood,male,,,
+1728,Mother Mole,female,Free Folk,,
+1729,Mudge,male,,,
+1730,Mudge,male,,,"At Donnelwood"
+1731,Mudge,male,,,
+1732,Mullin,male,,,
+1733,Mully,male,,,
+1734,Munciter,male,,,
+1735,Munda,female,Free Folk,,
+1736,Murch,male,,,
+1737,Murch,male,Northmen,,
+1738,Murenmure,male,,,
+1739,Mushroom,male,,,"In or after 136AC"
+1740,Muttering Bill,male,,,"In 300 AC, at the haunted forest"
+1741,Mya Stone,female,,"In 279 AC or 280 AC, at The Vale of Arryn",
+1742,Mycah,male,Westeros,"In 285 AC","In 298 AC, at Riverlands, near the Ruby Ford."
+1743,Myles,male,,,
+1744,Myles,male,,,"In 299 AC, at Riverrun"
+1745,Myrtle,female,Free Folk,,"In 300 AC, at Winterfell"
+1746,Mysaria,female,Lysene,"At Lys",
+1747,Nage,male,,,
+1748,Nail,male,,,
+1749,Nan,female,,,
+1750,Narbert,male,,,
+1751,Narbo,male,Braavosi,,
+1752,Ned,male,,,
+1753,Ned Woods,male,Northmen,,
+1754,Nella,female,Free Folk,,
+1755,Nestor Royce,male,,,
+1756,Nettles,female,,"In 113 AC",
+1757,Nissa Nissa,female,,,
+1758,Noho Dimittis,male,Braavosi,,
+1759,Nolla,female,,,"At Riverlands"
+1760,Norjen,male,Ironborn,,
+1761,Normund Tyrell,male,,,
+1762,Norne Goodbrother,male,Ironborn,,
+1763,Norren,male,,,
+1764,Notch,male,,,
+1765,Nute,male,Ironborn,,
+1766,Nymeria Sand,female,Dornish,"In 274 AC or 275 AC",
+1767,Nymos,male,,,
+1768,Obara Sand,female,Dornish,"In 271 AC or 272 AC, at Oldtown",
+1769,Obella Sand,female,Dornish,"In 287 AC or 288 AC",
+1770,Oberyn Nymeros Martell,male,Dornish,"In 257 AC or 258 AC","In 300 AC, at King's Landing"
+1771,Ocley,male,,,
+1772,Ogo,male,Dothraki,,"In 298 AC, at Dothraki sea"
+1773,Old Grey Gull,female,Ironborn,,
+1774,Old Henly,female,,"In or between 220 AC and 280 AC","In 299 AC, at Castle Black"
+1775,Old Tattersalt,female,,,
+1776,Ollo,male,Tyroshi,,"In 300 AC, at the haunted forest"
+1777,Omer Blackberry,male,,,
+1778,Omer Florent,male,,,
+1779,Orbelo,male,Braavosi,,
+1780,Ordello,male,Pentoshi,,"In 299 AC, at Pentos"
+1781,Orell,male,Free Folk,,"In 299 AC, at Skirling Pass"
+1782,Orland of Oldtown,male,,,
+1783,Ormond,male,,,"In 299 AC, at Pennytree"
+1784,Oro Tendyris,male,Braavosi,,
+1785,Orphan Oss,male,,,"In 300 AC, at the haunted forest"
+1786,Orwyle,male,,,
+1787,Osha,female,Free Folk,,
+1788,Ossy,male,,,
+1789,Oswyn,male,,,
+1790,Othor,male,,,"In 298 AC, at the haunted forest"
+1791,Otter Gimpknee,male,,,
+1792,Ottomore,male,,,
+1793,Owen,male,,,"At Stepstones"
+1794,Owen,male,,,
+1795,Oznak zo Pahl,male,Meereenese,,"In 299 AC, at Meereen"
+1796,Palla,female,Northmen,,
+1797,Patchface,male,,,
+1798,Pate,male,,"In 291 AC or 292 AC",
+1799,Pate,male,,,"In 299 AC, at the riverlands"
+1800,Pate,male,,,"At Riverlands"
+1801,Pate,male,,,"In 209 AC, at Little Dosk"
+1802,Pate,male,,,
+1803,Pate,male,,"In or between 161 AC and 181 AC",
+1804,Pate of Lancewood,male,,,"At the Riverlands"
+1805,Pate of Mory,male,,,"At the Riverlands"
+1806,Pate of Shermer's Grove,male,,,"At the Riverlands"
+1807,Patrek Vance,male,,"In or between 264 AC and 294 AC",
+1808,Pello of Tyrosh,male,Tyroshi,,
+1809,Penny,female,,"In 281 AC, 282 AC or 283 AC",
+1810,Perros Blackmont,male,Dornish,,
+1811,Pia,female,,"At Harrenhal",
+1812,Plummer,male,,,
+1813,Pollitor,male,,,
+1814,Polliver,male,,,"In 300 AC, at Inn at the Crossroads"
+1815,Pono,male,Dothraki,,
+1816,Porther,male,Northmen,,
+1817,Portifer Woodwright,male,,,
+1818,Poul Pemford,male,,,"In 299 AC, at Riverrun"
+1819,Poxy Tym,male,Northmen,,"In 299 AC, at Winterfell"
+1820,Praed,male,,,"In 299 AC, at the Crownlands"
+1821,Prendahl na Ghezn,male,Ghiscari,,"In 299 AC, at Yunkai"
+1822,Puckens,male,,,
+1823,Pudding,male,,,
+1824,Puddingfoot,male,,,
+1825,Pyat Pree,male,,,
+1826,Pycelle,male,,"In 216 AC","In 300 AC, at the Red Keep, King's Landing"
+1827,Pyg,male,,,"In 300 AC, at Whispers"
+1828,Pylos,male,,"In 273 AC or 274 AC",
+1829,Qalen,male,,,"In before 299"
+1830,Qarl,male,Ironborn,,
+1831,Qarl,male,Ironborn,,
+1832,Qarl,male,Ironborn,,
+1833,Qarl Correy,male,,,
+1834,Qarl Shepherd,male,Ironborn,,
+1835,Qarro Volentin,male,Braavosi,,
+1836,Qezza,female,Ghiscari,"At Meereen",
+1837,Qos,male,,,
+1838,Qotho,male,Dothraki,,"In 298 AC, at Dothraki sea"
+1839,Quaithe,female,Asshai,,
+1840,Quaro,male,Dothraki,,"In 298 AC, at Dothraki sea"
+1841,Quellon Humble,male,Ironborn,,
+1842,Quence,male,Braavosi,,
+1843,Quent,male,Northmen,,
+1844,Quhuru Mo,male,Summer Isles,,
+1845,Quill,male,Braavosi,,
+1846,Quincy Cox,male,,,
+1847,Quort,male,,"In or between 285 AC and 287 AC","In +/-299 AC, at Castle Black"
+1848,Qyburn,male,,"In 217AC or after",
+1849,Qyle,male,,,"In 299 AC, at Gods Eye"
+1850,Racallio Ryndoon,male,Tyroshi,,
+1851,Rafe,male,,,
+1852,Rafford,male,,,"In 300 AC, at Braavos"
+1853,Ragnor Pyke,male,Ironborn,,
+1854,Ragwyle,male,Free folk,,
+1855,Rainbow Knight,male,,,
+1856,Rakharo,male,Dothraki,,
+1857,Ralf,male,Ironborn,,
+1858,Ralf,male,Ironborn,,
+1859,Ralf the Limper,male,Ironborn,,
+1860,Randa,female,,,"At the Riverlands"
+1861,Rast,male,,,"In +/- 299 AC, at Castle Black"
+1862,Rat Cook,male,,,
+1863,Rawney,male,,,
+1864,Raymar Royce,male,,,
+1865,Raymond Nayland,male,,,
+1866,Raymun Redbeard,male,Free Folk,,"In 226 AC, at Long Lake"
+1867,Red Lamb,male,Lhazareen,,
+1868,Red Oarsman,male,Ironborn,,
+1869,Redtusk,male,,,
+1870,Rennifer Longwaters,male,,,
+1871,Reysen,male,,,
+1872,Reznak mo Reznak,male,Ghiscari,"At Meereen",
+1873,Rhaego,male,,"In 298 AC, at Dothraki Sea","In 298 AC or 299 AC, at Lhazar"
+1874,Rhaenys Targaryen,female,Valyrian,"In 25 BC or 26 BC, at Dragonstone","In 10 AC, at Hellholt"
+1875,Rhogoro,male,Dothraki,,
+1876,Ricasso,male,,,
+1877,Richard Farrow,male,,,"In 299 AC, at the Battle of the Blackwater"
+1878,Rigney,male,,,
+1879,Rob,male,,,
+1880,Robb Stark,male,,"283 AC, at Riverrun","299 AC, at the Twins"
+1881,Robin,male,,,"At Stepstones"
+1882,Robin Flint,male,,,"In 299 AC, at the Twins"
+1883,Robin Potter,male,,,
+1884,Rodrik Arryn,male,,,
+1885,Rodrik Flint,male,,,
+1886,Rodrik Freeborn,male,Ironborn,,
+1887,Roger Hogg,male,,,
+1888,Roger Ryswell,male,Northmen,,
+1889,Roger of Pennytree,male,,"At Pennytree","In 194 AC, at the Redgrass Field"
+1890,Roggo,male,Braavosi,,
+1891,Rohanne Webber,female,,"In 185 AC or 186 AC",
+1892,Rolder,male,,,
+1893,Rolfe,male,,,"In 299 AC, at Winterfell"
+1894,Rolfe,male,,,
+1895,Rolland Longthorpe,male,,,
+1896,Rolley of Sisterton,male,Sistermen,"At Sisterton","In 299 AC, at Craster's Keep"
+1897,Rolly Duckfield,male,,"At Bitterbridge",
+1898,Romny Weaver,male,Ironborn,,
+1899,Ronald Storm,male,,,
+1900,Ronel Rivers,male,,,
+1901,Roone,male,,"In 286 AC",
+1902,Roone,male,,,
+1903,Rorge,male,,,"In 300 AC, at the inn at the crossroads"
+1904,Roro Uhoris,male,Tyroshi,,"At Eastwatch-by-the-sea"
+1905,Rose of Red Lake,male,,,
+1906,Rosey,female,,"In 284 AC or 285 AC, at Oldtown",
+1907,Rowan,male,Free folk,,"In 300 AC, at Winterfell"
+1908,Rowan Gold-Tree,male,,,
+1909,Rudge,male,,,
+1910,Rufus Leek,male,,,
+1911,Rugen,male,,,
+1912,Runciter,male,,,"In 112 AC"
+1913,Rus,male,Ironborn,,
+1914,Rusty Flowers,male,,,
+1915,Ryam,male,,,
+1916,Ryger Rivers,male,,,
+1917,Ryk,male,Free Folk,,
+1918,Ryles,male,,,"In +/- 299 AC, at Beyond the Wall"
+1919,Rymolf,male,Ironborn,,
+1920,Rymund,male,,,
+1921,Ryn,male,,,"At the Riverlands"
+1922,Ryon Allyrion,male,Dornish,,
+1923,S'vrone,female,Braavosi,,
+1924,Saathos,male,,,
+1925,Salladhor Saan,male,Lysene,,
+1926,Sallor,male,Qartheen,,"In +/- 299 AC, at Yunkai"
+1927,Salloreon,male,,,
+1928,Sam Stoops,male,,,
+1929,Samwell Stone,male,,,
+1930,Sarella Sand,female,Dornish,"In 280 AC or 281 AC",
+1931,Satin,male,,"In 280 AC or 281 AC, at Oldtown",
+1932,Sawwood,male,,,
+1933,Scarb,male,,,"At Meereen"
+1934,Sedgekins,male,,,
+1935,Selyse Florent,female,,,
+1936,Senelle,female,,,"In 300 AC"
+1937,Serra,female,Lysene,,"At Pentos"
+1938,Shae,female,,"In 280 AC or 281 AC","In 300 AC, at King's Landing"
+1939,Shagga son of Dolf,male,Mountain clans,,
+1940,Shagwell,male,,,"In 300 AC, at near the Whispers"
+1941,Sharna,female,,,
+1942,Shella,female,,,
+1943,Sherrit,male,,,
+1944,Shiera Seastar,female,Westeros,"In or between 178 AC and 184 AC",
+1945,Shortear,male,,,
+1946,Shyra,female,Northmen,,
+1947,Sigrin,male,Ironborn,,
+1948,Skahaz mo Kandaq,male,Ghiscari,"At Meereen",
+1949,Skinner,male,,,
+1950,Skittrick,male,Northmen,,
+1951,Sky Blue Su,female,,,
+1952,Skyte,male,Ironborn,,
+1953,Sloey,female,Braavosi,,
+1954,Small Paul,male,,,"In 299 AC, at Beyond the Wall"
+1955,Softfoot,male,,,"In 299 AC, at Beyond the Wall"
+1956,Soren,male,Free Folk,,
+1957,Spare Boot,male,,,
+1958,Spotted Cat,male,Ghiscari,,
+1959,Spotted Pate,male,,,"In 299 AC, at Castle Black"
+1960,Squint,male,,,"In 299 AC, at Winterfell"
+1961,Squirrel,female,Free Folk,"At Beyond the Wall","In 300 AC, at Winterfell"
+1962,Stalwart Shield,male,,,"In 300 AC, at Meereen"
+1963,Stannis Baratheon,male,,"264 AC",
+1964,Stannis Seaworth,male,,"In 289 AC or 290 AC",
+1965,Steeelskin,male,Ghiscari,,
+1966,Steely Pate,male,,,
+1967,Steffon Seaworth,male,,"In 293 AC",
+1968,Stiv,male,Free Folk,,"In 298 AC, at the Wolfswood"
+1969,Stone Thumbs,male,Free Folk,,"In 299 AC, at Castle Black"
+1970,Stonehand,male,Ironborn,,
+1971,Stygg,male,,,
+1972,Styr,male,Free Folk,,"In 300 AC, at Castle Black"
+1973,Sybassion,male,Qartheen,,
+1974,Sylas,male,,,"In 294 AC"
+1975,Sylas Flatnose,male,Ironborn,,
+1976,Symeon Star-Eyes,male,,,
+1977,Symon,male,,,"In 299 AC, at King's Landing"
+1978,Symon Stripeback,male,,,
+1979,Syrio Forel,male,Braavosi,"At Braavos","In 298 AC, at King's Landing"
+1980,Tagganaro,male,Braavosi,,
+1981,Tal Toraq,male,Summer Isles,,
+1982,Talea,female,Braavosi,,
+1983,Tanselle,female,Dornish,,
+1984,Tansy,female,,,
+1985,Tansy,female,,,
+1986,Tarber,male,,,
+1987,Tarle,male,Ironborn,,
+1988,Temmo,male,Dothraki,"In Century of Blood","In Century of Blood, at the gates of Qohor"
+1989,Teora Kyndall,female,,,"In 212 AC"
+1990,Ternesio Terys,male,Braavosi,,
+1991,Terro,male,Braavosi,,
+1992,The Nightingale,female,,,
+1993,The Smiling Knight,female,,,
+1994,The Tickler,female,,,"In 300 AC, at Inn at the Crossroads"
+1995,Zekko,male,Dothraki,,
+1996,The Weeper,female,Free Folk,,
+1997,Theo Frey,male,,,
+1998,Theobald,male,,,
+1999,Theomore Lannister,male,,"At Lannisport",
+2000,Thistle,female,Free Folk,,"In 300 AC, at Beyond the Wall"
+2001,Thormor Ironmaker,male,Ironborn,,
+2002,Thoros of Myr,male,Myrish,,
+2003,Three Toes,male,,,
+2004,Three-Tooth,female,Ironborn,,
+2005,Tim Stone,male,,,
+2006,Tim Tangletongue,male,,,
+2007,Timeon,male,Dornish,"At Dorne","In 300 AC, at Whispers"
+2008,Timett,male,Mountain clans,,
+2009,Timett son of Timett,male,Mountain clans,"In or between 278 AC and 282 AC",
+2010,Timon,male,,,
+2011,Timoth,male,,,
+2012,Tobbot,male,,,
+2013,Tobho Mott,male,Qohor,,
+2014,Todder,male,,,
+2015,Todric,male,,,"In 299 AC, at the Stony Shore"
+2016,Toefinger,male,Free Folk,,
+2017,Togg Joth,male,Ibbenese,,
+2018,Tom of Sevenstreams,male,,"In or between 240 AC and 249 AC",
+2019,TomToo,male,Northmen,,
+2020,Tomard,male,Northmen,"In or between 249 AC and 253 AC","In 298 AC, at King's Landing"
+2021,Tommard Heddle,male,,,"In 211 AC, at Whitewalls"
+2022,Toregg,male,Free Folk,,
+2023,Torghen Flint,male,Northern mountain clans,,
+2024,Tormund,male,Free Folk,,
+2025,Torrek,male,,,
+2026,Torwold,male,Ironborn,,
+2027,Torwynd,male,Free Folk,,"In 300 AC"
+2028,Tothmure,male,,,"In 299 AC, at Harrenhal"
+2029,Tregar,male,,,"In 298 AC, at King's Landing"
+2030,Tregar Ormollen,male,Lysene,,
+2031,Tristimun,male,,,
+2032,Triston,male,,,
+2033,Triston Farwynd,male,Ironborn,,
+2034,Tuffleberry,male,,,
+2035,Tumberjon,male,,,
+2036,Tumco Lho,male,Ghiscari,"At Basilisk Isles",
+2037,Turnip,female,Northmen,,
+2038,Turquin,male,,,
+2039,Tybero Istarion,male,,,
+2040,Tycho Nestoris,male,Braavosi,,
+2041,Tyene Sand,female,Dornish,"In 276 AC or 277 AC",
+2042,Tymor,male,,,
+2043,Tyrion Tanner,male,,"In 300 AC, at Stokeworth",
+2044,Tysha,female,,"In 271 AC or 272 AC",
+2045,Tytos Blackwood,male,,"At Raventree Hall",
+2046,Ulf,male,Ironborn,,"In 299 AC, at Winterfell"
+2047,Ulf son of Umar,male,Mountain clans,,"In 298 AC, at the Green Fork"
+2048,Ulf the White,male,,,"In 130 AC, at Tumbleton"
+2049,Uller,male,Ironborn,,
+2050,Ulmer,male,,,
+2051,Umar,male,Mountain clans,,
+2052,Umfred,male,,,
+2053,Umma,female,,,
+2054,Unknown,male,Westeros,"In 195 AC or 196 AC",
+2055,Urek Ironmaker,male,Ironborn,,
+2056,Urras Greyiron,male,,", at Orkmont",
+2057,Urrathon,male,Qartheen,,
+2058,Urreg,male,,,
+2059,Urron Greyiron,male,Ironborn,,
+2060,Urswyck,male,,,
+2061,Urzen,male,Ironborn,,
+2062,Uthor of the High Tower,male,,,
+2063,Utt,male,,,"In 299 AC, at the burning septry"
+2064,Vaellyn,male,,,
+2065,Val,female,Free Folk,,
+2066,Varamyr,male,Free Folk,"At a village Beyond the Wall","In 300 AC, at a village Beyond the Wall"
+2067,Vargo Hoat,male,Qohor,,"In 300 AC, at Harrenhal"
+2068,Varly,male,Northmen,,"In 298 AC, at King's Landing"
+2069,Varys,male,,"At Lys",
+2070,Violet,female,,,
+2071,Visenya Targaryen,female,Valyrian,"In 28 BC or 29 BC, at Dragonstone","In 44 AC"
+2072,Vylarr,male,,,
+2073,Vyman,male,,,
+2074,Walder Vance,male,,"In or between 263 AC and 291 AC",
+2075,Walgrave,male,,,
+2076,Wallen,male,,,"In 298 AC, at Wolfswood"
+2077,Walton,male,,,
+2078,Walys Flowers,male,Reach,,"In before 283 AC"
+2079,Wat,male,,,
+2080,Wat,male,,,
+2081,Wat,male,,,
+2082,Wat,male,,,
+2083,Wat,male,,,
+2084,Wat,male,,,
+2085,Wat,male,,,
+2086,Wate,male,,,
+2087,Watt,male,,,"In 299 AC, at Bridge of Skulls"
+2088,Watty,male,,,
+2089,Wayn,male,Northmen,,
+2090,Weasel,female,,"In 296 AC or 297 AC",
+2091,Weese,male,,,"In 299 AC, at Harrenhal"
+2092,Wenda,female,,,
+2093,Wendamyr,male,,,
+2094,Wendell Webber,male,,,
+2095,Wendello Qar Deeth,male,Qartheen,,
+2096,Werlag,male,Ironborn,,
+2097,Wex Pyke,male,Ironborn,"In 286 AC",
+2098,Wilbert,male,,,"In 298 AC"
+2099,Will,male,,,"At Riverlands"
+2100,Will,male,,,"In 299 AC"
+2101,Will,male,,,
+2102,Will,male,,,
+2103,Will,male,,,
+2104,Will,male,,,"In 299 AC, at Blackwater Rush"
+2105,Will,male,,,
+2106,Will Humble,male,Ironborn,,
+2107,Willam,male,,,"At Stepstones"
+2108,Willam Wells,male,Dornish,,"In 300 AC, at Disputed Lands"
+2109,Willamen Frey,male,,"In or between 272 AC and 280 AC",
+2110,Willifer,male,,,
+2111,Willit,male,,,
+2112,Willow,female,Free Folk,,"In 300 AC, at Winterfell"
+2113,Willow Heddle,female,,"In 289 AC or 290 AC",
+2114,Willum,male,,,
+2115,Wolmer,male,,,
+2116,Woth,male,,,"In 299 AC, at Gods Eye"
+2117,Wulfe,male,Ironborn,,
+2118,Wun Weg Wun Dar Wun,male,,"At Beyond the Wall",
+2119,Wyl,male,Northmen,,"In 298 AC, at King's Landing"
+2120,Wyl,male,,,"At Riverlands"
+2121,Wylla,female,,,
+2122,Xaro Xhoan Daxos,male,Qartheen,,
+2123,Xhondo,male,Summer Isles,,
+2124,Yandry,male,,,
+2125,Ygon,male,Free Folk,,
+2126,Ygritte,female,Free Folk,"In 280 AC","In 299 AC, at Castle Black"
+2127,Yna,female,,,
+2128,Yorkel,male,,,
+2129,Yorko Terys,male,Braavosi,,
+2130,Yormwell,male,,,
+2131,Young Henly,male,,"In or between 240 AC and 248 AC","In 299 AC, at Castle Black"
+2132,Ysilla,female,,,
+2133,Zarabelo,male,,,
+2134,Zei,female,,,

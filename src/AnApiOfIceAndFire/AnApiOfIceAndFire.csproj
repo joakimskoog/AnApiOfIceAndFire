@@ -1,8 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-	<PropertyGroup>
+  <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
-	<ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnApiOfIceAndFire.Database\AnApiOfIceAndFire.Database.csproj" />
     <ProjectReference Include="..\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Resources\anapioficeandfire.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
