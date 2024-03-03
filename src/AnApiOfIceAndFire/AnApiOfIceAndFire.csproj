@@ -6,7 +6,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AnApiOfIceAndFire.Database\AnApiOfIceAndFire.Database.csproj" />
     <ProjectReference Include="..\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj" />
   </ItemGroup>
   <ItemGroup>

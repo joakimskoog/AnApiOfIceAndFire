@@ -1,11 +1,13 @@
-﻿using AnApiOfIceAndFire.Database.Models;
+﻿using AnApiOfIceAndFire.Data.Books;
+using AnApiOfIceAndFire.Data.Characters;
+using AnApiOfIceAndFire.Data.Houses;
 using nietras.SeparatedValues;
 
 namespace AnApiOfIceAndFire.Database.Seeder
 {
     internal static class Parser
     {
-        public static (Book[] books, Character[] characters, House[] houses) Parse()
+        public static (BookModel[] books, CharacterModel[] characters, HouseModel[] houses) Parse()
         {
             var books = ParseBooks();
             var characters = ParseCharacters();
@@ -16,14 +18,14 @@ namespace AnApiOfIceAndFire.Database.Seeder
             return (books, characters, houses);
         }
 
-        private static Book[] ParseBooks()
+        private static BookModel[] ParseBooks()
         {
-            var books = new Book[DataConstants.BooksMaxId + 1];
+            var books = new BookModel[DataConstants.BooksMaxId + 1];
 
             using var reader = Sep.Reader().FromFile(DataConstants.BooksFilePath);
             foreach (var row in reader)
             {
-                var book = new Book();
+                var book = new BookModel();
                 book.Id = row["id"].Parse<int>();
                 book.Name = row["name"].ToString();
                 book.ISBN = row["isbn"].ToString();
@@ -40,14 +42,14 @@ namespace AnApiOfIceAndFire.Database.Seeder
             return books;
         }
 
-        private static Character[] ParseCharacters()
+        private static CharacterModel[] ParseCharacters()
         {
-            var characters = new Character[DataConstants.CharactersMaxId + 1];
+            var characters = new CharacterModel[DataConstants.CharactersMaxId + 1];
 
-            using var reader = Sep.Reader().FromFile(DataConstants.CharactersFilePath);
+            using var reader = Sep.Reader(options => options with { Unescape = true }).FromFile(DataConstants.CharactersFilePath);
             foreach (var row in reader)
             {
-                var character = new Character();
+                var character = new CharacterModel();
                 character.Id = row["id"].Parse<int>();
                 character.Name = row["name"].ToString();
                 character.Gender = Enum.Parse<Gender>(row["gender"].Span, true);
@@ -116,14 +118,15 @@ namespace AnApiOfIceAndFire.Database.Seeder
             return characters;
         }
 
-        private static House[] ParseHouses()
+        private static HouseModel[] ParseHouses()
         {
-            var houses = new House[DataConstants.HousesMaxId + 1];
+            var houses = new HouseModel[DataConstants.HousesMaxId + 1];
 
-            using var reader = Sep.Reader().FromFile(DataConstants.HousesFilePath);
+            //using var aliasesReader = Sep.Reader(options => options with { Unescape = true }).FromFile(DataConstants.CharacterAliasesFilePath);
+            using var reader = Sep.Reader(options => options with { Unescape = true }).FromFile(DataConstants.HousesFilePath);
             foreach (var row in reader)
             {
-                var house = new House();
+                var house = new HouseModel();
                 house.Id = row["id"].Parse<int>();
                 house.Name = row["name"].ToString();
                 house.Region = row["region"].ToString();
@@ -165,7 +168,7 @@ namespace AnApiOfIceAndFire.Database.Seeder
             return houses;
         }
 
-        private static void ParseAndBuildRelationships(Book[] books, Character[] characters, House[] houses)
+        private static void ParseAndBuildRelationships(BookModel[] books, CharacterModel[] characters, HouseModel[] houses)
         {
             using var bookCharactersReader = Sep.Reader().FromFile(DataConstants.BookCharactersFilePath);
             foreach (var row in bookCharactersReader)

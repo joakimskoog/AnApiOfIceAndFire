@@ -2,7 +2,6 @@
 using AnApiOfIceAndFire.Data.Books;
 using AnApiOfIceAndFire.Data.Characters;
 using AnApiOfIceAndFire.Data.Houses;
-using AnApiOfIceAndFire.Database;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Builder;
@@ -30,22 +29,22 @@ namespace AnApiOfIceAndFire
             builder.Services.AddMemoryCache();
             builder.Services.AddResponseCompression();
 
-            builder.Services.AddDbContext<IceAndFireDbContext>(options => options
-                .UseSqlite(builder.Configuration.GetConnectionString("AnApiOfIceAndFireDatabase"))
-                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
-            //builder.Services.Configure<ConnectionOptions>(builder.Configuration.GetSection("ConnectionStrings"));
+            //builder.Services.AddDbContext<IceAndFireDbContext>(options => options
+            //    .UseSqlite(builder.Configuration.GetConnectionString("AnApiOfIceAndFireDatabase"))
+            //    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+            builder.Services.Configure<ConnectionOptions>(builder.Configuration.GetSection("ConnectionStrings"));
 
             builder.Services.AddSingleton<IPagingLinksFactory<BookFilter>, BookPagingLinksFactory>();
             builder.Services.AddSingleton<IPagingLinksFactory<CharacterFilter>, CharacterPagingLinksFactory>();
             builder.Services.AddSingleton<IPagingLinksFactory<HouseFilter>, HousePagingLinksFactory>();
 
-            builder.Services.AddSingleton<IModelMapper<BookEntity, Book>, BookMapper>();
-            builder.Services.AddSingleton<IModelMapper<CharacterEntity, Character>, CharacterMapper>();
-            builder.Services.AddSingleton<IModelMapper<HouseEntity, House>, HouseMapper>();
+            builder.Services.AddSingleton<IModelMapper<BookModel, Book>, BookMapper>();
+            builder.Services.AddSingleton<IModelMapper<CharacterModel, Character>, CharacterMapper>();
+            builder.Services.AddSingleton<IModelMapper<HouseModel, House>, HouseMapper>();
 
-            builder.Services.AddSingleton<IEntityRepository<BookEntity, BookFilter>, BookRepository>();
-            builder.Services.AddSingleton<IEntityRepository<CharacterEntity, CharacterFilter>, CharacterRepository>();
-            builder.Services.AddSingleton<IEntityRepository<HouseEntity, HouseFilter>, HouseRepository>();
+            builder.Services.AddSingleton<IEntityRepository<BookModel, BookFilter>, BookRepository>();
+            builder.Services.AddSingleton<IEntityRepository<CharacterModel, CharacterFilter>, CharacterRepository>();
+            builder.Services.AddSingleton<IEntityRepository<HouseModel, HouseFilter>, HouseRepository>();
 
             builder.Services.Configure<JsonOptions>(options =>
             {

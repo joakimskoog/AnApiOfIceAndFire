@@ -24,12 +24,11 @@
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.28" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.2" />
     <PackageReference Include="Sep" Version="0.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AnApiOfIceAndFire.Database\AnApiOfIceAndFire.Database.csproj" />
+    <ProjectReference Include="..\AnApiOfIceAndFire.Data\AnApiOfIceAndFire.Data.csproj" />
     <ProjectReference Include="..\AnApiOfIceAndFire.SourceGenerator\AnApiOfIceAndFire.SourceGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 

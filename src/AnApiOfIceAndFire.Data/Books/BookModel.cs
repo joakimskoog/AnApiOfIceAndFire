@@ -1,6 +1,9 @@
-﻿namespace AnApiOfIceAndFire.Database.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace AnApiOfIceAndFire.Data.Books
 {
-    public class Book : BaseModel
+    public class BookModel : BaseModel
     {
         public string ISBN { get; set; }
         public string Authors { get; set; }
@@ -12,6 +15,13 @@
 
         public ICollection<int> CharacterIdentifiers { get; internal set; } = new List<int>();
         public ICollection<int> PovCharacterIdentifiers { get; internal set; } = new List<int>();
+    }
+
+    internal class BookCharacter
+    {
+        public int BookId { get; set; }
+        public int CharacterId { get; set; }
+        public int Type { get; set; }
     }
 
     public enum MediaType

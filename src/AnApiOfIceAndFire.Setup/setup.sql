@@ -1,5 +1,3 @@
---BEGIN TRANSACTION;
-
 CREATE TABLE "Books" (
     "Id" INTEGER NOT NULL CONSTRAINT "PK_Books" PRIMARY KEY,
     "Name" TEXT NOT NULL,
@@ -28,22 +26,6 @@ CREATE TABLE "Characters" (
     "SpouseId" INTEGER NULL REFERENCES "Characters" ("Id") DEFERRABLE INITIALLY DEFERRED
 );
 
---CREATE TABLE "BookCharacters" (
---    "BooksId" INTEGER NOT NULL,
---    "CharactersId" INTEGER NOT NULL
---    --CONSTRAINT "PK_BookCharacters" PRIMARY KEY ("BooksId", "CharactersId"),
---    --CONSTRAINT "FK_BookCharacters_Books_BooksId" FOREIGN KEY ("BooksId") REFERENCES "Books" ("Id") ON DELETE CASCADE,
---    --CONSTRAINT "FK_BookCharacters_Characters_CharactersId" FOREIGN KEY ("CharactersId") REFERENCES "Characters" ("Id") ON DELETE CASCADE
---);
-
---CREATE TABLE "BookPovCharacters" (
---    "PovBooksId" INTEGER NOT NULL,
---    "PovCharactersId" INTEGER NOT NULL
---    --CONSTRAINT "PK_BookPovCharacters" PRIMARY KEY ("PovBooksId", "PovCharactersId"),
---    --CONSTRAINT "FK_BookPovCharacters_Books_PovBooksId" FOREIGN KEY ("PovBooksId") REFERENCES "Books" ("Id") ON DELETE CASCADE,
---    --CONSTRAINT "FK_BookPovCharacters_Characters_PovCharactersId" FOREIGN KEY ("PovCharactersId") REFERENCES "Characters" ("Id") ON DELETE CASCADE
---);
-
 CREATE TABLE "BookCharacters" (
     "BookId" INTEGER NOT NULL REFERENCES "Books" ("Id"),
     "CharacterId" INTEGER NOT NULL REFERENCES "Characters" ("Id"),
@@ -52,17 +34,6 @@ CREATE TABLE "BookCharacters" (
     PRIMARY KEY ("BookId", "CharacterId", "Type")
 
 );
-
- --@"CREATE TABLE [dbo].[book_character_link](
-	--        [BookId] [int] NOT NULL,
-	--        [CharacterId] [int] NOT NULL,
-	--        [Type] [int] NOT NULL,
- --           CONSTRAINT [PK_book_character_link] PRIMARY KEY CLUSTERED 
- --           (
-	--            [BookId] ASC,
-	--            [CharacterId] ASC,
-	--            [Type] ASC
- --           )WITH (PAD_INDEX
 
 CREATE TABLE "Houses" (
     "Id" INTEGER NOT NULL CONSTRAINT "PK_Houses" PRIMARY KEY,
@@ -111,6 +82,3 @@ CREATE TABLE "HouseCharacters" (
 --CREATE INDEX "IX_Houses_MainBranchId" ON "Houses" ("MainBranchId");
 
 --CREATE INDEX "IX_Houses_OverlordId" ON "Houses" ("OverlordId");
-
-
---COMMIT;

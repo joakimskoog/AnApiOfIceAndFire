@@ -10,7 +10,7 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace AnApiOfIceAndFire.Controllers.v1
 {
-    public class BaseController<TEntity, TEntityFilter, TExternalModel> : Controller where TEntity : BaseEntity where TEntityFilter : class
+    public class BaseController<TEntity, TEntityFilter, TExternalModel> : Controller where TEntity : BaseModel where TEntityFilter : class
     {
         protected const int DefaultPage = 1;
         protected const int DefaultPageSize = 10;

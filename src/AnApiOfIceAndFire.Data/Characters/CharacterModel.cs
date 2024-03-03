@@ -1,6 +1,9 @@
-﻿namespace AnApiOfIceAndFire.Database.Models
+﻿using AnApiOfIceAndFire.Data;
+using System.Collections.Generic;
+
+namespace AnApiOfIceAndFire.Data.Characters
 {
-    public class Character : BaseModel
+    public class CharacterModel : BaseModel
     {
         public string Culture { get; set; }
         public string Born { get; set; }
@@ -15,11 +18,6 @@
         public int? MotherId { get; set; }
         public int? SpouseId { get; set; }
 
-        //public House CurrentLordOver { get; set; }
-        //public House Founded { get; set; }
-        //public House HeirTo { get; set; }
-
-        
         public ICollection<int> AllegianceIdentifiers { get; set; } = new List<int>();
         public ICollection<int> BookIdentifiers { get; set; } = new List<int>();
         public ICollection<int> PovBookIdentifiers { get; set; } = new List<int>();

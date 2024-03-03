@@ -3,39 +3,40 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
+using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Options;
 using SimplePagedList;
 
 namespace AnApiOfIceAndFire.Data.Houses
 {
-    public class HouseRepository : BaseRepository<HouseEntity, HouseFilter>
+    public class HouseRepository : BaseRepository<HouseModel, HouseFilter>
     {
-        private const string SelectSingleHouseQuery = @"SELECT* FROM dbo.houses WHERE Id = @Id
-                                                        SELECT* FROM dbo.character_house_link WHERE HouseId = @Id
-                                                        SELECT* FROM dbo.house_cadetbranch_link WHERE HouseId = @Id";
+        private const string SelectSingleHouseQuery = @"SELECT* FROM Houses WHERE Id = @Id;
+                                                        SELECT CharacterId FROM HouseCharacters WHERE HouseId = @Id;
+                                                        SELECT Id FROM Houses WHERE MainBranchId = @Id;";
 
         public HouseRepository(IOptions<ConnectionOptions> options) : base(options)
         {
         }
 
-        public override async Task<HouseEntity> GetEntityAsync(int id)
+        public override async Task<HouseModel> GetEntityAsync(int id)
         {
-            using (var connection = new SqlConnection(Options.ConnectionString))
+            using (var connection = new SqliteConnection(Options.AnApiOfIceAndFireDatabase))
             {
                 using (var reader = await connection.QueryMultipleAsync(SelectSingleHouseQuery, new { Id = id }))
                 {
-                    var house = await reader.ReadFirstOrDefaultAsync<HouseEntity>();
+                    var house = await reader.ReadFirstOrDefaultAsync<HouseModel>();
 
                     if (house != null)
                     {
-                        foreach (var swornMember in await reader.ReadAsync())
+                        foreach (var swornMemberId in await reader.ReadAsync<int>())
                         {
-                            var memberId = swornMember.CharacterId;
-                            house.SwornMemberIdentifiers.Add(memberId);
+                            //var memberId = swornMember.CharacterId;
+                            house.SwornMemberIdentifiers.Add(swornMemberId);
                         }
-                        foreach (var cadetBranch in await reader.ReadAsync())
+                        foreach (var cadetBranchId in await reader.ReadAsync<int>())
                         {
-                            var cadetBranchId = cadetBranch.CadetBranchHouseId;
+                            //var cadetBranchId = cadetBranch.CadetBranchHouseId;
                             house.CadetBranchIdentifiers.Add(cadetBranchId);
                         }
                     }
@@ -45,12 +46,12 @@ namespace AnApiOfIceAndFire.Data.Houses
             }
         }
 
-        public override async Task<IPagedList<HouseEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, HouseFilter filter)
+        public override async Task<IPagedList<HouseModel>> GetPaginatedEntitiesAsync(int page, int pageSize, HouseFilter filter)
         {
             var builder = new SqlBuilder();
             var countBuilder = new SqlBuilder();
-            var template = builder.AddTemplate("SELECT* FROM dbo.houses /**where**/ ORDER BY ID OFFSET @RowsToSkip ROWS FETCH NEXT @PageSize ROWS ONLY");
-            var countTemplate = countBuilder.AddTemplate("SELECT COUNT(Id) FROM dbo.houses /**where**/");
+            var template = builder.AddTemplate("SELECT* FROM Houses /**where**/ ORDER BY ID LIMIT @PageSize OFFSET @RowsToSkip");
+            var countTemplate = countBuilder.AddTemplate("SELECT COUNT(Id) FROM Houses /**where**/");
 
             if (!string.IsNullOrEmpty(filter.Name))
             {
@@ -137,21 +138,21 @@ namespace AnApiOfIceAndFire.Data.Houses
             var rowsToSkip = (page - 1) * pageSize;
             builder.AddParameters(new { RowsToSkip = rowsToSkip, PageSize = pageSize });
 
-            using (var connection = new SqlConnection(Options.ConnectionString))
+            using (var connection = new SqliteConnection(Options.AnApiOfIceAndFireDatabase))
             {
                 await connection.OpenAsync();
                 var countTask = connection.QuerySingleAsync<int>(countTemplate.RawSql, countTemplate.Parameters);
-                var houses = (await connection.QueryAsync<HouseEntity>(template.RawSql, template.Parameters)).ToList();
+                var houses = (await connection.QueryAsync<HouseModel>(template.RawSql, template.Parameters)).ToList();
 
                 var identifiers = houses.Select(h => h.Id).ToList();
 
-                var relationshipsSql = @"SELECT* FROM dbo.character_house_link WHERE HouseId IN @hIdentifiers
-                                         SELECT* FROM dbo.house_cadetbranch_link WHERE HouseId IN @hcbIdentifiers";
+                var relationshipsSql = @"SELECT* FROM HouseCharacters WHERE HouseId IN @hIdentifiers;
+                                         SELECT Id as CadetBranchId, MainBranchId FROM Houses WHERE MainBranchId IN @hcbIdentifiers;";
                 
                 using (var reader = await connection.QueryMultipleAsync(relationshipsSql, new { hIdentifiers = identifiers, hcbIdentifiers = identifiers }))
                 {
-                    var characterHouseRelationships = (await reader.ReadAsync()).GroupBy(hcr => hcr.HouseId).ToList();
-                    var cadetBranchRelationships = (await reader.ReadAsync()).GroupBy(cbr => cbr.HouseId).ToList();
+                    var characterHouseRelationships = (await reader.ReadAsync<HouseCharacter>()).GroupBy(hcr => hcr.HouseId).ToList();
+                    var cadetBranchRelationships = (await reader.ReadAsync<HouseCadetBranch>()).GroupBy(cbr => cbr.MainBranchId).ToList();
 
                     foreach (var house in houses)
                     {
@@ -170,7 +171,7 @@ namespace AnApiOfIceAndFire.Data.Houses
                         {
                             foreach (var cadetBranch in cadetBranches)
                             {
-                                house.CadetBranchIdentifiers.Add(cadetBranch.CadetBranchHouseId);
+                                house.CadetBranchIdentifiers.Add(cadetBranch.CadetBranchId);
                             }
                         }
                     }
@@ -178,25 +179,8 @@ namespace AnApiOfIceAndFire.Data.Houses
 
                 var totalNumberOfHouses = await countTask;
 
-                return new PagedList<HouseEntity>(new PageMetadata(totalNumberOfHouses, page, pageSize), houses);
+                return new PagedList<HouseModel>(new PageMetadata(totalNumberOfHouses, page, pageSize), houses);
             }
-        }
-
-        protected override async Task InsertRelationships(HouseEntity house, SqlTransaction transaction, SqlConnection connection)
-        {
-            var insertTasks = new List<Task>();
-
-            foreach (var cadetBranch in house.CadetBranchIdentifiers)
-            {
-                var task = connection.ExecuteAsync("INSERT INTO dbo.house_cadetbranch_link VALUES(@HouseId, @CadetBranchHouseId)", new
-                {
-                    HouseId = house.Id,
-                    CadetBranchHouseId = cadetBranch
-                }, transaction);
-                insertTasks.Add(task);
-            }
-
-            await Task.WhenAll(insertTasks);
         }
     }
 }

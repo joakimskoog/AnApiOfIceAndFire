@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AnApiOfIceAndFire.Database\AnApiOfIceAndFire.Database.csproj" />
     <ProjectReference Include="..\..\src\AnApiOfIceAndFire.Setup\AnApiOfIceAndFire.Setup.csproj" />
   </ItemGroup>
 

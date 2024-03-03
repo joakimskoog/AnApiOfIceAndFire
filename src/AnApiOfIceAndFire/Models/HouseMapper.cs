@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AnApiOfIceAndFire.Models
 {
-    public class HouseMapper : IModelMapper<HouseEntity, House>
+    public class HouseMapper : IModelMapper<HouseModel, House>
     {
-        public House Map(HouseEntity @from, IUrlHelper urlHelper)
+        public House Map(HouseModel @from, IUrlHelper urlHelper)
         {
             if (@from == null) return null;
             if (urlHelper == null) throw new ArgumentNullException(nameof(urlHelper));
@@ -28,15 +28,15 @@ namespace AnApiOfIceAndFire.Models
                 Words = from.Words ?? string.Empty,
                 Founded = from.Founded ?? string.Empty,
                 DiedOut = from.DiedOut ?? string.Empty,
-                Titles = from.ParseTitles(),
-                AncestralWeapons = from.ParseAncestralWeapons(),
-                Seats = from.ParseSeats(),
+                Titles = from.Titles?.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? [],
+                AncestralWeapons = from.AncestralWeapons?.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? [],
+                Seats = from.Seats?.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? [],
                 CurrentLord = currentLordUrl,
                 Heir = heirUrl,
                 Founder = founderUrl,
-                SwornMembers = swornMemberUrls ?? new string[0],
+                SwornMembers = swornMemberUrls ?? [],
                 Overlord = overlordUrl,
-                CadetBranches = cadetBranchUrls ?? new string[0]
+                CadetBranches = cadetBranchUrls ?? []
             };
         }
     }

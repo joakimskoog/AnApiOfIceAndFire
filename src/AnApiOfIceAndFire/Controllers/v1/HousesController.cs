@@ -9,13 +9,13 @@ using Microsoft.Extensions.Caching.Memory;
 namespace AnApiOfIceAndFire.Controllers.v1
 {
     [Route("api/houses")]
-    public class HousesController : BaseController<HouseEntity, HouseFilter, House>
+    public class HousesController : BaseController<HouseModel, HouseFilter, House>
     {
         public const string SingleHouseRouteName = "SingleHouseEndpoint";
         public const string MultipleHousesRouteName = "MultipleHousesEndpoint";
 
 
-        public HousesController(IEntityRepository<HouseEntity, HouseFilter> repository, IModelMapper<HouseEntity, House> modelMapper, IPagingLinksFactory<HouseFilter> pagingLinksFactory, IMemoryCache memoryCache) : base(repository, modelMapper, pagingLinksFactory, memoryCache, "Houses")
+        public HousesController(IEntityRepository<HouseModel, HouseFilter> repository, IModelMapper<HouseModel, House> modelMapper, IPagingLinksFactory<HouseFilter> pagingLinksFactory, IMemoryCache memoryCache) : base(repository, modelMapper, pagingLinksFactory, memoryCache, "Houses")
         {
         }
 
