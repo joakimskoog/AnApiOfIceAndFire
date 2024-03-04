@@ -1,5 +1,4 @@
-﻿using AnApiOfIceAndFire.Data;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace AnApiOfIceAndFire.Data.Characters
 {

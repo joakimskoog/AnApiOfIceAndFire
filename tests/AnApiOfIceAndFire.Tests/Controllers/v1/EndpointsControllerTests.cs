@@ -1,10 +1,6 @@
-﻿using System;
-using System.Dynamic;
-using System.Net.Http;
-using AnApiOfIceAndFire.Controllers.v1;
+﻿using AnApiOfIceAndFire.Controllers.v1;
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Routing;
 using Moq;
 using Xunit;
 
