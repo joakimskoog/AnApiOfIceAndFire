@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire.SourceGen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire.Setup", "src\AnApiOfIceAndFire.Setup\AnApiOfIceAndFire.Setup.csproj", "{59A41A0C-B091-4821-A1D6-11D4C6F47147}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnApiOfIceAndFire.Setup.Tests", "tests\AnApiOfIceAndFire.Setup.Tests\AnApiOfIceAndFire.Setup.Tests.csproj", "{7239448C-5893-40BF-B693-672854641F9B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,10 +43,6 @@ Global
 		{59A41A0C-B091-4821-A1D6-11D4C6F47147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59A41A0C-B091-4821-A1D6-11D4C6F47147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59A41A0C-B091-4821-A1D6-11D4C6F47147}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7239448C-5893-40BF-B693-672854641F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7239448C-5893-40BF-B693-672854641F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7239448C-5893-40BF-B693-672854641F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7239448C-5893-40BF-B693-672854641F9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,7 +53,6 @@ Global
 		{1B7AEDDD-542D-437B-9D24-D04B6184EA90} = {38881ED6-B7BA-4273-B421-2ED256FECF7B}
 		{88E7529A-0DC7-4447-9B5F-03E303668178} = {38881ED6-B7BA-4273-B421-2ED256FECF7B}
 		{59A41A0C-B091-4821-A1D6-11D4C6F47147} = {38881ED6-B7BA-4273-B421-2ED256FECF7B}
-		{7239448C-5893-40BF-B693-672854641F9B} = {83A9DFF2-D534-4ACE-B65C-F1D7B5916A35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FB77914-FF1F-449C-B94A-C876D7DA4503}

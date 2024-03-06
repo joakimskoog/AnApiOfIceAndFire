@@ -6,6 +6,9 @@ using AnApiOfIceAndFire.Database.Seeder;
 using Dapper;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Options;
+using System;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace AnApiOfIceAndFire.Setup.Tests
 {

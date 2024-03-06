@@ -5,7 +5,6 @@ using AnApiOfIceAndFire.Infrastructure.Links;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using SimplePagedList;
-using Xunit;
 
 namespace AnApiOfIceAndFire.Tests.Infrastructure.Links
 {

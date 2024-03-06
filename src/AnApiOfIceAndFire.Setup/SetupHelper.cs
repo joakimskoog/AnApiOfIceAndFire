@@ -8,6 +8,7 @@ namespace AnApiOfIceAndFire.Database.Seeder
         public static string SetupDatabase(string databasePath = null)
         {
             var dbPath = databasePath ?? FindDatabasePath();
+            Console.WriteLine(dbPath);
             DeleteExistingDatabaseFiles(dbPath);
 
             var (books, characters, houses) = Parser.Parse();
@@ -145,6 +146,11 @@ namespace AnApiOfIceAndFire.Database.Seeder
         private static void DeleteExistingDatabaseFiles(string databasePath)
         {
             var folderPath = Path.GetDirectoryName(databasePath);
+            if(!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
             foreach (var file in Directory.GetFiles(folderPath).Where(fp => Path.GetFileName(fp).StartsWith("anapioficeandfire.db")))
             {
                 File.Delete(file);

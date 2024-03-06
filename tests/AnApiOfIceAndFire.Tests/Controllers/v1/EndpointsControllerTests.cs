@@ -2,7 +2,6 @@
 using AnApiOfIceAndFire.Models;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using Xunit;
 
 namespace AnApiOfIceAndFire.Tests.Controllers.v1
 {
