@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using AnApiOfIceAndFire.Infrastructure.Links;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Routing;
 using Moq;
 using SimplePagedList;
-using Xunit;
 
 namespace AnApiOfIceAndFire.Tests.Infrastructure.Links
 {

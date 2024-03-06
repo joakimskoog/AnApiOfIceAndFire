@@ -1,40 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
+using AnApiOfIceAndFire.Data.Books;
+using AnApiOfIceAndFire.Data.Houses;
 using Dapper;
+using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Options;
 using SimplePagedList;
 
 namespace AnApiOfIceAndFire.Data.Characters
 {
-    public class CharacterRepository : BaseRepository<CharacterEntity, CharacterFilter>
+    public class CharacterRepository : BaseRepository<CharacterModel, CharacterFilter>
     {
-        private const string SelectSingleCharacterQuery = @"SELECT* FROM dbo.characters WHERE Id = @Id
-                                                            SELECT* FROM dbo.character_house_link WHERE CharacterId = @Id
-                                                            SELECT* FROM dbo.book_character_link WHERE CharacterId = @Id";
+        private const string SelectSingleCharacterQuery = @"SELECT* FROM Characters WHERE Id = @Id;
+                                                            SELECT HouseId FROM HouseCharacters WHERE CharacterId = @Id;
+                                                            SELECT* FROM BookCharacters WHERE CharacterId = @Id;";
 
         public CharacterRepository(IOptions<ConnectionOptions> options) : base(options)
         {
         }
 
-        public override async Task<CharacterEntity> GetEntityAsync(int id)
+        public override async Task<CharacterModel> GetEntityAsync(int id)
         {
-            using (var connection = new SqlConnection(Options.ConnectionString))
+            using (var connection = new SqliteConnection(Options.AnApiOfIceAndFireDatabase))
             {
                 using (var reader = await connection.QueryMultipleAsync(SelectSingleCharacterQuery, new { Id = id }))
                 {
-                    var character = await reader.ReadFirstOrDefaultAsync<CharacterEntity>();
+                    var character = await reader.ReadFirstOrDefaultAsync<CharacterModel>();
 
                     if (character != null)
                     {
-                        foreach (var allegiance in await reader.ReadAsync())
+                        foreach (var houseId in await reader.ReadAsync<int>())
                         {
-                            var houseId = allegiance.HouseId;
                             character.AllegianceIdentifiers.Add(houseId);
                         }
-                        foreach (var book in await reader.ReadAsync())
+                        foreach (var book in await reader.ReadAsync<BookCharacter>())
                         {
                             var bookId = book.BookId;
                             var type = book.Type;
@@ -55,12 +54,12 @@ namespace AnApiOfIceAndFire.Data.Characters
             }
         }
 
-        public override async Task<IPagedList<CharacterEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, CharacterFilter filter)
+        public override async Task<IPagedList<CharacterModel>> GetPaginatedEntitiesAsync(int page, int pageSize, CharacterFilter filter)
         {
             var builder = new SqlBuilder();
             var countBuilder = new SqlBuilder();
-            var template = builder.AddTemplate("SELECT* FROM dbo.characters /**where**/ ORDER BY ID OFFSET @RowsToSkip ROWS FETCH NEXT @PageSize ROWS ONLY");
-            var countTemplate = countBuilder.AddTemplate("SELECT COUNT(Id) FROM dbo.characters /**where**/");
+            var template = builder.AddTemplate("SELECT* FROM Characters /**where**/ ORDER BY ID LIMIT @PageSize OFFSET @RowsToSkip");
+            var countTemplate = countBuilder.AddTemplate("SELECT COUNT(Id) FROM Characters /**where**/");
 
             if (!string.IsNullOrEmpty(filter.Name))
             {
@@ -97,36 +96,27 @@ namespace AnApiOfIceAndFire.Data.Characters
             }
             if (filter.Gender.HasValue)
             {
-                if (filter.Gender.Value == Gender.Female)
-                {
-                    builder.Where("IsFemale = @IsFemaleFemale", new { IsFemaleFemale = 1 });
-                    countBuilder.Where("IsFemale = @IsFemaleFemale", new { IsFemaleFemale = 1 });
-                }
-                else if (filter.Gender.Value == Gender.Male)
-                {
-                    builder.Where("IsFemale = @IsFemaleMale", new { IsFemaleMale = 0 });
-                    countBuilder.Where("IsFemale = @IsFemaleMale", new { IsFemaleMale = 0 });
-                }
+                builder.Where("Gender = @Gender", new { @Gender = (int)filter.Gender.Value });
             }
 
             var rowsToSkip = (page - 1) * pageSize;
             builder.AddParameters(new { RowsToSkip = rowsToSkip, PageSize = pageSize });
 
-            using (var connection = new SqlConnection(Options.ConnectionString))
+            using (var connection = new SqliteConnection(Options.AnApiOfIceAndFireDatabase))
             {
                 await connection.OpenAsync();
                 var countTask = connection.QuerySingleAsync<int>(countTemplate.RawSql, countTemplate.Parameters);
-                var characters = (await connection.QueryAsync<CharacterEntity>(template.RawSql, template.Parameters)).ToList();
+                var characters = (await connection.QueryAsync<CharacterModel>(template.RawSql, template.Parameters)).ToList();
 
                 var identifiers = characters.Select(c => c.Id).ToList();
 
-                var relationshipsSql = @"SELECT* FROM dbo.book_character_link WHERE CharacterId IN @bIdentifiers
-                                         SELECT* FROM dbo.character_house_link WHERE CharacterId IN @hIdentifiers";
+                var relationshipsSql = @"SELECT* FROM BookCharacters WHERE CharacterId IN @bIdentifiers;
+                                         SELECT* FROM HouseCharacters WHERE CharacterId IN @hIdentifiers;";
 
                 using (var reader = await connection.QueryMultipleAsync(relationshipsSql, new { bIdentifiers = identifiers, hIdentifiers = identifiers }))
                 {
-                    var charaterBookRelationships = (await reader.ReadAsync()).GroupBy(cbr => cbr.CharacterId).ToList();
-                    var characterHouseRelationships = (await reader.ReadAsync()).GroupBy(chr => chr.CharacterId).ToList();
+                    var charaterBookRelationships = (await reader.ReadAsync<BookCharacter>()).GroupBy(cbr => cbr.CharacterId).ToList();
+                    var characterHouseRelationships = (await reader.ReadAsync<HouseCharacter>()).GroupBy(chr => chr.CharacterId).ToList();
 
                     foreach (var character in characters)
                     {
@@ -161,49 +151,8 @@ namespace AnApiOfIceAndFire.Data.Characters
 
                 var totalNumberOfCharacters = await countTask;
 
-                return new PagedList<CharacterEntity>(new PageMetadata(totalNumberOfCharacters, page, pageSize), characters);
+                return new PagedList<CharacterModel>(new PageMetadata(totalNumberOfCharacters, page, pageSize), characters);
             }
-        }
-
-        protected override async Task InsertRelationships(CharacterEntity character, SqlTransaction transaction, SqlConnection connection)
-        {
-            var insertTasks = new List<Task>();
-
-            foreach (var book in character.BookIdentifiers)
-            {
-                var task = connection.ExecuteAsync("INSERT INTO dbo.book_character_link VALUES(@BookId, @CharacterId, @Type)", new
-                {
-                    BookId = book,
-                    CharacterId = character.Id,
-                    Type = 0
-                }, transaction);
-                insertTasks.Add(task);
-            }
-
-            foreach (var povBook in character.PovBookIdentifiers)
-            {
-                var task = connection.ExecuteAsync(
-                "INSERT INTO dbo.book_character_link VALUES(@BookId, @CharacterId, @Type)", new
-                {
-                    BookId = povBook,
-                    CharacterId = character.Id,
-                    Type = 1
-                }, transaction);
-                insertTasks.Add(task);
-            }
-
-            foreach (var allegiance in character.AllegianceIdentifiers)
-            {
-                var task = connection.ExecuteAsync("INSERT INTO dbo.character_house_link VALUES(@CharacterId, @HouseId)", new
-                {
-                    CharacterId = character.Id,
-                    HouseId = allegiance
-                }, transaction);
-
-                insertTasks.Add(task);
-            }
-
-            await Task.WhenAll(insertTasks);
         }
     }
 }

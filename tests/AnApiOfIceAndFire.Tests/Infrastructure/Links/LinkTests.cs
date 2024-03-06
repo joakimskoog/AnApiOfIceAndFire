@@ -1,6 +1,5 @@
 ﻿using System;
 using AnApiOfIceAndFire.Infrastructure.Links;
-using Xunit;
 
 namespace AnApiOfIceAndFire.Tests.Infrastructure.Links
 {

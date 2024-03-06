@@ -1,32 +1,32 @@
-﻿using System.Data.SqlClient;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
+using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Options;
 using SimplePagedList;
 
 namespace AnApiOfIceAndFire.Data.Books
 {
-    public class BookRepository : BaseRepository<BookEntity, BookFilter>
+    public class BookRepository : BaseRepository<BookModel, BookFilter>
     {
-        private const string SelectSingleBookQuery = @"SELECT* FROM dbo.books WHERE Id = @Id
-                                                       SELECT* FROM dbo.book_character_link WHERE BookId = @Id";
+        private const string SelectSingleBookQuery = @"SELECT* FROM Books WHERE Id = @Id;
+                                                       SELECT* FROM BookCharacters WHERE BookId = @Id;";
 
         public BookRepository(IOptions<ConnectionOptions> options) : base(options)
         {
         }
 
-        public override async Task<BookEntity> GetEntityAsync(int id)
+        public override async Task<BookModel> GetEntityAsync(int id)
         {
-            using (var connection = new SqlConnection(Options.ConnectionString))
+            using (var connection = new SqliteConnection(Options.AnApiOfIceAndFireDatabase))
             {
                 using (var reader = await connection.QueryMultipleAsync(SelectSingleBookQuery, new { Id = id }))
                 {
-                    var book = await reader.ReadFirstOrDefaultAsync<BookEntity>();
+                    var book = await reader.ReadFirstOrDefaultAsync<BookModel>();
 
                     if (book != null)
                     {
-                        foreach (var characterInBook in await reader.ReadAsync())
+                        foreach (var characterInBook in await reader.ReadAsync<BookCharacter>())
                         {
                             var characterId = characterInBook.CharacterId;
                             var type = characterInBook.Type;
@@ -47,12 +47,12 @@ namespace AnApiOfIceAndFire.Data.Books
             }
         }
 
-        public override async Task<IPagedList<BookEntity>> GetPaginatedEntitiesAsync(int page, int pageSize, BookFilter filter)
+        public override async Task<IPagedList<BookModel>> GetPaginatedEntitiesAsync(int page, int pageSize, BookFilter filter)
         {
             var builder = new SqlBuilder();
             var countBuilder = new SqlBuilder();
-            var template = builder.AddTemplate("SELECT* FROM dbo.books /**where**/ ORDER BY ID OFFSET @RowsToSkip ROWS FETCH NEXT @PageSize ROWS ONLY");
-            var countTemplate = countBuilder.AddTemplate("SELECT COUNT(Id) FROM dbo.books /**where**/");
+            var template = builder.AddTemplate("SELECT* FROM Books /**where**/ ORDER BY ID LIMIT @PageSize OFFSET @RowsToSkip");
+            var countTemplate = countBuilder.AddTemplate("SELECT COUNT(Id) FROM Books /**where**/");
 
             if (!string.IsNullOrEmpty(filter.Name))
             {
@@ -73,14 +73,14 @@ namespace AnApiOfIceAndFire.Data.Books
             var rowsToSkip = (page - 1) * pageSize;
             builder.AddParameters(new { RowsToSkip = rowsToSkip, PageSize = pageSize });
 
-            using (var connection = new SqlConnection(Options.ConnectionString))
+            using (var connection = new SqliteConnection(Options.AnApiOfIceAndFireDatabase))
             {
                 await connection.OpenAsync();
                 var countTask = connection.QuerySingleAsync<int>(countTemplate.RawSql, countTemplate.Parameters);
-                var books = (await connection.QueryAsync<BookEntity>(template.RawSql, template.Parameters)).ToList();
+                var books = (await connection.QueryAsync<BookModel>(template.RawSql, template.Parameters)).ToList();
 
-                var bookCharacterRelationships = (await connection.QueryAsync(
-                    "SELECT* FROM book_character_link WHERE BookId IN @identifiers", new
+                var bookCharacterRelationships = (await connection.QueryAsync<BookCharacter>(
+                    "SELECT* FROM BookCharacters WHERE BookId IN @identifiers", new
                     {
                         identifiers = books.Select(b => b.Id)
                     })).GroupBy(bcl => bcl.BookId).ToList();
@@ -109,7 +109,7 @@ namespace AnApiOfIceAndFire.Data.Books
 
                 var totalNumberOfBooks = await countTask;
 
-                return  new PagedList<BookEntity>(new PageMetadata(totalNumberOfBooks, page, pageSize), books);
+                return  new PagedList<BookModel>(new PageMetadata(totalNumberOfBooks, page, pageSize), books);
             }
         }
     }

@@ -10,12 +10,12 @@ using Microsoft.Extensions.Caching.Memory;
 namespace AnApiOfIceAndFire.Controllers.v1
 {
     [Route("api/books")]
-    public class BooksController : BaseController<BookEntity, BookFilter, Book>
+    public class BooksController : BaseController<BookModel, BookFilter, Book>
     {
         public const string SingleBookRouteName = "SingleBookEndpoint";
         public const string MultipleBooksRouteName = "MultipleBooksEndpoint";
 
-        public BooksController(IEntityRepository<BookEntity, BookFilter> repository, IModelMapper<BookEntity, Book> modelMapper, IPagingLinksFactory<BookFilter> pagingLinksFactory, IMemoryCache memoryCache) :
+        public BooksController(IEntityRepository<BookModel, BookFilter> repository, IModelMapper<BookModel, Book> modelMapper, IPagingLinksFactory<BookFilter> pagingLinksFactory, IMemoryCache memoryCache) :
             base(repository, modelMapper, pagingLinksFactory, memoryCache, "Books")
         {
         }

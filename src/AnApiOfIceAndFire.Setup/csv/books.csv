@@ -1,0 +1,13 @@
+id,name,isbn,authors,number_of_pages,publisher,media_type,country,release_date,preceded_by,followed_by
+1,A Game of Thrones,978-0553103540,George R. R. Martin,694,Bantam Books,Hardcover,United States,1996-08-01,,2
+2,A Clash of Kings,978-0553108033,George R. R. Martin,768,Bantam Books,Hardback,United States,1999-02-02,1,3
+3,A Storm of Swords,978-0553106633,George R. R. Martin,992,Bantam Books,Hardcover,United States,2000-10-31,2,5
+4,The Hedge Knight,978-0976401100,George R. R. Martin,164,Dabel Brothers Publishing,GraphicNovel,United States,2005-03-09,,6
+5,A Feast for Crows,978-0553801507,George R. R. Martin,784,Bantam Books,Hardcover,United Status,2005-11-08,3,8
+6,The Sworn Sword,978-0785126508,George R. R. Martin,152,Marvel,Hardcover,United States,2008-06-18,4,7
+7,The Mystery Knight,978-0765360267,George R. R. Martin,416,Tor Fantasy,Paperback,United States,2011-03-29,6,
+8,A Dance with Dragons,978-0553801477,George R. R. Martin,1040,Bantam Books,Hardcover,United States,2011-07-12,5,
+9,The Princess and the Queen,978-0765332066,George R. R. Martin,784,Tor Books,Hardcover,United States,2013-12-03,,
+10,The Rogue Prince,978-0345537263,George R. R. Martin,832,Bantam Books,Hardcover,United States,2014-06-17,,
+11,The World of Ice and Fire,978-0553805444,Elio Garcia;Linda Antonsson;George R. R. Martin,336,Bantam Books,Hardcover,United States,2014-10-28,,
+12,A Knight of the Seven Kingdoms,978-0345533487,George R. R. Martin,368,Bantam Books,Hardcover,United States,2015-10-06,,

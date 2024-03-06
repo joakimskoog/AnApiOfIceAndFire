@@ -9,12 +9,12 @@ using Microsoft.Extensions.Caching.Memory;
 namespace AnApiOfIceAndFire.Controllers.v1
 {
     [Route("api/characters")]
-    public class CharactersController : BaseController<CharacterEntity, CharacterFilter, Character>
+    public class CharactersController : BaseController<CharacterModel, CharacterFilter, Character>
     {
         public const string SingleCharacterRouteName = "SingleCharacterEndpoint";
         public const string MultipleCharactersRouteName = "MultipleCharactersEndpoint";
 
-        public CharactersController(IEntityRepository<CharacterEntity, CharacterFilter> repository, IModelMapper<CharacterEntity, Character> modelMapper, IPagingLinksFactory<CharacterFilter> pagingLinksFactory, IMemoryCache memoryCache) : 
+        public CharactersController(IEntityRepository<CharacterModel, CharacterFilter> repository, IModelMapper<CharacterModel, Character> modelMapper, IPagingLinksFactory<CharacterFilter> pagingLinksFactory, IMemoryCache memoryCache) : 
             base(repository, modelMapper, pagingLinksFactory, memoryCache, "Characters")
         {
         }

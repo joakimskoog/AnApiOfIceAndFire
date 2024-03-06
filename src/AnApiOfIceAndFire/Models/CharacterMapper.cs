@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AnApiOfIceAndFire.Models
 {
-    public class CharacterMapper : IModelMapper<CharacterEntity, Character>
+    public class CharacterMapper : IModelMapper<CharacterModel, Character>
     {
-        public Character Map(CharacterEntity @from, IUrlHelper urlHelper)
+        public Character Map(CharacterModel @from, IUrlHelper urlHelper)
         {
             if (@from == null) return null;
             if (urlHelper == null) throw new ArgumentNullException(nameof(urlHelper));
@@ -24,7 +24,7 @@ namespace AnApiOfIceAndFire.Models
             return new Character(url)
             {
                 Name = from.Name ?? string.Empty,
-                Gender = from.IsFemale ? Gender.Female : Gender.Male,
+                Gender = from.Gender,
                 Culture = from.Culture ?? string.Empty,
                 Born = from.Born ?? string.Empty,
                 Died = from.Died ?? string.Empty,
@@ -33,10 +33,10 @@ namespace AnApiOfIceAndFire.Models
                 Spouse = spouseUrl,
                 Books = bookUrls,
                 PovBooks = povBookUrls,
-                Aliases = from.ParseAliases(),
-                Titles = from.ParseTitles(),
-                PlayedBy = from.ParsePlayedBy(),
-                TvSeries = from.ParseTvSeries(),
+                Aliases = from.Aliases?.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? [],
+                Titles = from.Titles?.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? [],
+                PlayedBy = from.PlayedBy?.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? [],
+                TvSeries = from.TvSeries?.Split(';', StringSplitOptions.RemoveEmptyEntries) ?? [],
                 Allegiances = allegianceUrls
             };
         }
