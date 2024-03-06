@@ -31,7 +31,6 @@ namespace AnApiOfIceAndFire.Data.Characters
                     {
                         foreach (var houseId in await reader.ReadAsync<int>())
                         {
-                            //var houseId = allegiance.HouseId;
                             character.AllegianceIdentifiers.Add(houseId);
                         }
                         foreach (var book in await reader.ReadAsync<BookCharacter>())

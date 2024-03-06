@@ -29,12 +29,10 @@ namespace AnApiOfIceAndFire.Data.Houses
                     {
                         foreach (var swornMemberId in await reader.ReadAsync<int>())
                         {
-                            //var memberId = swornMember.CharacterId;
                             house.SwornMemberIdentifiers.Add(swornMemberId);
                         }
                         foreach (var cadetBranchId in await reader.ReadAsync<int>())
                         {
-                            //var cadetBranchId = cadetBranch.CadetBranchHouseId;
                             house.CadetBranchIdentifiers.Add(cadetBranchId);
                         }
                     }

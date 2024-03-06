@@ -27,9 +27,6 @@ namespace AnApiOfIceAndFire
             builder.Services.AddMemoryCache();
             builder.Services.AddResponseCompression();
 
-            //builder.Services.AddDbContext<IceAndFireDbContext>(options => options
-            //    .UseSqlite(builder.Configuration.GetConnectionString("AnApiOfIceAndFireDatabase"))
-            //    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
             builder.Services.Configure<ConnectionOptions>(builder.Configuration.GetSection("ConnectionStrings"));
 
             builder.Services.AddSingleton<IPagingLinksFactory<BookFilter>, BookPagingLinksFactory>();
