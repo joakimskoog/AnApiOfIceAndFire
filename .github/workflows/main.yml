@@ -19,3 +19,11 @@ jobs:
         run: dotnet build -c Release
       - name: Tests
         run: dotnet test tests/AnApiOfIceAndFire.Tests/AnApiOfIceAndFire.Tests.csproj -c Release --logger GitHubActions
+  deploy-job:
+    name: Deploy
+    if: github.ref == 'refs/heads/master'
+    needs: build-job
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Publish
+        run: dotnet publish -c Release
