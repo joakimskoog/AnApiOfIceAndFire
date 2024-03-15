@@ -13,12 +13,9 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4.1.1
-      - name: Run AnApiOfIceAndFire.Setup
-        working-directory: src/AnApiOfIceAndFire.Setup
-        run: dotnet run -c Release
-      - name: Build AnApiOfIceAndFire
-        run: dotnet build src/AnApiOfIceAndFire/AnApiOfIceAndFire.csproj -c Release
+      - name: Build
+        run: dotnet build -c Release
       - name: Tests
         run: dotnet test tests/AnApiOfIceAndFire.Tests/AnApiOfIceAndFire.Tests.csproj -c Release --logger GitHubActions
