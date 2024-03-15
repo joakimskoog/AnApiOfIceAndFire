@@ -27,4 +27,6 @@ jobs:
     if: github.ref == 'refs/heads/master'
     needs: build-job
     runs-on: ubuntu-latest
-    steps: dotnet publish -c Release 
+    steps: 
+      - name: Publish
+        uses: dotnet publish -c Release 
