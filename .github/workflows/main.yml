@@ -29,4 +29,4 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Publish
-        uses: dotnet publish -c Release 
+        run: dotnet publish -c Release 
