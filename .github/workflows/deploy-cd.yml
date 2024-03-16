@@ -20,6 +20,11 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      # Run setup
+      - name: Run AnApiOfIceAndFire.Setup
+        working-directory: src/AnApiOfIceAndFire.Setup
+        run: dotnet run -c Release
+
       # Build & publish
       - name: Build & Publish
         run: |
