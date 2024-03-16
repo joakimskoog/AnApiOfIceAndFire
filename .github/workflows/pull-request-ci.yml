@@ -1,0 +1,20 @@
+name: Pull Request CI
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '*.md'
+
+jobs:
+  build-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.1
+      - name: Build
+        run: dotnet build -c Release
+      - name: Tests
+        run: dotnet test tests/AnApiOfIceAndFire.Tests/AnApiOfIceAndFire.Tests.csproj -c Release --logger GitHubActions
