@@ -19,7 +19,7 @@
             <section>
                 <h2>Sandbox</h2>
                 <p class="subtitle">Play around with the API without build an integration yourself</p>
-                <form>
+                <form id="sandbox-form">
                     <label for="url">https://anapioficeandfire.com/api/</label>
                     <input type="text" id="url" placeholder="characters/583" />
                     <button type="submit">Request</button>
@@ -89,6 +89,11 @@
 
     <script type="text/javascript">
         makeRequest();
+
+        document.getElementById('sandbox-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            makeRequest();
+        })
 
         function updateRequestUrl(url) {
             document.getElementById('url').value = url;
