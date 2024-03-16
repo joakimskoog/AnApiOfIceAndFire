@@ -8,8 +8,8 @@ on:
       - '*.md'
 
 jobs:
-  build-test-deploy:
-    name: Build, Test & Deploy
+  build-deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
     steps:
       # Checkout code
