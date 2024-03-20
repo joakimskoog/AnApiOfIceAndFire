@@ -9,4 +9,6 @@
 
 ## Worth noting
 * All contributions are welcome, it doesn't matter if it's a big feature or a small data fix.
-* The data files are located [here](https://github.com/joakimskoog/AnApiOfIceAndFire/tree/master/data)
+* The data files are located [here](https://github.com/joakimskoog/AnApiOfIceAndFire/tree/master/src/AnApiOfIceAndFire.Setup/csv)
+
+
