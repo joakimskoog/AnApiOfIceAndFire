@@ -85,13 +85,13 @@ namespace AnApiOfIceAndFire.Data.Characters
             {
                 if (filter.IsAlive.Value)
                 {
-                    builder.Where("Died = ''");
-                    countBuilder.Where("Died = ''");
+                    builder.Where("Died IS NULL OR Died = ''");
+                    countBuilder.Where("Died IS NULL OR Died = ''");
                 }
                 else
                 {
-                    builder.Where("Died <> ''");
-                    countBuilder.Where("Died <> ''");
+                    builder.Where("Died IS NOT NULL AND Died <> ''");
+                    countBuilder.Where("Died IS NOT NULL AND Died <> ''");
                 }
             }
             if (filter.Gender.HasValue)

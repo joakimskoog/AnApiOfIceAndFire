@@ -55,7 +55,7 @@ namespace AnApiOfIceAndFire.Database.Seeder
                 character.Gender = Enum.Parse<Gender>(row["gender"].Span, true);
                 character.Culture = row["culture"].ToString();
                 character.Born = row["born"].ToString();
-
+                character.Died = row["died"].ToString();
                 characters[character.Id] = character;
             }
 
