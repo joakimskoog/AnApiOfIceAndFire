@@ -51,18 +51,18 @@ namespace AnApiOfIceAndFire.Data.Houses
 
             if (!string.IsNullOrEmpty(filter.Name))
             {
-                builder.Where("Name = @Name", new { filter.Name });
-                countBuilder.Where("Name = @Name", new { filter.Name });
+                builder.Where("Name LIKE @Name", new { Name = $"%{filter.Name}%" });
+                countBuilder.Where("Name LIKE @Name", new { Name = $"%{filter.Name}%" });
             }
             if (!string.IsNullOrEmpty(filter.Region))
             {
-                builder.Where("Region = @Region", new { filter.Region });
-                countBuilder.Where("Region = @Region", new { filter.Region });
+                builder.Where("Region LIKE @Region", new { Region = $"%{filter.Region}%" });
+                countBuilder.Where("Region LIKE @Region", new { Region = $"%{filter.Region}%" });
             }
             if (!string.IsNullOrEmpty(filter.Words))
             {
-                builder.Where("Words = @Words", new { filter.Words });
-                countBuilder.Where("Words = @Words", new { filter.Words });
+                builder.Where("Words LIKE @Words", new { Words = $"%{filter.Words}%" });
+                countBuilder.Where("Words LIKE @Words", new { Words = $"%{filter.Words}%" });
             }
             if (filter.HasWords.HasValue)
             {

@@ -63,13 +63,13 @@ namespace AnApiOfIceAndFire.Data.Characters
 
             if (!string.IsNullOrEmpty(filter.Name))
             {
-                builder.Where("Name = @Name", new { filter.Name });
-                countBuilder.Where("Name = @Name", new { filter.Name });
+                builder.Where("Name LIKE @Name", new { Name = $"%{filter.Name}%" });
+                countBuilder.Where("Name LIKE @Name", new { Name = $"%{filter.Name}%" });
             }
             if (!string.IsNullOrEmpty(filter.Culture))
             {
-                builder.Where("Culture = @Culture", new { filter.Culture });
-                countBuilder.Where("Culture = @Culture", new { filter.Culture });
+                builder.Where("Culture LIKE @Culture", new { Culture = $"%{filter.Culture}%" });
+                countBuilder.Where("Culture LIKE @Culture", new { Culture = $"%{filter.Culture}%" });
             }
             if (!string.IsNullOrEmpty(filter.Born))
             {
