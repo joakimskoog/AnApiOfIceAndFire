@@ -4,5 +4,7 @@
 
 The code powering [anapioficeandfire.com](https://anapioficeandfire.com)
 
+Swagger documentation [anapioficeandfire.com/swagger](https://anapioficeandfire.com/swagger)
+
 If you want to contribute to the project, please see [CONTRIBUTING.md](https://github.com/joakimskoog/AnApiOfIceAndFire/blob/master/CONTRIBUTING.md)
 
